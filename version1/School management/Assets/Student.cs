@@ -8,33 +8,63 @@ public class Student : MonoBehaviour
     private string SName;
     private string Scourse;
     private int Happines;
+    private string ClassIwant;
+    
     //private int 
-    [SerializeField]private NavMeshAgent myNavAgent;
+    private NavMeshAgent myNavAgent;
+    private bool LobbyFound = false;
+
+
+
+    Student instance;
+
+    public Student(string sName, int happines, string classIwant)
+    {
+        SName = sName;
+        Happines = happines;
+        ClassIwant = classIwant;
+        Scourse = "Not Registered";
+    }
+
+    private void Awake()
+    {
+        instance = this;
+        GameManager.instance.AddStudent();
+        
+    }
 
     void Start()
     {
+        myNavAgent = gameObject.GetComponent<NavMeshAgent>();
+       if (!GameObject.Find("Lobby"))myNavAgent.SetDestination(new Vector3(-10, 0, -10));
+
+            
+                InvokeRepeating("OnSpawn", 0, 5f);
+            
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        OnSpawn();
         
     }
 
     public void OnSpawn()
     {
         
+
             if (GameObject.Find("Lobby"))
             {
                 GameObject lobby = GameObject.Find("Lobby");
-                myNavAgent.SetDestination(lobby.transform.position);
+                Lobby.instance.FillList();
+                Lobby.instance.TakePlace(instance);
+                CancelInvoke();
             }
             else
             {
 
-            StartCoroutine(Waaiter());
+            myNavAgent.SetDestination(RandomNavmeshLocation(5f));
         }
         
     }
@@ -53,11 +83,13 @@ public class Student : MonoBehaviour
 
     public IEnumerator Waaiter()
     {
-       // do
+        // do
         //{
-          
-            myNavAgent.SetDestination(RandomNavmeshLocation(8f));
-            yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(20f);
+        myNavAgent.SetDestination(RandomNavmeshLocation(20f));
+            
         //} while (!GameObject.Find("Lobby")) ;
     }
+
+
 }
