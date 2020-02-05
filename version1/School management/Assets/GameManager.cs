@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.IO;
 
 
 public class GameManager : MonoBehaviour
@@ -13,12 +14,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     string[] Clasesbogth;
-    string[] AvalableClases= {"Magic","Surfing","Haking","" };
+    string[] AvalableClases= {"Magic","Surfing","Haking","Axe Trowing" };
 
     List<string> Clases;
 
     [Header("Student Prefab Toinstanciate")]
     [SerializeField]private GameObject Sudent;
+
+    
 
     private void Awake()
     {
