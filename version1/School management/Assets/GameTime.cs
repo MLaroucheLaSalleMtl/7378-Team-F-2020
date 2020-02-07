@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class GameTime : MonoBehaviour
 {
-    private const int Timescale = 45;
+    private const int Timescale = 9999;//default45
 
-    private Text clockTxt, seasonTxt, dayTxt,yearTxt;
-
+    private Text clockTxt, seasonTxt, dayTxt,datetxt;
+    private int daysSurv;
     private double minute, hour, day, second, month, year;
 
     void Start()
@@ -17,11 +17,11 @@ public class GameTime : MonoBehaviour
         day = 1;
         year = 2000;
         clockTxt = GameObject.Find("Clock").GetComponent<Text>();
-        clockTxt = GameObject.Find("Day").GetComponent<Text>();
-        clockTxt = GameObject.Find("Season").GetComponent<Text>();
-        clockTxt = GameObject.Find("Year").GetComponent<Text>();
-        //calculate the season
-        
+        dayTxt = GameObject.Find("DaysSurv").GetComponent<Text>();
+        seasonTxt = GameObject.Find("Season").GetComponent<Text>();
+        datetxt = GameObject.Find("Date").GetComponent<Text>();
+        CalculateSeason();
+
 
     }
 
@@ -64,13 +64,14 @@ public class GameTime : MonoBehaviour
         }
 
     }
-    private void CalculateSeason()
+    private void CalcMonth()
     {
         if (month == 1 || month == 3 || month == 5||month == 7 || month == 8 || month == 10 || month == 12 )
 
         {
             if (day >= 32)
             {
+                daysSurv++;
                 month++;
                 day = 1;
                 UpdateText();
@@ -82,6 +83,7 @@ public class GameTime : MonoBehaviour
         {
             if (day >= 31)
             {
+                daysSurv++;
                 month++;
                 day = 1;
                 UpdateText();
@@ -93,6 +95,7 @@ public class GameTime : MonoBehaviour
         {
             if (day >= 29)
             {
+                daysSurv++;
                 month++;
                 day = 1;
                 UpdateText();
@@ -100,7 +103,7 @@ public class GameTime : MonoBehaviour
             }
         }
     }
-    private void CalcMonth()
+    private void CalculateSeason()
     {
         if( month == 2 || month == 3|| month == 4)
 
@@ -122,12 +125,15 @@ public class GameTime : MonoBehaviour
             
             seasonTxt.text = "Winter";
         }
+        
     }
 
     private void UpdateText()
     {
-        dayTxt.text = "Day: " + day;
+        dayTxt.text = "Days survived: "+daysSurv;
         clockTxt.text = "Time: " + hour + ":" + minute;
-        yearTxt.text = "Year:" + year;
+        datetxt.text = "Date: " + day+"/"+month + "/" + year;
+       // monthtxt.text="Month"
+        
     }
 }

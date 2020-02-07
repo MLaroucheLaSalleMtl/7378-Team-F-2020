@@ -29,12 +29,13 @@ public class Student : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        GameManager.instance.AddStudent();
+       
         
     }
 
     void Start()
     {
+        GameManager.instance.AddStudent();
         myNavAgent = gameObject.GetComponent<NavMeshAgent>();
        if (!GameObject.Find("Lobby"))myNavAgent.SetDestination(new Vector3(-10, 0, -10));
 
