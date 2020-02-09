@@ -9,6 +9,7 @@ public class Student : MonoBehaviour
     private string Scourse;
     private int Happines;
     private string ClassIwant;
+    private char Gender;
     
     //private int 
     private NavMeshAgent myNavAgent;
@@ -18,12 +19,13 @@ public class Student : MonoBehaviour
 
     Student instance;
 
-    public Student(string sName, int happines, string classIwant)
+    public Student(string sName, string classIwant,char gender)
     {
         SName = sName;
-        Happines = happines;
+        Happines = 70;
         ClassIwant = classIwant;
         Scourse = "Not Registered";
+        Gender = gender;
     }
 
     private void Awake()
@@ -82,15 +84,7 @@ public class Student : MonoBehaviour
         return finalPosition;
     }
 
-    public IEnumerator Waaiter()
-    {
-        // do
-        //{
-        yield return new WaitForSeconds(20f);
-        myNavAgent.SetDestination(RandomNavmeshLocation(20f));
-            
-        //} while (!GameObject.Find("Lobby")) ;
-    }
+ 
 
 
 }
