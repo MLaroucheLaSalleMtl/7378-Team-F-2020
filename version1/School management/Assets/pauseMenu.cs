@@ -6,13 +6,22 @@ using UnityEngine.SceneManagement;
 public class pauseMenu : MonoBehaviour
 {
 
+    
+
     //Pause & Exit Buttons
     public static bool gamePaused = false;
     public GameObject btnQuit;
     public GameObject btnRestart;
-    public string sceneToReload = "SampleScene";
+    public GameObject btnResume;
+    public GameObject btnControls;
+    public GameObject btnSHIFT;
+    public GameObject btnSPACEBAR;
+
+
+    //Pause & Exit BG
     public GameObject pauseTxt;
     public GameObject pauseBG;
+    public string sceneToReload = "SampleScene";
 
     //timescale
     [SerializeField] public float timeScale;
@@ -27,6 +36,17 @@ public class pauseMenu : MonoBehaviour
         SceneManager.LoadScene(sceneToReload);
     }
 
+    public void DoResume()
+    {
+        unPause();
+    }
+
+    public void DoControl()
+    {
+
+        control();
+    }
+
     //Pause Menu Boolean activation
 
     public void Pause()
@@ -35,7 +55,11 @@ public class pauseMenu : MonoBehaviour
         pauseTxt.SetActive(true);
         btnQuit.SetActive(true);
         btnRestart.SetActive(true);
+        btnResume.SetActive(true);
+        btnControls.SetActive(true);
         pauseBG.SetActive(true);
+        btnSHIFT.SetActive(false);
+        btnSPACEBAR.SetActive(false);
         gamePaused = true;
     }
 
@@ -46,18 +70,45 @@ public class pauseMenu : MonoBehaviour
         pauseTxt.SetActive(false);
         btnQuit.SetActive(false);
         btnRestart.SetActive(false);
+        btnResume.SetActive(false);
+        btnControls.SetActive(false);
         pauseBG.SetActive(false);
+        btnSHIFT.SetActive(false);
+        btnSPACEBAR.SetActive(false);
         gamePaused = false;
+    }
+
+
+    public void control()
+    {
+        //Restarts the time when unpaused but timescale doesn't start right away??? :omegaMonka:
+        Time.timeScale = 0;
+        pauseTxt.SetActive(true);
+        btnQuit.SetActive(false);
+        btnRestart.SetActive(false);
+        btnResume.SetActive(true);
+        btnControls.SetActive(false);
+        pauseBG.SetActive(true);
+        btnSHIFT.SetActive(true);
+        btnSPACEBAR.SetActive(true);
+        gamePaused = true;
     }
 
     void Start()
     {
-        //Pause Menu ... :monkaS:
+        
         btnQuit.SetActive(false);
         btnRestart.SetActive(false);
+        btnResume.SetActive(false);
+        btnControls.SetActive(false);
         pauseTxt.SetActive(false);
         pauseBG.SetActive(false);
+        btnSHIFT.SetActive(false);
+        btnSPACEBAR.SetActive(false);
     }
+
+
+    
 
     // Update is called once per frame
     void Update()
@@ -69,10 +120,12 @@ public class pauseMenu : MonoBehaviour
             if (gamePaused)
             {
                 unPause();
+                Debug.Log("unpaused");
             }
             else
             {
                 Pause();
+                Debug.Log("Paused");
             }
         }
     }
