@@ -15,6 +15,7 @@ public class Student : MonoBehaviour
     private NavMeshAgent myNavAgent;
     private bool LobbyFound = false;
 
+    public Animator anim;
 
 
     Student instance;
@@ -38,13 +39,16 @@ public class Student : MonoBehaviour
     void Start()
     {
         GameManager.instance.AddStudent();
+        anim = GetComponent<Animator>(); //animation
         myNavAgent = gameObject.GetComponent<NavMeshAgent>();
-       if (!GameObject.Find("Lobby"))myNavAgent.SetDestination(new Vector3(-10, 0, -10));
 
-            
-                InvokeRepeating("OnSpawn", 0, 5f);
-            
         
+        if (!GameObject.Find("Lobby"))myNavAgent.SetDestination(new Vector3(-10, 0, -10));
+
+        
+        InvokeRepeating("OnSpawn", 0, 5f);
+        
+
     }
 
     // Update is called once per frame
@@ -55,33 +59,46 @@ public class Student : MonoBehaviour
 
     public void OnSpawn()
     {
-        
-
-            if (GameObject.Find("Lobby"))
+        anim.SetBool("isWalking", true); //WALKING
+        if (GameObject.Find("Lobby"))
             {
+                
                 GameObject lobby = GameObject.Find("Lobby");
                 Lobby.instance.FillList();
                 Lobby.instance.TakePlace(instance);
-                CancelInvoke();
-            }
+            anim.SetBool("isWalking", true); //WALKING
+            CancelInvoke();
+                
+        }
             else
             {
 
+            
             myNavAgent.SetDestination(RandomNavmeshLocation(5f));
+            
         }
         
     }
     public Vector3 RandomNavmeshLocation(float radius)
     {
+        anim.SetBool("isWalking", true); //WALKING
         Vector3 randomDirection = Random.insideUnitSphere * radius;
         randomDirection += transform.position;
         NavMeshHit hit;
         Vector3 finalPosition = Vector3.zero;
+        
+
         if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
         {
+            
             finalPosition = hit.position;
+            
         }
+        
+
         return finalPosition;
+        
+
     }
 
  
