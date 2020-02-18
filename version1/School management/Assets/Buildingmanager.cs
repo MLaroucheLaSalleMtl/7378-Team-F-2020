@@ -18,9 +18,15 @@ public class Buildingmanager : MonoBehaviour
     }
     
     private string[] AvalableClases = { "Magic", "Surfing", "Haking", "Axe Trowing" };
-    private GameObject[] ClassesPrefavs;
+    [SerializeField]private GameObject[] ClassesPrefavs;
     private string[] Clasesbogth;
     List<string> Clases;
     private GameObject ClassToBuild;
-    
+    private void Start()
+    {
+        ClassToBuild = ClassesPrefavs[0];
+    }
+    public GameObject GetClassToBuild() {
+        return ClassToBuild;
+    }
 }

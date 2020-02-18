@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.UI;
 
 
 
 
 public class GameManager : MonoBehaviour
 {
-
+    public static GameManager gameManager;
+    [SerializeField] private float money;
+    public Text moneyText;
 
     private int StudentCount;
     Text StudentCountText;//"StudentCount"
@@ -20,7 +22,8 @@ public class GameManager : MonoBehaviour
 
     string[] Clasesbogth;
 
-    //Percy wtf is Haking? 
+    //Percy wtf is Haking? like stealing paswoords type of shit
+
     string[] AvalableClases= {"Magic","Surfing","Haking","Axe Trowing"};
 
     
@@ -49,8 +52,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
+        gameManager = this; //only one
+        UpdateUI();
 
+        StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         
     }
 
@@ -58,11 +63,40 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         RefreshTextOnUI();
-
-
+        UpdateUI();
     }
 
-    public void AddStudent( )
+    /// money
+    public void AddMoney(float amount)
+    {
+        money += amount;
+        UpdateUI();
+    }
+
+    public void ReduceMoney(float amount)
+    {
+        money -= amount;
+        UpdateUI();
+    }
+
+    public bool RequestMoney(float amount)
+    {
+        if (amount <= money)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    void UpdateUI()
+    {
+        moneyText.text = "$ " + money.ToString("N0");
+    }
+
+
+
+    /// student
+    public void AddStudent()
     {
         StudentCount++;
 

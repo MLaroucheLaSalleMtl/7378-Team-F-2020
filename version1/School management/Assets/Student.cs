@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Student : MonoBehaviour
 {
+   
+
     private string SName;
     private string Scourse;
     private int Happines;
@@ -15,10 +18,14 @@ public class Student : MonoBehaviour
     private NavMeshAgent myNavAgent;
     private bool LobbyFound = false;
 
-    public Animator anim;
+    
 
 
     Student instance;
+
+    //animation 
+    private Animator anim;
+
 
     public Student(string sName, string classIwant,char gender)
     {
@@ -38,6 +45,7 @@ public class Student : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         GameManager.instance.AddStudent();
         anim = GetComponent<Animator>(); //animation
         myNavAgent = gameObject.GetComponent<NavMeshAgent>();
@@ -59,14 +67,15 @@ public class Student : MonoBehaviour
 
     public void OnSpawn()
     {
-        anim.SetBool("isWalking", true); //WALKING
+        anim.SetBool("isWalking", false); 
         if (GameObject.Find("Lobby"))
             {
                 
                 GameObject lobby = GameObject.Find("Lobby");
                 Lobby.instance.FillList();
-                Lobby.instance.TakePlace(instance);
-            anim.SetBool("isWalking", true); //WALKING
+            anim.SetBool("isWalking", true);
+            Lobby.instance.TakePlace(instance);
+            //anim.SetBool("isWalking", true); //WALKING
             CancelInvoke();
                 
         }
@@ -81,7 +90,7 @@ public class Student : MonoBehaviour
     }
     public Vector3 RandomNavmeshLocation(float radius)
     {
-        anim.SetBool("isWalking", true); //WALKING
+        anim.SetBool("isWalking", true);
         Vector3 randomDirection = Random.insideUnitSphere * radius;
         randomDirection += transform.position;
         NavMeshHit hit;

@@ -66,8 +66,10 @@ public class Lobby : MonoBehaviour
             foreach (GameObject student in StudentsInLine)
             {
                 NavMeshAgent studentNavAgent=student.GetComponent<NavMeshAgent>();
-                studentNavAgent.SetDestination(student.transform.position- new Vector3(0, 0, 3));
-            }
+            student.GetComponentInChildren<Animator>().SetBool("isWalking", true);
+            studentNavAgent.SetDestination(student.transform.position- new Vector3(0, 0, 3));
+            
+        }
        // }
     }
 
