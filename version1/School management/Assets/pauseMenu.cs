@@ -21,6 +21,7 @@ public class pauseMenu : MonoBehaviour
     //Pause & Exit BG
     public GameObject pauseTxt;
     public GameObject pauseBG;
+
     public string sceneToReload = "SampleScene";
 
     //timescale

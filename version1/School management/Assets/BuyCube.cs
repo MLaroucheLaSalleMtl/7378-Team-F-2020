@@ -9,8 +9,14 @@ public class BuyCube : MonoBehaviour
     private Color Defaaultcollor;
     private GameObject classroom;
     private GameObject Classselected;
+    
 
-    [SerializeField]private Vector3 PossitionOfcet;
+    [SerializeField] private Vector3 PossitionOfcet;
+
+    //Teacher position , inside the class room
+    [SerializeField] private GameObject teacher;
+    [SerializeField] private Vector3 teacherPosition;
+
 
     void Start()
     {
@@ -24,6 +30,10 @@ public class BuyCube : MonoBehaviour
         //display ui to pick
         GameObject ClassToBuild = Buildingmanager.instance.GetClassToBuild();
         classroom = (GameObject)Instantiate(ClassToBuild,transform.position+PossitionOfcet,transform.rotation);
+
+        //teacher shows up , for the demo i dont think we will have enough time to "hire" the teacher yet lol
+        Instantiate(teacher, teacherPosition, Quaternion.identity);
+
         //deactivate vbuy option
         //minus the money
     }
