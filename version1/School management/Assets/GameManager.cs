@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
 
     string[] Clasesbogth;
 
-    //Percy wtf is Haking? like stealing paswoords type of shit
+    
 
-    string[] AvalableClases= {"Magic","Surfing","Haking","Axe Trowing"};
+    string[] AvalableClases= {"Magic","Surfing","Hacking","Axe Trowing"};
 
     
 
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameManager = this; //only one
-        UpdateUI();
+        //UpdateMoneyUI();
 
         StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         
@@ -62,21 +62,22 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
+        UpdateMoneyUI();
         RefreshTextOnUI();
-        UpdateUI();
+        
     }
 
     /// money
     public void AddMoney(float amount)
     {
         money += amount;
-        UpdateUI();
+        UpdateMoneyUI();
     }
 
     public void ReduceMoney(float amount)
     {
         money -= amount;
-        UpdateUI();
+        UpdateMoneyUI();
     }
 
     public bool RequestMoney(float amount)
@@ -88,7 +89,7 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    void UpdateUI()
+    public void UpdateMoneyUI()
     {
         moneyText.text = "$ " + money.ToString("N0");
     }

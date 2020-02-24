@@ -633,6 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -743,6 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -867,6 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -2238,6 +2241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -2499,7 +2503,7 @@ GameObject:
   - component: {fileID: 759816622}
   - component: {fileID: 759816621}
   m_Layer: 0
-  m_Name: BuyCube (4)
+  m_Name: magic Class
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2517,6 +2521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 200
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   teacher: {fileID: 2712408142622019533, guid: 9af1dd2a91412d94f9544b25c49baa15, type: 3}
@@ -3717,6 +3722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -3904,6 +3910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -4000,6 +4007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   teacher: {fileID: 4646985499990273602, guid: 9af1dd2a91412d94f9544b25c49baa15, type: 3}
