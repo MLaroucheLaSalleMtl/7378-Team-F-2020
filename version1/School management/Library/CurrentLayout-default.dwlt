@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 160
+  controlID: 144
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 87
+  controlID: 94
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 36
+  controlID: 95
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 433, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 88
+  controlID: 120
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -382,7 +382,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -395,18 +395,18 @@ MonoBehaviour:
       y: 21
       width: 963
       height: 354
-    m_Scale: {x: 0.34214893, y: 0.34214893}
-    m_Translation: {x: 481.49997, y: 169.2396}
+    m_Scale: {x: 0.32777777, y: 0.32777777}
+    m_Translation: {x: 481.5, y: 177}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1407.2819
-      y: -494.6372
-      width: 2814.5637
-      height: 1034.6372
+      x: -1468.983
+      y: -540
+      width: 2937.966
+      height: 1080
     m_MinimalGUI: 1
   m_defaultScale: 0.32777777
   m_LastWindowPixelSize: {x: 963, y: 375}
@@ -451,9 +451,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.21, y: 3.4748816, z: 1.7801969}
+    m_Target: {x: 12.942994, y: -0.4663992, z: -20.181656}
     speed: 2
-    m_Value: {x: 6.2100005, y: 3.4748814, z: 1.7801955}
+    m_Value: {x: 12.942994, y: -0.4663992, z: -20.181656}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -499,13 +499,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.17418002, y: -0.08965986, z: 0.01592877, w: 0.98050267}
+    m_Target: {x: 0.33418787, y: 0.29819643, z: -0.11234724, w: 0.8870131}
     speed: 2
-    m_Value: {x: 0.17417856, y: -0.08965912, z: 0.015928637, w: 0.9804945}
+    m_Value: {x: 0.33418506, y: 0.29819396, z: -0.1123463, w: 0.8870057}
   m_Size:
-    m_Target: 4.3316755
+    m_Target: 8.300898
     speed: 2
-    m_Value: 4.3316755
+    m_Value: 7.9434423
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -789,13 +789,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: ec812145499df2e4aad0aef4518d91e4,
+  m_AnimatorController: {fileID: 9100000, guid: f33c26a20157ff14fba2f97895209c7c,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -2344963165149226013, guid: ec812145499df2e4aad0aef4518d91e4,
-      type: 2}
-    m_ScrollPosition: {x: 0, y: 0}
-  - m_Target: {fileID: -6749116367583089953, guid: ec812145499df2e4aad0aef4518d91e4,
+  - m_Target: {fileID: 5395650392113966729, guid: f33c26a20157ff14fba2f97895209c7c,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -838,9 +835,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6cfbffff
-      m_LastClickedID: -1172
-      m_ExpandedIDs: 6efbffffd4370000fa370000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6cfbffff6efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -929,7 +926,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Student 3D Model
+    - Assets/Teacher 3D Model
   m_ViewMode: 0
   m_StartGridSize: 16
   m_LastFolders: []
@@ -942,7 +939,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: de3d0000
     m_LastClickedID: 15838
-    m_ExpandedIDs: 00000000dc380000523c0000543c0000563c0000583c00005a3c00005c3c00005e3c0000603c0000623c0000643c0000663c0000683c00006a3c0000
+    m_ExpandedIDs: 00000000dc380000523c0000543c0000563c0000583c00005a3c00005c3c00005e3c0000603c0000623c0000643c0000663c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -967,21 +964,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 146}
+    scrollPos: {x: 0, y: 178}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000dc380000523c0000543c0000563c0000583c00005a3c00005c3c00005e3c0000603c0000623c0000663c0000683c0000
+    m_ExpandedIDs: ffffffff00000000dc380000523c0000543c0000563c0000583c00005a3c00005c3c00005e3c0000603c0000623c0000643c0000663c00009c3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Student 3D Model
-      m_OriginalName: Student 3D Model
+      m_Name: teacher 3D
+      m_OriginalName: teacher 3D
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 15530
+      m_UserData: 14450
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
