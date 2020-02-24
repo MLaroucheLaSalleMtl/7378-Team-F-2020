@@ -23,7 +23,15 @@ public class speedUpGame : MonoBehaviour
         Debug.Log("Speed OFF");
     }
 
-    
+    public void DoSpeed()
+    {
+        Speed();
+    }
+
+    public void DoUnspeed()
+    {
+        unSpeed();
+    }
    
     void Start()
     {

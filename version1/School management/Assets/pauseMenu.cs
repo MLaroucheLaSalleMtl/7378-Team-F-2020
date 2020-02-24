@@ -48,6 +48,21 @@ public class pauseMenu : MonoBehaviour
         control();
     }
 
+    public void DoPause()
+    {
+        if (gamePaused)
+        {
+            unPause();
+            Debug.Log("unpaused");
+        }
+        else
+        {
+            Pause();
+            Debug.Log("Paused");
+        }
+    }
+
+
     //Pause Menu Boolean activation
 
     public void Pause()
