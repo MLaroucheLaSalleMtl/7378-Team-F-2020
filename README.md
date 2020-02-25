@@ -13,7 +13,8 @@ There are two objectives in this game:
 ![Image of instruction](https://i.imgur.com/gtXfmIh.jpg)
 
 # Controls 
-- GUI - small buttons as listed above 
+![Image of instruction](https://i.imgur.com/Xu80MQG.jpg)
+- GUI - small buttons as listed above under "Instructions"
 - Keyboard & Mouse: 
   - SHIFT - fast foward time
   - SPACEBAR - Stop time
