@@ -30,3 +30,4 @@ There are two objectives in this game:
 - Brown wallpaper (used in Main Menu)- https://besthqwallpapers.com/textures/brown-paper-texture-4k-brown-crumpled-paper-macro-brown-paper-110636
 - Loading circle icon - https://loading.io/
 - Font Edo SZ: Vic Fierger - http://www.vicfieger.com/
+- keyboard img for controller instruction: https://www.kissclipart.com/keyboard-clipart-computer-keyboard-computer-mouse-41dhmi/download-clipart.html
