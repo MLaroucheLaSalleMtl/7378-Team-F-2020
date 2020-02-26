@@ -34,6 +34,9 @@ public class BuyCube : MonoBehaviour
 
     private void OnMouseDown()
     {
+        // displays how many classes built
+        GameManager.instance.AddClasses(); 
+
         //display ui to pick
         GameObject ClassToBuild = Buildingmanager.instance.GetClassToBuild();
         classroom = (GameObject)Instantiate(ClassToBuild,transform.position+PossitionOfcet,transform.rotation);

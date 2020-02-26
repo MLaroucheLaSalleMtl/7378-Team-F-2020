@@ -6,6 +6,7 @@ public class panel : MonoBehaviour
 {
     public GameObject Panel;
 
+    //pop up message
     public void OpenPanel()
     {
         if(Panel !=null)

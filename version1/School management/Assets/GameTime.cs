@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class GameTime : MonoBehaviour
 {
-    private const int Timescale = 9999;//default45
+    public static GameManager gameManager;
+
+    private const int Timescale = 45;//default45
+
+    [Header("amount of money increase overtime")]
+    [SerializeField] private float amount;
 
     private Text clockTxt, seasonTxt, dayTxt,datetxt;
     private int daysSurv;
@@ -38,17 +43,20 @@ public class GameTime : MonoBehaviour
         if (second >= 60)
         {
             minute++;
+            GameManager.gameManager.AddMoneyOvertime(amount);
             second = 0;
             UpdateText();
         }else
         if (minute >= 60)
         {
+            
             hour++;
             minute = 0;
             UpdateText();
         }
         else if(hour >= 60)
         {
+           
             day++;
             hour = 0;
             UpdateText();

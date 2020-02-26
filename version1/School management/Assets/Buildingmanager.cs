@@ -24,6 +24,8 @@ public class Buildingmanager : MonoBehaviour
     private GameObject ClassToBuild;
     private void Start()
     {
+        
+
         ClassToBuild = ClassesPrefavs[0];
     }
     public GameObject GetClassToBuild() {

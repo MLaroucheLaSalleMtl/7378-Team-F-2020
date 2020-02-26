@@ -12,11 +12,17 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
+
+    [Header("Gold")]
     [SerializeField] private float money;
-    public Text moneyText;
+    [SerializeField] Text moneyText; //"Money Text"
 
     private int StudentCount;
     Text StudentCountText;//"StudentCount"
+
+    private int classRCount;
+    Text classRCountText;//"classRCount"
+
     Vector3 LocationOfSpawn=new Vector3(6,1,2);
     public static GameManager instance = null;
 
@@ -33,10 +39,8 @@ public class GameManager : MonoBehaviour
     [Header("Student Prefab Toinstanciate")]
     [SerializeField]private GameObject Student;
 
-
-  
-
-    
+    public int ClassRCount { get => classRCount; set => classRCount = value; }
+    public float Money { get => money; set => money = value; }
 
     private void Awake()
     {
@@ -56,15 +60,19 @@ public class GameManager : MonoBehaviour
         //UpdateMoneyUI();
 
         StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
-        
+        classRCountText  =GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
+
     }
 
-    
+
+
     void Update()
     {
         UpdateMoneyUI();
         RefreshTextOnUI();
-        
+        classRTxtOnUI();
+
+
     }
 
     /// money
@@ -80,6 +88,12 @@ public class GameManager : MonoBehaviour
         UpdateMoneyUI();
     }
 
+    public void AddMoneyOvertime(float amount)
+    {
+        money += amount++;
+        UpdateMoneyUI();
+    }
+
     public bool RequestMoney(float amount)
     {
         if (amount <= money)
@@ -89,13 +103,7 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    public void UpdateMoneyUI()
-    {
-        moneyText.text = "$ " + money.ToString("N0");
-    }
-
-
-
+    
     /// student
     public void AddStudent()
     {
@@ -103,9 +111,25 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void AddClasses()
+    {
+        classRCount++;
+
+    }
+
+    public void UpdateMoneyUI()
+    {
+        moneyText.text = "$ " + money.ToString("N0");
+    }
+
     public void RefreshTextOnUI()
     {
         StudentCountText.text = "Students: "+StudentCount;
+    }
+
+    public void classRTxtOnUI()
+    {
+        classRCountText.text = "Class Built: "+classRCount;
     }
 
     public void Spawn(InputAction.CallbackContext context)
