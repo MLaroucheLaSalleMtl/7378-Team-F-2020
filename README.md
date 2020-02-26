@@ -31,3 +31,5 @@ There are two objectives in this game:
 - Loading circle icon - https://loading.io/
 - Font Edo SZ: Vic Fierger - http://www.vicfieger.com/
 - keyboard img for controller instruction: https://www.kissclipart.com/keyboard-clipart-computer-keyboard-computer-mouse-41dhmi/download-clipart.html
+- clip board for tasks - http://www.clker.com/clipart-eps-clip-board.html
+- board icon for classes - https://www.pngkey.com/download/u2r5a9q8w7e6a9q8_writing-study-learn-education-student-board-school-school/
