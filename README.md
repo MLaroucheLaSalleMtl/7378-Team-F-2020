@@ -2,15 +2,15 @@
 Team Percival Gallardo Castro and Arisa Ohashi
 
 # Whoopee Scholarship
-Percy and I decided to make a Tycoon game. We cooked up a school management game where you must manage the students and the school itself. Hire teachers that suit the different classes your school offers and try not to go bankrupt or have boring teachers. It might drop the student’s “fun” meter and kill them of boredom. 
- 
+Percy and I decided to make a Tycoon game. We cooked up a school management game where you must manage the students and the school itself. Hire teachers that suit the different classes your school offers. Try not to go bankrupt or have boring teachers, it might drop the student’s “fun” meter and kill them of boredom. 
+
 # Objectives
 There are two objectives in this game:
-* You must maintain over zero gold, don't go bankrupt! 
-* You also have to keep a positive level of the student’s fun meter, by keeping them engaged.
+- You must have over zero gold, don't go bankrupt!
+- You also need maintain the student’s fun meter, by keeping them engaged.
 
 # Instructions
-![Image of instruction](https://i.imgur.com/gtXfmIh.jpg)
+![Image of instruction](https://i.imgur.com/mmzY8Zi.jpg)
 
 # Controls 
 ![Image of instruction](https://i.imgur.com/Xu80MQG.jpg)
