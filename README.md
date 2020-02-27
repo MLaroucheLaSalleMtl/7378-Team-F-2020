@@ -10,7 +10,7 @@ There are two objectives in this game:
 * You also have to keep a positive level of the student’s fun meter, by keeping them engaged.
 
 # Instructions
-![Image of instruction](https://i.imgur.com/gtXfmIh.jpg)
+![Image of instruction](https://i.imgur.com/mmzY8Zi.jpg)
 
 # Controls 
 ![Image of instruction](https://i.imgur.com/Xu80MQG.jpg)
