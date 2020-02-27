@@ -20,7 +20,7 @@ There are two objectives in this game:
   - SPACEBAR - Stop time
 - Controller: SOON TM
 
-# Extra
+# Future Plans
 ![Image of instruction](https://i.imgur.com/yPADjGe.jpg)
 
 # Sources
