@@ -6,7 +6,9 @@ public class BuyCube : MonoBehaviour
 {
     public static GameManager gameManager;
 
-    //cost of the class
+
+
+    [Header("Amount Deducted")]
     [SerializeField] private float amount;
 
     public Color hovercolor;
@@ -15,45 +17,66 @@ public class BuyCube : MonoBehaviour
     private GameObject classroom;
     private GameObject Classselected;
 
-
+    [Header("Player must have this much gold to purchase")]
+    [SerializeField] private int classPrice;
 
     [SerializeField] private Vector3 PossitionOfcet;
 
-    //Teacher position , inside the class room
+    [Header("Teacher Model & Position")]
     [SerializeField] private GameObject teacher;
     [SerializeField] private Vector3 teacherPosition;
+
+    [Header("Warning Panels")]
+    [SerializeField] private GameObject[] Panels;
+    [SerializeField] private GameObject[] BTNS;
 
 
     void Start()
     {
+
         rend = GetComponent<Renderer>();
         Defaaultcollor = rend.material.color;
+
         
     }
 
+  
 
     private void OnMouseDown()
     {
-        // displays how many classes built
-        GameManager.instance.AddClasses(); 
+        if (GameManager.gameManager.Money >= classPrice) //I put a barrier of 200 for now
+        {
+            // displays how many classes built
+            GameManager.instance.AddClasses();
 
-        //display ui to pick
-        GameObject ClassToBuild = Buildingmanager.instance.GetClassToBuild();
-        classroom = (GameObject)Instantiate(ClassToBuild,transform.position+PossitionOfcet,transform.rotation);
+            //display ui to pick
+            GameObject ClassToBuild = Buildingmanager.instance.GetClassToBuild();
+            classroom = (GameObject)Instantiate(ClassToBuild, transform.position + PossitionOfcet, transform.rotation);
 
-        //teacher shows up 
-        Instantiate(teacher, teacherPosition, Quaternion.identity);
+            //teacher shows up 
+            Instantiate(teacher, teacherPosition, Quaternion.identity);
 
-        //deactivate vbuy option
-        Destroy(gameObject);
+            //deactivate vbuy option
+            Destroy(gameObject);
 
-        //minus the money 
-        GameManager.gameManager.ReduceMoney(amount);
+            //minus the money 
+            GameManager.gameManager.ReduceMoney(amount);
+
+        }
+
+        else
+        {
+
+            GameManager.gameManager.RequestMoney(amount);
+
+        }
     }
     void Update()
     {
         
     }
+
+   
     private void OnMouseEnter()
     {
         rend.material.color = hovercolor;
