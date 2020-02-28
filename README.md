@@ -10,6 +10,7 @@ There are two objectives in this game:
 - You must have over zero gold, don't go bankrupt!
 - You also need maintain the student’s fun meter, by keeping them engaged.
 
+
 # Instructions
 ![Image of instruction](https://i.imgur.com/mmzY8Zi.jpg)
 
