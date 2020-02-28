@@ -13,11 +13,8 @@ There are two objectives in this game:
 ![Image of instruction](https://i.imgur.com/mmzY8Zi.jpg)
 
 # Controls 
-![Image of instruction](https://i.imgur.com/Xu80MQG.jpg)
+![Image of instruction](https://i.imgur.com/n7pd1VN.jpg)
 - GUI - small buttons as listed above under "Instructions"
-- Keyboard & Mouse: 
-  - SHIFT - fast foward time
-  - SPACEBAR - Stop time
 - Controller: SOON TM
 
 # Roadmap
