@@ -25,7 +25,7 @@ public class pauseMenu : MonoBehaviour
     public string sceneToReload = "SampleScene";
 
     //timescale
-    [SerializeField] public float timeScale;
+    private float timeScale = 45f;
 
     //Buttons for pauseMenu
     public void DoQuit()

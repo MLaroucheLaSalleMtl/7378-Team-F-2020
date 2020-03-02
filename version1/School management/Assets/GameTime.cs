@@ -5,7 +5,22 @@ using UnityEngine.UI;
 
 public class GameTime : MonoBehaviour
 {
-    public static GameManager gameManager;
+    public static GameTime instance=null;
+    GameManager manager;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    
 
     private const int Timescale = 45;//default45
 
@@ -14,7 +29,8 @@ public class GameTime : MonoBehaviour
 
     private Text clockTxt, seasonTxt, dayTxt,datetxt;
     private int daysSurv;
-    private double minute, hour, day, second, month, year;
+    private double minute,day, second, month, year;
+    public double hour;
 
     void Start()
     {
@@ -27,7 +43,7 @@ public class GameTime : MonoBehaviour
         datetxt = GameObject.Find("Date").GetComponent<Text>();
         CalculateSeason();
 
-
+        manager = GameManager.instance;
     }
 
     
@@ -43,7 +59,9 @@ public class GameTime : MonoBehaviour
         if (second >= 60)
         {
             minute++;
-            GameManager.gameManager.AddMoneyOvertime(amount);
+            //GameManager.gameManager.AddMoneyOvertime(amount); Not using singleton
+            manager.AddMoneyOvertime(amount);
+            
             second = 0;
             UpdateText();
         }else
@@ -54,7 +72,7 @@ public class GameTime : MonoBehaviour
             minute = 0;
             UpdateText();
         }
-        else if(hour >= 60)
+        else if(hour >= 24)
         {
            
             day++;

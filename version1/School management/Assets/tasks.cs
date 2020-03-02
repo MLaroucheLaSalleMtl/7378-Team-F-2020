@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class tasks : MonoBehaviour
 {
@@ -12,11 +13,11 @@ public class tasks : MonoBehaviour
 
     //coinGoals
     [Header("Objectives 2")]
-    public int coinGoal = 500; //player must make this much money to complete Objective 2
+    private  int coinGoal = 400; //player must make this much money to complete Objective 2
 
 
     [Header("Objectives 1")]
-    public int classRoom = 1; //player must have this many classes built to complete Objective 1
+    private int classRoom = 1; //player must have this many classes built to complete Objective 1
 
   
 
@@ -49,16 +50,21 @@ public class tasks : MonoBehaviour
             if (taskPanels[0] != null)
             {
                 taskPanels[0].SetActive(false);
-
+               
             }
 
+           
             Destroy(taskBTNS[0].gameObject);
+            SceneManager.LoadScene(3);
+
         }
 
         else
         {
             taskPanels[0].SetActive(true);
         }
+
+        
     }
 
 

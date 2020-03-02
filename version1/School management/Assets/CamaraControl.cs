@@ -8,9 +8,14 @@ public class CamaraControl : MonoBehaviour
     private float MoveSpeed =30f;
     private bool Locked=false;
     private float scrollSpeed=5f;
-    private float miny = 10f;
-    private float maxy = 80f;
-
+    private float miny = 8f;
+    private float maxy = 65f;
+    private float RotationSpeed = 1;
+    private Vector3 CamRotY=new Vector3(0f,2f,0f) ;
+    [SerializeField]private float xRotationup = 10f;
+    [SerializeField] private float xRotationdown = 90f;
+    [SerializeField] private float leftLimit = -31f;
+    [SerializeField] private float rightLimit = 31f;
     void Start()
     {
         
@@ -23,7 +28,12 @@ public class CamaraControl : MonoBehaviour
             Locked = !Locked;
         if (!Locked)
             return;
-        if (Input.GetKey("w"))
+
+        //if (Input.GetKey("left ctrl")){
+        //    transform.Rotate(CamRotY, RotationSpeed * Time.deltaTime, Space.World);
+        //}
+
+            if (Input.GetKey("w"))
         {
             transform.Translate(Vector3.forward * MoveSpeed * Time.deltaTime, Space.World);
         }
@@ -42,7 +52,13 @@ public class CamaraControl : MonoBehaviour
         float scrollig = Input.GetAxis("Mouse ScrollWheel");
         Vector3 Poss = transform.position;
         Poss.y -= scrollig * 1000 * scrollSpeed * Time.deltaTime;
+
+        if (transform.position.y > xRotationup && transform.position.y < xRotationdown)
+            transform.rotation = Quaternion.Euler(transform.position.y, transform.rotation.y, transform.rotation.z);
+
         Poss.y = Mathf.Clamp(Poss.y, miny, maxy);
+        Poss.x = Mathf.Clamp(Poss.x, leftLimit, rightLimit);
+
 
         transform.position = Poss;
     }

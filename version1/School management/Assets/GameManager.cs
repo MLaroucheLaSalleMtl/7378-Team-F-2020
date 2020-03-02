@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gameManager;
+    public static GameManager gameManager=null;
 
     [Header("Gold")]
     [SerializeField] private float money;
@@ -21,16 +21,16 @@ public class GameManager : MonoBehaviour
     Text StudentCountText;//"StudentCount"
 
     private int classRCount;
-    Text classRCountText;//"classRCount"
+    [SerializeField]private Text classRCountText;//"classRCount"
 
-    Vector3 LocationOfSpawn=new Vector3(6,1,2);
+    Vector3 LocationOfSpawn=new Vector3(-7.98f, 5.7f, -72f);
     public static GameManager instance = null;
 
-    string[] Clasesbogth;
+    public string[] Clasesbogth;
 
     
 
-    string[] AvalableClases= {"Magic","Surfing","Hacking","Axe Trowing"};
+    public string[] AvalableClases= {"Magic","Surfing","Hacking","Axe Trowing"};
 
     
 
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        gameManager = this; //only one
+        //gameManager = this; //only one ---Why?????
         //UpdateMoneyUI();
 
         StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
