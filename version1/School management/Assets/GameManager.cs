@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gameManager=null;
+    public static GameManager gameManager;
 
     [Header("Gold")]
     [SerializeField] private float money;
@@ -23,18 +23,21 @@ public class GameManager : MonoBehaviour
     private int classRCount;
     [SerializeField]private Text classRCountText;//"classRCount"
 
-    Vector3 LocationOfSpawn=new Vector3(-7.98f, 5.7f, -72f);
+    public Vector3 LocationOfSpawn=new Vector3(-7.98f, 5.7f, -72f);
     public static GameManager instance = null;
 
-    public string[] Clasesbogth;
+    public List<GameObject> Clasesbogth=new List<GameObject>();
+    public int NumberOfMagic=0; 
+    public int NumberOfSurfing=0; 
+    public int NumberOfHacking=0; 
+    public int NumberOfAxeTrowing=0; 
+    
+
+    public string[] AvalableClases=new string[] {"Magic","Surfing","Hacking","Axe Trowing"};
 
     
 
-    public string[] AvalableClases= {"Magic","Surfing","Hacking","Axe Trowing"};
-
-    
-
-    List<string> Clases;
+    List<string> Clases=new List<string>();
 
     [Header("Student Prefab Toinstanciate")]
     [SerializeField]private GameObject Student;
@@ -53,7 +56,35 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void ClasesNumber()
+    { 
 
+       NumberOfMagic = 0;
+    NumberOfSurfing = 0;
+    NumberOfHacking = 0;
+     NumberOfAxeTrowing = 0;
+
+        foreach (GameObject clasroom in Clasesbogth)
+        {
+            if (clasroom.tag == "Magic")
+            {
+                NumberOfMagic++;
+            }
+            else if (clasroom.tag == "Haking")
+            {
+                NumberOfHacking++;
+            }
+            else if (clasroom.tag == "AxeTrowing")
+            {
+                NumberOfAxeTrowing++;
+            }
+            else if (clasroom.tag == "Surfing")
+            {
+                NumberOfSurfing++;
+            }
+
+        }
+    }
     void Start()
     {
         //gameManager = this; //only one ---Why?????
@@ -138,5 +169,10 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(Student, LocationOfSpawn, Quaternion.identity);
         }
+    }
+    public void SpawnCode()
+    {
+            Instantiate(Student, LocationOfSpawn, Quaternion.identity);
+        
     }
 }

@@ -325,7 +325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 147.39001, y: -86}
+  m_AnchoredPosition: {x: 152.39001, y: -74}
   m_SizeDelta: {x: 226, y: 101}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &46242173
@@ -1059,7 +1059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -1170,7 +1169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -1285,8 +1283,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -62.9, y: 2.1999817}
-  m_SizeDelta: {x: 98.3, y: 28.6}
+  m_AnchoredPosition: {x: -61.5, y: 5.5}
+  m_SizeDelta: {x: 106.4, y: 35.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &308966896
 MonoBehaviour:
@@ -1355,7 +1353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.1782218, g: 0.5808539, b: 0.8396226, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1424,7 +1422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -2576,7 +2573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144.39001, y: -57.5}
+  m_AnchoredPosition: {x: 149.39001, y: -45.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542056047
@@ -2657,8 +2654,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.8, y: 2.1999817}
-  m_SizeDelta: {x: 98.3, y: 28.6}
+  m_AnchoredPosition: {x: -183.5, y: 5.5}
+  m_SizeDelta: {x: 106.4, y: 35.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554546278
 MonoBehaviour:
@@ -2727,12 +2724,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9150943, g: 0.82925457, b: 0.25467247, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3079,9 +3076,9 @@ RectTransform:
   m_Father: {fileID: 1124281602}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 195, y: 16}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 195, y: -13}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &611683474
@@ -3415,7 +3412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -3739,9 +3735,9 @@ RectTransform:
   m_Father: {fileID: 1692071590}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 146, y: 90}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 155, y: -371}
   m_SizeDelta: {x: 187, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737541584
@@ -3812,7 +3808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 200
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   teacher: {fileID: 2712408142622019533, guid: 9af1dd2a91412d94f9544b25c49baa15, type: 3}
@@ -3947,7 +3942,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 33d7901cc59eb45458363fa437e95d45, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -4309,6 +4304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b0e1fec3c85ad843800328efb02a90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StudentsInLine: []
 --- !u!65 &849879926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4629,8 +4625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 158, y: 2.2}
-  m_SizeDelta: {x: 98.3, y: 28.6}
+  m_AnchoredPosition: {x: 183.5, y: 5.5}
+  m_SizeDelta: {x: 106.4, y: 35.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &939314663
 MonoBehaviour:
@@ -4699,7 +4695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8584906, g: 0.6259348, b: 0.10933607, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5083,7 +5079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 157, y: -102}
+  m_AnchoredPosition: {x: 162, y: -90}
   m_SizeDelta: {x: 185.22998, y: 37.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966411574
@@ -5586,9 +5582,9 @@ RectTransform:
   m_Father: {fileID: 1692071590}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 142, y: 272}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 154, y: -189}
   m_SizeDelta: {x: 190, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124281603
@@ -5663,8 +5659,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.6, y: 2.1999817}
-  m_SizeDelta: {x: 98.3, y: 28.6}
+  m_AnchoredPosition: {x: 61.5, y: 5.5}
+  m_SizeDelta: {x: 106.4, y: 35.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130857637
 MonoBehaviour:
@@ -5733,7 +5729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2452251, g: 0.6603774, b: 0.08410467, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5849,6 +5845,49 @@ Transform:
   m_Father: {fileID: 1432571256}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1162796482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162796483}
+  - component: {fileID: 1162796484}
+  m_Layer: 0
+  m_Name: waiter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1162796483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162796482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.9967327, y: 62.29329, z: -40.613068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1162796484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162796482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ccb57741284c854a9686531c95d517d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1193929620
 GameObject:
   m_ObjectHideFlags: 0
@@ -6685,7 +6724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -6806,7 +6844,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 33d7901cc59eb45458363fa437e95d45, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -6950,7 +6988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   teacher: {fileID: 0}
@@ -7047,7 +7084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d67ec7588167f40930f49079c12a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   teacher: {fileID: 4646985499990273602, guid: 9af1dd2a91412d94f9544b25c49baa15, type: 3}
@@ -7278,8 +7314,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 33d7901cc59eb45458363fa437e95d45, type: 3}
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -7290,9 +7326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Axe Throwing Class
-
-'
+  m_Text: Axe Throwin Class
 --- !u!222 &1450926268
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8255,9 +8289,9 @@ RectTransform:
   m_Father: {fileID: 1692071590}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 143, y: 182}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 152, y: -262}
   m_SizeDelta: {x: 187, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1811663143
@@ -8563,8 +8597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41, y: -57.560005}
-  m_SizeDelta: {x: 510.4, y: 179.6}
+  m_AnchoredPosition: {x: -41.4, y: -57.560005}
+  m_SizeDelta: {x: 550.5, y: 180.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1899024444
 MonoBehaviour:
@@ -8640,7 +8674,12 @@ MonoBehaviour:
   money: 400
   moneyText: {fileID: 1362588606}
   classRCountText: {fileID: 0}
+  LocationOfSpawn: {x: -7.98, y: 5.7, z: -72}
   Clasesbogth: []
+  NumberOfMagic: 0
+  NumberOfSurfing: 0
+  NumberOfHacking: 0
+  NumberOfAxeTrowing: 0
   AvalableClases:
   - Magic
   - Surfing
@@ -8673,7 +8712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9867be41e4474d741b718f6875cf6c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  amount: 0.2
   hour: 0
 --- !u!114 &1905191040
 MonoBehaviour:
@@ -8728,6 +8767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51671cdcfe07874599a53f733b13b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   taskPanels:
   - {fileID: 558363267}
   - {fileID: 1050253783}
@@ -9070,7 +9110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 33d7901cc59eb45458363fa437e95d45, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -9082,9 +9122,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Hacking Class
-
-'
+  m_Text: Hacking Class
 --- !u!222 &1925961925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10113,6 +10151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: STUDENT
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645989803708781399, guid: 5295bdf5c528e654aa8dc88457a4c8ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5295bdf5c528e654aa8dc88457a4c8ac, type: 3}

@@ -3,7 +3,10 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Buildingmanager
     - BuyCube
+    - Buying
     - CamaraControl
+    - ClasroomScip
+    - DontDestroy
     - GameManager
     - GameTime
     - LoadScene
@@ -11,9 +14,13 @@ ScriptsOnlyBuild:
     - Lobby
     - MixerController
     - PercyTestStudentAnim
+    - SitUsed
     - SpawnAdmin
+    - SpawnLobby
     - StopTime
-    - Student
+    - StudentFactory
+    - StudentMono
+    - Waiter
     - exitOut
     - mainMenu
     - mainMenuBTN
@@ -76,19 +83,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11184}
     - Class: 114
-      Script: {instanceID: 11402}
+      Script: {instanceID: 11404}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11456}
     - Class: 114
-      Script: {instanceID: 11986}
+      Script: {instanceID: 11990}
     - Class: 114
-      Script: {instanceID: 12312}
+      Script: {instanceID: 12318}
     - Class: 114
-      Script: {instanceID: 12540}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 13156}
+      Script: {instanceID: 13164}
     - Class: 114
-      Script: {instanceID: 13604}
+      Script: {instanceID: 13616}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -133,25 +140,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11184}
     - Class: 114
-      Script: {instanceID: 11332}
+      Script: {instanceID: 11334}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11456}
     - Class: 114
-      Script: {instanceID: 11466}
+      Script: {instanceID: 11468}
     - Class: 114
-      Script: {instanceID: 11480}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11704}
+      Script: {instanceID: 11706}
     - Class: 114
-      Script: {instanceID: 11986}
+      Script: {instanceID: 11990}
     - Class: 114
-      Script: {instanceID: 12540}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 13156}
+      Script: {instanceID: 13164}
     - Class: 114
-      Script: {instanceID: 13604}
+      Script: {instanceID: 13616}
     - Class: 114
-      Script: {instanceID: 13650}
+      Script: {instanceID: 13662}
+    - Class: 114
+      Script: {instanceID: 17740}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -214,59 +223,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11198}
     - Class: 114
-      Script: {instanceID: 11350}
+      Script: {instanceID: 11270}
     - Class: 114
-      Script: {instanceID: 11402}
+      Script: {instanceID: 11352}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11404}
     - Class: 114
-      Script: {instanceID: 11476}
+      Script: {instanceID: 11456}
     - Class: 114
-      Script: {instanceID: 11744}
+      Script: {instanceID: 11478}
     - Class: 114
-      Script: {instanceID: 11812}
+      Script: {instanceID: 11746}
     - Class: 114
-      Script: {instanceID: 11890}
+      Script: {instanceID: 11814}
     - Class: 114
-      Script: {instanceID: 11986}
+      Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 12096}
+      Script: {instanceID: 11926}
     - Class: 114
-      Script: {instanceID: 12224}
+      Script: {instanceID: 11990}
     - Class: 114
-      Script: {instanceID: 12278}
+      Script: {instanceID: 12100}
     - Class: 114
-      Script: {instanceID: 12398}
+      Script: {instanceID: 12146}
     - Class: 114
-      Script: {instanceID: 12452}
+      Script: {instanceID: 12230}
     - Class: 114
-      Script: {instanceID: 12516}
+      Script: {instanceID: 12284}
     - Class: 114
-      Script: {instanceID: 12540}
+      Script: {instanceID: 12404}
     - Class: 114
-      Script: {instanceID: 12698}
+      Script: {instanceID: 12432}
     - Class: 114
-      Script: {instanceID: 12766}
+      Script: {instanceID: 12458}
     - Class: 114
-      Script: {instanceID: 12912}
+      Script: {instanceID: 12522}
     - Class: 114
-      Script: {instanceID: 13042}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 13110}
+      Script: {instanceID: 12704}
     - Class: 114
-      Script: {instanceID: 13156}
+      Script: {instanceID: 12772}
     - Class: 114
-      Script: {instanceID: 13248}
+      Script: {instanceID: 12918}
     - Class: 114
-      Script: {instanceID: 13364}
+      Script: {instanceID: 13050}
     - Class: 114
-      Script: {instanceID: 13390}
+      Script: {instanceID: 13118}
     - Class: 114
-      Script: {instanceID: 13508}
+      Script: {instanceID: 13164}
     - Class: 114
-      Script: {instanceID: 13512}
+      Script: {instanceID: 13256}
     - Class: 114
-      Script: {instanceID: 13698}
+      Script: {instanceID: 13326}
+    - Class: 114
+      Script: {instanceID: 13374}
+    - Class: 114
+      Script: {instanceID: 13400}
+    - Class: 114
+      Script: {instanceID: 13480}
+    - Class: 114
+      Script: {instanceID: 13520}
+    - Class: 114
+      Script: {instanceID: 13524}
+    - Class: 114
+      Script: {instanceID: 13710}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -315,13 +336,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11190}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11456}
     - Class: 114
-      Script: {instanceID: 11986}
+      Script: {instanceID: 11990}
     - Class: 114
-      Script: {instanceID: 13156}
+      Script: {instanceID: 13164}
     - Class: 114
-      Script: {instanceID: 13604}
+      Script: {instanceID: 13616}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -375,6 +396,12 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 33b8de37ce034946444b9208dc1f695c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SitUsed
+  - hash:
+      serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -387,7 +414,7 @@ ScriptsOnlyBuild:
     className: quitBTN
   - hash:
       serializedVersion: 2
-      Hash: 0c7b517ac364bebbb5b6a98d0aea41f2
+      Hash: 4711ece28b1795d164895dc859e5f447
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameTime
@@ -609,6 +636,12 @@ ScriptsOnlyBuild:
     className: InputSystemUIInputModule
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Waiter
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -655,6 +688,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem
     className: InputSettings
+  - hash:
+      serializedVersion: 2
+      Hash: eb53a6e2631ad082d99bb36144cff651
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Buying
   - hash:
       serializedVersion: 2
       Hash: cd0ecdca0166232906c6f2df9dddc3d3
@@ -723,7 +762,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 0607185441aabee2d3a05137adba6d3c
+      Hash: b15242db704891b4d0bad0d4ced85522
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuyCube
@@ -825,7 +864,7 @@ ScriptsOnlyBuild:
     className: Names
   - hash:
       serializedVersion: 2
-      Hash: 5b7c4aff6e3c3d4a4570583559d00175
+      Hash: ccdba761942bd43dc13720d485cc59f1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -927,10 +966,16 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: faadd964cbb3598e30ccacbc938dea71
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Lobby
+  - hash:
+      serializedVersion: 2
+      Hash: fc8c66f0a5cca0795b4db02f8d6ddec3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ClasroomScip
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -945,7 +990,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 0edb454659ae5127f8cf2fb324527b71
+      Hash: 6d17c4cd0f77bd95c6ab065baf0a0bf3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: tasks
@@ -967,6 +1012,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshPro
+  - hash:
+      serializedVersion: 2
+      Hash: 9810e6947d6c0f0e95d2e3c0cf9264fc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnLobby
   - hash:
       serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
@@ -993,10 +1044,10 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 4739b2ff6a539ae5429660ef927e920a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Student
+    className: StudentMono
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -1077,7 +1128,7 @@ ScriptsOnlyBuild:
     className: TouchSimulation
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: b1b59f1d9a8f6bb288f4e227d03d3ed7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CamaraControl
@@ -1087,10 +1138,16 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DontDestroy
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/Loading.unity
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/thankyou.unity
-  playerPath: F:/GAME ENGINE 2/DEMO V1.0/Whoopee Scholarship.exe
+  playerPath: F:/GAME ENGINE 2/DEMO V2.0/Whoopee Scholarship.exe

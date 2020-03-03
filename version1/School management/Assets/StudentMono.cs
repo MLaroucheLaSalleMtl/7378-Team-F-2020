@@ -6,18 +6,24 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class StudentMono : MonoBehaviour
 {
+    private Lobby loby;
+    private GameManager manager;
+
     private GameTime gtime;
     private StudentFactory Sfactory;
     public Student stdudentinfo;
     private NavMeshAgent myNavAgent;
     private bool LobbyFound = false;
-
+    public GameObject ClassSit;
     void Start()
     {
+        loby = Lobby.instance;
+        manager = GameManager.instance;
+
         Sfactory = StudentFactory.instance;
         stdudentinfo = Sfactory.CreateStudent();
         gtime = GameTime.instance;
-        GameManager.instance.AddStudent();
+        manager.AddStudent();
        
         myNavAgent = gameObject.GetComponent<NavMeshAgent>();
 
@@ -25,7 +31,7 @@ public class StudentMono : MonoBehaviour
         if (!GameObject.Find("Lobby"))myNavAgent.SetDestination(new Vector3(-10, 0, -10));
 
         
-        InvokeRepeating("OnSpawn", 0, 5f);
+        InvokeRepeating("OnSpawn", 10, 5f);
 
         Debug.Log(stdudentinfo.SName1 +" - "+ stdudentinfo.ClassIwant1);
     }
@@ -33,7 +39,7 @@ public class StudentMono : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Schedule();
     }
 
     public void OnSpawn()
@@ -43,9 +49,10 @@ public class StudentMono : MonoBehaviour
             {
                 
                 GameObject lobby = GameObject.Find("Lobby");
-                Lobby.instance.FillList();
+            //loby.FillList();
+            //loby.StudentsInLine.Add(gameObject);
           
-            Lobby.instance.TakePlace(gameObject);
+            loby.TakePlace(gameObject);
             
             CancelInvoke();
                 
@@ -88,19 +95,19 @@ public class StudentMono : MonoBehaviour
             
             if (gtime.hour >8 && gtime.hour <= 12)
             {
-                //Go to class
+                myNavAgent.SetDestination(ClassSit.transform.position);
             }
             if (gtime.hour > 12 && gtime.hour <= 15)
             {
-                //break
+                RandomNavmeshLocation(25);
             }
             if (gtime.hour > 15 && gtime.hour <= 20)
             {
-                //go to class
+                myNavAgent.SetDestination(ClassSit.transform.position);
             }
             if (gtime.hour > 20)
             {
-                //go Home
+                myNavAgent.SetDestination(manager.LocationOfSpawn);
             }
         }
     }

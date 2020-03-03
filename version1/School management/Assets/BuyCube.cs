@@ -7,7 +7,7 @@ public class BuyCube : MonoBehaviour
      GameManager gameManager;
 
     //cost of the class
-    [SerializeField] private float amount;
+    //[SerializeField] private float amount;
 
     public Color hovercolor;
     private Renderer rend;
@@ -37,13 +37,24 @@ public class BuyCube : MonoBehaviour
     private void OnMouseDown()
     {if (buildManager.GetClassToBuild() == null)
             return;
+        if (gameManager.Money < buildManager.GetClassToBuild().GetComponent<ClasroomScip>().ClassCost)
+        {
+            Debug.Log("Not Enogth Money");
+            return;
+        }
+
+
+
+        GameObject ClassToBuild = buildManager.GetClassToBuild();
+        
+        gameManager.ReduceMoney(ClassToBuild.GetComponent<ClasroomScip>().ClassCost);
         // displays how many classes built
         GameManager.instance.AddClasses(); 
 
         //display ui to pick
-        GameObject ClassToBuild = buildManager.GetClassToBuild();
-        classroom = (GameObject)Instantiate(ClassToBuild,transform.position+PossitionOfcet,transform.rotation);
-
+       
+        classroom = Instantiate(ClassToBuild,transform.position+PossitionOfcet,transform.rotation);
+        gameManager.Clasesbogth.Add(classroom);
         if (teacher != null)
         {
             //teacher shows up 
@@ -51,12 +62,13 @@ public class BuyCube : MonoBehaviour
         }
         buildManager.SetClass(null);
         //deactivate vbuy option
-        Destroy(gameObject);
+
 
         //minus the money 
-        GameManager.gameManager.ReduceMoney(amount);
         
-        
+
+        Destroy(gameObject);
+
     }
     void Update()
     {

@@ -66,7 +66,8 @@ public class StudentFactory : MonoBehaviour
         int RandsBoy=Random.Range(0, BoyNamesList.Count);
         int RandsGirl=Random.Range(0, GirNamesList.Count);
         int Randslastname=Random.Range(0, LastNameList.Count);
-        int random=Random.Range(0, manager.AvalableClases.Length);
+        int temporary = manager.AvalableClases.Length;
+        int random=Random.Range(0, temporary);
         int binary = Random.Range(0,1);
         string gender,firstname,lastname,classwanted;
 

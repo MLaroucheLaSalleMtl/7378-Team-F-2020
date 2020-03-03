@@ -22,7 +22,7 @@ public class GameTime : MonoBehaviour
 
     
 
-    private const int Timescale = 45;//default45
+    private const int Timescale = 600;//default45
 
     [Header("amount of money increase overtime")]
     [SerializeField] private float amount;
@@ -42,7 +42,7 @@ public class GameTime : MonoBehaviour
         seasonTxt = GameObject.Find("Season").GetComponent<Text>();
         datetxt = GameObject.Find("Date").GetComponent<Text>();
         CalculateSeason();
-
+        hour = 6;
         manager = GameManager.instance;
     }
 
@@ -55,7 +55,14 @@ public class GameTime : MonoBehaviour
     private void CalculateTime()
     {
         second += Time.deltaTime * Timescale;
+        //if (second >= 10&& Lobby.instance.StudentsInLine.Count > 0 )
+        //{
+            
+             
+        //        Lobby.instance.Register();
 
+            
+        //}
         if (second >= 60)
         {
             minute++;
@@ -67,7 +74,11 @@ public class GameTime : MonoBehaviour
         }else
         if (minute >= 60)
         {
-            
+            // if(manager.AvalableClases[1].)
+            if (GameObject.Find("Lobby") != null)
+            {
+                manager.SpawnCode();
+            }
             hour++;
             minute = 0;
             UpdateText();
