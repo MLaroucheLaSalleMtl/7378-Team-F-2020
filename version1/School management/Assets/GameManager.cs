@@ -39,8 +39,11 @@ public class GameManager : MonoBehaviour
 
     List<string> Clases=new List<string>();
 
-    [Header("Student Prefab Toinstanciate")]
-    [SerializeField]private GameObject Student;
+    [Header("Male Student Prefab Toinstanciate")]
+    [SerializeField] private GameObject Student;
+
+    [Header("Female Student Prefab Toinstanciate")]
+    [SerializeField] private GameObject fStudent;
 
     public int ClassRCount { get => classRCount; set => classRCount = value; }
     public float Money { get => money; set => money = value; }
@@ -59,10 +62,10 @@ public class GameManager : MonoBehaviour
     public void ClasesNumber()
     { 
 
-       NumberOfMagic = 0;
+    NumberOfMagic = 0;
     NumberOfSurfing = 0;
     NumberOfHacking = 0;
-     NumberOfAxeTrowing = 0;
+    NumberOfAxeTrowing = 0;
 
         foreach (GameObject clasroom in Clasesbogth)
         {
