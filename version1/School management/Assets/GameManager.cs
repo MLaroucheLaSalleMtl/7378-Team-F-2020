@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UI;
+using System.Collections;
 
 
 
@@ -39,11 +40,16 @@ public class GameManager : MonoBehaviour
 
     List<string> Clases=new List<string>();
 
-    [Header("Male Student Prefab Toinstanciate")]
-    [SerializeField] private GameObject Student;
+    [Header("Male & Female Student Prefab Toinstanciate")]
+    [SerializeField] private GameObject[] Student;
 
-    [Header("Female Student Prefab Toinstanciate")]
-    [SerializeField] private GameObject fStudent;
+    //private int StudentSpawn;
+
+    //[Header("Female Student Prefab Toinstanciate")]
+    //[SerializeField] private GameObject fStudent;
+
+    //[Header("student prefab Pool")]
+    //[SerializeField] private GameObject[] m_Pool;
 
     public int ClassRCount { get => classRCount; set => classRCount = value; }
     public float Money { get => money; set => money = value; }
@@ -88,10 +94,25 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+    public bool SpaceOnClasroomBogth()
+    {
+        bool tempo = false;
+        foreach (GameObject a in Clasesbogth)
+        {
+            if (a.GetComponent<ClasroomScip>().IsthereSpace())
+            {
+                tempo = true;
+            }
+        }
+        return tempo;
+    }
     void Start()
     {
         //gameManager = this; //only one ---Why?????
         //UpdateMoneyUI();
+
+        
 
         StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         classRCountText  =GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
@@ -102,6 +123,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
+
         UpdateMoneyUI();
         RefreshTextOnUI();
         classRTxtOnUI();
@@ -170,12 +193,13 @@ public class GameManager : MonoBehaviour
     {
         if (context.performed)
         {
-            Instantiate(Student, LocationOfSpawn, Quaternion.identity);
+            Instantiate (Student[Random.Range(0,1)], LocationOfSpawn, Quaternion.identity);
         }
     }
     public void SpawnCode()
     {
-            Instantiate(Student, LocationOfSpawn, Quaternion.identity);
-        
+        Instantiate(Student[Random.Range(0,1)], LocationOfSpawn, Quaternion.identity);
+        //Instantiate(Student, LocationOfSpawn, Quaternion.identity);
+
     }
 }

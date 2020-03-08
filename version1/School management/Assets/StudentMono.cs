@@ -14,7 +14,7 @@ public class StudentMono : MonoBehaviour
     public Student stdudentinfo;
     private NavMeshAgent myNavAgent;
     private bool LobbyFound = false;
-    public GameObject ClassSit;
+    public GameObject ClassSit=null;
     void Start()
     {
         loby = Lobby.instance;
@@ -88,10 +88,10 @@ public class StudentMono : MonoBehaviour
 
     }
 
-    private void Schedule()
+    public void Schedule()
     {
-        if (stdudentinfo.ClassIgot1 != null)
-        {
+    
+        {if (stdudentinfo.ClassIgot1 != null)
             
             if (gtime.hour >8 && gtime.hour <= 12)
             {

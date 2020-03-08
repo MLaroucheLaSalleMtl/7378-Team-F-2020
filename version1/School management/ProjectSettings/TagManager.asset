@@ -24,6 +24,8 @@ TagManager:
   - SurfingSit1
   - RegisteredStudent
   - Music
+  - female
+  - male
   layers:
   - Default
   - TransparentFX
