@@ -23,8 +23,9 @@ There are two objectives in this game:
 
 # Sources
 * UI pack – Lynda Mc Donald https://loudeyes.itch.io/paper-ui-pack-for-games
-* 3D male student model: https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870
-* 3D female student model: https://assetstore.unity.com/packages/3d/animations/sd-unity-chan-haon-custom-bundle-84992
+- 3D student models
+  - male: https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870
+  - female: https://assetstore.unity.com/packages/3d/animations/sd-unity-chan-haon-custom-bundle-84992
 - 3D teacher model:
   - mixamo: sporty granny character package: https://www.mixamo.com/#/
   -	barb teacher: https://assetstore.unity.com/packages/3d/characters/humanoids/barbarian-warrior-75519
