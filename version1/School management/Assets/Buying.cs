@@ -40,4 +40,9 @@ public class Buying : MonoBehaviour
         Buyingmenu.SetActive(true);
     }
 
+    public void ExitBuyingMenu()
+    {
+        Buyingmenu.SetActive(false);
+    }
+
 }

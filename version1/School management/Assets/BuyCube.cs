@@ -64,7 +64,7 @@ public class BuyCube : MonoBehaviour
         //deactivate vbuy option
 
 
-        //minus the money 
+        // when teacher is bought then destroy game object
         
 
         Destroy(gameObject);
