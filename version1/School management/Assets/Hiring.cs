@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class Hiring : MonoBehaviour
 {
+    public GameManager gameManager;
+
+    public Teachermanager teachermanager;
 
     public GameObject HiringMenu;
 
-   
     void Start()
     {
-       
+        teachermanager = Teachermanager.instance;
+        gameManager = GameManager.instance;
+    }
+
+    public void hireTeacher()
+    {
+        teachermanager.HireTeacher();
+        HiringMenu.SetActive(false);
     }
 
     public void oneStarTeacher()
     {
+        teachermanager.HireTeacher();
         HiringMenu.SetActive(false);
     }
 

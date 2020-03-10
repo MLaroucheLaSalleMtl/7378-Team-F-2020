@@ -26,7 +26,8 @@ public class Buildingmanager : MonoBehaviour
     {
         
     }
-    public GameObject GetClassToBuild() {
+    public GameObject GetClassToBuild()
+    {
         return ClassToBuild;
     }
 
