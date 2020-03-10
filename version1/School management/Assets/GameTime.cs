@@ -75,10 +75,10 @@ public class GameTime : MonoBehaviour
         if (minute >= 60)
         {
             // if(manager.AvalableClases[1].)
-            if (GameObject.Find("Lobby") != null)
-            {
-                manager.SpawnCode();
-            }
+            //if (GameObject.Find("Lobby") != null)
+            //{
+            //    manager.SpawnCode();
+            //}
             hour++;
             minute = 0;
             UpdateText();

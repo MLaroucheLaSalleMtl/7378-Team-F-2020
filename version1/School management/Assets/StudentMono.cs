@@ -27,11 +27,11 @@ public class StudentMono : MonoBehaviour
        
         myNavAgent = gameObject.GetComponent<NavMeshAgent>();
 
-        
-        if (!GameObject.Find("Lobby"))myNavAgent.SetDestination(new Vector3(-10, 0, -10));
+        loby.TakePlace(gameObject);
+        //if (!GameObject.Find("Lobby"))myNavAgent.SetDestination(new Vector3(-10, 0, -10));
 
-        
-        InvokeRepeating("OnSpawn", 10, 5f);
+
+        //InvokeRepeating("OnSpawn", 10, 5f);
 
         Debug.Log(stdudentinfo.SName1 +" - "+ stdudentinfo.ClassIwant1);
     }
@@ -42,30 +42,30 @@ public class StudentMono : MonoBehaviour
         Schedule();
     }
 
-    public void OnSpawn()
-    {
+    //public void OnSpawn()
+    //{
       
-        if (GameObject.Find("Lobby"))
-            {
+    //    //if (GameObject.Find("Lobby"))
+    //    //    {
                 
-                GameObject lobby = GameObject.Find("Lobby");
-            //loby.FillList();
-            //loby.StudentsInLine.Add(gameObject);
+    //         GameObject lobby = GameObject.Find("Lobby");
+    //        //loby.FillList();
+    //        //loby.StudentsInLine.Add(gameObject);
           
-            loby.TakePlace(gameObject);
+    //        loby.TakePlace(gameObject);
             
-            CancelInvoke();
+    //    //    CancelInvoke();
                 
-        }
-            else
-            {
+    //    //}
+    //    //    else
+    //    //    {
 
             
-            myNavAgent.SetDestination(RandomNavmeshLocation(5f));
+    //    //    myNavAgent.SetDestination(RandomNavmeshLocation(5f));
             
-        }
+    //    //}
         
-    }
+    //}
     public Vector3 RandomNavmeshLocation(float radius)
     {
 

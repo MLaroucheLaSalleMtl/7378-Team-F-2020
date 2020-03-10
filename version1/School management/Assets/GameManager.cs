@@ -97,15 +97,23 @@ public class GameManager : MonoBehaviour
 
     public bool SpaceOnClasroomBogth()
     {
-        bool tempo = false;
-        foreach (GameObject a in Clasesbogth)
+        bool temp = false;
+        if (Clasesbogth.Count >= 0)
         {
-            if (a.GetComponent<ClasroomScip>().IsthereSpace())
+
+            foreach (GameObject a in Clasesbogth)
             {
-                tempo = true;
+                if (a.GetComponent<ClasroomScip>().IsthereSpace())
+                    temp = true;
+
             }
+
+            return temp;
         }
-        return tempo;
+        else
+        {
+            return false;
+        }
     }
     void Start()
     {
@@ -128,6 +136,7 @@ public class GameManager : MonoBehaviour
         UpdateMoneyUI();
         RefreshTextOnUI();
         classRTxtOnUI();
+        ClasesNumber();
 
 
     }

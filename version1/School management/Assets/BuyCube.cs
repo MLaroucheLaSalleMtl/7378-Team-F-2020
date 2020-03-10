@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuyCube : MonoBehaviour
 {
-     GameManager gameManager;
+    private GameManager gameManager;
 
     //cost of the class
     //[SerializeField] private float amount;

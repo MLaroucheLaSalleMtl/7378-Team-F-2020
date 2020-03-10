@@ -21,7 +21,7 @@ public class Lobby : MonoBehaviour
             Destroy(gameObject);
         }
 
-        WaitingPos = gameObject.transform.position - new Vector3(0, 0, 1);
+        WaitingPos = gameObject.transform.position - new Vector3(0, 0, 2);
     }
     #endregion
 
@@ -79,16 +79,17 @@ public class Lobby : MonoBehaviour
 
     //    }
     //}
-    public void FillList()
-    {
-        GameObject[] studs = GameObject.FindGameObjectsWithTag("PotentialStudent");
-        StudentsInLine = new List<GameObject>(studs);
-    }
+    //public void FillList()
+    //{
+    //    //GameObject[] studs = GameObject.FindGameObjectsWithTag("PotentialStudent");
+    //    //StudentsInLine = new List<GameObject>(studs);
+    //}
     public void TakePlace(GameObject a) {
-        lineup = 0;
+        lineup = StudentsInLine.Count; ;
         NavMeshAgent StudentPos = a.GetComponent<NavMeshAgent>();
-        lineup = StudentsInLine.Count;
+      
         Debug.Log(lineup);
+        StudentsInLine.Add(a);
         StudentPos.SetDestination(WaitingPos - (DistanceNeded * lineup));
 
 
@@ -96,20 +97,21 @@ public class Lobby : MonoBehaviour
 
     public void Register()
     {
-        FillList();
-        if (StudentsInLine.Count > 0&&manager.SpaceOnClasroomBogth())
+        
+        if (StudentsInLine.Count > 0&&manager.SpaceOnClasroomBogth()==true)
         {
-            string studClassWanted;
-            studClassWanted = StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIwant1;
+            
+
+            StudentMono studentfirs=StudentsInLine[0].GetComponent<StudentMono>();
             foreach (GameObject a in manager.Clasesbogth)
             {
-                if (StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1 == null)
+                if (studentfirs.stdudentinfo.ClassIgot1 == null)
                 {
-                    if (studClassWanted == a.tag && a.GetComponent<ClasroomScip>().IsthereSpace())
+                    if (studentfirs.stdudentinfo.ClassIwant1 == a.tag && a.GetComponent<ClasroomScip>().IsthereSpace())
                     {
-                        StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1 = a.tag;
-                        StudentsInLine[0].GetComponent<StudentMono>().ClassSit = a.GetComponent<ClasroomScip>().AvalableSit();
-                        Debug.Log(StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1);
+                        studentfirs.stdudentinfo.ClassIgot1 = a.tag;
+                        studentfirs.ClassSit = a.GetComponent<ClasroomScip>().AvalableSit();
+                        //Debug.Log(StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1);
                     }
                 }
             }
@@ -121,9 +123,11 @@ public class Lobby : MonoBehaviour
                     {
                         if (F.GetComponent<ClasroomScip>().IsthereSpace())
                         {
-                            StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1 = F.tag;
-                            StudentsInLine[0].GetComponent<StudentMono>().ClassSit = F.GetComponent<ClasroomScip>().AvalableSit();
-                            Debug.Log(StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1);
+                            studentfirs.stdudentinfo.ClassIgot1 = F.tag;
+                            GameObject sit=F.GetComponent<ClasroomScip>().AvalableSit();
+                            studentfirs.ClassSit = sit;
+                            //sit.GetComponent<SitUsed>().Ocupied = true;
+                           Debug.Log(studentfirs.stdudentinfo.ClassIgot1);
                         }
                     }
 
@@ -148,12 +152,15 @@ public class Lobby : MonoBehaviour
 
                 //}
             }
-            StudentsInLine[0].tag = "RegisteredStudent";
-            StudentsInLine[0].GetComponent<StudentMono>().Schedule();
-            StudentsInLine.RemoveAt(0);
-            if (StudentsInLine.Count > 0)
+            if (StudentsInLine[0].GetComponent<StudentMono>().ClassSit != null)
             {
-                Organice();
+                StudentsInLine[0].tag = "RegisteredStudent";
+                StudentsInLine[0].GetComponent<StudentMono>().Schedule();
+                StudentsInLine.RemoveAt(0);
+                if (StudentsInLine.Count > 0)
+                {
+                    Organice();
+                }
             }
         }
     }

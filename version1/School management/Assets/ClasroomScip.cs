@@ -9,22 +9,20 @@ public class ClasroomScip : MonoBehaviour
     public string ChildTagName;
     private void Awake()
     {
-        ChildTagName = "";
-    }
-    private void Start()
-    {
-
-        Sits = GameObject.FindGameObjectsWithTag(ChildTagName);
-
-        
+        ChildTagName = null;
     }
 
+    private void Update() 
+        {
+            if (ChildTagName != null)
+                Sits = GameObject.FindGameObjectsWithTag(ChildTagName);
+        }
     public bool IsthereSpace()
     {
         int count=0;
         foreach (GameObject sit in Sits)
         {
-            if (!sit.GetComponent<SitUsed>().Ocupied)
+            if (sit.GetComponent<SitUsed>().Ocupied==false)
                 count++;
            
         }
@@ -37,7 +35,7 @@ public class ClasroomScip : MonoBehaviour
         List<GameObject> tep = new List<GameObject>();
         foreach (GameObject sit in Sits)
         {
-            if (!sit.GetComponent<SitUsed>().Ocupied)
+            if (sit.GetComponent<SitUsed>().Ocupied==false)
                 tep.Add(sit);
             
         }

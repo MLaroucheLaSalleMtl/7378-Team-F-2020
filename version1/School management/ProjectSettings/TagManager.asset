@@ -14,18 +14,15 @@ TagManager:
   - Surfing
   - Haking
   - AxeTrowing
-  - MagicSit0
   - MagicSit1
-  - HakingSit0
   - HakingSit1
-  - AxeTrowing0
   - AxeTrowing1
-  - SurfingSit0
   - SurfingSit1
   - RegisteredStudent
   - Music
   - female
   - male
+  - HakingSit2
   layers:
   - Default
   - TransparentFX

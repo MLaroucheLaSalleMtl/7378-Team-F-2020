@@ -7,7 +7,7 @@ public class SitUsed :MonoBehaviour
     private GameManager manager;
     public bool Ocupied = false;
 
-    private void Awake()
+    private void Start()
     {
        
         manager = GameManager.instance;
@@ -26,10 +26,10 @@ public class SitUsed :MonoBehaviour
         }
         else if (transform.parent.tag == "Surfing")
         {
-            gameObject.tag = "SurfingSit";
+            gameObject.tag = "SurfingSit" + manager.NumberOfSurfing;
         }
 
-        if (transform.parent.GetComponent<ClasroomScip>().ChildTagName == "")
+        if (transform.parent.GetComponent<ClasroomScip>().ChildTagName == null)
         {
             transform.parent.GetComponent<ClasroomScip>().ChildTagName = gameObject.tag;
         }
