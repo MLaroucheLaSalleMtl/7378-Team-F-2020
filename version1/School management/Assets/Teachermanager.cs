@@ -44,39 +44,52 @@ public class Teachermanager : MonoBehaviour
         }
     }
 
-    //private string[] teachertypes = { "Viking", "Goblin", "Witch", "Pirate" };
+    
     [Header("Teacher prefabs")]
     [SerializeField] public GameObject[] teacherPrefabs;
 
     [Header("Teacher Name")]
-    public Text[] Teachernames;
-    
-    
+    [SerializeField] public Text[] Teachernames;
+
+    [Header("Teacher Pictures")]
+    [SerializeField] public Sprite[] teacherPortrait;
+
+    [Header("Teacher Icons")]
+    [SerializeField] public Image[] teacherIcons;
 
 
-    void Start()
+
+    public void teacherNames()
     {
-      
         teacherPrefabs[0].name = "Bob the Viking";
         teacherPrefabs[1].name = "Joe the Goblin";
         teacherPrefabs[2].name = "Stacy the Witch";
         teacherPrefabs[3].name = "Barb the Pirate";
-
-
-       randomNum[0] = Random.Range(0, teacherPrefabs.Length);
-       randomNum[1] = Random.Range(0, teacherPrefabs.Length);
-       randomNum[2] = Random.Range(0, teacherPrefabs.Length);
-       randomNum[3] = Random.Range(0, teacherPrefabs.Length);
-
-        Teachernames[0].text = "Name: " + teacherPrefabs[randomNum[0]].ToString();
-        Teachernames[1].text = "Name: " + teacherPrefabs[randomNum[1]].ToString();
-        Teachernames[2].text = "Name: " + teacherPrefabs[randomNum[2]].ToString();
-        Teachernames[3].text = "Name: " + teacherPrefabs[randomNum[3]].ToString();
-
     }
 
+    public void RandomGenNum()
+    {
+        randomNum[0] = Random.Range(0, teacherPrefabs.Length);
+        randomNum[1] = Random.Range(0, teacherPrefabs.Length);
+        randomNum[2] = Random.Range(0, teacherPrefabs.Length);
+        randomNum[3] = Random.Range(0, teacherPrefabs.Length);
+    }
 
+    public void teacherUInames()
+    {
+        Teachernames[0].text = teacherPrefabs[randomNum[0]].ToString();
+        Teachernames[1].text = teacherPrefabs[randomNum[1]].ToString();
+        Teachernames[2].text = teacherPrefabs[randomNum[2]].ToString();
+        Teachernames[3].text = teacherPrefabs[randomNum[3]].ToString();
+    }
 
+    public void teacherAvatar()
+    {
+        teacherIcons[0].sprite = teacherPortrait[randomNum[0]];
+        teacherIcons[1].sprite = teacherPortrait[randomNum[1]];
+        teacherIcons[2].sprite = teacherPortrait[randomNum[2]];
+        teacherIcons[3].sprite = teacherPortrait[randomNum[3]];
+    }
 
     public void HireTeacherOne()
     {
@@ -98,7 +111,16 @@ public class Teachermanager : MonoBehaviour
         Instantiate(teacherPrefabs[randomNum[3]], tPossitionOfcet, Quaternion.identity);
     }
 
+    void Start()
+    {
+        teacherNames(); //Teacher's name
 
+        RandomGenNum(); //Generate Number (this applies to all the UI name and Avatar that goes along with it)
+
+        teacherUInames(); //Name of Teacher based off Random Gen Num
+
+        teacherAvatar(); //Teacher Portrait matches the Name!
+    }
 
     // Update is called once per frame
     void Update()
