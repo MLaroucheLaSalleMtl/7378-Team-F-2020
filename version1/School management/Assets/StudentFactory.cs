@@ -73,13 +73,16 @@ public class StudentFactory : MonoBehaviour
 
         classwanted = manager.AvalableClases[random];
         lastname = LastNameList[Randslastname];
+
         if (binary == 1)
         {
             gender = "Male";
             firstname = BoyNamesList[RandsBoy];
             
         }
-        else { gender = "Female";
+        else {
+
+            gender = "Female";
             firstname = GirNamesList[RandsGirl];
             
         }
