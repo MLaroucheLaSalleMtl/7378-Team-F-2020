@@ -1741,6 +1741,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4636916375202554}
   - component: {fileID: 95411435178327466}
+  - component: {fileID: 4046592906183345689}
   m_Layer: 0
   m_Name: Chr_Fantasy_Witch_01
   m_TagString: Untagged
@@ -1842,6 +1843,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4046592906183345689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211613768531628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257ba0fc81cbb274faa3ecc8f13db339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tfactory: {fileID: 0}
 --- !u!1 &1219971190545986
 GameObject:
   m_ObjectHideFlags: 0

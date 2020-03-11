@@ -21,7 +21,9 @@ public class StudentMono : MonoBehaviour
         manager = GameManager.instance;
 
         Sfactory = StudentFactory.instance;
+
         stdudentinfo = Sfactory.CreateStudent();
+
         gtime = GameTime.instance;
         manager.AddStudent();
        

@@ -120,10 +120,8 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        //gameManager = this; //only one ---Why?????
-        //UpdateMoneyUI();
-
         
+        //UpdateMoneyUI();
 
         StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         classRCountText  =GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();

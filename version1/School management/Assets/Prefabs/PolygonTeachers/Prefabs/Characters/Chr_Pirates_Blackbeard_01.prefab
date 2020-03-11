@@ -5657,6 +5657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4659060933568082}
   - component: {fileID: 95993992509409012}
+  - component: {fileID: 8741195295608997556}
   m_Layer: 0
   m_Name: Chr_Pirates_Blackbeard_01
   m_TagString: Untagged
@@ -5758,6 +5759,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8741195295608997556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610447763959210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257ba0fc81cbb274faa3ecc8f13db339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tfactory: {fileID: 0}
 --- !u!1 &1625145536350010
 GameObject:
   m_ObjectHideFlags: 0
