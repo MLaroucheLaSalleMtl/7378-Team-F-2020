@@ -10,11 +10,9 @@ public class Hiring : MonoBehaviour
 
     public GameObject HiringMenu;
 
-    void Start()
-    {
-        teachermanager = Teachermanager.instance;
-        gameManager = GameManager.instance;
-    }
+    public static bool HiringMenuUI = false;
+
+    
 
     public void OnhireTeacherOne()
     {
@@ -42,17 +40,49 @@ public class Hiring : MonoBehaviour
 
 
     //menu panel
+    
+
+
+
     public void EnterHiringMenu()
     {
+       
         HiringMenu.SetActive(true);
+        HiringMenuUI = true;
+
     }
     public void ExitHiringMenu()
     {
+        
         HiringMenu.SetActive(false);
+        HiringMenuUI = false;
     }
 
 
-    
+    public void DoHireMenu()
+    {
+        if (HiringMenuUI)
+        {
+            ExitHiringMenu();
+            Debug.Log("hire menu OFF");
+        }
+        else
+        {
+            EnterHiringMenu();
+            Debug.Log("hire menu ON");
+            
+        }
+    }
+
+
+    void Start()
+    {
+        teachermanager = Teachermanager.instance;
+        gameManager = GameManager.instance;
+
+        
+    }
+
     void Update()
     {
         

@@ -112,15 +112,15 @@ public class pauseMenu : MonoBehaviour
 
     void Start()
     {
-        
-        btnQuit.SetActive(false);
-        btnRestart.SetActive(false);
-        btnResume.SetActive(false);
-        btnControls.SetActive(false);
-        pauseTxt.SetActive(false);
-        pauseBG.SetActive(false);
-        btnSHIFT.SetActive(false);
-        btnSPACEBAR.SetActive(false);
+
+        //btnQuit.SetActive(false);
+        //btnRestart.SetActive(false);
+        //btnResume.SetActive(false);
+        //btnControls.SetActive(false);
+        //pauseTxt.SetActive(false);
+        //pauseBG.SetActive(false);
+        //btnSHIFT.SetActive(false);
+        //btnSPACEBAR.SetActive(false);
     }
 
 
