@@ -11605,24 +11605,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7c6b7ae07497a4eae7ffbc67213e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teachers:
-  - teacherName: 
-    avatar: {fileID: 0}
-    teachers:
-    - {fileID: 0}
-  - teacherName: 
-    avatar: {fileID: 0}
-    teachers: []
-  - teacherName: 
-    avatar: {fileID: 0}
-    teachers: []
-  - teacherName: 
-    avatar: {fileID: 0}
-    teachers: []
-  - teacherName: 
-    avatar: {fileID: 0}
-    teachers: []
   tPossitionOfcet: {x: 0, y: 0, z: 0}
+  info:
+  - teacherName: Bob the Viking
+  - teacherName: Joe the Goblin
+  - teacherName: Stacy the Witch
+  - teacherName: Umi the Pirate
+  displayTeacherName: {fileID: 0}
+  teacherPrefabs:
+  - {fileID: 1304508085423192, guid: 5d70fa8020733a24bb64b0b16d7fb8da, type: 3}
+  - {fileID: 1009295489438026, guid: 66e77aa60f5941c4fac8214300600242, type: 3}
+  - {fileID: 1211613768531628, guid: ff16e3fcec505e54ea0a9e9313673ac0, type: 3}
+  - {fileID: 1610447763959210, guid: 6739c8872dae63747a4ea064985a789f, type: 3}
 --- !u!1 &1910294635
 GameObject:
   m_ObjectHideFlags: 0

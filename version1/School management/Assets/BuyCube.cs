@@ -48,6 +48,7 @@ public class BuyCube : MonoBehaviour
         GameObject ClassToBuild = buildManager.GetClassToBuild();
         
         gameManager.ReduceMoney(ClassToBuild.GetComponent<ClasroomScip>().ClassCost);
+
         // displays how many classes built
         GameManager.instance.AddClasses(); 
 
@@ -64,7 +65,7 @@ public class BuyCube : MonoBehaviour
         //deactivate vbuy option
 
 
-        // when teacher is bought then destroy game object
+        
         
 
         Destroy(gameObject);
