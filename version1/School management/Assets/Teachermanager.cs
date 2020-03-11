@@ -29,7 +29,8 @@ public class Teachermanager : MonoBehaviour
     [Header("Teacher position")]
     [SerializeField] private Vector3 tPossitionOfcet;
 
-
+    [Header("Randomize Number")]
+    [SerializeField] public int[] randomNum;
 
     private void Awake()
     {
@@ -42,32 +43,59 @@ public class Teachermanager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    [System.Serializable]
-    public class teacherInfo
-    {
-        public string teacherName;
-    }
-    [Header("Teacher Information")]
-    [SerializeField] public teacherInfo[] info;
-
-    public Text displayTeacherName;
 
     //private string[] teachertypes = { "Viking", "Goblin", "Witch", "Pirate" };
     [Header("Teacher prefabs")]
     [SerializeField] public GameObject[] teacherPrefabs;
+
+    [Header("Teacher Name")]
+    public Text[] Teachernames;
     
+    
+
+
     void Start()
     {
-       // teacherPrefabs[0].name = info[0];
+      
         teacherPrefabs[0].name = "Bob the Viking";
         teacherPrefabs[1].name = "Joe the Goblin";
         teacherPrefabs[2].name = "Stacy the Witch";
-        teacherPrefabs[3].name = "Umi the Pirate";
+        teacherPrefabs[3].name = "Barb the Pirate";
+
+
+       randomNum[0] = Random.Range(0, teacherPrefabs.Length);
+       randomNum[1] = Random.Range(0, teacherPrefabs.Length);
+       randomNum[2] = Random.Range(0, teacherPrefabs.Length);
+       randomNum[3] = Random.Range(0, teacherPrefabs.Length);
+
+        Teachernames[0].text = "Name: " + teacherPrefabs[randomNum[0]].ToString();
+        Teachernames[1].text = "Name: " + teacherPrefabs[randomNum[1]].ToString();
+        Teachernames[2].text = "Name: " + teacherPrefabs[randomNum[2]].ToString();
+        Teachernames[3].text = "Name: " + teacherPrefabs[randomNum[3]].ToString();
+
     }
 
-    public void HireTeacher()
+
+
+
+    public void HireTeacherOne()
     {
-        Debug.Log(Instantiate(teacherPrefabs[Random.Range(0, teacherPrefabs.Length)], tPossitionOfcet, Quaternion.identity));
+        Instantiate(teacherPrefabs[randomNum[0]], tPossitionOfcet, Quaternion.identity); 
+    }
+
+    public void HireTeacherTwo()
+    {
+        Instantiate(teacherPrefabs[randomNum[1]], tPossitionOfcet, Quaternion.identity);
+    }
+
+    public void HireTeacherThree()
+    {
+        Instantiate(teacherPrefabs[randomNum[2]], tPossitionOfcet, Quaternion.identity);
+    }
+
+    public void HireTeacherFour()
+    {
+        Instantiate(teacherPrefabs[randomNum[3]], tPossitionOfcet, Quaternion.identity);
     }
 
 

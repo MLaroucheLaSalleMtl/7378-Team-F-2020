@@ -13,6 +13,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
+    
 
     [Header("Gold")]
     [SerializeField] private float money;
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] Student;
 
     private int StudentSpawn;
+
+
 
     //[Header("Female Student Prefab Toinstanciate")]
     //[SerializeField] private GameObject fStudent;
@@ -197,6 +200,9 @@ public class GameManager : MonoBehaviour
     {
         classRCountText.text = "Class Built: "+classRCount;
     }
+
+    
+
 
     public void Spawn(InputAction.CallbackContext context)
     {

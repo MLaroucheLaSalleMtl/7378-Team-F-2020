@@ -16,40 +16,43 @@ public class Hiring : MonoBehaviour
         gameManager = GameManager.instance;
     }
 
-    public void hireTeacher()
+    public void OnhireTeacherOne()
     {
-        teachermanager.HireTeacher();
+        teachermanager.HireTeacherOne();
         HiringMenu.SetActive(false);
     }
 
-    public void oneStarTeacher()
+    public void OnhireTeacherTwo()
     {
-        teachermanager.HireTeacher();
+        teachermanager.HireTeacherTwo();
         HiringMenu.SetActive(false);
     }
 
-    public void twoStarTeacher()
+    public void OnhireTeacherThree()
     {
+        teachermanager.HireTeacherThree();
         HiringMenu.SetActive(false);
     }
 
-    public void treeStarTeacher()
+    public void OnhireTeacherFour()
     {
+        teachermanager.HireTeacherFour();
         HiringMenu.SetActive(false);
     }
 
-    public void DisplayHiringMenu()
+
+    //menu panel
+    public void EnterHiringMenu()
     {
         HiringMenu.SetActive(true);
     }
-
     public void ExitHiringMenu()
     {
         HiringMenu.SetActive(false);
     }
 
 
-    // Update is called once per frame
+    
     void Update()
     {
         
