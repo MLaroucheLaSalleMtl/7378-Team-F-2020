@@ -11,6 +11,9 @@ public class SpawnLobby : MonoBehaviour
     [SerializeField] GameObject lobby;
     
     [SerializeField] private Vector3 PossitionOfcet;
+
+    public GameObject Lobby { get => lobby; set => lobby = value; }
+
     void Start()
     {
         rend = GetComponent<Renderer>();

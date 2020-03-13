@@ -52,16 +52,16 @@ public class BuyCube : MonoBehaviour
             Debug.Log("Buy a classroom!");
             return;
         }
-            
 
 
-        if (gameManager.Money < buildManager.GetClassToBuild().GetComponent<ClasroomScip>().ClassCost)
-        {
-            Debug.Log("Not Enough Money");
-            return;
-        }
 
-      
+        //if (gameManager.Money < buildManager.GetClassToBuild().GetComponent<ClasroomScip>().ClassCost)
+        //{
+        //    Debug.Log("Not Enough Money");
+        //    return;
+        //}
+
+
 
         GameObject ClassToBuild = buildManager.GetClassToBuild();
         
@@ -75,14 +75,15 @@ public class BuyCube : MonoBehaviour
         classroom = Instantiate(ClassToBuild, transform.position + PossitionOfcet, transform.rotation);
         gameManager.Clasesbogth.Add(classroom);
 
-        Destroy(clone);
+        
+        // Destroy(clone);
 
         //HIRE TEACHER ---------- NEED TO BUY ATLEAST 1 CLASSROOM TO UNLOCK ---------------- 
-        if (gameManager.ClassRCount > 0)
+        if (gameManager.ClassRCount >= 1)
         {
             if (gameManager.Money < teacherManager.GetTeacherTohire().GetComponent<TeacherMono>().Salary)
             {
-                okayToHire = false;
+                
 
                 /// FALSE
                 Debug.Log("Not enough money to hire this teacher!");
@@ -93,6 +94,11 @@ public class BuyCube : MonoBehaviour
                 okayToHire = true;
 
                 GameManager.instance.AddTeacher();
+
+                //ez fix or else it will say there are two classrooms lmao 
+                // TO DO: fix later
+
+                GameManager.instance.ReduceClasses();
                 /// TRUE
                 GameObject TeacherTohire = teacherManager.GetTeacherTohire();
                 tStaff = Instantiate(TeacherTohire, teacherPosition, transform.rotation);

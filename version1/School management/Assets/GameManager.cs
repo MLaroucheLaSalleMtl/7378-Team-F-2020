@@ -189,6 +189,12 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ReduceClasses()
+    {
+        classRCount--;
+
+    }
+
     public void AddTeacher()
     {
         TeacherCount++;
