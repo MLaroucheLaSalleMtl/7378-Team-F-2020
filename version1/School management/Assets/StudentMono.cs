@@ -89,11 +89,15 @@ public class StudentMono : MonoBehaviour
         
 
     }
+  
+
+
+
 
     public void Schedule()
     {
     
-        {if (stdudentinfo.ClassIgot1 != null)
+        {if (ClassSit != null)
             
             if (gtime.hour >8 && gtime.hour <= 12)
             {

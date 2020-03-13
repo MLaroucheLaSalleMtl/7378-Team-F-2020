@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UI;
-using System.Collections;
+
 
 
 
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
     public bool SpaceOnClasroomBogth()
     {
         bool temp = false;
-        if (Clasesbogth.Count >= 0)
+        if (Clasesbogth.Count > 0)
         {
 
             foreach (GameObject a in Clasesbogth)

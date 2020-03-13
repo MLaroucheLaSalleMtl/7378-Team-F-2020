@@ -28,6 +28,7 @@ public class Student
         ClassIwant1 = classIwant;
         Scourse1 = "Not Registered";
         Gender1 = gender;
+        ClassIgot = "nada";
     }
 
 }

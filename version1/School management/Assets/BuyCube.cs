@@ -20,6 +20,11 @@ public class BuyCube : MonoBehaviour
 
     [SerializeField] private Vector3 PossitionOfcet;
 
+    //GostyStuff
+    [SerializeField] private GameObject tempmap;
+    private GameObject clone;
+    //...
+
     //Teacher position , inside the class room
     [SerializeField] private GameObject teacher;
     [SerializeField] private Vector3 teacherPosition;
@@ -65,9 +70,9 @@ public class BuyCube : MonoBehaviour
         //deactivate vbuy option
 
 
-        
-        
 
+
+        Destroy(clone);
         Destroy(gameObject);
 
     }
@@ -80,7 +85,9 @@ public class BuyCube : MonoBehaviour
         
             if (buildManager.GetClassToBuild() == null)
                 return;
-            rend.material.color = hovercolor;
+        
+        clone = Instantiate(tempmap, transform.position + PossitionOfcet, transform.rotation);
+        rend.material.color = hovercolor;
     }
     private void OnMouseExit()
     {

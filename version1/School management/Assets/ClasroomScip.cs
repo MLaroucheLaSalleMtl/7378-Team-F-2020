@@ -26,7 +26,7 @@ public class ClasroomScip : MonoBehaviour
                 count++;
            
         }
-        if (count < Sits.Length)
+        if (count >0 )
             return true;
         else return false;
     }

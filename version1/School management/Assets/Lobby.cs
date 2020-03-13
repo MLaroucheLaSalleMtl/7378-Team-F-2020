@@ -33,13 +33,17 @@ public class Lobby : MonoBehaviour
     private Vector3 DistanceNeded = new Vector3(0, 0, 2);
 
     public List<GameObject> StudentsInLine=new List<GameObject>();
-
+    private Waitingpossition waitingspaces;
     
 
     private void Start()
+
     {
+        waitingspaces = Waitingpossition.instance;
         manager = GameManager.instance;
         InvokeRepeating("Register", 10, 10f);
+        lineup = StudentsInLine.Count;
+
     }
     void Update()
     {
@@ -85,12 +89,13 @@ public class Lobby : MonoBehaviour
     //    //StudentsInLine = new List<GameObject>(studs);
     //}
     public void TakePlace(GameObject a) {
-        lineup = StudentsInLine.Count; ;
+        
         NavMeshAgent StudentPos = a.GetComponent<NavMeshAgent>();
-      
+        lineup++;
         Debug.Log(lineup);
         StudentsInLine.Add(a);
-        StudentPos.SetDestination(WaitingPos - (DistanceNeded * lineup));
+        StudentPos.SetDestination(waitingspaces.ArrayOfWaitingposs[lineup]);
+        
 
 
     }
@@ -105,7 +110,7 @@ public class Lobby : MonoBehaviour
             StudentMono studentfirs=StudentsInLine[0].GetComponent<StudentMono>();
             foreach (GameObject a in manager.Clasesbogth)
             {
-                if (studentfirs.stdudentinfo.ClassIgot1 == null)
+                if (studentfirs.stdudentinfo.ClassIgot1 == "nada")
                 {
                     if (studentfirs.stdudentinfo.ClassIwant1 == a.tag && a.GetComponent<ClasroomScip>().IsthereSpace())
                     {
@@ -115,11 +120,11 @@ public class Lobby : MonoBehaviour
                     }
                 }
             }
-            if (StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1 == null)
+            if (StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1 == "nada")
             {
                 foreach (GameObject F in manager.Clasesbogth)
                 {
-                    if (StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1 == null)
+                    if (StudentsInLine[0].GetComponent<StudentMono>().stdudentinfo.ClassIgot1 == "nada")
                     {
                         if (F.GetComponent<ClasroomScip>().IsthereSpace())
                         {
@@ -157,29 +162,28 @@ public class Lobby : MonoBehaviour
                 StudentsInLine[0].tag = "RegisteredStudent";
                 StudentsInLine[0].GetComponent<StudentMono>().Schedule();
                 StudentsInLine.RemoveAt(0);
-                if (StudentsInLine.Count > 0)
-                {
+                lineup--;
+                
                     Organice();
-                }
+                
             }
         }
     }
-    
+
 
     private void Organice()
     {
-       
-        if (StudentsInLine[0].transform.position!=WaitingPos) {
-            foreach (GameObject student in StudentsInLine)
-            {
-            NavMeshAgent studentNavAgent=student.GetComponent<NavMeshAgent>();
-            //student.transform.rotation.y = 0;
 
-            //student.GetComponentInChildren<Animator>().SetBool("isWalking", true);//No use
-            studentNavAgent.SetDestination(student.transform.position+ new Vector3(0, 0, 3));
-            
-        }
-       }
+        for (int i=0;i<StudentsInLine.Count;i++) { 
+
+            NavMeshAgent studentNavAgent = StudentsInLine[i].GetComponent<NavMeshAgent>();
+        //student.transform.rotation.y = 0;
+
+        //student.GetComponentInChildren<Animator>().SetBool("isWalking", true);//No use
+        studentNavAgent.SetDestination(waitingspaces.ArrayOfWaitingposs[i]);
+
+                }
+       
     }
 }
 

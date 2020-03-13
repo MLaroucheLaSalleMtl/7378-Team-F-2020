@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class SpawnAdmin : MonoBehaviour
 {
-    private Color Defaaultcollor;
-    public Color hovercolor;
-    private Renderer rend;
-
+    //GostyStuff
+    [SerializeField]private GameObject tempmap;
+    private GameObject clone;
+    //...
+    
     [SerializeField] private GameObject Admin;
     [SerializeField] private Vector3 PossitionOfcet;
     void Start()
     {
-        rend = GetComponent<Renderer>();
-        Defaaultcollor = rend.material.color;
+     
     }
+    
 
     private void OnMouseDown()
     {
-        GameObject ClassToBuild = Buildingmanager.instance.GetClassToBuild();
+        
         Instantiate(Admin, transform.position + PossitionOfcet, transform.rotation);
+        Destroy(clone);
         Destroy(gameObject);
+    }
+
+    private void OnMouseEnter()
+    {
+        clone = Instantiate(tempmap, transform.position + PossitionOfcet, transform.rotation);
+       
+    }
+    private void OnMouseExit()
+    {
+        Destroy(clone);
     }
 }
