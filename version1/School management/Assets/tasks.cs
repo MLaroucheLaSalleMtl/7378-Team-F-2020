@@ -77,27 +77,27 @@ public class tasks : MonoBehaviour
     }
 
 
-    //public void LobbyGoals()
-    //{
-    //    if (lobbyScript.LobbyMade > LobbyBuilt)
-    //    {
-    //        if (taskPanels[1] != null)
-    //        {
-    //            taskPanels[1].SetActive(false);
-    //        }
+    public void LobbyGoals()
+    {
+        if (lobbyScript.LobbyMade > LobbyBuilt)
+        {
+            if (taskPanels[2] != null)
+            {
+                taskPanels[2].SetActive(false);
+            }
 
-    //        Destroy(taskBTNS[1].gameObject);
+            Destroy(taskBTNS[2].gameObject);
 
-    //        taskPanels[2].SetActive(true);
-    //        taskBTNS[2].SetActive(true);
+            taskPanels[3].SetActive(true);
+            taskBTNS[3].SetActive(true);
 
-    //    }
+        }
 
-    //    else
-    //    {
-    //        taskPanels[1].SetActive(true);
-    //    }
-    //}
+        else
+        {
+            taskPanels[2].SetActive(true);
+        }
+    }
 
 
 
@@ -105,21 +105,21 @@ public class tasks : MonoBehaviour
     {
         if (gameManager.Money >= coinGoal)
         {
-            if (taskPanels[2] != null)
+            if (taskPanels[3] != null)
             {
-                taskPanels[2].SetActive(false);
+                taskPanels[3].SetActive(false);
                
             }
 
            
-            Destroy(taskBTNS[2].gameObject);
+            Destroy(taskBTNS[3].gameObject);
             //SceneManager.LoadScene(3);
 
         }
 
         else
         {
-            taskPanels[2].SetActive(true);
+            taskPanels[3].SetActive(true);
         }
 
         
@@ -130,14 +130,17 @@ public class tasks : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
+        lobbyScript = SpawnLobby.instance;
 
-        //second objectives
-        taskPanels[1].SetActive(false);
-        taskBTNS[1].SetActive(false);
-        //third objectives
-        taskPanels[2].SetActive(false);
-        taskBTNS[2].SetActive(false);
-        
+        ////second objectives
+        //taskPanels[1].SetActive(false);
+        //taskBTNS[1].SetActive(false);
+        ////third objectives
+        //taskPanels[2].SetActive(false);
+        //taskBTNS[2].SetActive(false);
+        ////third objectives
+        //taskPanels[3].SetActive(false);
+        //taskBTNS[3].SetActive(false);
     }
 
     // Update is called once per frame

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnLobby : MonoBehaviour
 {
+    public static SpawnLobby instance = null;
+
     private Color Defaaultcollor;
     public Color hovercolor;
     private Renderer rend;
@@ -12,7 +14,22 @@ public class SpawnLobby : MonoBehaviour
     
     [SerializeField] private Vector3 PossitionOfcet;
 
-    public GameObject Lobby { get => lobby; set => lobby = value; }
+    private int lobbyMade;
+
+    public int LobbyMade { get => lobbyMade; set => lobbyMade = value; }
+
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -22,9 +39,9 @@ public class SpawnLobby : MonoBehaviour
 
     private void OnMouseDown()
     {
-
         
         lobby.SetActive(true);
+        lobbyMade = 1;
         Destroy(gameObject);
     }
 }
