@@ -23,7 +23,10 @@ public class GameManager : MonoBehaviour
     Text StudentCountText;//"StudentCount"
 
     private int classRCount;
-    [SerializeField]private Text classRCountText;//"classRCount"
+    [SerializeField] private Text classRCountText;//"classRCount"
+
+    private int teacherCount;
+    [SerializeField] private Text TeacherCountTXT;
 
     public Vector3 LocationOfSpawn=new Vector3(-7.98f, 5.7f, -72f);
     public static GameManager instance = null;
@@ -56,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     public int ClassRCount { get => classRCount; set => classRCount = value; }
     public float Money { get => money; set => money = value; }
+    public int TeacherCount { get => teacherCount; set => teacherCount = value; }
 
     private void Awake()
     {
@@ -125,7 +129,7 @@ public class GameManager : MonoBehaviour
 
         StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         classRCountText  =GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
-
+        TeacherCountTXT = GameObject.FindGameObjectWithTag("TeacherCount").GetComponent<Text>();
     }
 
 
@@ -138,6 +142,7 @@ public class GameManager : MonoBehaviour
         RefreshTextOnUI();
         classRTxtOnUI();
         ClasesNumber();
+        teacherTxtOnUI();
 
 
     }
@@ -184,6 +189,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void AddTeacher()
+    {
+        TeacherCount++;
+    }
+
     public void UpdateMoneyUI()
     {
         moneyText.text = "$ " + money.ToString("N0");
@@ -199,6 +209,10 @@ public class GameManager : MonoBehaviour
         classRCountText.text = "Class Built: "+classRCount;
     }
 
+    public void teacherTxtOnUI()
+    {
+        TeacherCountTXT.text = "Teachers: " + TeacherCount;
+    }
     
 
 

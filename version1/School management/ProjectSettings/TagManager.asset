@@ -23,6 +23,7 @@ TagManager:
   - female
   - male
   - HakingSit2
+  - TeacherCount
   layers:
   - Default
   - TransparentFX

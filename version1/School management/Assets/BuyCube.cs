@@ -32,7 +32,6 @@ public class BuyCube : MonoBehaviour
     //...
 
     //Teacher position , inside the class room
-    //[SerializeField] private GameObject teacher;
     [SerializeField] private Vector3 teacherPosition;
 
 
@@ -40,8 +39,8 @@ public class BuyCube : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         Defaaultcollor = rend.material.color;
-        buildManager=Buildingmanager.instance;
         gameManager = GameManager.instance;
+        buildManager =Buildingmanager.instance;
         teacherManager = Teachermanager.instance;
     }
 
@@ -62,11 +61,10 @@ public class BuyCube : MonoBehaviour
             return;
         }
 
-
+      
 
         GameObject ClassToBuild = buildManager.GetClassToBuild();
-        //GameObject TeacherTohire = teacherManager.GetTeacherTohire();
-
+        
 
         gameManager.ReduceMoney(ClassToBuild.GetComponent<ClasroomScip>().ClassCost);
 
@@ -74,39 +72,44 @@ public class BuyCube : MonoBehaviour
         GameManager.instance.AddClasses();
 
         //display ui to pick
-        
         classroom = Instantiate(ClassToBuild, transform.position + PossitionOfcet, transform.rotation);
         gameManager.Clasesbogth.Add(classroom);
 
-        //if (teacher != null)
-        //{
-        //    //teacher shows up 
-
-        //    Instantiate(teacher, teacherPosition, Quaternion.identity);
-        //}
         Destroy(clone);
 
-        // we could only hire a teacher if we have a classroom built 
+        //HIRE TEACHER ---------- NEED TO BUY ATLEAST 1 CLASSROOM TO UNLOCK ---------------- 
         if (gameManager.ClassRCount > 0)
         {
-            okayToHire = true;
-            GameObject TeacherTohire = teacherManager.GetTeacherTohire();
-            tStaff = Instantiate(TeacherTohire, teacherPosition, transform.rotation);
+            if (gameManager.Money < teacherManager.GetTeacherTohire().GetComponent<TeacherMono>().Salary)
+            {
+                okayToHire = false;
 
-            //Player can choose other teachers
-            teacherManager.SetTeacher(null);
+                /// FALSE
+                Debug.Log("Not enough money to hire this teacher!");
+                return;
+            }
+            else
+            {
+                okayToHire = true;
+
+                GameManager.instance.AddTeacher();
+                /// TRUE
+                GameObject TeacherTohire = teacherManager.GetTeacherTohire();
+                tStaff = Instantiate(TeacherTohire, teacherPosition, transform.rotation);
+
+                //How much the teacher cost to hire 
+                gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().Salary);
+
+                //Player can choose other teachers, wont duplicate to previously selected one
+                teacherManager.SetTeacher(null);
+            }
         }
-        else
-        {
-            okayToHire = false;
-        }
 
 
+
+        //game to know there is a classroom, important for hiring a teacher
         buildManager.SetClass(null);
-        //deactivate vbuy option
-
         
-        Destroy(clone);
 
         //Fuck the cube! :D
         Destroy(gameObject);

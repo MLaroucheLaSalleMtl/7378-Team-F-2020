@@ -9,9 +9,11 @@ public class TeacherMono : MonoBehaviour
 
     private GameManager manager;
    
-    public TeacherFactory tfactory;
+    private TeacherFactory tfactory;
 
     public Teacher teacherinfo;
+
+    public int Salary;
 
     // Start is called before the first frame update
 
@@ -22,13 +24,16 @@ public class TeacherMono : MonoBehaviour
 
     void Start()
     {
-        //manager = GameManager.instance;
+        manager = GameManager.instance;
         //tfactory = TeacherFactory.instance;
         //teacherinfo = tfactory.CreateTeacher();
 
         Debug.Log("1st trait: " + teacherinfo.traits1 + "2nd trait: " + teacherinfo.traits12 + "3rd trait: " + teacherinfo.traits13 );
 
     }
+
+    
+
 
     void Update()
     {
