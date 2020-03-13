@@ -1226,7 +1226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &211000593
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1300,7 +1300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &212104271
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1517,8 +1517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
-  teacher: {fileID: 0}
-  teacherPosition: {x: 0, y: 0, z: 0}
+  teacherPosition: {x: -33, y: 0, z: -13.14}
 --- !u!65 &243414814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1760,8 +1759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
-  teacher: {fileID: 0}
-  teacherPosition: {x: 0, y: 0, z: 0}
+  teacherPosition: {x: -35.03, y: 0, z: 11.09}
 --- !u!65 &305177535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2044,8 +2042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
-  teacher: {fileID: 0}
-  teacherPosition: {x: 0, y: 0, z: 0}
+  teacherPosition: {x: 13.03, y: 0, z: 17.91}
 --- !u!65 &313436749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2461,7 +2458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -153.84009, y: -140.59998}
+  m_AnchoredPosition: {x: -153.84033, y: -140.59985}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390163723
@@ -2601,7 +2598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &425250158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3167,7 +3164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &528188495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4307,8 +4304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
-  teacher: {fileID: 0}
-  teacherPosition: {x: 0, y: 0, z: 0}
+  teacherPosition: {x: -33, y: 0, z: -0.9}
 --- !u!65 &649558005
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4966,7 +4962,7 @@ GameObject:
   - component: {fileID: 759816622}
   - component: {fileID: 759816621}
   m_Layer: 0
-  m_Name: magic Class
+  m_Name: Buy Cube 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4986,8 +4982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
-  teacher: {fileID: 2712408142622019533, guid: 9af1dd2a91412d94f9544b25c49baa15, type: 3}
-  teacherPosition: {x: 13, y: 0, z: -18.4}
+  teacherPosition: {x: 13, y: 0.4, z: -19.98}
 --- !u!65 &759816622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6625,7 +6620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -45.340088, y: -29.099976}
+  m_AnchoredPosition: {x: -45.340332, y: -29.099854}
   m_SizeDelta: {x: 41, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954778797
@@ -7150,7 +7145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1032522529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9151,8 +9146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
-  teacher: {fileID: 0}
-  teacherPosition: {x: 0, y: 0, z: 0}
+  teacherPosition: {x: 13, y: 0.4, z: -8.1}
 --- !u!65 &1284126475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9703,8 +9697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
-  teacher: {fileID: 0}
-  teacherPosition: {x: 0, y: 0, z: 0}
+  teacherPosition: {x: 13, y: 0.4, z: 4.91}
 --- !u!65 &1378325038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9799,8 +9792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
-  teacher: {fileID: 4646985499990273602, guid: 9af1dd2a91412d94f9544b25c49baa15, type: 3}
-  teacherPosition: {x: 0, y: 0, z: 0}
+  teacherPosition: {x: -33.03, y: -0.09, z: -24.91}
 --- !u!65 &1411147998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10807,7 +10799,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -159.34009, y: -103.099976}
+  m_AnchoredPosition: {x: -159.34033, y: -103.09985}
   m_SizeDelta: {x: 107, y: 107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638573733
@@ -12850,6 +12842,11 @@ MonoBehaviour:
   - {fileID: 8168514624509027681, guid: 0a27a99b4b3f620458301e1f417c0cb2, type: 3}
   - {fileID: 2128224391909981594, guid: fc55a9c1c45811347b9758e311cbb304, type: 3}
   - {fileID: 1345249026365973915, guid: 0de56353f29132a499661ea74df41beb, type: 3}
+  tempmap:
+  - {fileID: 6806409030234386078, guid: b5bb2cf48a4414346b3796032b1d5e8d, type: 3}
+  - {fileID: 1345249026365973915, guid: ae9b4268ae6a6c54fa10653d50a44103, type: 3}
+  - {fileID: 8168514624509027681, guid: 78d8e69d946058f4d96310a1a181c423, type: 3}
+  - {fileID: 2128224391909981594, guid: 1eafcc2854861894a9e73417615adb56, type: 3}
 --- !u!114 &1905191041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12918,8 +12915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76faa1310ca676429a1de06c4f975c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  teachermanager: {fileID: 0}
   HiringMenu: {fileID: 1795757935}
 --- !u!114 &1905191047
 MonoBehaviour:
@@ -13118,7 +13113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -232.34009, y: -54.099976}
+  m_AnchoredPosition: {x: -232.34033, y: -54.099854}
   m_SizeDelta: {x: 171, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912881550

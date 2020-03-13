@@ -22,6 +22,10 @@ public class Buildingmanager : MonoBehaviour
     private string[] Clasesbogth;
     List<string> Clases;
     private GameObject ClassToBuild;
+
+    //hover over color
+    [SerializeField] private GameObject[] tempmap;
+
     private void Start()
     {
         
@@ -34,5 +38,33 @@ public class Buildingmanager : MonoBehaviour
     public void SetClass(GameObject Clasroom)
     {
         ClassToBuild= Clasroom;
+    }
+
+    public GameObject GetGostClass()
+    {
+        if (ClassToBuild.tag == "Magic")
+        {
+            return tempmap[0];
+        }else
+        if (ClassToBuild.tag == "Haking")
+        {
+            return tempmap[1];
+        }
+        else
+        if (ClassToBuild.tag == "AxeTrowing")
+        {
+            return tempmap[2];
+        }
+        else
+        if (ClassToBuild.tag == "Surfing")
+        {
+            return tempmap[3];
+        }
+        else
+        {
+            return null;
+        }
+
+
     }
 }

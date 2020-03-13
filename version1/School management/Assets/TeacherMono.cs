@@ -22,9 +22,9 @@ public class TeacherMono : MonoBehaviour
 
     void Start()
     {
-        manager = GameManager.instance;
-        tfactory = TeacherFactory.instance;
-        teacherinfo = tfactory.CreateTeacher();
+        //manager = GameManager.instance;
+        //tfactory = TeacherFactory.instance;
+        //teacherinfo = tfactory.CreateTeacher();
 
         Debug.Log("1st trait: " + teacherinfo.traits1 + "2nd trait: " + teacherinfo.traits12 + "3rd trait: " + teacherinfo.traits13 );
 

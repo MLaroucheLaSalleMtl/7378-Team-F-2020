@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class mainMenuBTN : MonoBehaviour
 {
+    private GameManager gameManager;
+
     //ON & OFF
     public static bool mainMenu = false;
 
@@ -35,6 +37,7 @@ public class mainMenuBTN : MonoBehaviour
 
     public void OnMainMenu()
     {
+        
         btnStaff.SetActive(true);
         btnStudent.SetActive(true);
         btnFacility.SetActive(true);
@@ -56,11 +59,12 @@ public class mainMenuBTN : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        btnStaff.SetActive(false);
-        btnStudent.SetActive(false);
-        btnFacility.SetActive(false);
-        btnPublicity.SetActive(false);
-        halfCircle.SetActive(false);
+        
+        //btnStaff.SetActive(false);
+        //btnStudent.SetActive(false);
+        //btnFacility.SetActive(false);
+        //btnPublicity.SetActive(false);
+        //halfCircle.SetActive(false);
     }
 
     // Update is called once per frame

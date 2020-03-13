@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Hiring : MonoBehaviour
 {
-    public GameManager gameManager;
+    private GameManager gameManager;
 
-    public Teachermanager teachermanager;
+    private Teachermanager teachermanager;
 
     public GameObject HiringMenu;
 
@@ -16,25 +16,29 @@ public class Hiring : MonoBehaviour
 
     public void OnhireTeacherOne()
     {
-        teachermanager.HireTeacherOne();
+        //teachermanager.HireTeacherOne();
+        teachermanager.SetTeacher(teachermanager.teacherPrefabs[teachermanager.randomNum[0]]);
         HiringMenu.SetActive(false);
     }
 
     public void OnhireTeacherTwo()
     {
-        teachermanager.HireTeacherTwo();
+        //teachermanager.HireTeacherTwo();
+        teachermanager.SetTeacher(teachermanager.teacherPrefabs[teachermanager.randomNum[1]]);
         HiringMenu.SetActive(false);
     }
 
     public void OnhireTeacherThree()
     {
-        teachermanager.HireTeacherThree();
+        //teachermanager.HireTeacherThree();
+        teachermanager.SetTeacher(teachermanager.teacherPrefabs[teachermanager.randomNum[2]]);
         HiringMenu.SetActive(false);
     }
 
     public void OnhireTeacherFour()
     {
-        teachermanager.HireTeacherFour();
+        //teachermanager.HireTeacherFour();
+        teachermanager.SetTeacher(teachermanager.teacherPrefabs[teachermanager.randomNum[3]]);
         HiringMenu.SetActive(false);
     }
 
@@ -61,16 +65,19 @@ public class Hiring : MonoBehaviour
 
     public void DoHireMenu()
     {
-        if (HiringMenuUI)
+        if (gameManager.ClassRCount > 0)
         {
-            ExitHiringMenu();
-            Debug.Log("hire menu OFF");
-        }
-        else
-        {
-            EnterHiringMenu();
-            Debug.Log("hire menu ON");
-            
+            if (HiringMenuUI)
+            {
+                ExitHiringMenu();
+                Debug.Log("hire menu OFF");
+            }
+            else
+            {
+                EnterHiringMenu();
+                Debug.Log("hire menu ON");
+
+            }
         }
     }
 

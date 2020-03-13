@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9bc38d1bb5738489cee4d68f6ceb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ClassCost: 400
+  ClassCost: 200
   Sits: []
   ChildTagName: 
 --- !u!114 &3238134744289416081

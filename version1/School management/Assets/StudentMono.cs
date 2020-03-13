@@ -35,7 +35,6 @@ public class StudentMono : MonoBehaviour
 
         //InvokeRepeating("OnSpawn", 10, 5f);
 
-        Debug.Log(stdudentinfo.SName1 +" - "+ stdudentinfo.ClassIwant1);
     }
 
     // Update is called once per frame

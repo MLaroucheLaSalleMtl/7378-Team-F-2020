@@ -57,6 +57,7 @@ public class Teachermanager : MonoBehaviour
     [Header("Teacher Icons")]
     [SerializeField] public Image[] teacherIcons;
 
+    private GameObject TeacherTohire;
 
 
     public void teacherNames()
@@ -93,7 +94,8 @@ public class Teachermanager : MonoBehaviour
 
     public void HireTeacherOne()
     {
-        Instantiate(teacherPrefabs[randomNum[0]], tPossitionOfcet, Quaternion.identity); 
+        Instantiate(teacherPrefabs[randomNum[0]], tPossitionOfcet, Quaternion.identity);
+        
     }
 
     public void HireTeacherTwo()
@@ -110,6 +112,17 @@ public class Teachermanager : MonoBehaviour
     {
         Instantiate(teacherPrefabs[randomNum[3]], tPossitionOfcet, Quaternion.identity);
     }
+
+    public GameObject GetTeacherTohire()
+    {
+        return TeacherTohire;
+    }
+
+    public void SetTeacher(GameObject Staff)
+    {
+        TeacherTohire = Staff;
+    }
+
 
     void Start()
     {
