@@ -47,6 +47,7 @@ public class SpawnLobby : MonoBehaviour
         lobby.SetActive(true);
         lobbyMade = 1;
         Destroy(gameObject);
+        tooltip.SetActive(false);
     }
 
     private void OnMouseEnter()

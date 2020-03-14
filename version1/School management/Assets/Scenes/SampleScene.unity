@@ -10749,7 +10749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
-  tooltip: {fileID: 0}
+  tooltip: {fileID: 1235687355}
   teacherPosition: {x: -33.03, y: -0.09, z: -24.91}
 --- !u!65 &1411147998
 BoxCollider:
@@ -11525,7 +11525,7 @@ GameObject:
   - component: {fileID: 1540471780}
   - component: {fileID: 1540471779}
   m_Layer: 5
-  m_Name: tooltip
+  m_Name: Roadmaptooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11547,8 +11547,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -68.5, y: -68.7}
-  m_SizeDelta: {x: 277, y: -53.7}
+  m_AnchoredPosition: {x: 0, y: -97}
+  m_SizeDelta: {x: 106.9, y: -22.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1540471779
 MonoBehaviour:
@@ -14481,7 +14481,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905191036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca217b156c92dca40b814a7e10b318cf, type: 3}
   m_Name: 

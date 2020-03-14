@@ -107,8 +107,10 @@ public class BuyCube : MonoBehaviour
                 //How much the teacher cost to hire 
                 gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().Salary);
 
+                Destroy(clone);
                 //Player can choose other teachers, wont duplicate to previously selected one
                 teacherManager.SetTeacher(null);
+
             }
         }
 
@@ -121,7 +123,7 @@ public class BuyCube : MonoBehaviour
         //Fuck the cube! :D
         Destroy(gameObject);
 
-
+        tooltip.SetActive(false);
 
     }
     void Update()
@@ -146,6 +148,6 @@ public class BuyCube : MonoBehaviour
         tooltip.SetActive(false);
         rend.material.color = Defaaultcollor;
         Destroy(clone);
-        Destroy(clone);
+        
     }
 }

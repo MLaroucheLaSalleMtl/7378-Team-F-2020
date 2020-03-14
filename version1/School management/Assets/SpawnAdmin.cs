@@ -26,6 +26,7 @@ public class SpawnAdmin : MonoBehaviour
         Instantiate(Admin, transform.position + PossitionOfcet, transform.rotation);
         Destroy(clone);
         Destroy(gameObject);
+        tooltip.SetActive(false);
     }
 
     private void OnMouseEnter()
