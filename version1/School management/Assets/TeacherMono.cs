@@ -7,7 +7,7 @@ public class TeacherMono : MonoBehaviour
 {
    
 
-    private GameManager manager;
+    private GameManager Gmanager;
    
     private TeacherFactory tfactory;
 
@@ -24,11 +24,11 @@ public class TeacherMono : MonoBehaviour
 
     void Start()
     {
-        manager = GameManager.instance;
+        Gmanager = GameManager.instance;
         //tfactory = TeacherFactory.instance;
         //teacherinfo = tfactory.CreateTeacher();
 
-        Debug.Log("1st trait: " + teacherinfo.traits1 + "2nd trait: " + teacherinfo.traits12 + "3rd trait: " + teacherinfo.traits13 );
+        //Debug.Log("1st trait: " + teacherinfo.traits1 + "2nd trait: " + teacherinfo.traits12 + "3rd trait: " + teacherinfo.traits13 );
 
     }
 

@@ -21,19 +21,29 @@ public class BuyCube : MonoBehaviour
     Teachermanager teacherManager;
 
     Buildingmanager buildManager;
-    
+
     Buying buying;
 
+    [Header("Classroom Offset")]
     [SerializeField] private Vector3 PossitionOfcet;
+
+    [Header("Tooltip when Hovered over cube")]
     [SerializeField] private GameObject tooltip;
 
-    //GostyStuff
-
+    
+    [Header("Preview of classroom/building")]
     private GameObject clone;
     //...
 
-    //Teacher position , inside the class room
+
+    [Header("Teacher's Spawn point")]
     [SerializeField] private Vector3 teacherPosition;
+
+    [Header("Teacher is facing towards the classroom")]
+    [SerializeField] private Vector3 RotationOfcet;
+    
+
+
 
 
     void Start()
@@ -41,8 +51,12 @@ public class BuyCube : MonoBehaviour
         rend = GetComponent<Renderer>();
         Defaaultcollor = rend.material.color;
         gameManager = GameManager.instance;
-        buildManager =Buildingmanager.instance;
+        buildManager = Buildingmanager.instance;
         teacherManager = Teachermanager.instance;
+    }
+    void Update()
+    {
+       
     }
 
 
@@ -84,7 +98,6 @@ public class BuyCube : MonoBehaviour
         {
             if (gameManager.Money < teacherManager.GetTeacherTohire().GetComponent<TeacherMono>().Salary)
             {
-                
 
                 /// FALSE
                 Debug.Log("Not enough money to hire this teacher!");
@@ -101,8 +114,9 @@ public class BuyCube : MonoBehaviour
 
                 GameManager.instance.ReduceClasses();
                 /// TRUE
+                /// 
                 GameObject TeacherTohire = teacherManager.GetTeacherTohire();
-                tStaff = Instantiate(TeacherTohire, teacherPosition, transform.rotation);
+                tStaff = Instantiate(TeacherTohire,  teacherPosition, transform.rotation * Quaternion.Euler(RotationOfcet));
 
                 //How much the teacher cost to hire 
                 gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().Salary);
@@ -126,10 +140,7 @@ public class BuyCube : MonoBehaviour
         tooltip.SetActive(false);
 
     }
-    void Update()
-    {
-        
-    }
+    
     private void OnMouseEnter()
     {
         tooltip.SetActive(true);
