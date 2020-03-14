@@ -7,8 +7,11 @@ public class SpawnAdmin : MonoBehaviour
     //GostyStuff
     [SerializeField]private GameObject tempmap;
     private GameObject clone;
-    //...
+
+    [SerializeField] private GameObject tooltip;
     
+    //...
+
     [SerializeField] private GameObject Admin;
     [SerializeField] private Vector3 PossitionOfcet;
     void Start()
@@ -27,11 +30,14 @@ public class SpawnAdmin : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        tooltip.SetActive(true);
         clone = Instantiate(tempmap, transform.position + PossitionOfcet, transform.rotation);
+        
        
     }
     private void OnMouseExit()
     {
+        tooltip.SetActive(false);
         Destroy(clone);
     }
 }

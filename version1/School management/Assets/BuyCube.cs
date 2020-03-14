@@ -23,11 +23,12 @@ public class BuyCube : MonoBehaviour
     Buildingmanager buildManager;
     
     Buying buying;
-    
+
     [SerializeField] private Vector3 PossitionOfcet;
+    [SerializeField] private GameObject tooltip;
 
     //GostyStuff
-    
+
     private GameObject clone;
     //...
 
@@ -129,6 +130,7 @@ public class BuyCube : MonoBehaviour
     }
     private void OnMouseEnter()
     {
+        tooltip.SetActive(true);
 
         if (buildManager.GetClassToBuild() == null)
         
@@ -141,6 +143,7 @@ public class BuyCube : MonoBehaviour
     }
     private void OnMouseExit()
     {
+        tooltip.SetActive(false);
         rend.material.color = Defaaultcollor;
         Destroy(clone);
         Destroy(clone);

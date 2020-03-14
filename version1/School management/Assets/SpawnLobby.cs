@@ -11,8 +11,10 @@ public class SpawnLobby : MonoBehaviour
     private Renderer rend;
 
     [SerializeField] GameObject lobby;
-    
+
     [SerializeField] private Vector3 PossitionOfcet;
+
+    [SerializeField] private GameObject tooltip;
 
     private int lobbyMade;
 
@@ -31,6 +33,8 @@ public class SpawnLobby : MonoBehaviour
         }
     }
 
+
+
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -39,9 +43,20 @@ public class SpawnLobby : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
+
         lobby.SetActive(true);
         lobbyMade = 1;
         Destroy(gameObject);
+    }
+
+    private void OnMouseEnter()
+    {
+        tooltip.SetActive(true);
+      
+    }
+
+    private void OnMouseExit()
+    {
+        tooltip.SetActive(false);
     }
 }
