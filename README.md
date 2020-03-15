@@ -2,7 +2,7 @@
 
 ![Image of instruction](https://i.imgur.com/NbiDdPx.jpg)
 ======
-Percival Gallardo Castro and Arisa Ohashi decided to make a Tycoon game. We cooked up a school management game where you must manage the students and the school itself. Hire teachers that suit the different classes your school offers. Try not to go bankrupt or have boring teachers, it might drop the student’s “fun” meter and kill them of boredom. 
+```Percival Gallardo Castro and Arisa Ohashi decided to make a Tycoon game. We cooked up a school management game where you must manage the students and the school itself. Hire teachers that suit the different classes your school offers. Try not to go bankrupt or have boring teachers, it might drop the student’s “fun” meter and kill them of boredom. ```
 
 # Objectives
 There are two objectives in this game:
@@ -24,10 +24,8 @@ There are two objectives in this game:
 # Sources
 * UI pack – Lynda Mc Donald https://loudeyes.itch.io/paper-ui-pack-for-games
 - 3D student models
-```
   - male: https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870
   - female: https://assetstore.unity.com/packages/3d/animations/sd-unity-chan-haon-custom-bundle-84992
-```
 - 3D teacher model:
   - mixamo: sporty granny character package: https://www.mixamo.com/#/
   -	barb teacher: https://assetstore.unity.com/packages/3d/characters/humanoids/barbarian-warrior-75519
