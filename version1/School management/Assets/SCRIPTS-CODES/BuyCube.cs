@@ -11,6 +11,7 @@ public class BuyCube : MonoBehaviour
     //cost of the class
     //[SerializeField] private float amount;
     private bool okayToHire = false;
+
     public Color hovercolor;
     private Renderer rend;
     private Color Defaaultcollor;
@@ -67,14 +68,15 @@ public class BuyCube : MonoBehaviour
             Debug.Log("Buy a classroom!");
             return;
         }
+        
 
 
 
-        //if (gameManager.Money < buildManager.GetClassToBuild().GetComponent<ClasroomScip>().ClassCost)
-        //{
-        //    Debug.Log("Not Enough Money");
-        //    return;
-        //}
+        if (gameManager.Money < buildManager.GetClassToBuild().GetComponent<ClasroomScip>().ClassCost)
+        {
+            Debug.Log("Not Enough Money");
+            return;
+        }
 
 
 
@@ -84,57 +86,60 @@ public class BuyCube : MonoBehaviour
         gameManager.ReduceMoney(ClassToBuild.GetComponent<ClasroomScip>().ClassCost);
 
         // displays how many classes built
-        GameManager.instance.AddClasses();
+        gameManager.AddClasses();
 
         //display ui to pick
         classroom = Instantiate(ClassToBuild, transform.position + PossitionOfcet, transform.rotation);
         gameManager.Clasesbogth.Add(classroom);
 
-        
-        // Destroy(clone);
+
+        #region Old Hire teacher code
+
 
         //HIRE TEACHER ---------- NEED TO BUY ATLEAST 1 CLASSROOM TO UNLOCK ---------------- 
-        if (gameManager.ClassRCount >= 1)
-        {
-            if (gameManager.Money < teacherManager.GetTeacherTohire().GetComponent<TeacherMono>().Salary)
-            {
+        //if (gameManager.ClassRCount >= 1)
+        //{
+        //    if (gameManager.Money < teacherManager.GetTeacherTohire().GetComponent<TeacherMono>().Salary)
+        //    {
 
-                /// FALSE
-                Debug.Log("Not enough money to hire this teacher!");
-                return;
-            }
-            else
-            {
-                okayToHire = true;
+        //        /// FALSE
+        //        Debug.Log("Not enough money to hire this teacher!");
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        okayToHire = true;
 
-                GameManager.instance.AddTeacher();
 
-                //ez fix or else it will say there are two classrooms lmao 
-                // TO DO: fix later
+        //        gameManager.AddTeacher();
 
-                GameManager.instance.ReduceClasses();
-                /// TRUE
-                /// 
-                GameObject TeacherTohire = teacherManager.GetTeacherTohire();
-                tStaff = Instantiate(TeacherTohire,  teacherPosition, transform.rotation * Quaternion.Euler(RotationOfcet));
+        //        //ez fix or else it will say there are two classrooms lmao 
+        //        // TO DO: fix later
+        //        gameManager.ReduceClasses();
 
-                //How much the teacher cost to hire 
-                gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().Salary);
+        //        /// TRUE
+        //        /// 
+        //        GameObject TeacherTohire = teacherManager.GetTeacherTohire();
+        //        tStaff = Instantiate(TeacherTohire,  teacherPosition, transform.rotation * Quaternion.Euler(RotationOfcet));
 
-                Destroy(clone);
-                //Player can choose other teachers, wont duplicate to previously selected one
-                teacherManager.SetTeacher(null);
+        //        //How much the teacher cost to hire 
+        //        gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().Salary);
 
-            }
-        }
+        //        Destroy(clone);
+        //        //Player can choose other teachers, wont duplicate to previously selected one
+        //        teacherManager.SetTeacher(null);
 
+        //    }
+        //}
+        #endregion
 
 
         //game to know there is a classroom, important for hiring a teacher
         buildManager.SetClass(null);
-        
 
-        //Fuck the cube! :D
+        Destroy(clone);
+
+        //Remove the Cube
         Destroy(gameObject);
 
         tooltip.SetActive(false);
@@ -143,11 +148,17 @@ public class BuyCube : MonoBehaviour
     
     private void OnMouseEnter()
     {
-        tooltip.SetActive(true);
+        
 
         if (buildManager.GetClassToBuild() == null)
-        
-            return;
+        {
+            tooltip.SetActive(true);
+            
+        }
+       else
+        {
+            tooltip.SetActive(false);
+        }
         
             clone = buildManager.GetGostClass();
             clone = Instantiate(clone, transform.position + PossitionOfcet, transform.rotation);
