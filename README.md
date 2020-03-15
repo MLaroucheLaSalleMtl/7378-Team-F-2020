@@ -9,8 +9,8 @@ Percival Gallardo Castro and Arisa Ohashi decided to make a Tycoon game. We cook
 # Objectives
 There are two objectives in this game:
 ```
-- You must have over zero gold, don't go bankrupt!
-- You also need maintain the student’s fun meter, by keeping them engaged.
+1) You must have over zero gold, don't go bankrupt!
+2) You also need maintain the student’s fun meter, by keeping them engaged.
 ```
 
 # Instructions
