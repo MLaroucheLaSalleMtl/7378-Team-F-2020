@@ -41,13 +41,13 @@ There are two objectives in this game:
 * [board icon for classes](https://www.pngkey.com/download/u2r5a9q8w7e6a9q8_writing-study-learn-education-student-board-school-school/)
 * [teacher icon for counter](https://icons8.com/icons/set/teacher)
 
-### 3D Character Asset Models
+### 3D Characters 
 * [male students](https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870)
 * [female students](https://assetstore.unity.com/packages/3d/animations/sd-unity-chan-haon-custom-bundle-84992)
 * [Teachers](https://assetstore.unity.com/packages/3d/characters/humanoids/polygon-mini-fantasy-character-pack-122084)
 
 
-### 3D Room Asset
+### 3D Props
 * [Assets that is staple for every classroom](https://assetstore.unity.com/packages/3d/environments/school-assets-146253)
 * [Assets for the magic class](https://assetstore.unity.com/packages/3d/environments/fantasy/free-cartoon-halloween-pack-mobile-vr-45896)
 * [Assets for the axe throwing class](https://assetstore.unity.com/packages/3d/props/tools/stylized-3d-tools-91080)
