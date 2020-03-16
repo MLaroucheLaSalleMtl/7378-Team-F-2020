@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BuyCube : MonoBehaviour
 {
+
+
     private GameManager gameManager;
-
-
 
     //cost of the class
     //[SerializeField] private float amount;
@@ -23,6 +23,8 @@ public class BuyCube : MonoBehaviour
 
     Buildingmanager buildManager;
 
+    private tasks Tasks;
+
     Buying buying;
 
     [Header("Classroom Offset")]
@@ -31,7 +33,7 @@ public class BuyCube : MonoBehaviour
     [Header("Tooltip when Hovered over cube")]
     [SerializeField] private GameObject tooltip;
 
-    
+
     [Header("Preview of classroom/building")]
     private GameObject clone;
     //...
@@ -42,10 +44,9 @@ public class BuyCube : MonoBehaviour
 
     [Header("Teacher is facing towards the classroom")]
     [SerializeField] private Vector3 RotationOfcet;
-    
 
 
-
+   
 
     void Start()
     {
@@ -54,6 +55,8 @@ public class BuyCube : MonoBehaviour
         gameManager = GameManager.instance;
         buildManager = Buildingmanager.instance;
         teacherManager = Teachermanager.instance;
+        Tasks = tasks.instance;
+
     }
     void Update()
     {
@@ -138,6 +141,9 @@ public class BuyCube : MonoBehaviour
         buildManager.SetClass(null);
 
         Destroy(clone);
+
+        // Remove Objective Spark
+        Tasks.SparklesForObj[0].SetActive(false);
 
         //Remove the Cube
         Destroy(gameObject);

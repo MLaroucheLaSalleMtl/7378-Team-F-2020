@@ -18,6 +18,8 @@ public class SpawnLobby : MonoBehaviour
 
     private int lobbyMade;
 
+    private tasks Tasks;
+
     public int LobbyMade { get => lobbyMade; set => lobbyMade = value; }
 
 
@@ -39,6 +41,7 @@ public class SpawnLobby : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         Defaaultcollor = rend.material.color;
+        Tasks = tasks.instance;
     }
 
     private void OnMouseDown()
@@ -46,6 +49,7 @@ public class SpawnLobby : MonoBehaviour
 
         lobby.SetActive(true);
         lobbyMade = 1;
+        Tasks.SparklesForObj[2].SetActive(false);
         Destroy(gameObject);
         tooltip.SetActive(false);
     }

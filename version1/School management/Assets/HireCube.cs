@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class HireCube : MonoBehaviour
 {
+
     private GameManager gameManager;
 
     private GameObject tStaff;
+
+    private tasks Tasks;
 
     Teachermanager teacherManager;
 
@@ -22,18 +25,24 @@ public class HireCube : MonoBehaviour
     [Header("Tooltip when Hovered over cube")]
     [SerializeField] private GameObject tooltip;
 
+    [Header("Sparkles/Glow objective indicator")]
+    [SerializeField] public GameObject SparklesForTeacher;
+
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.instance;
         teacherManager = Teachermanager.instance;
+        Tasks = tasks.instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnMouseDown()
@@ -75,8 +84,12 @@ public class HireCube : MonoBehaviour
             teacherManager.SetTeacher(null);
         }
 
-        tooltip.SetActive(false);
+
+
+        Tasks.SparklesForObj[1].SetActive(false);
         Destroy(gameObject);
+        tooltip.SetActive(false);
+
     }
 
 

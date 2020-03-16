@@ -5,15 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class tasks : MonoBehaviour
 {
+
+
     public GameManager gameManager;
 
     public SpawnLobby lobbyScript;
 
+    public static tasks instance = null;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     [SerializeField] private GameObject[] taskPanels;
     [SerializeField] private GameObject[] taskBTNS;
 
-    
+    [Header("Sparkles/Glow objective indicator")]
+    [SerializeField] public GameObject[] SparklesForObj;
+
+    [Header("Sparkle Spawn point")]
+    [SerializeField] private Vector3 SparklePos;
 
 
 
@@ -31,6 +49,28 @@ public class tasks : MonoBehaviour
 
 
 
+    void Start()
+    {
+        gameManager = GameManager.instance;
+        lobbyScript = SpawnLobby.instance;
+
+
+        ////second objectives
+        //taskPanels[1].SetActive(false);
+        //taskBTNS[1].SetActive(false);
+        ////third objectives
+        //taskPanels[2].SetActive(false);
+        //taskBTNS[2].SetActive(false);
+        ////third objectives
+        //taskPanels[3].SetActive(false);
+        //taskBTNS[3].SetActive(false);
+
+
+        SparklesForObj[0].SetActive(true);
+    }
+
+   
+
     public void classRoomGoals()
     {
         if (gameManager.ClassRCount >= classRoom)
@@ -43,13 +83,18 @@ public class tasks : MonoBehaviour
             
             Destroy(taskBTNS[0].gameObject);
 
+            
             taskPanels[1].SetActive(true);
             taskBTNS[1].SetActive(true);
+
+            SparklesForObj[1].SetActive(true);
+
 
         }
 
         else
         {
+            
             taskPanels[0].SetActive(true);
         }
     }
@@ -65,8 +110,11 @@ public class tasks : MonoBehaviour
 
             Destroy(taskBTNS[1].gameObject);
 
+
             taskPanels[2].SetActive(true);
             taskBTNS[2].SetActive(true);
+
+            SparklesForObj[2].SetActive(true);
 
         }
 
@@ -86,7 +134,7 @@ public class tasks : MonoBehaviour
                 taskPanels[2].SetActive(false);
             }
 
-            Destroy(taskBTNS[2].gameObject);
+            
 
             taskPanels[3].SetActive(true);
             taskBTNS[3].SetActive(true);
@@ -126,22 +174,8 @@ public class tasks : MonoBehaviour
     }
 
 
-    
-    void Start()
-    {
-        gameManager = GameManager.instance;
-        lobbyScript = SpawnLobby.instance;
+   
 
-        ////second objectives
-        //taskPanels[1].SetActive(false);
-        //taskBTNS[1].SetActive(false);
-        ////third objectives
-        //taskPanels[2].SetActive(false);
-        //taskBTNS[2].SetActive(false);
-        ////third objectives
-        //taskPanels[3].SetActive(false);
-        //taskBTNS[3].SetActive(false);
-    }
 
     // Update is called once per frame
     void Update()
