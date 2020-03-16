@@ -5597,7 +5597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &784239817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15582,12 +15582,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tPossitionOfcet: {x: 0, y: 0, z: 0}
-  randomNum: 00000000000000000000000000000000
+  randomNum: 0000000000000000000000000000000000000000
   teacherPrefabs:
   - {fileID: 1304508085423192, guid: 5d70fa8020733a24bb64b0b16d7fb8da, type: 3}
   - {fileID: 1009295489438026, guid: 66e77aa60f5941c4fac8214300600242, type: 3}
   - {fileID: 1211613768531628, guid: ff16e3fcec505e54ea0a9e9313673ac0, type: 3}
   - {fileID: 1610447763959210, guid: 6739c8872dae63747a4ea064985a789f, type: 3}
+  - {fileID: 1152512832814340, guid: 50818c83516699c47b45ef4e84cdba90, type: 3}
+  - {fileID: 1744385805961278, guid: f9527c2757f240d4092108c99f07e436, type: 3}
+  - {fileID: 1981386913803054, guid: 29207f02eaa72364ea38eed11a36d43c, type: 3}
   Teachernames:
   - {fileID: 695563731}
   - {fileID: 1472414360}
@@ -15598,6 +15601,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 15627cc5fbdc3004082be1e4dd6ee433, type: 3}
   - {fileID: 21300000, guid: fea0251740676c34280275970c41ed0e, type: 3}
   - {fileID: 21300000, guid: f43e3f360beee444f9356349af0bc03a, type: 3}
+  - {fileID: 21300000, guid: 1307213c8eda96e48b880fa7c44b66e2, type: 3}
+  - {fileID: 21300000, guid: b5f1517f9cd7e214e88e7977014c5237, type: 3}
+  - {fileID: 21300000, guid: 3c9e75a75c2e416438790455ddf0dc6b, type: 3}
   teacherIcons:
   - {fileID: 1765717665}
   - {fileID: 231857354}

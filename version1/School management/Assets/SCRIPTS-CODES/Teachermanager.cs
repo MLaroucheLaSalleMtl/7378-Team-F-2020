@@ -65,7 +65,10 @@ public class Teachermanager : MonoBehaviour
         teacherPrefabs[0].name = "Bob the Viking";
         teacherPrefabs[1].name = "Joe the Goblin";
         teacherPrefabs[2].name = "Stacy the Witch";
-        teacherPrefabs[3].name = "Barb the Pirate";
+        teacherPrefabs[3].name = "Paul the Pirate";
+        teacherPrefabs[4].name = "Jill the Goblin";
+        teacherPrefabs[5].name = "Sam the Wizard";
+        teacherPrefabs[6].name = "Jesse the Shield Maiden";
     }
 
     public void RandomGenNum()
@@ -74,23 +77,30 @@ public class Teachermanager : MonoBehaviour
         randomNum[1] = Random.Range(0, teacherPrefabs.Length);
         randomNum[2] = Random.Range(0, teacherPrefabs.Length);
         randomNum[3] = Random.Range(0, teacherPrefabs.Length);
+      
     }
 
-    public void teacherUInames()
-    {
-        Teachernames[0].text = teacherPrefabs[randomNum[0]].ToString();
-        Teachernames[1].text = teacherPrefabs[randomNum[1]].ToString();
-        Teachernames[2].text = teacherPrefabs[randomNum[2]].ToString();
-        Teachernames[3].text = teacherPrefabs[randomNum[3]].ToString();
-    }
 
+    //dont touch These two functions!
     public void teacherAvatar()
     {
         teacherIcons[0].sprite = teacherPortrait[randomNum[0]];
         teacherIcons[1].sprite = teacherPortrait[randomNum[1]];
         teacherIcons[2].sprite = teacherPortrait[randomNum[2]];
         teacherIcons[3].sprite = teacherPortrait[randomNum[3]];
+        
     }
+
+    
+    public void teacherUInames()
+    {
+        Teachernames[0].text = teacherPrefabs[randomNum[0]].ToString();
+        Teachernames[1].text = teacherPrefabs[randomNum[1]].ToString();
+        Teachernames[2].text = teacherPrefabs[randomNum[2]].ToString();
+        Teachernames[3].text = teacherPrefabs[randomNum[3]].ToString();
+
+    }
+
 
     public void HireTeacherOne()
     {
