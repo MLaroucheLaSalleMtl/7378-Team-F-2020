@@ -7,6 +7,7 @@ public class GameTime : MonoBehaviour
 {
     public static GameTime instance=null;
     GameManager manager;
+    Teachermanager teacher;
 
     private void Awake()
     {
@@ -44,6 +45,7 @@ public class GameTime : MonoBehaviour
         CalculateSeason();
         hour = 6;
         manager = GameManager.instance;
+        teacher = Teachermanager.instance;
     }
 
     
@@ -85,8 +87,10 @@ public class GameTime : MonoBehaviour
         }
         else if(hour >= 24)
         {
-           
+
             day++;
+            //teacher generator per day
+            teacher.RandomGenNum();
             hour = 0;
             UpdateText();
         }else if (day >= 28)

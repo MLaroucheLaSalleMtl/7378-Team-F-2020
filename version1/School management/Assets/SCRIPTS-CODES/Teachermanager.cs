@@ -68,8 +68,10 @@ public class Teachermanager : MonoBehaviour
         teacherPrefabs[3].name = "Paul the Pirate";
         teacherPrefabs[4].name = "Jill the Goblin";
         teacherPrefabs[5].name = "Sam the Wizard";
-        teacherPrefabs[6].name = "Jesse the Shield Maiden";
+        teacherPrefabs[6].name = "Jesse the Viking";
     }
+
+   
 
     public void RandomGenNum()
     {
@@ -133,21 +135,33 @@ public class Teachermanager : MonoBehaviour
         TeacherTohire = Staff;
     }
 
+   public void GenerateRanNum()
+    {
+        RandomGenNum();
+    }
 
+    
     void Start()
     {
-        teacherNames(); //Teacher's name
+        //teacherNames(); //Teacher's name
 
         RandomGenNum(); //Generate Number (this applies to all the UI name and Avatar that goes along with it)
 
-        teacherUInames(); //Name of Teacher based off Random Gen Num
+        //teacherUInames(); //Name of Teacher based off Random Gen Num
 
-        teacherAvatar(); //Teacher Portrait matches the Name!
+        //teacherAvatar(); //Teacher Portrait matches the Name!
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonUp("R"))
+        {
+            RandomGenNum();
+        }
         
+        teacherNames();
+        teacherUInames();
+        teacherAvatar();
     }
 }
