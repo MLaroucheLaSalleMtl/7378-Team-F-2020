@@ -26,6 +26,7 @@ public class tasks : MonoBehaviour
 
     [SerializeField] private GameObject[] taskPanels;
     [SerializeField] private GameObject[] taskBTNS;
+    [SerializeField] private GameObject taskArrow;
 
     [Header("Sparkles/Glow objective indicator")]
     [SerializeField] public GameObject[] SparklesForObj;
@@ -54,7 +55,7 @@ public class tasks : MonoBehaviour
         gameManager = GameManager.instance;
         lobbyScript = SpawnLobby.instance;
 
-
+        #region hidden task
         ////second objectives
         //taskPanels[1].SetActive(false);
         //taskBTNS[1].SetActive(false);
@@ -64,7 +65,7 @@ public class tasks : MonoBehaviour
         ////third objectives
         //taskPanels[3].SetActive(false);
         //taskBTNS[3].SetActive(false);
-
+        #endregion
 
         SparklesForObj[0].SetActive(true);
     }
@@ -174,7 +175,10 @@ public class tasks : MonoBehaviour
     }
 
 
-   
+   public void RemoveArrow()
+    {
+        taskArrow.SetActive(false);
+    }
 
 
     // Update is called once per frame

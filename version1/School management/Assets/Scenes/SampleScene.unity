@@ -2731,6 +2731,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380066983}
   m_CullTransparentMesh: 0
+--- !u!1 &382330075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382330076}
+  - component: {fileID: 382330078}
+  - component: {fileID: 382330077}
+  m_Layer: 5
+  m_Name: Arrow for Task 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &382330076
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382330075}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 613991365}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1546, y: -251}
+  m_SizeDelta: {x: 275.5, y: 275.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &382330077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382330075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d4caafb5143f9d2499907b304edfe2d0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &382330078
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382330075}
+  m_CullTransparentMesh: 0
 --- !u!1 &390163721
 GameObject:
   m_ObjectHideFlags: 0
@@ -4424,6 +4497,7 @@ RectTransform:
   m_Children:
   - {fileID: 1050253786}
   - {fileID: 838820395}
+  - {fileID: 382330076}
   m_Father: {fileID: 843688816}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8230,11 +8304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405738, guid: 9e4b6619f4485584d8fe40f4f7bd3f05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.84
+      value: 13.59
       objectReference: {fileID: 0}
     - target: {fileID: 405738, guid: 9e4b6619f4485584d8fe40f4f7bd3f05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.13
+      value: -1.38
       objectReference: {fileID: 0}
     - target: {fileID: 405738, guid: 9e4b6619f4485584d8fe40f4f7bd3f05, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8274,15 +8348,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405738, guid: 9e4b6619f4485584d8fe40f4f7bd3f05, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 405738, guid: 9e4b6619f4485584d8fe40f4f7bd3f05, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 405738, guid: 9e4b6619f4485584d8fe40f4f7bd3f05, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19873808, guid: 9e4b6619f4485584d8fe40f4f7bd3f05, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
@@ -9347,7 +9421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -142.14, y: 2.69}
+  m_AnchoredPosition: {x: -140, y: 6}
   m_SizeDelta: {x: 262.89, y: 62.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1211995109
@@ -9381,7 +9455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Buy a classroom! \n"
+  m_Text: "Buy a Classroom! \n"
 --- !u!222 &1211995110
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9629,6 +9703,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1427447643}
         m_MethodName: DoMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1905191043}
+        m_MethodName: RemoveArrow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9914,7 +9999,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Interact with the Red sparkles
+  m_Text: Interact with the Red sparkles once you've hired a teacher
 --- !u!222 &1221807768
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9973,17 +10058,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8301887, g: 0.254539, b: 0.254539, a: 1}
+  m_Color: {r: 0.25490192, g: 0.3173668, b: 0.83137256, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d6b66d478fc2348409ba9ef04886a3a9, type: 3}
-    m_FontSize: 17
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -9991,7 +10076,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Interact with the blue sparkles
+  m_Text: 'Tips: Follow the blue Arrow & interact with the Sparkle'
 --- !u!222 &1228475353
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12402,15 +12487,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 421590, guid: 5adae378504927049be800673638602d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 421590, guid: 5adae378504927049be800673638602d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 421590, guid: 5adae378504927049be800673638602d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5adae378504927049be800673638602d, type: 3}
@@ -15546,6 +15631,7 @@ MonoBehaviour:
   - {fileID: 1271446928}
   - {fileID: 1705525882}
   - {fileID: 1910294635}
+  taskArrow: {fileID: 382330075}
   SparklesForObj:
   - {fileID: 1456099969}
   - {fileID: 937768670}
@@ -16546,7 +16632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 476642, guid: 37edeecfddad5b14eb754807c328f4bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.378437
+      value: -1.13
       objectReference: {fileID: 0}
     - target: {fileID: 476642, guid: 37edeecfddad5b14eb754807c328f4bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16586,15 +16672,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 476642, guid: 37edeecfddad5b14eb754807c328f4bf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 476642, guid: 37edeecfddad5b14eb754807c328f4bf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 476642, guid: 37edeecfddad5b14eb754807c328f4bf, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19841508, guid: 37edeecfddad5b14eb754807c328f4bf, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
