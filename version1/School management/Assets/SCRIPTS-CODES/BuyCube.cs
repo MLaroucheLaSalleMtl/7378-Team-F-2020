@@ -33,6 +33,8 @@ public class BuyCube : MonoBehaviour
     [Header("Tooltip when Hovered over cube")]
     [SerializeField] private GameObject tooltip;
 
+    [Header("Tooltip when Hovered over cube")]
+    [SerializeField] private GameObject HireCube;
 
     [Header("Preview of classroom/building")]
     private GameObject clone;
@@ -147,6 +149,9 @@ public class BuyCube : MonoBehaviour
 
         //Remove the Cube
         Destroy(gameObject);
+
+        //bring out the teacher HireCube
+        HireCube.SetActive(true);
 
         tooltip.SetActive(false);
 

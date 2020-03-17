@@ -1519,6 +1519,7 @@ MonoBehaviour:
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   tooltip: {fileID: 1235687355}
+  HireCube: {fileID: 271458729}
   teacherPosition: {x: -33, y: 0, z: -13.14}
   RotationOfcet: {x: 0, y: 180, z: 0}
 --- !u!65 &243414814
@@ -1751,7 +1752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &271458730
 Transform:
   m_ObjectHideFlags: 0
@@ -1950,6 +1951,7 @@ MonoBehaviour:
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   tooltip: {fileID: 1235687355}
+  HireCube: {fileID: 2090501831}
   teacherPosition: {x: -35.03, y: 0, z: 11.09}
   RotationOfcet: {x: 0, y: 180, z: 0}
 --- !u!65 &305177535
@@ -2214,7 +2216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313436746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.872025, y: 6.18125, z: 33.686317}
+  m_LocalPosition: {x: 26.872025, y: 6.18125, z: 33.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1693669690}
@@ -2235,6 +2237,7 @@ MonoBehaviour:
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   tooltip: {fileID: 1235687355}
+  HireCube: {fileID: 696862289}
   teacherPosition: {x: 13.03, y: 0, z: 17.91}
   RotationOfcet: {x: 0, y: 180, z: 0}
 --- !u!65 &313436749
@@ -2410,7 +2413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &332938798
 Transform:
   m_ObjectHideFlags: 0
@@ -4686,6 +4689,7 @@ MonoBehaviour:
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   tooltip: {fileID: 1235687355}
+  HireCube: {fileID: 1079699379}
   teacherPosition: {x: -33, y: 0, z: -0.9}
   RotationOfcet: {x: 0, y: 180, z: 0}
 --- !u!65 &649558005
@@ -5011,7 +5015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &696862290
 Transform:
   m_ObjectHideFlags: 0
@@ -5476,6 +5480,7 @@ MonoBehaviour:
   hovercolor: {r: 0.0506853, g: 0.3377973, b: 0.6320754, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   tooltip: {fileID: 1235687355}
+  HireCube: {fileID: 1385796837}
   teacherPosition: {x: 13, y: 0.4, z: -19.98}
   RotationOfcet: {x: 0, y: 180, z: 0}
 --- !u!65 &759816622
@@ -6582,7 +6587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &887763399
 Transform:
   m_ObjectHideFlags: 0
@@ -8639,7 +8644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1079699380
 Transform:
   m_ObjectHideFlags: 0
@@ -10800,6 +10805,7 @@ MonoBehaviour:
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   tooltip: {fileID: 1235687355}
+  HireCube: {fileID: 332938797}
   teacherPosition: {x: 13, y: 0.4, z: -8.1}
   RotationOfcet: {x: 0, y: 180, z: 0}
 --- !u!65 &1284126475
@@ -11427,6 +11433,7 @@ MonoBehaviour:
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: 2.24, y: 10, z: 0.22}
   tooltip: {fileID: 1235687355}
+  HireCube: {fileID: 1643615478}
   teacherPosition: {x: 13, y: 0.4, z: 4.91}
   RotationOfcet: {x: 0, y: 180, z: 0}
 --- !u!65 &1378325038
@@ -11508,7 +11515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1385796838
 Transform:
   m_ObjectHideFlags: 0
@@ -11634,6 +11641,7 @@ MonoBehaviour:
   hovercolor: {r: 0, g: 0, b: 0, a: 0}
   PossitionOfcet: {x: -3.76, y: 10, z: 0.22}
   tooltip: {fileID: 1235687355}
+  HireCube: {fileID: 887763398}
   teacherPosition: {x: -33.03, y: -0.09, z: -24.91}
   RotationOfcet: {x: 0, y: 180, z: 0}
 --- !u!65 &1411147998
@@ -13107,7 +13115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1643615479
 Transform:
   m_ObjectHideFlags: 0
@@ -17699,7 +17707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2090501832
 Transform:
   m_ObjectHideFlags: 0
