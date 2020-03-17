@@ -42,23 +42,31 @@ public class Buildingmanager : MonoBehaviour
 
     public GameObject GetGostClass()
     {
-        if (ClassToBuild.tag == "Magic")
+        if (ClassToBuild != null)
         {
-            return tempmap[0];
-        }else
-        if (ClassToBuild.tag == "Haking")
-        {
-            return tempmap[1];
-        }
-        else
-        if (ClassToBuild.tag == "AxeTrowing")
-        {
-            return tempmap[2];
-        }
-        else
-        if (ClassToBuild.tag == "Surfing")
-        {
-            return tempmap[3];
+            if (ClassToBuild.tag == "Magic")
+            {
+                return tempmap[0];
+            }
+            else
+            if (ClassToBuild.tag == "Haking")
+            {
+                return tempmap[1];
+            }
+            else
+            if (ClassToBuild.tag == "AxeTrowing")
+            {
+                return tempmap[2];
+            }
+            else
+            if (ClassToBuild.tag == "Surfing")
+            {
+                return tempmap[3];
+            }
+            else
+            {
+                return null;
+            }
         }
         else
         {

@@ -11,6 +11,10 @@ public class tasks : MonoBehaviour
 
     public SpawnLobby lobbyScript;
 
+    public SpawnAdmin adminScript;
+
+    public SpawnCaff caffScript;
+
     public static tasks instance = null;
     private void Awake()
     {
@@ -26,6 +30,7 @@ public class tasks : MonoBehaviour
 
     [SerializeField] private GameObject[] taskPanels;
     [SerializeField] private GameObject[] taskBTNS;
+
     [SerializeField] private GameObject taskArrow;
 
     [Header("Sparkles/Glow objective indicator")]
@@ -36,24 +41,33 @@ public class tasks : MonoBehaviour
 
 
 
+    [Header("Objectives 0")]
+    private int classRoom = 1; 
+
     [Header("Objectives 1")]
-    private int classRoom = 1; //player must have this many classes built to complete Objective 1
+    private int Teacher = 1;
 
     [Header("Objectives 2")]
-    private int Teacher = 1; 
+    private int LobbyBuilt = 0;
 
     [Header("Objectives 3")]
-    private int LobbyBuilt = 0; 
+    private int coinGoal = 400;
 
     [Header("Objectives 4")]
-    private int coinGoal = 400; //player must make this much money to complete Objective 2
+    private int AdminBuilt = 0;
 
+    [Header("Objectives 5")]
+    private int CaffBuilt = 0;
+
+    int indexer = 0;
 
 
     void Start()
     {
         gameManager = GameManager.instance;
         lobbyScript = SpawnLobby.instance;
+        adminScript = SpawnAdmin.instance;
+        caffScript = SpawnCaff.instance;
 
         #region hidden task
         ////second objectives
@@ -70,7 +84,22 @@ public class tasks : MonoBehaviour
         SparklesForObj[0].SetActive(true);
     }
 
-   
+    void Update()
+    {
+        switch (indexer)
+        {
+            case 0: { classRoomGoals(); } break;
+            case 1: { TeacherGoals(); } break;
+            case 2: { LobbyGoals(); } break;
+            case 3: { coinGoals(); } break;
+            case 4: { AdminGoals(); } break;
+            case 5: { CaffGoals(); } break;
+
+            default:
+                break;
+        }
+    }
+
 
     public void classRoomGoals()
     {
@@ -81,21 +110,21 @@ public class tasks : MonoBehaviour
                 taskPanels[0].SetActive(false);
             }
 
-            
+
             Destroy(taskBTNS[0].gameObject);
 
-            
+
             taskPanels[1].SetActive(true);
             taskBTNS[1].SetActive(true);
 
             SparklesForObj[1].SetActive(true);
 
-
+            indexer++;
         }
 
         else
         {
-            
+
             taskPanels[0].SetActive(true);
         }
     }
@@ -116,7 +145,7 @@ public class tasks : MonoBehaviour
             taskBTNS[2].SetActive(true);
 
             SparklesForObj[2].SetActive(true);
-
+            indexer++;
         }
 
         else
@@ -135,11 +164,12 @@ public class tasks : MonoBehaviour
                 taskPanels[2].SetActive(false);
             }
 
-            
+
 
             taskPanels[3].SetActive(true);
             taskBTNS[3].SetActive(true);
-
+            
+            indexer++;
         }
 
         else
@@ -157,33 +187,81 @@ public class tasks : MonoBehaviour
             if (taskPanels[3] != null)
             {
                 taskPanels[3].SetActive(false);
-               
+
             }
 
-           
-            Destroy(taskBTNS[3].gameObject);
-            //SceneManager.LoadScene(3);
 
+            Destroy(taskBTNS[3].gameObject);
+            SparklesForObj[3].SetActive(true);
+            indexer++;
         }
 
         else
         {
             taskPanels[3].SetActive(true);
         }
+    }
 
-        
+    public void AdminGoals()
+    {
+        if (adminScript.AdminMade > AdminBuilt)
+        {
+            if (taskPanels[4] != null)
+            {
+                taskPanels[4].SetActive(false);
+            }
+
+            Destroy(taskBTNS[4].gameObject);
+            SparklesForObj[4].SetActive(true);
+            taskPanels[5].SetActive(true);
+            taskBTNS[5].SetActive(true);
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[4].SetActive(true);
+        }
+    }
+
+    public void CaffGoals()
+    {
+        if (caffScript.CaffMade > CaffBuilt)
+        {
+            if (taskPanels[5] != null)
+            {
+                taskPanels[5].SetActive(false);
+            }
+
+            Destroy(taskBTNS[5].gameObject);
+
+            //taskPanels[6].SetActive(true);
+            //taskBTNS[6].SetActive(true);
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[5].SetActive(true);
+        }
     }
 
 
-   public void RemoveArrow()
+
+
+    public void RemoveArrow()
     {
         taskArrow.SetActive(false);
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
+
+
+
+    
+   
+
