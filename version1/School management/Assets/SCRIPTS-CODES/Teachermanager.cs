@@ -65,7 +65,7 @@ public class Teachermanager : MonoBehaviour
         teacherPrefabs[0].name = "Bob the Viking";
         teacherPrefabs[1].name = "Joe the Goblin";
         teacherPrefabs[2].name = "Stacy the Witch";
-        teacherPrefabs[3].name = "Paul the Pirate";
+        teacherPrefabs[3].name = "Percy the Pirate";
         teacherPrefabs[4].name = "Jill the Goblin";
         teacherPrefabs[5].name = "Sam the Wizard";
         teacherPrefabs[6].name = "Jesse the Viking";
