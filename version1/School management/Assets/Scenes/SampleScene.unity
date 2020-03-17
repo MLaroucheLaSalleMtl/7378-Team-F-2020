@@ -3297,8 +3297,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -144.15, y: 2.18}
-  m_SizeDelta: {x: 271.76, y: 57.43}
+  m_AnchoredPosition: {x: -144.15, y: 6.6}
+  m_SizeDelta: {x: 271.76, y: 48.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &450139033
 MonoBehaviour:
@@ -5672,7 +5672,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.9811321, g: 0.9523725, b: 0.8469206, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 0.9
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6645,7 +6645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &838820395
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10665,8 +10665,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -144.06, y: -21.9}
-  m_SizeDelta: {x: 261.65, y: 28.2}
+  m_AnchoredPosition: {x: -144.81, y: -26}
+  m_SizeDelta: {x: 224.6, y: 36.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221807767
 MonoBehaviour:
@@ -10690,7 +10690,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d6b66d478fc2348409ba9ef04886a3a9, type: 3}
     m_FontSize: 13
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 8
     m_MaxSize: 40
     m_Alignment: 7
@@ -11393,7 +11393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271446929
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12657,7 +12657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1431641153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14834,7 +14834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1705525883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16688,13 +16688,6 @@ MonoBehaviour:
   - {fileID: 2104077590}
   - {fileID: 501702951}
   - {fileID: 545626112}
-  taskBTNS:
-  - {fileID: 838820394}
-  - {fileID: 1271446928}
-  - {fileID: 1705525882}
-  - {fileID: 1910294635}
-  - {fileID: 1431641152}
-  - {fileID: 2019322715}
   taskArrow: {fileID: 382330075}
   SparklesForObj:
   - {fileID: 1456099969}
@@ -16787,7 +16780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1910294636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18152,7 +18145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2019322716
 RectTransform:
   m_ObjectHideFlags: 0

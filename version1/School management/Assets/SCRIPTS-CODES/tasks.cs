@@ -29,7 +29,7 @@ public class tasks : MonoBehaviour
     }
 
     [SerializeField] private GameObject[] taskPanels;
-    [SerializeField] private GameObject[] taskBTNS;
+    // [SerializeField] private GameObject[] taskBTNS;
 
     [SerializeField] private GameObject taskArrow;
 
@@ -111,11 +111,11 @@ public class tasks : MonoBehaviour
             }
 
 
-            Destroy(taskBTNS[0].gameObject);
+           
 
 
             taskPanels[1].SetActive(true);
-            taskBTNS[1].SetActive(true);
+          
 
             SparklesForObj[1].SetActive(true);
 
@@ -138,11 +138,11 @@ public class tasks : MonoBehaviour
                 taskPanels[1].SetActive(false);
             }
 
-            Destroy(taskBTNS[1].gameObject);
+           
 
 
             taskPanels[2].SetActive(true);
-            taskBTNS[2].SetActive(true);
+          
 
             SparklesForObj[2].SetActive(true);
             indexer++;
@@ -167,7 +167,7 @@ public class tasks : MonoBehaviour
 
 
             taskPanels[3].SetActive(true);
-            taskBTNS[3].SetActive(true);
+       
             
             indexer++;
         }
@@ -191,8 +191,9 @@ public class tasks : MonoBehaviour
             }
 
 
-            Destroy(taskBTNS[3].gameObject);
+           
             SparklesForObj[3].SetActive(true);
+
             indexer++;
         }
 
@@ -211,10 +212,10 @@ public class tasks : MonoBehaviour
                 taskPanels[4].SetActive(false);
             }
 
-            Destroy(taskBTNS[4].gameObject);
+           
             SparklesForObj[4].SetActive(true);
             taskPanels[5].SetActive(true);
-            taskBTNS[5].SetActive(true);
+           
 
             indexer++;
         }
@@ -234,10 +235,10 @@ public class tasks : MonoBehaviour
                 taskPanels[5].SetActive(false);
             }
 
-            Destroy(taskBTNS[5].gameObject);
+      
 
             //taskPanels[6].SetActive(true);
-            //taskBTNS[6].SetActive(true);
+           
 
             indexer++;
         }
