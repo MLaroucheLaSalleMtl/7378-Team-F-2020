@@ -30,8 +30,8 @@ public class GameTime : MonoBehaviour
 
     private Text clockTxt, seasonTxt, dayTxt,datetxt;
     private int daysSurv;
-    private double minute,day, second, month, year;
-    public double hour;
+    private float minute,day, second, month, year;
+    public float hour;
 
     void Start()
     {
@@ -43,7 +43,7 @@ public class GameTime : MonoBehaviour
         seasonTxt = GameObject.Find("Season").GetComponent<Text>();
         datetxt = GameObject.Find("Date").GetComponent<Text>();
         CalculateSeason();
-        hour = 6;
+        hour = 3;
         manager = GameManager.instance;
         teacher = Teachermanager.instance;
     }
@@ -57,6 +57,7 @@ public class GameTime : MonoBehaviour
     private void CalculateTime()
     {
         second += Time.deltaTime * Timescale;
+        Mathf.Round(second);
         //if (second >= 10&& Lobby.instance.StudentsInLine.Count > 0 )
         //{
             
@@ -69,7 +70,7 @@ public class GameTime : MonoBehaviour
         {
             minute++;
             //GameManager.gameManager.AddMoneyOvertime(amount); Not using singleton
-            manager.AddMoneyOvertime(amount);
+            //manager.AddMoneyOvertime(amount);
             
             second = 0;
             UpdateText();
@@ -85,9 +86,9 @@ public class GameTime : MonoBehaviour
             minute = 0;
             UpdateText();
         }
-        else if(hour >= 24)
+        else if(hour >= 15)
         {
-
+            manager.Gopay();
             day++;
             //teacher generator per day
             teacher.RandomGenNum();

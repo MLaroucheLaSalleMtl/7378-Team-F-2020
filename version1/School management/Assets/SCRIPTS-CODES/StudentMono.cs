@@ -15,6 +15,9 @@ public class StudentMono : MonoBehaviour
     private NavMeshAgent myNavAgent;
     private bool LobbyFound = false;
     public GameObject ClassSit=null;
+
+    public bool Paid = false;
+
     void Start()
     {
         loby = Lobby.instance;
@@ -96,21 +99,27 @@ public class StudentMono : MonoBehaviour
     public void Schedule()
     {
     
-        {if (ClassSit != null)
+        if (ClassSit != null) { 
+            if (gtime.hour >= 3 && gtime.hour < 4)
+            {
+                Paid = false;
+            }
+                
+            if (gtime.hour >3 && gtime.hour <= 7)
+            {
+                
+                myNavAgent.SetDestination(ClassSit.transform.position);
+            }
+            if (gtime.hour > 7 && gtime.hour <= 9)
+            {
+                myNavAgent.SetDestination( RandomNavmeshLocation(25));
+            }
+            if (gtime.hour > 9 && gtime.hour <= 12)
+            {
+                myNavAgent.SetDestination(ClassSit.transform.position);
+            }
             
-            if (gtime.hour >8 && gtime.hour <= 12)
-            {
-                myNavAgent.SetDestination(ClassSit.transform.position);
-            }
-            if (gtime.hour > 12 && gtime.hour <= 15)
-            {
-                RandomNavmeshLocation(25);
-            }
-            if (gtime.hour > 15 && gtime.hour <= 20)
-            {
-                myNavAgent.SetDestination(ClassSit.transform.position);
-            }
-            if (gtime.hour > 20)
+            if (gtime.hour > 0 && gtime.hour < 3&&Paid ==true)
             {
                 myNavAgent.SetDestination(manager.LocationOfSpawn);
             }

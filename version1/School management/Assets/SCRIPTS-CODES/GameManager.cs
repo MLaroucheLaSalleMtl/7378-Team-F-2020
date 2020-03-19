@@ -5,10 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UI;
-
-
-
-
+using UnityEngine.AI;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     private int StudentSpawn;
 
-
+    [SerializeField] private GameObject[] waypontsinmanagement;
 
     //[Header("Female Student Prefab Toinstanciate")]
     //[SerializeField] private GameObject fStudent;
@@ -233,6 +230,47 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(Student[Random.Range(0,1)], LocationOfSpawn, Quaternion.identity);
         //Instantiate(Student, LocationOfSpawn, Quaternion.identity);
+
+    }
+
+    public Administration[] managementlines;
+    public List<GameObject> Allregisteredstudents;
+
+    public void Gopay()
+    {
+        managementlines[0].studentstopay = new List<GameObject>();
+        managementlines[1].studentstopay = new List<GameObject>();
+        managementlines[2].studentstopay = new List<GameObject>();
+        managementlines[3].studentstopay = new List<GameObject>();
+        foreach (GameObject student in Allregisteredstudents) {
+            if (student.GetComponent<StudentMono>().Paid == false)
+            {
+                NavMeshAgent agent;
+                agent = student.GetComponent<NavMeshAgent>();
+                int temp=0;
+                for (int i = 0; i < managementlines.Length; i++)
+                {
+                    int f = 1;
+
+                    if (managementlines[i].Isthereasecretary && managementlines[i].studentstopay.Count <= managementlines[f].studentstopay.Count)
+                    {
+                        temp = i;
+                    }
+
+                }
+
+                managementlines[temp].studentstopay.Add(student);
+            }
+
+        }
+        StartCoroutine( managementlines[0].Payfees());
+        managementlines[0].organiseline();
+        StartCoroutine( managementlines[1].Payfees());
+        managementlines[1].organiseline();
+        StartCoroutine( managementlines[2].Payfees());
+        managementlines[2].organiseline();
+        StartCoroutine( managementlines[3].Payfees());
+        managementlines[3].organiseline();
 
     }
 }

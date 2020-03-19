@@ -161,6 +161,7 @@ public class Lobby : MonoBehaviour
             {
                 StudentsInLine[0].tag = "RegisteredStudent";
                 StudentsInLine[0].GetComponent<StudentMono>().Schedule();
+                manager.Allregisteredstudents.Add(StudentsInLine[0]);
                 StudentsInLine.RemoveAt(0);
                 lineup--;
                 
