@@ -32,6 +32,10 @@ public class Teachermanager : MonoBehaviour
     [Header("Randomize Number")]
     [SerializeField] public int[] randomNum;
 
+    [Header("Teacher Traits")]
+    [SerializeField] public string[] Traits;
+    
+
     private void Awake()
     {
         if (instance == null)
@@ -57,18 +61,21 @@ public class Teachermanager : MonoBehaviour
     [Header("Teacher Icons")]
     [SerializeField] public Image[] teacherIcons;
 
+    [Header("Teacher Traits Text")]
+    [SerializeField] public Text[] teachertraitstxt;
+
     private GameObject TeacherTohire;
 
 
     public void teacherNames()
     {
-        teacherPrefabs[0].name = "Bob the Viking";
-        teacherPrefabs[1].name = "Joe the Goblin";
-        teacherPrefabs[2].name = "Stacy the Witch";
+        teacherPrefabs[0].name = "Vlad the Viking";
+        teacherPrefabs[1].name = "Goe the Goblin";
+        teacherPrefabs[2].name = "Wendy the Witch";
         teacherPrefabs[3].name = "Percy the Pirate";
-        teacherPrefabs[4].name = "Jill the Goblin";
-        teacherPrefabs[5].name = "Sam the Wizard";
-        teacherPrefabs[6].name = "Jesse the Viking";
+        teacherPrefabs[4].name = "Gill the Goblin";
+        teacherPrefabs[5].name = "Will the Wizard";
+        teacherPrefabs[6].name = "Vicky the Viking";
     }
 
    
@@ -93,7 +100,7 @@ public class Teachermanager : MonoBehaviour
         
     }
 
-    
+
     public void teacherUInames()
     {
         Teachernames[0].text = teacherPrefabs[randomNum[0]].ToString();
@@ -102,6 +109,18 @@ public class Teachermanager : MonoBehaviour
         Teachernames[3].text = teacherPrefabs[randomNum[3]].ToString();
 
     }
+
+    public void teacherUItraits()
+    {
+     
+        teachertraitstxt[0].text = "Traits: " + Traits[randomNum[0]];
+        teachertraitstxt[1].text = "Traits: " + Traits[randomNum[1]];
+        teachertraitstxt[2].text = "Traits: " + Traits[randomNum[2]];
+        teachertraitstxt[3].text = "Traits: " + Traits[randomNum[3]];
+
+
+    }
+
 
 
     public void HireTeacherOne()
@@ -163,5 +182,6 @@ public class Teachermanager : MonoBehaviour
         teacherNames();
         teacherUInames();
         teacherAvatar();
+        teacherUItraits();
     }
 }
