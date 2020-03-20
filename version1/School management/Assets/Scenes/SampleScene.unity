@@ -4711,6 +4711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 1886563863}
+  Task: {fileID: 613991364}
 --- !u!114 &554882415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16244,7 +16245,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hey there! \nCheck out your tasks on the right side!"
+  m_Text: "Hey there! \nCheck out your tasks!"
 --- !u!222 &1827821697
 CanvasRenderer:
   m_ObjectHideFlags: 0
