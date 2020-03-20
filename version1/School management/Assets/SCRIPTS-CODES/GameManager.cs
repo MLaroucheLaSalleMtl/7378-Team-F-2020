@@ -26,12 +26,17 @@ public class GameManager : MonoBehaviour
     private int teacherCount;
     [SerializeField] private Text TeacherCountTXT;
 
-    //SALARY
-    private float totalSalary;
-    private float temp;
+    [Header("Salary Needs to be paid")]
+    
+    [SerializeField] private float totalSalary;
+    [SerializeField] private float totalSalaryPerDay;
+    [SerializeField] private float GrandtotalSalary;
+
     public Text totalSalarytxt;
     public Text SalaryPaidtxt;
-    public Text incrementTxt; //tester
+    public Text GrandtotalSalarytxt;
+
+    // public Text incrementTxt; //tester
 
     public Vector3 LocationOfSpawn = new Vector3(-7.98f, 5.7f, -72f);
     public static GameManager instance = null;
@@ -66,7 +71,9 @@ public class GameManager : MonoBehaviour
     public float Money { get => money; set => money = value; }
     public int TeacherCount { get => teacherCount; set => teacherCount = value; }
     public float TotalSalary { get => totalSalary; set => totalSalary = value; }
-    public float Temp { get => temp; set => temp = value; }
+   
+    public float TotalSalaryPerDay { get => totalSalaryPerDay; set => totalSalaryPerDay = value; }
+    public float GrandtotalSalary1 { get => GrandtotalSalary; set => GrandtotalSalary = value; }
 
     private void Awake()
     {
@@ -135,6 +142,7 @@ public class GameManager : MonoBehaviour
         StudentCountText = GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         classRCountText = GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
         TeacherCountTXT = GameObject.FindGameObjectWithTag("TeacherCount").GetComponent<Text>();
+        
     }
 
 
@@ -147,8 +155,9 @@ public class GameManager : MonoBehaviour
         classRTxtOnUI();
         ClasesNumber();
         teacherTxtOnUI();
-        updateSalaryPaidUI();
-        updateSalaryPayUI();
+        updateNewlyHiredTSalary();
+        updateCurrentTSalary();
+        updateRecentTSalary();
 
     }
 
@@ -208,38 +217,52 @@ public class GameManager : MonoBehaviour
     }
 
     // SALARY
-    public void SumofSalary(float cost)
+    public void SumofSalary(float teacherSalary)
     {
-        Temp += cost;
-        TotalSalary = Temp;
 
-        updateSalaryPayUI();
+        TotalSalaryPerDay += teacherSalary;
+
+       calcTotalSumofAllSalary();
 
     }
-    ////////////////////////////////// fixing
-    public void addSumofSalary(float TotalSalary)
+
+    public void calcTotalSumofAllSalary()
     {
-        Temp = TotalSalary++;
-        TotalSalary = Temp;
+        //cal what needs to be paid in TOTAL
+        GrandtotalSalary1 = TotalSalaryPerDay + totalSalary;
     }
 
+  
     public void paySumofSalary()
     {
-        ReduceMoney(Temp);
-        Temp = 0;
-        updateSalaryPayUI();
+        
+        //remove it from the Money
+        ReduceMoney(GrandtotalSalary1);
+
+        //resets the daily salary 
+        TotalSalary += TotalSalaryPerDay;
+        TotalSalaryPerDay = 0;
+
+        
     }
+
+
    
 
     // UI 
-    public void updateSalaryPayUI()
+    public void updateCurrentTSalary()
     {
-        totalSalarytxt.text = "Salary / Day: $" + Temp.ToString();
+        SalaryPaidtxt.text = "Current Salary: $" + TotalSalary.ToString();
     }
 
-    public void updateSalaryPaidUI()
+    public void updateNewlyHiredTSalary()
     {
-        SalaryPaidtxt.text = "Salary paid: $" + TotalSalary.ToString();
+        totalSalarytxt.text = "Newly Hired Salary: $" + TotalSalaryPerDay.ToString();
+    }
+
+    public void updateRecentTSalary()
+    {
+        GrandtotalSalarytxt.text = "Total Salary Due: $" + GrandtotalSalary1.ToString();
     }
 
     public void UpdateMoneyUI()

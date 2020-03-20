@@ -93,10 +93,6 @@ public class GameTime : MonoBehaviour
             day++;
             //teacher generator per day
             teacher.RandomGenNum();
-            
-            //SALARY
-            manager.SumofSalary(manager.Temp);
-            
             hour = 0;
             UpdateText();
         }else if (day >= 28)
