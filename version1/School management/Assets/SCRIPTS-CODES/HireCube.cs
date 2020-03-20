@@ -13,6 +13,8 @@ public class HireCube : MonoBehaviour
 
     Teachermanager teacherManager;
 
+    TeacherMono teachermono;
+
     private bool okayToHire = false;
 
 
@@ -36,6 +38,7 @@ public class HireCube : MonoBehaviour
     {
         gameManager = GameManager.instance;
         teacherManager = Teachermanager.instance;
+        teachermono = TeacherMono.instance;
         Tasks = tasks.instance;
     }
 
@@ -56,7 +59,7 @@ public class HireCube : MonoBehaviour
 
 
 
-        if (gameManager.Money < teacherManager.GetTeacherTohire().GetComponent<TeacherMono>().Salary)
+        if (gameManager.Money < teacherManager.GetTeacherTohire().GetComponent<TeacherMono>().HiringCost)
         {
             Debug.Log("Not enough money to hire this teacher!");
             return;
@@ -67,6 +70,7 @@ public class HireCube : MonoBehaviour
             okayToHire = true;
 
             gameManager.AddTeacher();
+           
 
 
             // TO DO: fix later
@@ -77,8 +81,10 @@ public class HireCube : MonoBehaviour
             tStaff = Instantiate(TeacherTohire, teacherPosition, transform.rotation * Quaternion.Euler(RotationOfcet));
 
             //How much the teacher cost to hire 
-            gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().Salary);
+            gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().HiringCost);
 
+            //SALARY per day
+            gameManager.SumofSalary(TeacherTohire.GetComponent<TeacherMono>().salary);
 
             //Player can choose other teachers, wont duplicate to previously selected one
             teacherManager.SetTeacher(null);

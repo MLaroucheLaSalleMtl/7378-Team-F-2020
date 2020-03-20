@@ -5,15 +5,22 @@ using UnityEngine.AI;
 
 public class Administration : MonoBehaviour
 {
+    public GameManager gameManager;
+
+    Teachermanager teacherManager;
+
     [SerializeField] private Transform[] waypontgameobject;
     private Vector3[] wayponts;
     public List<GameObject> studentstopay = new List<GameObject>();
     public bool Isthereasecretary=false;
 
-    private GameObject secretary; private float eficiency = 5;//this will be inside of secretary
+    private GameObject secretary; private float efficiency = 5;//this will be inside of secretary 
+
     void Start()
     {
         transformwaiponts();
+        gameManager = GameManager.instance;
+        teacherManager = Teachermanager.instance;
     }
 
     
@@ -24,18 +31,23 @@ public class Administration : MonoBehaviour
    
     public IEnumerator Payfees()
     {
-        if (Isthereasecretary) {
+        if (Isthereasecretary)
+        {
 
             yield return new WaitForSeconds(10.0f);
             for (int i = 0; i < studentstopay.Count; i++)
             {
-                yield return new WaitForSeconds(eficiency);
+                yield return new WaitForSeconds(efficiency);
                 studentstopay[0].GetComponent<StudentMono>().Paid = true;
                 studentstopay.RemoveAt(0);
                 GameManager.instance.AddMoney(25);
                 organiseline();
             }
-            
+
+            /// Pay teacher fees
+
+
+
         }
     }
     public void organiseline()

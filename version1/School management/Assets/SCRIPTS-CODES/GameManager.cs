@@ -10,7 +10,8 @@ using UnityEngine.AI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    
+
+    TeacherMono teachermono;
 
     [Header("Gold")]
     [SerializeField] private float money;
@@ -24,6 +25,10 @@ public class GameManager : MonoBehaviour
 
     private int teacherCount;
     [SerializeField] private Text TeacherCountTXT;
+
+    //SALARY
+    private float totalSalary;
+    public Text totalSalarytxt;
 
     public Vector3 LocationOfSpawn=new Vector3(-7.98f, 5.7f, -72f);
     public static GameManager instance = null;
@@ -57,6 +62,7 @@ public class GameManager : MonoBehaviour
     public int ClassRCount { get => classRCount; set => classRCount = value; }
     public float Money { get => money; set => money = value; }
     public int TeacherCount { get => teacherCount; set => teacherCount = value; }
+    public float TotalSalary { get => totalSalary; set => totalSalary = value; }
 
     private void Awake()
     {
@@ -121,8 +127,11 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+
+
         
-        //UpdateMoneyUI();
+
+
 
         StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         classRCountText  =GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
@@ -140,6 +149,9 @@ public class GameManager : MonoBehaviour
         classRTxtOnUI();
         ClasesNumber();
         teacherTxtOnUI();
+        updateSalaryUI();
+
+
 
 
     }
@@ -192,10 +204,36 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //TEACHER
+
     public void AddTeacher()
     {
         TeacherCount++;
     }
+
+    // SALARY
+    public void SumofSalary(float cost)
+    {
+        totalSalary += cost;
+        updateSalaryUI();
+
+    }
+
+    public void paySumofSalary()
+    {
+        ReduceMoney(totalSalary);
+        totalSalary = 0;
+        updateSalaryUI();
+    }
+   
+
+    // UI 
+    public void updateSalaryUI()
+    {
+
+        totalSalarytxt.text = "Salary / Day: $" + TotalSalary.ToString();
+    }
+
 
     public void UpdateMoneyUI()
     {
@@ -216,8 +254,10 @@ public class GameManager : MonoBehaviour
     {
         TeacherCountTXT.text = "Teachers: " + TeacherCount;
     }
-    
 
+
+
+    
 
     public void Spawn(InputAction.CallbackContext context)
     {

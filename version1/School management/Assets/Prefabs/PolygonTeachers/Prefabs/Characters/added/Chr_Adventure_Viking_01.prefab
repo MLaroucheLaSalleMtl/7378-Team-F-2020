@@ -2252,7 +2252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257ba0fc81cbb274faa3ecc8f13db339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Salary: 200
+  HiringCost: 0
+  salary: 1
 --- !u!1 &1312911748016820
 GameObject:
   m_ObjectHideFlags: 0

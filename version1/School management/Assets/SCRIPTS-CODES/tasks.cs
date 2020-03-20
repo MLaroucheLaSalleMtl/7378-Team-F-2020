@@ -15,6 +15,8 @@ public class tasks : MonoBehaviour
 
     public SpawnCaff caffScript;
 
+    TeacherMono teachermono;
+
     public static tasks instance = null;
     private void Awake()
     {

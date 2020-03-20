@@ -1,19 +1,38 @@
 ﻿//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class TeacherMono : MonoBehaviour
 {
-   
+    public static TeacherMono instance = null;
 
-    private GameManager Gmanager;
-   
-    private TeacherFactory tfactory;
+    GameManager gamemanager;
+
+    TeacherFactory tfactory;
 
     public Teacher teacherinfo;
 
-    public int Salary;
+    public int HiringCost; // initaial payment
+
+    public int salary; // each teacher's salary that will be paid at the end of the day
+
+    //public int totalSalary;
+
+    //public Text totalSalarytxt; //total sum of salary
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            //Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
 
@@ -22,9 +41,15 @@ public class TeacherMono : MonoBehaviour
 
 
 
+
+
+
+
     void Start()
     {
-        Gmanager = GameManager.instance;
+        gamemanager = GameManager.instance;
+
+
         //tfactory = TeacherFactory.instance;
         //teacherinfo = tfactory.CreateTeacher();
 
@@ -32,11 +57,11 @@ public class TeacherMono : MonoBehaviour
 
     }
 
-    
-
-
     void Update()
     {
-
+        
+        //totalSalarytxt.text = TeacherMono.instance.totalSalary.ToString();
+        //updateSalaryUI();
     }
+
 }

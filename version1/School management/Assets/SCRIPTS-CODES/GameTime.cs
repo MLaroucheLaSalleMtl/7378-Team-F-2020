@@ -9,6 +9,7 @@ public class GameTime : MonoBehaviour
     GameManager manager;
     Teachermanager teacher;
 
+
     private void Awake()
     {
         if (instance == null)
@@ -92,6 +93,8 @@ public class GameTime : MonoBehaviour
             day++;
             //teacher generator per day
             teacher.RandomGenNum();
+            
+            
             hour = 0;
             UpdateText();
         }else if (day >= 28)
