@@ -45,7 +45,7 @@ There are two objectives in this game:
 ### 3D Characters 
 * [male students](https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870)
 * [female students](https://assetstore.unity.com/packages/3d/animations/sd-unity-chan-haon-custom-bundle-84992)
-* [Teachers](https://assetstore.unity.com/packages/3d/characters/humanoids/polygon-mini-fantasy-character-pack-122084)
+* [Teacher Models](https://assetstore.unity.com/packages/3d/characters/humanoids/polygon-mini-fantasy-character-pack-122084)
 
 
 ### 3D Props
@@ -56,3 +56,4 @@ There are two objectives in this game:
 * [Assets for the surfing class #2](https://assetstore.unity.com/packages/3d/vegetation/cartoon-palmtree-and-umbrellas-58457)
 * [Assets for the hacking class](https://assetstore.unity.com/packages/3d/environments/sci-fi/atm-95057)
 * [Assets for the Caffeteria](https://assetstore.unity.com/packages/3d/props/food/delicious-food-02-54273)
+* [Glowing particles for the objectives](https://assetstore.unity.com/packages/vfx/particles/sci-fi-arsenal-60519)
