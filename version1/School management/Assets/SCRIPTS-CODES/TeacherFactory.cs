@@ -15,7 +15,7 @@ public class TeacherFactory : MonoBehaviour
         }
         else if (instance != this)
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
     #endregion
@@ -23,8 +23,8 @@ public class TeacherFactory : MonoBehaviour
     #region Teacher Traits
 
     private string PathTeacherTraits = "Assets/Resources/TeacherTraits.txt";
-
     readonly List<string> PathTeacherList = new List<string>();
+
     #endregion
 
     private GameManager manager ;
@@ -73,7 +73,8 @@ public class TeacherFactory : MonoBehaviour
             Traits3 = PathTeacherList[RandomTeacherTrait];
         }
 
-        
+
+        Debug.Log(NumOfTraits + Traits + Traits2 + Traits3);
 
         Teacher temp = new Teacher(NumOfTraits, Traits, Traits2, Traits3);
         return temp;
