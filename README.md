@@ -31,6 +31,7 @@ There are two objectives in this game:
 ### Fonts
 * [Edo SZ](http://www.vicfieger.com/) - Vic Fierger
 * [Luckiest Guy](https://www.fontsquirrel.com/fonts/luckiest-guy) - Astigmatic
+* [Stanberry](https://www.dafont.com/stanberry.font) -  Jayvee D. Enaguas (Grand Chaos)
 
 ### UI
 * [UI pack](https://loudeyes.itch.io/paper-ui-pack-for-games) – Lynda Mc Donald
