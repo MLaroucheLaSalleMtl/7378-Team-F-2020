@@ -28,23 +28,26 @@ public class GameManager : MonoBehaviour
 
     //SALARY
     private float totalSalary;
+    private float temp;
     public Text totalSalarytxt;
+    public Text SalaryPaidtxt;
+    public Text incrementTxt; //tester
 
-    public Vector3 LocationOfSpawn=new Vector3(-7.98f, 5.7f, -72f);
+    public Vector3 LocationOfSpawn = new Vector3(-7.98f, 5.7f, -72f);
     public static GameManager instance = null;
 
-    public List<GameObject> Clasesbogth=new List<GameObject>();
-    public int NumberOfMagic=0; 
-    public int NumberOfSurfing=0; 
-    public int NumberOfHacking=0; 
-    public int NumberOfAxeTrowing=0; 
-    
+    public List<GameObject> Clasesbogth = new List<GameObject>();
+    public int NumberOfMagic = 0;
+    public int NumberOfSurfing = 0;
+    public int NumberOfHacking = 0;
+    public int NumberOfAxeTrowing = 0;
 
-    public string[] AvalableClases=new string[] {"Magic","Surfing","Hacking","Axe Trowing"};
 
-    
+    public string[] AvalableClases = new string[] { "Magic", "Surfing", "Hacking", "Axe Trowing" };
 
-    List<string> Clases=new List<string>();
+
+
+    List<string> Clases = new List<string>();
 
     [Header("Male & Female Student Prefab Toinstanciate")]
     [SerializeField] private GameObject[] Student;
@@ -63,6 +66,7 @@ public class GameManager : MonoBehaviour
     public float Money { get => money; set => money = value; }
     public int TeacherCount { get => teacherCount; set => teacherCount = value; }
     public float TotalSalary { get => totalSalary; set => totalSalary = value; }
+    public float Temp { get => temp; set => temp = value; }
 
     private void Awake()
     {
@@ -70,18 +74,18 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-        else if (instance != this)                                          
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
     }
     public void ClasesNumber()
-    { 
+    {
 
-    NumberOfMagic = 0;
-    NumberOfSurfing = 0;
-    NumberOfHacking = 0;
-    NumberOfAxeTrowing = 0;
+        NumberOfMagic = 0;
+        NumberOfSurfing = 0;
+        NumberOfHacking = 0;
+        NumberOfAxeTrowing = 0;
 
         foreach (GameObject clasroom in Clasesbogth)
         {
@@ -128,13 +132,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-
-        
-
-
-
-        StudentCountText =GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
-        classRCountText  =GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
+        StudentCountText = GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
+        classRCountText = GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
         TeacherCountTXT = GameObject.FindGameObjectWithTag("TeacherCount").GetComponent<Text>();
     }
 
@@ -143,16 +142,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-
         UpdateMoneyUI();
         RefreshTextOnUI();
         classRTxtOnUI();
         ClasesNumber();
         teacherTxtOnUI();
-        updateSalaryUI();
-
-
-
+        updateSalaryPaidUI();
+        updateSalaryPayUI();
 
     }
 
@@ -184,7 +180,7 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    
+
     /// student
     public void AddStudent()
     {
@@ -214,26 +210,37 @@ public class GameManager : MonoBehaviour
     // SALARY
     public void SumofSalary(float cost)
     {
-        totalSalary += cost;
-        updateSalaryUI();
+        Temp += cost;
+        TotalSalary = Temp;
 
+        updateSalaryPayUI();
+
+    }
+    ////////////////////////////////// fixing
+    public void addSumofSalary(float TotalSalary)
+    {
+        Temp = TotalSalary++;
+        TotalSalary = Temp;
     }
 
     public void paySumofSalary()
     {
-        ReduceMoney(totalSalary);
-        totalSalary = 0;
-        updateSalaryUI();
+        ReduceMoney(Temp);
+        Temp = 0;
+        updateSalaryPayUI();
     }
    
 
     // UI 
-    public void updateSalaryUI()
+    public void updateSalaryPayUI()
     {
-
-        totalSalarytxt.text = "Salary / Day: $" + TotalSalary.ToString();
+        totalSalarytxt.text = "Salary / Day: $" + Temp.ToString();
     }
 
+    public void updateSalaryPaidUI()
+    {
+        SalaryPaidtxt.text = "Salary paid: $" + TotalSalary.ToString();
+    }
 
     public void UpdateMoneyUI()
     {

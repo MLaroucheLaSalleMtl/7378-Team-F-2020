@@ -94,6 +94,8 @@ public class GameTime : MonoBehaviour
             //teacher generator per day
             teacher.RandomGenNum();
             
+            //SALARY
+            manager.SumofSalary(manager.Temp);
             
             hour = 0;
             UpdateText();
