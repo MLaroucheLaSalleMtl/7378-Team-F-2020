@@ -57,3 +57,8 @@ There are two objectives in this game:
 * [Assets for the hacking class](https://assetstore.unity.com/packages/3d/environments/sci-fi/atm-95057)
 * [Assets for the Caffeteria](https://assetstore.unity.com/packages/3d/props/food/delicious-food-02-54273)
 * [Glowing particles for the objectives](https://assetstore.unity.com/packages/vfx/particles/sci-fi-arsenal-60519)
+
+### Others
+
+Special thanks to Zach for helping out with Logic :)
+
