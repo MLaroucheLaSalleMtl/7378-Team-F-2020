@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Teachermanager : MonoBehaviour
 {
    public static Teachermanager instance = null;
@@ -32,8 +33,8 @@ public class Teachermanager : MonoBehaviour
     [Header("Randomize Number")]
     [SerializeField] public int[] randomNum;
 
-    [Header("Teacher Traits")]
-    [SerializeField] public string[] Traits;
+    [Header("Teacher Skill's rarity")]
+    [SerializeField] public string[] skills;
     
 
     private void Awake()
@@ -61,21 +62,22 @@ public class Teachermanager : MonoBehaviour
     [Header("Teacher Icons")]
     [SerializeField] public Image[] teacherIcons;
 
-    [Header("Teacher Traits Text")]
+    [Header("Teacher Skill's Rarity Text")]
     [SerializeField] public Text[] teachertraitstxt;
 
     private GameObject TeacherTohire;
 
+    
 
     public void teacherNames()
     {
-        teacherPrefabs[0].name = "Vlad the Viking";
-        teacherPrefabs[1].name = "Goe the Goblin";
-        teacherPrefabs[2].name = "Wendy the Witch";
-        teacherPrefabs[3].name = "Percy the Pirate";
-        teacherPrefabs[4].name = "Gill the Goblin";
-        teacherPrefabs[5].name = "Will the Wizard";
-        teacherPrefabs[6].name = "Vicky the Viking";
+        teacherPrefabs[0].name = "Vlad the Viking";         //Common
+        teacherPrefabs[1].name = "Goe the Goblin";          //Common
+        teacherPrefabs[2].name = "Wendy the Witch";         //Rare
+        teacherPrefabs[3].name = "Percy the Pirate";        //Legendary       
+        teacherPrefabs[4].name = "Gill the Goblin";         //Rare
+        teacherPrefabs[5].name = "Will the Wizard";         //Common
+        teacherPrefabs[6].name = "Vicky the Viking";        //Rare
     }
 
    
@@ -113,16 +115,15 @@ public class Teachermanager : MonoBehaviour
     public void teacherUItraits()
     {
      
-        teachertraitstxt[0].text = "Traits: " + Traits[randomNum[0]];
-        teachertraitstxt[1].text = "Traits: " + Traits[randomNum[1]];
-        teachertraitstxt[2].text = "Traits: " + Traits[randomNum[2]];
-        teachertraitstxt[3].text = "Traits: " + Traits[randomNum[3]];
+        teachertraitstxt[0].text = "Rarity: " + skills[randomNum[0]];
+        teachertraitstxt[1].text = "Rarity: " + skills[randomNum[1]];
+        teachertraitstxt[2].text = "Rarity: " + skills[randomNum[2]];
+        teachertraitstxt[3].text = "Rarity: " + skills[randomNum[3]];
 
 
     }
 
-
-
+    
     public void HireTeacherOne()
     {
         Instantiate(teacherPrefabs[randomNum[0]], tPossitionOfcet, Quaternion.identity);
@@ -169,6 +170,7 @@ public class Teachermanager : MonoBehaviour
         //teacherUInames(); //Name of Teacher based off Random Gen Num
 
         //teacherAvatar(); //Teacher Portrait matches the Name!
+       
     }
 
     // Update is called once per frame
@@ -178,6 +180,7 @@ public class Teachermanager : MonoBehaviour
         {
             RandomGenNum();
         }
+
         
         teacherNames();
         teacherUInames();

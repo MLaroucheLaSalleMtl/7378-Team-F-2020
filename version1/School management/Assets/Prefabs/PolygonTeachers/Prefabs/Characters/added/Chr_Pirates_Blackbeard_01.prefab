@@ -5772,6 +5772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257ba0fc81cbb274faa3ecc8f13db339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: 
   HiringCost: 0
   salary: 7
 --- !u!114 &1178790058671011039

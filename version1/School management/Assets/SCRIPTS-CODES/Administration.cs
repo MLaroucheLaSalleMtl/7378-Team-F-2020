@@ -44,7 +44,7 @@ public class Administration : MonoBehaviour
                 organiseline();
             }
 
-            /// Pay teacher fees
+            
 
 
 

@@ -35,7 +35,7 @@ public class TeacherSkills : MonoBehaviour
     delegate void TraitHandler();
 
     List<Action> possibleSkills;
-    TraitHandler applyEffects;
+    TraitHandler knownSkills;
 
     void Start()
     {
@@ -43,7 +43,6 @@ public class TeacherSkills : MonoBehaviour
 
         possibleSkills = new List<Action>()
         {
-            // Must be the same names as in the method defintions below
             axeThrowing, surfing, magic, hacking
         };
 
@@ -52,11 +51,11 @@ public class TeacherSkills : MonoBehaviour
         {
             if (UnityEngine.Random.Range(0, 2) == 1)
             {
-                // This gives you a 50/50 chance this trait will be applied
-                applyEffects += trait.Invoke;
+                // This gives you a 50/50 chance this skill will be applied
+                knownSkills += trait.Invoke;
             }
         }
-        applyEffects(); // calls all of the trait methods below, that have been added to this delegate in the foreach loop above
+        knownSkills(); // calls all of the skill methods below, that have been added to this delegate in the foreach loop above
 
     }
 
