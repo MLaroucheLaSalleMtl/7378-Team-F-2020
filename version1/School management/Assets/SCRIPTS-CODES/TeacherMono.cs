@@ -10,9 +10,9 @@ public class TeacherMono : MonoBehaviour
 
     GameManager gamemanager;
 
-    TeacherFactory tfactory;
-
     public Teacher teacherinfo;
+
+    public string Name; // initaial payment
 
     public int HiringCost; // initaial payment
 
