@@ -1155,7 +1155,7 @@ GameObject:
   - component: {fileID: -6691597092555346978}
   m_Layer: 0
   m_Name: Chr_Dungeon_GoblinFemale_01
-  m_TagString: Untagged
+  m_TagString: Rare
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257ba0fc81cbb274faa3ecc8f13db339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Gill the Goblin
   HiringCost: 0
   salary: 2
 --- !u!114 &-6691597092555346978

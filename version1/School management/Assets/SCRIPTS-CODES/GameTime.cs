@@ -91,15 +91,21 @@ public class GameTime : MonoBehaviour
         {
             manager.Gopay();
             day++;
+
             //teacher generator per day
             teacher.RandomGenNum();
-            
+
+            //total teacher salary paid per day
+            manager.SumofSalary(manager.GrandtotalSalary1);
+
             hour = 0;
             UpdateText();
-        }else if (day >= 28)
+        }
+        else if (day >= 28)
         {
             CalcMonth();
-        }else if(month >= 12)
+        }
+        else if(month >= 12)
         {
             month = 1;
             year++;

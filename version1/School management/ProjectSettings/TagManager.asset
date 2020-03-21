@@ -24,6 +24,9 @@ TagManager:
   - male
   - HakingSit2
   - TeacherCount
+  - Legendary
+  - Rare
+  - Common
   layers:
   - Default
   - TransparentFX

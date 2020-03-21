@@ -237,7 +237,7 @@ public class GameManager : MonoBehaviour
     {
         
         //remove it from the Money
-        ReduceMoney(GrandtotalSalary1);
+        ReduceMoney(TotalSalaryPerDay); //GrandtotalSalary1
 
         //resets the daily salary 
         TotalSalary += TotalSalaryPerDay;
@@ -252,17 +252,17 @@ public class GameManager : MonoBehaviour
     // UI 
     public void updateCurrentTSalary()
     {
-        SalaryPaidtxt.text = "Current Salary: $" + TotalSalary.ToString();
+        SalaryPaidtxt.text = "Paid Salary: $" + TotalSalary.ToString();
     }
 
     public void updateNewlyHiredTSalary()
     {
-        totalSalarytxt.text = "Newly Hired Salary: $" + TotalSalaryPerDay.ToString();
+        totalSalarytxt.text = "Salary to Pay: $" + TotalSalaryPerDay.ToString();
     }
 
     public void updateRecentTSalary()
     {
-        GrandtotalSalarytxt.text = "Total Salary Due: $" + GrandtotalSalary1.ToString();
+        GrandtotalSalarytxt.text = "Total Upkeep: $" + GrandtotalSalary1.ToString(); 
     }
 
     public void UpdateMoneyUI()
