@@ -82,7 +82,7 @@ public class Hiring : MonoBehaviour
             }
         }
     }
-    /// unlock pannel for 200 Gold
+    /// Teacher unlock Panel
     public void unlockPannel200()
     {
         if (gameManager.Money < 200)
@@ -97,7 +97,7 @@ public class Hiring : MonoBehaviour
         }
     }
 
-    /// unlock pannel for 400 Gold
+    
     public void unlockPannel400()
     {
         if (gameManager.Money < 400)
@@ -109,6 +109,22 @@ public class Hiring : MonoBehaviour
         {
             gameManager.ReduceMoney(400);
             Destroy(unlockPannels[1]);
+        }
+    }
+
+
+    //Admin unlock Panel
+    public void unlockAdminPannel100()
+    {
+        if (gameManager.Money < 100)
+        {
+            Debug.Log("Not enough Gold to unlock this pannel");
+            return;
+        }
+        else
+        {
+            gameManager.ReduceMoney(100);
+            Destroy(unlockPannels[2]);
         }
     }
 
