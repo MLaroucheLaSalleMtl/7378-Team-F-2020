@@ -12,7 +12,9 @@ public class Hiring : MonoBehaviour
 
     public static bool HiringMenuUI = false;
 
-    
+    [Header("Unlock pannels in the hiring menu")]
+    [SerializeField] public GameObject[] unlockPannels;
+
 
     public void OnhireTeacherOne()
     {
@@ -80,7 +82,35 @@ public class Hiring : MonoBehaviour
             }
         }
     }
+    /// unlock pannel for 200 Gold
+    public void unlockPannel200()
+    {
+        if (gameManager.Money < 200)
+        {
+            Debug.Log("Not enough Gold to unlock this pannel");
+            return;
+        }
+        else
+        {
+            gameManager.ReduceMoney(200);
+            Destroy(unlockPannels[0]);
+        }
+    }
 
+    /// unlock pannel for 400 Gold
+    public void unlockPannel400()
+    {
+        if (gameManager.Money < 400)
+        {
+            Debug.Log("Not enough Gold to unlock this pannel");
+            return;
+        }
+        else
+        {
+            gameManager.ReduceMoney(400);
+            Destroy(unlockPannels[1]);
+        }
+    }
 
     void Start()
     {
