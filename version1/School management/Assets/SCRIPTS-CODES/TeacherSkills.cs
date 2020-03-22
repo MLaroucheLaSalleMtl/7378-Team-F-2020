@@ -60,8 +60,8 @@ public class TeacherSkills : MonoBehaviour
             knownSkills += possibleSkills[0].Invoke;
             
 
-
-            if (UnityEngine.Random.Range(0, 10) == 1)
+            // there is a 1/20 chance which is 5%
+            if (UnityEngine.Random.Range(0, 19) == 1)
             {
                 knownSkills += possibleSkills[1].Invoke;
                 knownSkills += possibleSkills[2].Invoke;
@@ -82,8 +82,8 @@ public class TeacherSkills : MonoBehaviour
             knownSkills += possibleSkills[0].Invoke;
             knownSkills += possibleSkills[1].Invoke;
             
-
-            if (UnityEngine.Random.Range(0, 5) == 1)
+            // there is a 1/10 chance which is 10%
+            if (UnityEngine.Random.Range(0, 9) == 1)
             {
                 knownSkills += possibleSkills[2].Invoke;
                 knownSkills += possibleSkills[3].Invoke;
@@ -104,7 +104,8 @@ public class TeacherSkills : MonoBehaviour
             knownSkills += possibleSkills[1].Invoke;
             knownSkills += possibleSkills[2].Invoke;
 
-            if (UnityEngine.Random.Range(0, 2) == 1)
+            //there is a 1/4 chances so 25%
+            if (UnityEngine.Random.Range(0, 3) == 1)
             {
                 knownSkills += possibleSkills[3].Invoke;
 
