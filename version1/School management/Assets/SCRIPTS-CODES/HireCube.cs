@@ -53,6 +53,7 @@ public class HireCube : MonoBehaviour
 
         if (teacherManager.GetTeacherTohire() == null)
         {
+
             Debug.Log("Hire a Teacher!");
             return;
         }

@@ -10,6 +10,8 @@ public class Hiring : MonoBehaviour
 
     public GameObject HiringMenu;
 
+    private PlayerLog eventLog;
+
     public static bool HiringMenuUI = false;
 
     [Header("Unlock pannels in the hiring menu")]
@@ -87,6 +89,7 @@ public class Hiring : MonoBehaviour
     {
         if (gameManager.Money < 200)
         {
+            eventLog.AddEvent("Not enough Gold to unlock this pannel");
             Debug.Log("Not enough Gold to unlock this pannel");
             return;
         }
@@ -102,6 +105,7 @@ public class Hiring : MonoBehaviour
     {
         if (gameManager.Money < 400)
         {
+            eventLog.AddEvent("Not enough Gold to unlock this pannel");
             Debug.Log("Not enough Gold to unlock this pannel");
             return;
         }
@@ -118,6 +122,7 @@ public class Hiring : MonoBehaviour
     {
         if (gameManager.Money < 100)
         {
+            eventLog.AddEvent("Not enough Gold to unlock this pannel");
             Debug.Log("Not enough Gold to unlock this pannel");
             return;
         }
@@ -132,8 +137,9 @@ public class Hiring : MonoBehaviour
     {
         teachermanager = Teachermanager.instance;
         gameManager = GameManager.instance;
+        eventLog = GetComponent<PlayerLog>();
 
-        
+
     }
 
     void Update()
