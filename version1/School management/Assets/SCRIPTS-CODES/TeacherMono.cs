@@ -10,17 +10,20 @@ public class TeacherMono : MonoBehaviour
 
     GameManager gamemanager;
 
-    public Teacher teacherinfo;
+    Teachermanager teachermanager;
+
+    Teacher teacherinfo;
 
     public string Name; // initaial payment
 
-    public int HiringCost; // initaial payment
+    [SerializeField]
+    private int HiringCost; // initaial payment
 
-    public int salary; // each teacher's salary that will be paid at the end of the day
+    [SerializeField]
+    private int salary; // each teacher's salary that will be paid at the end of the day
 
-    //public int totalSalary;
-
-    //public Text totalSalarytxt; //total sum of salary
+    public int Salary { get => salary; set => salary = value; }
+    public int HiringCost1 { get => HiringCost; set => HiringCost = value; }
 
     private void Awake()
     {
@@ -34,34 +37,20 @@ public class TeacherMono : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-
-
-    // Update is called once per frame
-
-
-
-
-
+ 
 
 
     void Start()
     {
         gamemanager = GameManager.instance;
-
-
-        //tfactory = TeacherFactory.instance;
-        //teacherinfo = tfactory.CreateTeacher();
-
-        //Debug.Log("1st trait: " + teacherinfo.traits1 + "2nd trait: " + teacherinfo.traits12 + "3rd trait: " + teacherinfo.traits13 );
+        teachermanager = Teachermanager.instance;
 
     }
 
     void Update()
     {
         
-        //totalSalarytxt.text = TeacherMono.instance.totalSalary.ToString();
-        //updateSalaryUI();
+      
     }
 
 }

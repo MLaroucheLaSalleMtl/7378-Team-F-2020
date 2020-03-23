@@ -8175,7 +8175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Vicky the Viking
   HiringCost: 0
-  salary: 8
+  salary: 7
 --- !u!114 &2593853937066441501
 MonoBehaviour:
   m_ObjectHideFlags: 0

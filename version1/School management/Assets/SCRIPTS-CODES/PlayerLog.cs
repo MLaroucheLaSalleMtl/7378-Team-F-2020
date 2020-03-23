@@ -23,10 +23,12 @@ public class PlayerLog : MonoBehaviour
     // Private VARS
     private Queue<string> Eventlog = new Queue<string>();
     private string guiText = "";
+    public Font font;
 
     // Public VARS
-   [SerializeField] public int maxLines;
+    [SerializeField] public int maxLines;
 
+    private GUIStyle guiStyle = new GUIStyle();
 
 
     public void AddEvent(string eventString)
@@ -47,11 +49,15 @@ public class PlayerLog : MonoBehaviour
 
     void OnGUI()
     {
+        guiStyle.fontSize = 20;
+        GUI.skin.textArea = guiStyle;
+        GUI.skin.scrollView = guiStyle;
+        guiStyle.font = font;
 
-        
-        GUI.Label(new Rect(1500, Screen.height - (Screen.height / 7), Screen.width / 5, Screen.height / 5), guiText, GUI.skin.textArea);
-        //GUI.Label(new Rect(0, Screen.height - (Screen.height / 3), Screen.width, Screen.height / 3), guiText, GUI.skin.textArea);
 
+       GUI.Label(new Rect(1560, Screen.height - (Screen.height / 7), Screen.width / 5, Screen.height / 5), guiText, guiStyle);
+       
+       GUI.EndScrollView();
     }
 
 

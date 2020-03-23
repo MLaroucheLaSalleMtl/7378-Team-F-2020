@@ -47,6 +47,8 @@ public class TeacherSkills : MonoBehaviour
 
     PlayerLog eventLog;
 
+    Teachermanager teachermanager;
+
     delegate void TraitHandler();
 
     List<Action> possibleSkills;
@@ -59,7 +61,8 @@ public class TeacherSkills : MonoBehaviour
     {
         gamemanager = GameManager.instance;
         eventLog = PlayerLog.instance;
-        
+        teachermanager = Teachermanager.instance;
+
         possibleSkills = new List<Action>() { axeThrowing, surfing, magic, hacking }; // 0,1,2,3
 
         //Common Teacher
