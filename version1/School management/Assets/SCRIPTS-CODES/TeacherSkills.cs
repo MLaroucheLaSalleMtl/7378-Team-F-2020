@@ -58,12 +58,9 @@ public class TeacherSkills : MonoBehaviour
     void Start()
     {
         gamemanager = GameManager.instance;
-        eventLog = GetComponent<PlayerLog>();
+        eventLog = PlayerLog.instance;
         
-
         possibleSkills = new List<Action>() { axeThrowing, surfing, magic, hacking }; // 0,1,2,3
-
-        
 
         //Common Teacher
         commonTeacher();
@@ -81,8 +78,8 @@ public class TeacherSkills : MonoBehaviour
     {
         if (gameObject.tag == "Common")
         {
+            eventLog.AddEvent("You hired a Common teacher!");
 
-            
             knownSkills += possibleSkills[0].Invoke;
             
 
@@ -103,7 +100,7 @@ public class TeacherSkills : MonoBehaviour
     {
         if (gameObject.tag == "Rare")
         {
-
+            eventLog.AddEvent("You hired a Rare teacher!");
 
             knownSkills += possibleSkills[0].Invoke;
             knownSkills += possibleSkills[1].Invoke;
@@ -124,7 +121,7 @@ public class TeacherSkills : MonoBehaviour
     {
         if (gameObject.tag == "Legendary")
         {
-
+            eventLog.AddEvent("Wow, a Legendary teacher!");
 
             knownSkills += possibleSkills[0].Invoke;
             knownSkills += possibleSkills[1].Invoke;
@@ -152,21 +149,21 @@ public class TeacherSkills : MonoBehaviour
     public void surfing()
     {
         print("Surfer");
-        //eventLog.AddEvent("Knows Surfing");
+        eventLog.AddEvent("Knows Surfing");
     }
 
     public void magic()
     {
 
         print("Magic Power");
-        //eventLog.AddEvent("Knows Magic");
+        eventLog.AddEvent("Knows Magic");
     }
 
     public void hacking()
     {
         
         print("Hacker");
-        //eventLog.AddEvent("Knows Hacking");
+        eventLog.AddEvent("Knows Hacking");
     }
 
  

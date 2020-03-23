@@ -5,6 +5,21 @@ using UnityEngine;
 public class PlayerLog : MonoBehaviour
 {
 
+    #region Instance
+    public static PlayerLog instance = null;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            // Destroy(gameObject);
+        }
+    }
+    #endregion
+
     // Private VARS
     private Queue<string> Eventlog = new Queue<string>();
     private string guiText = "";
@@ -33,7 +48,7 @@ public class PlayerLog : MonoBehaviour
     void OnGUI()
     {
 
-        //GUI.Label(new Rect(1500, (Screen.height) - (Screen.height / 4), Screen.width / 5, Screen.height / 8), guiText, GUI.skin.textArea);
+        
         GUI.Label(new Rect(1500, Screen.height - (Screen.height / 7), Screen.width / 5, Screen.height / 5), guiText, GUI.skin.textArea);
         //GUI.Label(new Rect(0, Screen.height - (Screen.height / 3), Screen.width, Screen.height / 3), guiText, GUI.skin.textArea);
 
