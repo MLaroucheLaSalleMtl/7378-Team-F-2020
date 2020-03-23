@@ -138,8 +138,6 @@ public class Hiring : MonoBehaviour
         teachermanager = Teachermanager.instance;
         gameManager = GameManager.instance;
         eventLog = GetComponent<PlayerLog>();
-
-
     }
 
     void Update()

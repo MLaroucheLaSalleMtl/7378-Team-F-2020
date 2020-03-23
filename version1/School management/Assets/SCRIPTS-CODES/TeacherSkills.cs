@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TeacherSkills : MonoBehaviour
 {
-   
+
 
     #region Instance
     public static TeacherSkills instance = null;
@@ -45,18 +45,44 @@ public class TeacherSkills : MonoBehaviour
 
     GameManager gamemanager;
 
+    PlayerLog eventLog;
 
     delegate void TraitHandler();
 
     List<Action> possibleSkills;
     TraitHandler knownSkills;
 
+    
+
+
+    void Start()
+    {
+        gamemanager = GameManager.instance;
+        eventLog = GetComponent<PlayerLog>();
+        
+
+        possibleSkills = new List<Action>() { axeThrowing, surfing, magic, hacking }; // 0,1,2,3
+
+        
+
+        //Common Teacher
+        commonTeacher();
+
+        //Rare Teacher
+        rareTeacher();
+
+        //Legendary Teacher
+        legendaryTeacher();
+
+    }
+
+
     public void commonTeacher()
     {
         if (gameObject.tag == "Common")
         {
 
-
+            
             knownSkills += possibleSkills[0].Invoke;
             
 
@@ -120,38 +146,30 @@ public class TeacherSkills : MonoBehaviour
     public void axeThrowing()
     {
         print("Axe Thrower");
+        eventLog.AddEvent("Knows Axe throwing");
     }
 
     public void surfing()
     {
         print("Surfer");
+        //eventLog.AddEvent("Knows Surfing");
     }
 
     public void magic()
     {
+
         print("Magic Power");
+        //eventLog.AddEvent("Knows Magic");
     }
 
     public void hacking()
     {
-        print("Hacker");
-    }
-
-    void Start()
-    {
-        gamemanager = GameManager.instance;
-        possibleSkills = new List<Action>() { axeThrowing, surfing, magic, hacking }; // 0,1,2,3
-
-        //Common Teacher
-        commonTeacher();
-
-        //Rare Teacher
-        rareTeacher();
-
-        //Legendary Teacher
-        legendaryTeacher();
         
+        print("Hacker");
+        //eventLog.AddEvent("Knows Hacking");
     }
+
+ 
 
     // Update is called once per frame
     void Update()

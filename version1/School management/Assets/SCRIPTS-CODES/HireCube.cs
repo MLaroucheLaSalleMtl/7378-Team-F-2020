@@ -15,6 +15,8 @@ public class HireCube : MonoBehaviour
 
     TeacherMono teachermono;
 
+    private PlayerLog eventLog;
+
     private bool okayToHire = false;
 
 
@@ -40,6 +42,7 @@ public class HireCube : MonoBehaviour
         teacherManager = Teachermanager.instance;
         teachermono = TeacherMono.instance;
         Tasks = tasks.instance;
+        eventLog = GetComponent<PlayerLog>();
     }
 
     // Update is called once per frame
@@ -53,7 +56,7 @@ public class HireCube : MonoBehaviour
 
         if (teacherManager.GetTeacherTohire() == null)
         {
-
+            eventLog.AddEvent("Hire a Teacher!");
             Debug.Log("Hire a Teacher!");
             return;
         }
@@ -62,6 +65,7 @@ public class HireCube : MonoBehaviour
 
         if (gameManager.Money < teacherManager.GetTeacherTohire().GetComponent<TeacherMono>().HiringCost)
         {
+            eventLog.AddEvent("Not enough money to hire this teacher!");
             Debug.Log("Not enough money to hire this teacher!");
             return;
         }
@@ -71,12 +75,6 @@ public class HireCube : MonoBehaviour
             okayToHire = true;
 
             gameManager.AddTeacher();
-           
-
-
-            // TO DO: fix later
-            //gameManager.ReduceClasses();
-
 
             GameObject TeacherTohire = teacherManager.GetTeacherTohire();
             tStaff = Instantiate(TeacherTohire, teacherPosition, transform.rotation * Quaternion.Euler(RotationOfcet));
