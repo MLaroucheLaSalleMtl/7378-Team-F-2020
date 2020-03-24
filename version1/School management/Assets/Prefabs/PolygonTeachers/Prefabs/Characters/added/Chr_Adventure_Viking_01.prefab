@@ -2140,6 +2140,7 @@ GameObject:
   - component: {fileID: 95104943993134400}
   - component: {fileID: 6869630742130427497}
   - component: {fileID: 4812892313121811834}
+  - component: {fileID: 8889285409802285294}
   m_Layer: 0
   m_Name: Chr_Adventure_Viking_01
   m_TagString: Common
@@ -2263,11 +2264,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304508085423192}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da8270e84603cfd419aa5e70ea709f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8889285409802285294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304508085423192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f5c517f65912f499e47186920edabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomSkill0: 0
+  randomSkill1: 0
+  randomSkill2: 0
 --- !u!1 &1312911748016820
 GameObject:
   m_ObjectHideFlags: 0

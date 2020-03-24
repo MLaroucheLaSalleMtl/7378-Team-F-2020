@@ -83,7 +83,7 @@ public class Teachermanager : MonoBehaviour
         randomNum[0] = Random.Range(0, teacherPrefabs.Length);
         randomNum[1] = Random.Range(0, teacherPrefabs.Length);
         randomNum[2] = Random.Range(0, teacherPrefabs.Length);
-       // randomNum[3] = Random.Range(0, teacherPrefabs.Length);
+       //randomNum[3] = Random.Range(0, teacherPrefabs.Length);
       
     }
 

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
 public class TeacherSkills : MonoBehaviour
 {
 
@@ -54,7 +56,8 @@ public class TeacherSkills : MonoBehaviour
     List<Action> possibleSkills;
     TraitHandler knownSkills;
 
-    
+   
+
 
 
     void Start()
@@ -63,8 +66,13 @@ public class TeacherSkills : MonoBehaviour
         eventLog = PlayerLog.instance;
         teachermanager = Teachermanager.instance;
 
+        
+
+
+
         possibleSkills = new List<Action>() { axeThrowing, surfing, magic, hacking }; // 0,1,2,3
 
+        
         //Common Teacher
         commonTeacher();
 
@@ -74,16 +82,27 @@ public class TeacherSkills : MonoBehaviour
         //Legendary Teacher
         legendaryTeacher();
 
+        
+
     }
 
+   
 
     public void commonTeacher()
     {
         if (gameObject.tag == "Common")
         {
+            
+
             eventLog.AddEvent("You hired a Common teacher!");
 
+
+            
+
             knownSkills += possibleSkills[0].Invoke;
+
+           
+            
             
 
             // there is a 1/20 chance which is 5%

@@ -27,6 +27,7 @@ TagManager:
   - Legendary
   - Rare
   - Common
+  - PlaceForKitchen
   layers:
   - Default
   - TransparentFX
