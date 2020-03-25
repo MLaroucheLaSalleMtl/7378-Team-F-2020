@@ -72,11 +72,6 @@ public class TeacherSkillsEnum : MonoBehaviour
 
             switch (randomSkill0)
             {
-
-                case teacherSkills.none:
-                    Debug.Log("None");
-                    eventLog.AddEvent("None");
-                    break;
                 case teacherSkills.axeThrowing:
                     Debug.Log("Axe Thrower, efficiency of " + CEfficiency + "%");
                     eventLog.AddEvent("Axe Thrower, efficiency of " + CEfficiency + "%");
@@ -92,6 +87,10 @@ public class TeacherSkillsEnum : MonoBehaviour
                 case teacherSkills.hacking:
                     Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
                     eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
+                    break;
+                 default:
+                    Debug.Log("None");
+                    eventLog.AddEvent("None");
                     break;
             }
         }
@@ -110,10 +109,6 @@ public class TeacherSkillsEnum : MonoBehaviour
 
             switch (randomSkill0)
             {
-                case teacherSkills.none:
-                    Debug.Log("None");
-                    eventLog.AddEvent("None");
-                    break;
                 case teacherSkills.axeThrowing:
                     Debug.Log("Axe Thrower, efficiency of " + CEfficiency + "%");
                     eventLog.AddEvent("Axe Thrower, efficiency of " + CEfficiency + "%");
@@ -130,13 +125,13 @@ public class TeacherSkillsEnum : MonoBehaviour
                     Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
                     eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
                     break;
-            }
-            switch (randomSkill1)
-            {
-                case teacherSkills.none:
+                default:
                     Debug.Log("None");
                     eventLog.AddEvent("None");
                     break;
+            }
+            switch (randomSkill1)
+            {
                 case teacherSkills.axeThrowing:
                     Debug.Log("Axe Thrower, efficiency of " + REfficiency + "%");
                     eventLog.AddEvent("Axe Thrower, efficiency of " + REfficiency + "%");
@@ -152,6 +147,10 @@ public class TeacherSkillsEnum : MonoBehaviour
                 case teacherSkills.hacking:
                     Debug.Log("Surfer, efficiency of " + REfficiency + "%");
                     eventLog.AddEvent("Surfer, efficiency of " + REfficiency + "%");
+                    break;
+                default:
+                    Debug.Log("None");
+                    eventLog.AddEvent("None");
                     break;
             }
         }
@@ -173,10 +172,6 @@ public class TeacherSkillsEnum : MonoBehaviour
 
             switch (randomSkill0)
             {
-                case teacherSkills.none:
-                    Debug.Log("None");
-                    eventLog.AddEvent("None");
-                    break;
                 case teacherSkills.axeThrowing:
                     Debug.Log("Axe Thrower, efficiency of " + CEfficiency + "%");
                     eventLog.AddEvent("Axe Thrower, efficiency of " + CEfficiency + "%");
@@ -193,13 +188,14 @@ public class TeacherSkillsEnum : MonoBehaviour
                     Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
                     eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
                     break;
-            }
-            switch (randomSkill1)
-            {
-                case teacherSkills.none:
+                default:
                     Debug.Log("None");
                     eventLog.AddEvent("None");
                     break;
+            }
+            switch (randomSkill1)
+            {
+                
                 case teacherSkills.axeThrowing:
                     Debug.Log("Axe Thrower, efficiency of " + REfficiency + "%");
                     eventLog.AddEvent("Axe Thrower, efficiency of " + REfficiency + "%");
@@ -216,13 +212,14 @@ public class TeacherSkillsEnum : MonoBehaviour
                     Debug.Log("Surfer, efficiency of " + REfficiency + "%");
                     eventLog.AddEvent("Surfer, efficiency of " + REfficiency + "%");
                     break;
-            }
-            switch (randomSkill2)
-            {
-                case teacherSkills.none:
+                default:
                     Debug.Log("None");
                     eventLog.AddEvent("None");
                     break;
+            }
+            switch (randomSkill2)
+            {
+                
                 case teacherSkills.axeThrowing:
                     Debug.Log("Axe Thrower, efficiency of " + LEfficiency + "%");
                     eventLog.AddEvent("Axe Thrower, efficiency of " + LEfficiency + "%");
@@ -238,6 +235,10 @@ public class TeacherSkillsEnum : MonoBehaviour
                 case teacherSkills.hacking:
                     Debug.Log("Surfer, efficiency of " + LEfficiency + "%");
                     eventLog.AddEvent("Surfer, efficiency of " + LEfficiency + "%");
+                    break;
+                default:
+                    Debug.Log("None");
+                    eventLog.AddEvent("None");
                     break;
             }
 

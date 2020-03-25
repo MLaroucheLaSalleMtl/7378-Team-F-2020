@@ -7,13 +7,13 @@ public class tasks : MonoBehaviour
 {
 
 
-    public GameManager gameManager;
+    GameManager gameManager;
 
-    public SpawnLobby lobbyScript;
+    SpawnLobby lobbyScript;
 
-    public SpawnAdmin adminScript;
+    SpawnAdmin adminScript;
 
-    public SpawnCaff caffScript;
+    SpawnCaff caffScript;
 
     TeacherMono teachermono;
 
