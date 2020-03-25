@@ -33,12 +33,14 @@ public class PlayerLog : MonoBehaviour
 
     public void AddEvent(string eventString)
     {
-        
+
         if (Eventlog.Count >= maxLines)
             Eventlog.Clear();
-        Eventlog.Enqueue(eventString);
+            guiText = "";
 
-        guiText = "";
+            Eventlog.Enqueue(eventString);
+
+            
 
         foreach (string logEvent in Eventlog)
         {
@@ -70,6 +72,11 @@ public class PlayerLog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonUp("C"))
+        {
+            Eventlog.Clear();
+            guiText = "";
+            Debug.Log("if you press C, it CLEARS the PlayerLog, b-baka");
+        }
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class TeacherSkillsEnum : MonoBehaviour
 {
-   
+    GameManager gamemanager;
+    PlayerLog eventLog;
 
     public enum teacherSkills
     {
@@ -20,13 +21,42 @@ public class TeacherSkillsEnum : MonoBehaviour
     public teacherSkills randomSkill1;
     public teacherSkills randomSkill2;
 
-    int lastValue;
+    [SerializeField] private int cEfficiency;
+    [SerializeField] private int rEfficiency;
+    [SerializeField] private int lEfficiency;
+
+    public int CEfficiency
+
+    {
+        get { return cEfficiency; }
+
+        set { cEfficiency = Mathf.Clamp(value, 0, 30); }
+
+    }
+
+    public int REfficiency
+
+    {
+        get { return rEfficiency; }
+
+        set { rEfficiency = Mathf.Clamp(value, 30, 70); }
+
+    }
+
+    public int LEfficiency
+
+    {
+        get { return lEfficiency; }
+
+        set { lEfficiency = Mathf.Clamp(value, 70, 100); }
+
+    }
 
     public void randomSkillGen()
     {
-        randomSkill0 = (teacherSkills)Random.Range(0, 3);
-        randomSkill1 = (teacherSkills)Random.Range(0, 3);
-        randomSkill2 = (teacherSkills)Random.Range(0, 3);
+        randomSkill0 = (teacherSkills)Random.Range(0, 4);
+        randomSkill1 = (teacherSkills)Random.Range(0, 4);
+        randomSkill2 = (teacherSkills)Random.Range(0, 4);
     }
 
 
@@ -34,24 +64,34 @@ public class TeacherSkillsEnum : MonoBehaviour
     {
         if (gameObject.tag == "Common")
         {
-            randomSkill0 = (teacherSkills)Random.Range(1, 3);
+            eventLog.AddEvent("You hired a Common teacher!");
+
+            randomSkill0 = (teacherSkills)Random.Range(1, 4);
+
+            CEfficiency = Random.Range(0, 50);
 
             switch (randomSkill0)
             {
+
                 case teacherSkills.none:
                     Debug.Log("None");
+                    eventLog.AddEvent("None");
                     break;
                 case teacherSkills.axeThrowing:
-                    Debug.Log("Axe Thrower");
-                    break;
-                case teacherSkills.hacking:
-                    Debug.Log("Surfer");
-                    break;
-                case teacherSkills.magic:
-                    Debug.Log("Magic");
+                    Debug.Log("Axe Thrower, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Axe Thrower, efficiency of " + CEfficiency + "%");
                     break;
                 case teacherSkills.surfing:
-                    Debug.Log("Surfer");
+                    Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
+                    break;
+                case teacherSkills.magic:
+                    Debug.Log("Magic, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Magic, efficiency of " + CEfficiency + "%");
+                    break;
+                case teacherSkills.hacking:
+                    Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
                     break;
             }
         }
@@ -60,43 +100,58 @@ public class TeacherSkillsEnum : MonoBehaviour
     {
         if (gameObject.tag == "Rare")
         {
-            randomSkill0 = (teacherSkills)Random.Range(1, 3);
-            randomSkill1 = (teacherSkills)Random.Range(1, 3);
+            eventLog.AddEvent("You hired a Rare teacher!");
+
+            randomSkill0 = (teacherSkills)Random.Range(1, 2);
+            randomSkill1 = (teacherSkills)Random.Range(3, 4);
+
+            CEfficiency = Random.Range(0, 50);
+            REfficiency = Random.Range(0, 90);
 
             switch (randomSkill0)
             {
                 case teacherSkills.none:
                     Debug.Log("None");
+                    eventLog.AddEvent("None");
                     break;
                 case teacherSkills.axeThrowing:
-                    Debug.Log("Axe Thrower");
-                    break;
-                case teacherSkills.hacking:
-                    Debug.Log("Surfer");
-                    break;
-                case teacherSkills.magic:
-                    Debug.Log("Magic");
+                    Debug.Log("Axe Thrower, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Axe Thrower, efficiency of " + CEfficiency + "%");
                     break;
                 case teacherSkills.surfing:
-                    Debug.Log("Surfer");
+                    Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
+                    break;
+                case teacherSkills.magic:
+                    Debug.Log("Magic, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Magic, efficiency of " + CEfficiency + "%");
+                    break;
+                case teacherSkills.hacking:
+                    Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
                     break;
             }
             switch (randomSkill1)
             {
                 case teacherSkills.none:
                     Debug.Log("None");
+                    eventLog.AddEvent("None");
                     break;
                 case teacherSkills.axeThrowing:
-                    Debug.Log("Axe Thrower");
-                    break;
-                case teacherSkills.hacking:
-                    Debug.Log("Surfer");
-                    break;
-                case teacherSkills.magic:
-                    Debug.Log("Magic");
+                    Debug.Log("Axe Thrower, efficiency of " + REfficiency + "%");
+                    eventLog.AddEvent("Axe Thrower, efficiency of " + REfficiency + "%");
                     break;
                 case teacherSkills.surfing:
-                    Debug.Log("Surfer");
+                    Debug.Log("Surfer, efficiency of " + REfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + REfficiency + "%");
+                    break;
+                case teacherSkills.magic:
+                    Debug.Log("Magic, efficiency of " + REfficiency + "%");
+                    eventLog.AddEvent("Magic, efficiency of " + REfficiency + "%");
+                    break;
+                case teacherSkills.hacking:
+                    Debug.Log("Surfer, efficiency of " + REfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + REfficiency + "%");
                     break;
             }
         }
@@ -106,63 +161,83 @@ public class TeacherSkillsEnum : MonoBehaviour
     {
         if (gameObject.tag == "Legendary")
         {
+            eventLog.AddEvent("You hired a Legandary teacher!");
 
-            randomSkill0 = (teacherSkills)Random.Range(1, 3);
-            randomSkill1 = (teacherSkills)Random.Range(2, 3);
-            randomSkill2 = (teacherSkills)Random.Range(3, 3);
+            randomSkill0 = (teacherSkills)Random.Range(1, 1);
+            randomSkill1 = (teacherSkills)Random.Range(2, 2);
+            randomSkill2 = (teacherSkills)Random.Range(3, 4);
+
+            CEfficiency = Random.Range(0, 50);
+            REfficiency = Random.Range(0, 90);
+            LEfficiency = Random.Range(0, 100);
 
             switch (randomSkill0)
             {
                 case teacherSkills.none:
                     Debug.Log("None");
+                    eventLog.AddEvent("None");
                     break;
                 case teacherSkills.axeThrowing:
-                    Debug.Log("Axe Thrower");
-                    break;
-                case teacherSkills.hacking:
-                    Debug.Log("Surfer");
-                    break;
-                case teacherSkills.magic:
-                    Debug.Log("Magic");
+                    Debug.Log("Axe Thrower, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Axe Thrower, efficiency of " + CEfficiency + "%");
                     break;
                 case teacherSkills.surfing:
-                    Debug.Log("Surfer");
+                    Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
+                    break;
+                case teacherSkills.magic:
+                    Debug.Log("Magic, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Magic, efficiency of " + CEfficiency + "%");
+                    break;
+                case teacherSkills.hacking:
+                    Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
                     break;
             }
             switch (randomSkill1)
             {
                 case teacherSkills.none:
                     Debug.Log("None");
+                    eventLog.AddEvent("None");
                     break;
                 case teacherSkills.axeThrowing:
-                    Debug.Log("Axe Thrower");
-                    break;
-                case teacherSkills.hacking:
-                    Debug.Log("Surfer");
-                    break;
-                case teacherSkills.magic:
-                    Debug.Log("Magic");
+                    Debug.Log("Axe Thrower, efficiency of " + REfficiency + "%");
+                    eventLog.AddEvent("Axe Thrower, efficiency of " + REfficiency + "%");
                     break;
                 case teacherSkills.surfing:
-                    Debug.Log("Surfer");
+                    Debug.Log("Surfer, efficiency of " + REfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + REfficiency + "%");
+                    break;
+                case teacherSkills.magic:
+                    Debug.Log("Magic, efficiency of " + REfficiency + "%");
+                    eventLog.AddEvent("Magic, efficiency of " + REfficiency + "%");
+                    break;
+                case teacherSkills.hacking:
+                    Debug.Log("Surfer, efficiency of " + REfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + REfficiency + "%");
                     break;
             }
             switch (randomSkill2)
             {
                 case teacherSkills.none:
                     Debug.Log("None");
+                    eventLog.AddEvent("None");
                     break;
                 case teacherSkills.axeThrowing:
-                    Debug.Log("Axe Thrower");
-                    break;
-                case teacherSkills.hacking:
-                    Debug.Log("Surfer");
-                    break;
-                case teacherSkills.magic:
-                    Debug.Log("Magic");
+                    Debug.Log("Axe Thrower, efficiency of " + LEfficiency + "%");
+                    eventLog.AddEvent("Axe Thrower, efficiency of " + LEfficiency + "%");
                     break;
                 case teacherSkills.surfing:
-                    Debug.Log("Surfer");
+                    Debug.Log("Surfer, efficiency of " + LEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + LEfficiency + "%");
+                    break;
+                case teacherSkills.magic:
+                    Debug.Log("Magic, efficiency of " + LEfficiency + "%");
+                    eventLog.AddEvent("Magic, efficiency of " + LEfficiency + "%");
+                    break;
+                case teacherSkills.hacking:
+                    Debug.Log("Surfer, efficiency of " + LEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + LEfficiency + "%");
                     break;
             }
 
@@ -172,6 +247,9 @@ public class TeacherSkillsEnum : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gamemanager = GameManager.instance;
+        eventLog = PlayerLog.instance;
+
         commonTeacher();
         rareTeacher();
         legendaryTeacher();

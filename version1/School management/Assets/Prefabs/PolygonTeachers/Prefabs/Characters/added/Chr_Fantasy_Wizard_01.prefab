@@ -5452,6 +5452,9 @@ MonoBehaviour:
   randomSkill0: 0
   randomSkill1: 0
   randomSkill2: 0
+  cEfficiency: 0
+  rEfficiency: 0
+  lEfficiency: 0
 --- !u!1 &1752813088756096
 GameObject:
   m_ObjectHideFlags: 0

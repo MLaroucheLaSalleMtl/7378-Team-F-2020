@@ -21121,7 +21121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   font: {fileID: 12800000, guid: d6b66d478fc2348409ba9ef04886a3a9, type: 3}
-  maxLines: 8
+  maxLines: 7
 --- !u!1 &1910294635
 GameObject:
   m_ObjectHideFlags: 0
