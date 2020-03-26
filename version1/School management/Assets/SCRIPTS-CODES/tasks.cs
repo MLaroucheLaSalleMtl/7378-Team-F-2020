@@ -5,18 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class tasks : MonoBehaviour
 {
-
-
-    GameManager gameManager;
-
-    SpawnLobby lobbyScript;
-
-    SpawnAdmin adminScript;
-
-    SpawnCaff caffScript;
-
-    TeacherMono teachermono;
-
     public static tasks instance = null;
     private void Awake()
     {
@@ -29,6 +17,20 @@ public class tasks : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    GameManager gameManager;
+
+    SpawnLobby lobbyScript;
+
+    SpawnAdmin adminScript;
+
+    SpawnCaff caffScript;
+
+    TeacherMono teachermono;
+
+    HireSecretary secretaryScript;
+
+   
 
     [SerializeField] private GameObject[] taskPanels;
     // [SerializeField] private GameObject[] taskBTNS;
@@ -53,10 +55,10 @@ public class tasks : MonoBehaviour
     private int LobbyBuilt = 0;
 
     [Header("Objectives 3")]
-    private int coinGoal = 400;
+    private int AdminBuilt = 0;
 
     [Header("Objectives 4")]
-    private int AdminBuilt = 0;
+    private int noSecretary = 0;
 
     [Header("Objectives 5")]
     private int CaffBuilt = 0;
@@ -67,9 +69,11 @@ public class tasks : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.instance;
+        secretaryScript = HireSecretary.instance;
         lobbyScript = SpawnLobby.instance;
         adminScript = SpawnAdmin.instance;
         caffScript = SpawnCaff.instance;
+        
 
         #region hidden task
         ////second objectives
@@ -93,8 +97,8 @@ public class tasks : MonoBehaviour
             case 0: { classRoomGoals(); } break;
             case 1: { TeacherGoals(); } break;
             case 2: { LobbyGoals(); } break;
-            case 3: { coinGoals(); } break;
-            case 4: { AdminGoals(); } break;
+            case 3: { AdminGoals(); } break;
+            case 4: { SecretaryGoal(); } break;
             case 5: { CaffGoals(); } break;
 
             default:
@@ -144,9 +148,8 @@ public class tasks : MonoBehaviour
 
 
             taskPanels[2].SetActive(true);
-          
-
             SparklesForObj[2].SetActive(true);
+
             indexer++;
         }
 
@@ -167,7 +170,7 @@ public class tasks : MonoBehaviour
             }
 
 
-
+            SparklesForObj[3].SetActive(true);
             taskPanels[3].SetActive(true);
        
             
@@ -180,44 +183,45 @@ public class tasks : MonoBehaviour
         }
     }
 
-    // hire a secretary
 
-    public void coinGoals()
+    public void AdminGoals()
     {
-        if (gameManager.Money >= coinGoal)
+        if (adminScript.AdminMade > AdminBuilt) 
         {
             if (taskPanels[3] != null)
             {
                 taskPanels[3].SetActive(false);
-
             }
 
 
-           
-            SparklesForObj[3].SetActive(true);
+            SparklesForObj[4].SetActive(true);
+            taskPanels[4].SetActive(true);
+
 
             indexer++;
         }
 
         else
         {
-            taskPanels[3].SetActive(true);
+            taskPanels[4].SetActive(true);
         }
     }
 
-    public void AdminGoals()
+
+    public void SecretaryGoal()
     {
-        if (adminScript.AdminMade > AdminBuilt)
+        if (gameManager.AdminCount > noSecretary)
         {
             if (taskPanels[4] != null)
             {
                 taskPanels[4].SetActive(false);
+
             }
 
-           
-            SparklesForObj[4].SetActive(true);
+
+
+            SparklesForObj[5].SetActive(true);
             taskPanels[5].SetActive(true);
-           
 
             indexer++;
         }

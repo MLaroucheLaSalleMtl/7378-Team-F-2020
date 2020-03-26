@@ -40,8 +40,6 @@ public class BuyCube : MonoBehaviour
 
     [Header("Preview of classroom/building")]
     private GameObject clone;
-    //...
-
 
     [Header("Teacher's Spawn point")]
     [SerializeField] private Vector3 teacherPosition;

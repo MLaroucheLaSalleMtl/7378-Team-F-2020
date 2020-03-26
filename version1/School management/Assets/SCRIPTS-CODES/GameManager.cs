@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     private int classRCount;
     [SerializeField] private Text classRCountText;//"classRCount"
 
+
+
+    //ADMIN
+    private int adminCount;
+
     private int teacherCount;
     [SerializeField] private Text TeacherCountTXT;
 
@@ -74,6 +79,7 @@ public class GameManager : MonoBehaviour
    
     public float TotalSalaryPerDay { get => totalSalaryPerDay; set => totalSalaryPerDay = value; }
     public float GrandtotalSalary1 { get => GrandtotalSalary; set => GrandtotalSalary = value; }
+    public int AdminCount { get => adminCount; set => adminCount = value; }
 
     private void Awake()
     {
@@ -214,6 +220,12 @@ public class GameManager : MonoBehaviour
     public void AddTeacher()
     {
         TeacherCount++;
+    }
+
+    /// ADMIN
+    public void AddAdmin()
+    {
+        AdminCount++;
     }
 
     // SALARY

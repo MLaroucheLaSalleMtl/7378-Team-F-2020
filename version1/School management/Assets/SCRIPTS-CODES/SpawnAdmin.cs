@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnAdmin : MonoBehaviour
 {
     public static SpawnAdmin instance = null;
+
     private tasks Tasks;
 
 

@@ -50,7 +50,7 @@ public class SpawnCaff : MonoBehaviour
         Instantiate(Caff, transform.position + PossitionOfcet, transform.rotation);
         CaffMade = 1;
         Destroy(clone);
-        Tasks.SparklesForObj[4].SetActive(false);
+        Tasks.SparklesForObj[5].SetActive(false);
         Destroy(gameObject);
         tooltip.SetActive(false);
     }
