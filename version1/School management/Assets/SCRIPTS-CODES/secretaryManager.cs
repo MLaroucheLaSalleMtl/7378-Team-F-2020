@@ -38,8 +38,14 @@ public class secretaryManager : MonoBehaviour
     [Header("Secretary Efficency txt")]
     [SerializeField] public Text[] efficencytxt;
 
-    [Header("Efficency number")]
+    [Header("Secretary Efficency %")]
     [SerializeField] public string[] Efficency;
+
+    [Header("Secretary Hire text")]
+    [SerializeField] public Text[] hireCostTxt;
+
+    [Header("Secretary Skill's Hiring Cost")]
+    [SerializeField] public string[] hiringCost;
 
     [Header("Secretary Prefabs")]
     [SerializeField] public GameObject[] secretary;
@@ -47,6 +53,8 @@ public class secretaryManager : MonoBehaviour
     private GameObject SecretaryTohire;
 
     SecretaryMono adminMono;
+
+
 
     public void secretaryNames()
     {
@@ -82,6 +90,11 @@ public class secretaryManager : MonoBehaviour
         efficencytxt[1].text = "Efficency: " + Efficency[randomNum[1]];
     }
 
+    public void secretaryHireCostUI()
+    {
+        hireCostTxt[0].text = "Hire for $" + hiringCost[randomNum[0]];
+        hireCostTxt[1].text = "Hire for $" + hiringCost[randomNum[1]];
+    }
 
     ///hire secretary 
     public void HireSecretaryOne()
@@ -117,7 +130,10 @@ public class secretaryManager : MonoBehaviour
 
     void Start()
     {
+        adminMono = SecretaryMono.instance;
+
         RandomGenNum();
+       
     }
 
     
@@ -132,5 +148,6 @@ public class secretaryManager : MonoBehaviour
         secretaryUInames();
         secretaryAvatar();
         efficencytxtUI();
+        secretaryHireCostUI();
     }
 }

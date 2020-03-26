@@ -13,7 +13,6 @@ public class Teachermanager : MonoBehaviour
     {
         if (instance == null)
         {
-
             instance = this;
         }
         else if (instance != this)
