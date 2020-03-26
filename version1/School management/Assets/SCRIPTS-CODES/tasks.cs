@@ -180,7 +180,7 @@ public class tasks : MonoBehaviour
         }
     }
 
-
+    // hire a secretary
 
     public void coinGoals()
     {

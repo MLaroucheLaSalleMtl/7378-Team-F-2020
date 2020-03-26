@@ -29,8 +29,8 @@ public class HireCube : MonoBehaviour
     [Header("Tooltip when Hovered over cube")]
     [SerializeField] private GameObject tooltip;
 
-    [Header("Sparkles/Glow objective indicator")]
-    [SerializeField] public GameObject SparklesForTeacher;
+    //[Header("Sparkles/Glow objective indicator")]
+    //[SerializeField] public GameObject SparklesForTeacher;
 
     
 
@@ -69,6 +69,7 @@ public class HireCube : MonoBehaviour
             Debug.Log("Not enough money to hire this teacher!");
             return;
         }
+
 
         if (gameManager.ClassRCount >= 1)
         {

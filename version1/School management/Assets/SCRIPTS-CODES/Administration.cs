@@ -24,7 +24,7 @@ public class Administration : MonoBehaviour
 
     Teachermanager teacherManager;
 
-    AdminStaff adminstaff;
+    SecretaryMono adminstaff;
 
     [SerializeField] private Transform[] waypontgameobject;
     private Vector3[] wayponts;
@@ -49,7 +49,7 @@ public class Administration : MonoBehaviour
    
     public IEnumerator Payfees()
     {
-        if (Isthereasecretary)
+        if (Isthereasecretary == true)
         {
 
             yield return new WaitForSeconds(10.0f);

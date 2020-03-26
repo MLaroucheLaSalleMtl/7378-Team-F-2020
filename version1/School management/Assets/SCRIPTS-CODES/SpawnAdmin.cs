@@ -19,6 +19,9 @@ public class SpawnAdmin : MonoBehaviour
     [SerializeField] private GameObject Admin;
     [SerializeField] private Vector3 PossitionOfcet;
 
+    [Header("Hire Admin Cube activation")]
+    [SerializeField] private GameObject[] hireAdminCube;
+
     private int adminmade;
 
     public int AdminMade { get => adminmade; set => adminmade = value; }
@@ -51,6 +54,13 @@ public class SpawnAdmin : MonoBehaviour
         Destroy(clone);
         Tasks.SparklesForObj[3].SetActive(false);
         Destroy(gameObject);
+
+        //bring out
+        hireAdminCube[0].SetActive(true);
+        hireAdminCube[1].SetActive(true);
+        hireAdminCube[2].SetActive(true);
+        hireAdminCube[3].SetActive(true);
+
         tooltip.SetActive(false);
     }
 

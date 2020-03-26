@@ -165,6 +165,8 @@ public class Teachermanager : MonoBehaviour
         TeacherTohire = Staff;
     }
 
+
+
    public void GenerateRanNum()
     {
         RandomGenNum();

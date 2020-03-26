@@ -35,7 +35,7 @@ public class BuyCube : MonoBehaviour
     [Header("Tooltip when Hovered over cube")]
     [SerializeField] private GameObject tooltip;
 
-    [Header("Tooltip when Hovered over cube")]
+    [Header("Hire Cube activation")]
     [SerializeField] private GameObject HireCube;
 
     [Header("Preview of classroom/building")]

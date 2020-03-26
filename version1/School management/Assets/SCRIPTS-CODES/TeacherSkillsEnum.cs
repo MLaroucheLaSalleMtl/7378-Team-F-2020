@@ -30,7 +30,7 @@ public class TeacherSkillsEnum : MonoBehaviour
     {
         get { return cEfficiency; }
 
-        set { cEfficiency = Mathf.Clamp(value, 0, 30); }
+        set { cEfficiency = Mathf.Clamp(value, 10, 30); }
 
     }
 

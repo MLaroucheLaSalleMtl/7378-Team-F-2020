@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class secretaryManager : MonoBehaviour
 {
-    #region Instance
     public static secretaryManager instance = null;
+    #region Instance
     private void Awake()
     {
         if (instance == null)
@@ -20,10 +20,13 @@ public class secretaryManager : MonoBehaviour
     }
     #endregion
 
+    [Header("Secretary position")]
+    [SerializeField] private Vector3 sPossitionOfcet;
+
     [Header("Randomize Number")]
     [SerializeField] public int[] randomNum;
 
-    [Header("Teacher Name")]
+    [Header("Secretary Name")]
     [SerializeField] public Text[] secretaryNametxt;
 
     [Header("Secretary Icons")]
@@ -38,9 +41,12 @@ public class secretaryManager : MonoBehaviour
     [Header("Efficency number")]
     [SerializeField] public string[] Efficency;
 
-    [SerializeField]
-    private GameObject[] secretary;
+    [Header("Secretary Prefabs")]
+    [SerializeField] public GameObject[] secretary;
 
+    private GameObject SecretaryTohire;
+
+    SecretaryMono adminMono;
 
     public void secretaryNames()
     {
@@ -76,12 +82,45 @@ public class secretaryManager : MonoBehaviour
         efficencytxt[1].text = "Efficency: " + Efficency[randomNum[1]];
     }
 
-        void Start()
+
+    ///hire secretary 
+    public void HireSecretaryOne()
+    {
+        Instantiate(secretary[randomNum[0]], sPossitionOfcet, Quaternion.identity);
+
+    }
+
+    public void HireSecretaryTwo()
+    {
+        Instantiate(secretary[randomNum[1]], sPossitionOfcet, Quaternion.identity);
+    }
+
+
+
+    public GameObject GetSecretaryTohire()
+    {
+        return SecretaryTohire;
+    }
+
+    public void SetSecretary(GameObject Sec)
+    {
+        SecretaryTohire = Sec;
+    }
+
+    public void GenerateRanNum()
     {
         RandomGenNum();
     }
 
-    // Update is called once per frame
+
+    ///start
+
+    void Start()
+    {
+        RandomGenNum();
+    }
+
+    
     void Update()
     {
         if (Input.GetButtonUp("R"))

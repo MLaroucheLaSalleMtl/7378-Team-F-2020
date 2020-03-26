@@ -8,9 +8,13 @@ public class Hiring : MonoBehaviour
 
     private Teachermanager teachermanager;
 
+    private secretaryManager secretarymanager;
+
     public GameObject HiringMenu;
 
     private PlayerLog eventLog;
+
+
 
     public static bool HiringMenuUI = false;
 
@@ -46,9 +50,24 @@ public class Hiring : MonoBehaviour
         HiringMenu.SetActive(false);
     }
 
+    // hire secretary
+    public void OnhireSecretaryOne()
+    {
+        //teachermanager.HireTeacherOne();
+        secretarymanager.SetSecretary(secretarymanager.secretary[secretarymanager.randomNum[0]]);
+        
+        HiringMenu.SetActive(false);
+    }
 
+    public void OnhireSecretaryTwo()
+    {
+        //teachermanager.HireTeacherTwo();
+        secretarymanager.SetSecretary(secretarymanager.secretary[secretarymanager.randomNum[1]]);
+
+        HiringMenu.SetActive(false);
+    }
     //menu panel
-    
+
 
 
 
@@ -136,6 +155,8 @@ public class Hiring : MonoBehaviour
     void Start()
     {
         teachermanager = Teachermanager.instance;
+        secretarymanager = secretaryManager.instance;
+
         gameManager = GameManager.instance;
         eventLog = GetComponent<PlayerLog>();
     }

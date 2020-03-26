@@ -331,11 +331,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903754174244869963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.435, y: -3.995, z: 1.718}
-  m_LocalScale: {x: 0.34145, y: 0.34145, z: 0.34145}
+  m_LocalPosition: {x: -1.75, y: -3.995, z: 1.718}
+  m_LocalScale: {x: 0.0717523, y: 0.34145, z: 0.34145}
   m_Children: []
   m_Father: {fileID: 6345694025074447761}
-  m_RootOrder: 60
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4516557923874934545
 MeshFilter:
@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c822f6ac7c9414797065d47163b144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   waypontgameobject:
   - {fileID: 1868439634232435290}
   - {fileID: 4505862960872156806}
@@ -847,7 +848,6 @@ Transform:
   - {fileID: 88769590182071541}
   - {fileID: 603247512513904880}
   - {fileID: 4024990529052255620}
-  - {fileID: 6859440998710758228}
   - {fileID: 3198975917443741053}
   - {fileID: 9092571347222476453}
   - {fileID: 7901108989418084486}
@@ -1354,7 +1354,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.959999, y: -3.98, z: -2.46}
   m_LocalScale: {x: 2.33075, y: 0.53407407, z: 0.61149997}
-  m_Children: []
+  m_Children:
+  - {fileID: 6859440998710758228}
   m_Father: {fileID: 6345694025074447761}
   m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1415,11 +1416,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4389285754231451073}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -2, y: -3.491, z: -2.886}
-  m_LocalScale: {x: 0.95000565, y: 0.3364324, z: 0.3}
+  m_LocalPosition: {x: 2.986163, y: 0.9156031, z: -0.6966474}
+  m_LocalScale: {x: 1.7787901, y: 0.55017567, z: 0.12871394}
   m_Children: []
-  m_Father: {fileID: 6345694025074447761}
-  m_RootOrder: 59
+  m_Father: {fileID: 4024990529052255620}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!33 &2809332693958847432
 MeshFilter:
@@ -2091,11 +2092,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6029980300324227650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.435, y: -3.995, z: -1.158}
-  m_LocalScale: {x: 0.34145, y: 0.34145, z: 0.34145}
+  m_LocalPosition: {x: -1.75, y: -3.995, z: -1.158}
+  m_LocalScale: {x: 0.0717523, y: 0.34145, z: 0.34145}
   m_Children: []
   m_Father: {fileID: 6345694025074447761}
-  m_RootOrder: 62
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3475414153552844125
 MeshFilter:
@@ -2169,6 +2170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c822f6ac7c9414797065d47163b144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   waypontgameobject:
   - {fileID: 3668338762676624774}
   - {fileID: 6235834562922089413}
@@ -2242,11 +2244,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6338865294274328839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.435, y: -3.995, z: -2.33}
-  m_LocalScale: {x: 0.34145, y: 0.34145, z: 0.34145}
+  m_LocalPosition: {x: -1.75, y: -3.995, z: -2.33}
+  m_LocalScale: {x: 0.0717523, y: 0.34145, z: 0.34145}
   m_Children: []
   m_Father: {fileID: 6345694025074447761}
-  m_RootOrder: 63
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3502030612586036380
 MeshFilter:
@@ -2320,6 +2322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c822f6ac7c9414797065d47163b144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   waypontgameobject:
   - {fileID: 1717596208934940482}
   - {fileID: 399080025280629543}
@@ -2756,11 +2759,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558162929828293616}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.435, y: -3.995, z: 0.245}
-  m_LocalScale: {x: 0.34145, y: 0.34145, z: 0.34145}
+  m_LocalPosition: {x: -1.75, y: -3.995, z: 0.245}
+  m_LocalScale: {x: 0.0717523, y: 0.34145, z: 0.34145}
   m_Children: []
   m_Father: {fileID: 6345694025074447761}
-  m_RootOrder: 61
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7862828358810209667
 MeshFilter:
@@ -2834,6 +2837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c822f6ac7c9414797065d47163b144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   waypontgameobject:
   - {fileID: 8324762172495826029}
   - {fileID: 8114495799220329205}
