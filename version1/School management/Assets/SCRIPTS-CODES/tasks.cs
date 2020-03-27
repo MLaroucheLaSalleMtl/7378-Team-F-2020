@@ -117,9 +117,6 @@ public class tasks : MonoBehaviour
             }
 
 
-           
-
-
             taskPanels[1].SetActive(true);
           
 
