@@ -516,9 +516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257ba0fc81cbb274faa3ecc8f13db339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  HiringCost: 0
-  salary: 0
+  Name: Caiou the Cowboy
+  HiringCost: 100
+  salary: 8
 --- !u!1 &1117065530419990
 GameObject:
   m_ObjectHideFlags: 0
