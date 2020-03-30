@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
 
+   
+
     TeacherMono teachermono;
 
     [Header("Gold")]
@@ -24,15 +26,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text classRCountText;//"classRCount"
 
 
-
     //ADMIN
     private int adminCount;
 
     private int teacherCount;
     [SerializeField] private Text TeacherCountTXT;
 
-    [Header("Salary Needs to be paid")]
-    
+    [Header("Salary Needs to be paid")]    
     [SerializeField] private float totalSalary;
     [SerializeField] private float totalSalaryPerDay;
     [SerializeField] private float GrandtotalSalary;
@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
     public Text totalSalarytxt;
     public Text SalaryPaidtxt;
     public Text GrandtotalSalarytxt;
+
+    public bool playerPaidSalary = false;
 
     // public Text incrementTxt; //tester
 
@@ -255,7 +257,8 @@ public class GameManager : MonoBehaviour
         TotalSalary += TotalSalaryPerDay;
         TotalSalaryPerDay = 0;
 
-        
+        //paid salary indicator
+        playerPaidSalary = true;
     }
 
 

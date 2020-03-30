@@ -18,7 +18,7 @@ public class speedUpGame : MonoBehaviour
 
     public void unSpeed()
     {
-        Time.timeScale = 600f;
+        Time.timeScale = 15f;
         gameSpeedUp = false;
         Debug.Log("Speed OFF");
     }

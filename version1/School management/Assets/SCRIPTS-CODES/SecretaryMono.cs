@@ -26,6 +26,7 @@ public class SecretaryMono : MonoBehaviour
 
     secretaryManager secManager;
 
+    public bool Isthereasecretary = true;
 
     [SerializeField]
     private int hiringCost;
@@ -36,14 +37,21 @@ public class SecretaryMono : MonoBehaviour
     public float Efficiency { get => efficiency; set => efficiency = value; }
     public int HiringCost { get => hiringCost; set => hiringCost = value; }
 
+
+
     void Start()
     {
-        //administration.Isthereasecretary = true;
+
 
         gameManager = GameManager.instance;
         administration = Administration.instance;
         secManager = secretaryManager.instance;
+
+        Isthereasecretary = true;
+
     }
+
+
 
     // Update is called once per frame
     void Update()

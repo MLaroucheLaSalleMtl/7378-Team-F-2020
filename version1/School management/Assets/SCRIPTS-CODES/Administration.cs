@@ -29,7 +29,7 @@ public class Administration : MonoBehaviour
     [SerializeField] private Transform[] waypontgameobject;
     private Vector3[] wayponts;
     public List<GameObject> studentstopay = new List<GameObject>();
-    public bool Isthereasecretary=false;
+    public bool Isthereasecretary=false; //i put it in the SecretaryMono Script
 
     //private GameObject secretary;
     //private float efficiency = 5;       //this will be inside of secretary 
@@ -39,6 +39,7 @@ public class Administration : MonoBehaviour
         transformwaiponts();
         gameManager = GameManager.instance;
         teacherManager = Teachermanager.instance;
+        adminstaff = SecretaryMono.instance;
     }
 
     
@@ -49,7 +50,7 @@ public class Administration : MonoBehaviour
    
     public IEnumerator Payfees()
     {
-        if (Isthereasecretary == true)
+        if (adminstaff.Isthereasecretary == true)
         {
 
             yield return new WaitForSeconds(10.0f);

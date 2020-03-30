@@ -73,8 +73,8 @@ public class Teachermanager : MonoBehaviour
         teacherPrefabs[4].name = "Gill the Goblin";         //Rare
         teacherPrefabs[5].name = "Will the Wizard";         //Common
         teacherPrefabs[6].name = "Vicky the Viking";        //Rare
-        teacherPrefabs[7].name = "Caiou the Cowboy";        //blue
-        teacherPrefabs[8].name = "Cindy the Cowgal";       //blue
+        teacherPrefabs[7].name = "Cain the Cowboy";        //blue
+        teacherPrefabs[8].name = "Cyn the Cowgal";       //blue
         teacherPrefabs[9].name = "Zoro the Legend";         //blue
     }
 

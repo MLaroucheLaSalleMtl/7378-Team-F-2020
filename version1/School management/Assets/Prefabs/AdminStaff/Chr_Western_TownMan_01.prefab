@@ -7335,8 +7335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb36c414e32344c42802bc71d5165a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hiringCost: 0
-  efficiency: 0
+  Isthereasecretary: 1
+  hiringCost: 50
+  efficiency: 5
 --- !u!1 &1852205792963908
 GameObject:
   m_ObjectHideFlags: 0

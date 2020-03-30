@@ -4534,7 +4534,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: d6b66d478fc2348409ba9ef04886a3a9, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
@@ -21689,7 +21689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sPossitionOfcet: {x: 0, y: 0, z: 0}
-  randomNum: 0000000000000000
+  randomNum: 000000000000000000000000000000000000000000000000
   secretaryNametxt:
   - {fileID: 718286123}
   - {fileID: 36828847}
