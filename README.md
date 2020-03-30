@@ -41,6 +41,7 @@ There are two objectives in this game:
 * [clip board for hiring](http://www.clker.com/clipart-eps-clip-board.html)
 * [board icon for classes](https://www.pngkey.com/download/u2r5a9q8w7e6a9q8_writing-study-learn-education-student-board-school-school/)
 * [teacher icon for counter](https://icons8.com/icons/set/teacher)
+* [Confetti FX](https://assetstore.unity.com/packages/vfx/particles/confetti-fx-82497) 
 
 ### 3D Characters 
 * [male students](https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870)
