@@ -9,6 +9,9 @@ public class LevelUI : MonoBehaviour
     private Text levelText;
     private Image expBarimg;
 
+    [SerializeField] private GameObject confetti;
+    
+
     private LevelSystem levelSystem;
 
     public void Awake()
@@ -26,6 +29,7 @@ public class LevelUI : MonoBehaviour
     private void setLvlNum(int lvlNum)
     {
         levelText.text = "LEVEL " + (lvlNum + 1);
+        confetti.SetActive(false);
     }
 
     public void setLvlSystem(LevelSystem levelSystem)
@@ -33,8 +37,10 @@ public class LevelUI : MonoBehaviour
         this.levelSystem = levelSystem;
 
         //update restart values
+        
         setLvlNum(levelSystem.GetLvLNum());
         setExpBarSize(levelSystem.GetExpNormalized());
+
 
         levelSystem.onExpChange += LevelSystem_onExpchange;
         levelSystem.onLvlChange += LevelSystem_onLvlChange;
@@ -50,6 +56,9 @@ public class LevelUI : MonoBehaviour
     {
         //level changed, updated UI
         setLvlNum(levelSystem.GetLvLNum());
+        confetti.SetActive(true);
+        
+
     }
 
     /////BUTTON TESTING
@@ -65,16 +74,16 @@ public class LevelUI : MonoBehaviour
         levelSystem.addExp(50);
     }
 
-    public void Onexp500()
-    {
-       
-        levelSystem.addExp(500);
-    }
+  
 
     void Start()
     {
        // levelSystem = LevelSystem.instance;
     }
 
+    private void Update()
+    {
+        
+    }
 
 }
