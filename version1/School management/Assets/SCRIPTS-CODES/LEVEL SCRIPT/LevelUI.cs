@@ -63,8 +63,7 @@ public class LevelUI : MonoBehaviour
 
     /////BUTTON TESTING
     public void Onexp5()
-    {
-        
+    {   
         levelSystem.addExp(5);
     }
 

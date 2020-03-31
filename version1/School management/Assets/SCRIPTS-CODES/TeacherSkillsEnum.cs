@@ -22,6 +22,7 @@ public class TeacherSkillsEnum : MonoBehaviour
     public teacherSkills randomSkill2;
 
     [SerializeField] private int cEfficiency;
+    [SerializeField] private int gEfficiency;
     [SerializeField] private int rEfficiency;
     [SerializeField] private int lEfficiency;
 
@@ -33,6 +34,16 @@ public class TeacherSkillsEnum : MonoBehaviour
         set { cEfficiency = Mathf.Clamp(value, 10, 30); }
 
     }
+
+    public int GEfficiency
+
+    {
+        get { return gEfficiency; }
+
+        set { gEfficiency = Mathf.Clamp(value, 10, 55); }
+
+    }
+
 
     public int REfficiency
 
@@ -88,13 +99,50 @@ public class TeacherSkillsEnum : MonoBehaviour
                     Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
                     eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
                     break;
-                 default:
+                default:
                     Debug.Log("None");
                     eventLog.AddEvent("None");
                     break;
             }
         }
     }
+
+    public void greatTeacher()
+    {
+        if (gameObject.tag == "Great")
+        {
+            eventLog.AddEvent("You hired a Great teacher!");
+
+            randomSkill0 = (teacherSkills)Random.Range(1, 4);
+
+            GEfficiency = Random.Range(0, 70);
+
+            switch (randomSkill0)
+            {
+                case teacherSkills.axeThrowing:
+                    Debug.Log("Axe Thrower, efficiency of " + GEfficiency + "%");
+                    eventLog.AddEvent("Axe Thrower, efficiency of " + GEfficiency + "%");
+                    break;
+                case teacherSkills.surfing:
+                    Debug.Log("Surfer, efficiency of " + GEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + GEfficiency + "%");
+                    break;
+                case teacherSkills.magic:
+                    Debug.Log("Magic, efficiency of " + GEfficiency + "%");
+                    eventLog.AddEvent("Magic, efficiency of " + GEfficiency + "%");
+                    break;
+                case teacherSkills.hacking:
+                    Debug.Log("Surfer, efficiency of " + GEfficiency + "%");
+                    eventLog.AddEvent("Surfer, efficiency of " + GEfficiency + "%");
+                    break;
+                default:
+                    Debug.Log("None");
+                    eventLog.AddEvent("None");
+                    break;
+            }
+        }
+    }
+
     public void rareTeacher()
     {
         if (gameObject.tag == "Rare")
@@ -252,6 +300,7 @@ public class TeacherSkillsEnum : MonoBehaviour
         eventLog = PlayerLog.instance;
 
         commonTeacher();
+        greatTeacher();
         rareTeacher();
         legendaryTeacher();
     }

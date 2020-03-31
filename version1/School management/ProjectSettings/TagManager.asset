@@ -28,6 +28,7 @@ TagManager:
   - Rare
   - Common
   - PlaceForKitchen
+  - Great
   layers:
   - Default
   - TransparentFX
