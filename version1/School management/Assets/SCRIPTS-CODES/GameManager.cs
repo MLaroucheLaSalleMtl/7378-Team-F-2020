@@ -9,7 +9,7 @@ using UnityEngine.AI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gameManager;
+    //public static GameManager gameManager;
 
     PlayerLog eventlog;
 

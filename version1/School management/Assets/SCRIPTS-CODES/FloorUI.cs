@@ -5,9 +5,24 @@ using UnityEngine.UI;
 
 public class FloorUI : MonoBehaviour
 {
-    [SerializeField] public GameObject[] floorTxt;
+    #region Singleton to change the camera view
+    public static FloorUI instance = null;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+    #endregion
 
-    int indexer = 0;
+    [SerializeField] public GameObject[] floorTxt;
+    
+    public int indexer = 0;
 
     public void firstFloor()
     {
@@ -30,7 +45,7 @@ public class FloorUI : MonoBehaviour
 
     public void clickNext()
     {
-
+        
         if (indexer > 3)
         {
             indexer = default;
@@ -40,12 +55,12 @@ public class FloorUI : MonoBehaviour
         {
             indexer++;
         }
-
+        floorsystem.instance.changecamera();
     }
 
     public void clickPrev()
     {
-
+        
         if (indexer == 0)
         {
             indexer = 2;
@@ -55,14 +70,10 @@ public class FloorUI : MonoBehaviour
         {
             indexer--;
         }
-
+        floorsystem.instance.changecamera();
     }
 
 
-    void Start()
-    {
-        
-    }
 
     
     void Update()

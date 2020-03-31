@@ -15,16 +15,14 @@ public class lookatstudent : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
-    {
+    //private void FixedUpdate()
+    //{
 
-        if (target.tag=="PotentialStudent"||target.tag=="RegisteredStudent")
-        {
-            Vector3 wantedpos = target.transform.position + ofset;
-            transform.position = wantedpos;
-            transform.LookAt(target.transform.position);
-        }
-    }
+    //    if (target.tag=="PotentialStudent"||target.tag=="RegisteredStudent")
+    //    {
+            
+    //    }
+    //}
     public void Raycastt(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -32,6 +30,12 @@ public class lookatstudent : MonoBehaviour
             RaycastHit hit;
             
             Physics.Raycast(Input.mousePosition, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity);
+            if(hit.collider.CompareTag("PotentialStudent")|| hit.collider.CompareTag("RegisteredStudent"))
+            {
+                Vector3 wantedpos = hit.transform.position + ofset;
+                transform.position = wantedpos;
+                transform.LookAt(hit.transform.position);
+            }
 
 
                 

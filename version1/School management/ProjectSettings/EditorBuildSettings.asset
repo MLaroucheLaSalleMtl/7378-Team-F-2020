@@ -17,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/thankyou.unity
     guid: 41695b64a50035c4985a8f1d7e9e32be
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 9adb2d84faea2e94691f251cbaae4592,
+      type: 2}

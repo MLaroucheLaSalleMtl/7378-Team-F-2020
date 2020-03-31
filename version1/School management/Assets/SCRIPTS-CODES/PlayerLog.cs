@@ -15,7 +15,7 @@ public class PlayerLog : MonoBehaviour
         }
         else if (instance != this)
         {
-            // Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
     #endregion
