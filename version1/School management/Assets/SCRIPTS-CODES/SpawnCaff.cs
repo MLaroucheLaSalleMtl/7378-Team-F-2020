@@ -15,7 +15,7 @@ public class SpawnCaff : MonoBehaviour
 
     [SerializeField] private GameObject tooltip;
 
-
+    //...
 
     [SerializeField] private GameObject Caff;
     [SerializeField] private Vector3 PossitionOfcet;

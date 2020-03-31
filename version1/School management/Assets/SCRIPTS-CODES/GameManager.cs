@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
 
-   
+    PlayerLog eventlog;
 
     TeacherMono teachermono;
 
@@ -150,7 +150,9 @@ public class GameManager : MonoBehaviour
         StudentCountText = GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         classRCountText = GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
         TeacherCountTXT = GameObject.FindGameObjectWithTag("TeacherCount").GetComponent<Text>();
-        
+
+        eventlog = PlayerLog.instance;
+
     }
 
 
@@ -246,19 +248,27 @@ public class GameManager : MonoBehaviour
         GrandtotalSalary1 = TotalSalaryPerDay + totalSalary;
     }
 
-  
+
     public void paySumofSalary()
     {
-        
-        //remove it from the Money
-        ReduceMoney(TotalSalaryPerDay); //GrandtotalSalary1
+        if (playerPaidSalary == true)
+        {
+            eventlog.AddEvent("Already paid!");
+            Debug.Log("Already paid!");
+        }
+        else
+        {
+            //remove it from the Money
+            ReduceMoney(TotalSalaryPerDay); //GrandtotalSalary1
 
-        //resets the daily salary 
-        TotalSalary += TotalSalaryPerDay;
-        TotalSalaryPerDay = 0;
+            //resets the daily salary 
+            TotalSalary += TotalSalaryPerDay;
+            TotalSalaryPerDay = 0;
 
-        //paid salary indicator
-        playerPaidSalary = true;
+            //paid salary indicator
+            playerPaidSalary = true;
+        }
+
     }
 
 

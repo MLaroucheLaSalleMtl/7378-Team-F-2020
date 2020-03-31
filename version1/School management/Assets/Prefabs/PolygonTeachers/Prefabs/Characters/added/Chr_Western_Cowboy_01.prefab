@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 4316376952530692}
   - component: {fileID: 95733494733025152}
   - component: {fileID: -9027956350270743005}
+  - component: {fileID: 2946678636850304509}
   m_Layer: 0
   m_Name: Chr_Western_Cowboy_01
   m_TagString: Great
@@ -511,7 +512,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093078912564410}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 257ba0fc81cbb274faa3ecc8f13db339, type: 3}
   m_Name: 
@@ -519,6 +520,25 @@ MonoBehaviour:
   Name: Caiou the Cowboy
   HiringCost: 100
   salary: 8
+--- !u!114 &2946678636850304509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093078912564410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f5c517f65912f499e47186920edabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomSkill0: 0
+  randomSkill1: 0
+  randomSkill2: 0
+  cEfficiency: 0
+  gEfficiency: 0
+  rEfficiency: 0
+  lEfficiency: 0
 --- !u!1 &1117065530419990
 GameObject:
   m_ObjectHideFlags: 0

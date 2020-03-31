@@ -95,9 +95,12 @@ public class GameTime : MonoBehaviour
             //teacher generator per day
             teacher.RandomGenNum();
 
+            //total teacher salary paid per day
+            manager.SumofSalary(manager.GrandtotalSalary1);
+
             if (manager.playerPaidSalary == true)
             {
-                Debug.Log("already paid!");
+                Debug.Log("Already paid!");
             }
             else
             {

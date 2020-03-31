@@ -23,9 +23,9 @@ public class BuyCube : MonoBehaviour
 
     Buildingmanager buildManager;
 
-    private tasks Tasks;
+     tasks Tasks;
 
-    private PlayerLog eventLog;
+    PlayerLog eventLog;
 
     Buying buying;
 
@@ -57,7 +57,7 @@ public class BuyCube : MonoBehaviour
         gameManager = GameManager.instance;
         buildManager = Buildingmanager.instance;
         teacherManager = Teachermanager.instance;
-        eventLog = GetComponent<PlayerLog>();
+        eventLog = PlayerLog.instance;
         Tasks = tasks.instance;
 
     }

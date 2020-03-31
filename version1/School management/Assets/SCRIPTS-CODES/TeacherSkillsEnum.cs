@@ -40,17 +40,16 @@ public class TeacherSkillsEnum : MonoBehaviour
     {
         get { return gEfficiency; }
 
-        set { gEfficiency = Mathf.Clamp(value, 10, 55); }
+        set { gEfficiency = Mathf.Clamp(value, 30, 55); }
 
     }
-
 
     public int REfficiency
 
     {
         get { return rEfficiency; }
 
-        set { rEfficiency = Mathf.Clamp(value, 30, 70); }
+        set { rEfficiency = Mathf.Clamp(value, 55, 80); }
 
     }
 
@@ -99,15 +98,14 @@ public class TeacherSkillsEnum : MonoBehaviour
                     Debug.Log("Surfer, efficiency of " + CEfficiency + "%");
                     eventLog.AddEvent("Surfer, efficiency of " + CEfficiency + "%");
                     break;
-                default:
+                 default:
                     Debug.Log("None");
                     eventLog.AddEvent("None");
                     break;
             }
         }
     }
-
-    public void greatTeacher()
+    public void GreatTeacher()
     {
         if (gameObject.tag == "Great")
         {
@@ -115,7 +113,7 @@ public class TeacherSkillsEnum : MonoBehaviour
 
             randomSkill0 = (teacherSkills)Random.Range(1, 4);
 
-            GEfficiency = Random.Range(0, 70);
+            GEfficiency = Random.Range(30, 70);
 
             switch (randomSkill0)
             {
@@ -143,6 +141,7 @@ public class TeacherSkillsEnum : MonoBehaviour
         }
     }
 
+    
     public void rareTeacher()
     {
         if (gameObject.tag == "Rare")
@@ -300,7 +299,7 @@ public class TeacherSkillsEnum : MonoBehaviour
         eventLog = PlayerLog.instance;
 
         commonTeacher();
-        greatTeacher();
+        GreatTeacher();
         rareTeacher();
         legendaryTeacher();
     }
