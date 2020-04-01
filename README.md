@@ -59,6 +59,9 @@ There are two objectives in this game:
 * [Assets for the Caffeteria](https://assetstore.unity.com/packages/3d/props/food/delicious-food-02-54273)
 * [Glowing particles for the objectives](https://assetstore.unity.com/packages/vfx/particles/sci-fi-arsenal-60519)
 
+### Music
+* [SFX](https://assetstore.unity.com/packages/audio/sound-fx/interface-item-sounds-148951)
+
 ### Others
 
 Special thanks to Zach for helping out with Logic :)
