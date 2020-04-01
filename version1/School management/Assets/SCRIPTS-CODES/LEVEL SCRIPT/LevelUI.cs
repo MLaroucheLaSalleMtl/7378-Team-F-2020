@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LevelUI : MonoBehaviour
 {
+    SFX sfx;
 
     private Text levelText;
     private Image expBarimg;
@@ -56,6 +57,7 @@ public class LevelUI : MonoBehaviour
     {
         //level changed, updated UI
         setLvlNum(levelSystem.GetLvLNum());
+        sfx.playSound();
         confetti.SetActive(true);
         
 
@@ -78,7 +80,8 @@ public class LevelUI : MonoBehaviour
 
     void Start()
     {
-       // levelSystem = LevelSystem.instance;
+        // levelSystem = LevelSystem.instance;
+        sfx = SFX.instance;
     }
 
     private void Update()

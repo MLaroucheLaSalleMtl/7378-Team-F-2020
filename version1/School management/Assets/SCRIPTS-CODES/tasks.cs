@@ -43,7 +43,9 @@ public class tasks : MonoBehaviour
     [Header("Sparkle Spawn point")]
     [SerializeField] private Vector3 SparklePos;
 
-
+    [Header("Task SFX")]
+    public AudioClip sfx;
+    private AudioSource source { get { return GetComponent<AudioSource>(); } }
 
     [Header("Objectives 0")]
     private int classRoom = 1; 
@@ -73,7 +75,7 @@ public class tasks : MonoBehaviour
         lobbyScript = SpawnLobby.instance;
         adminScript = SpawnAdmin.instance;
         caffScript = SpawnCaff.instance;
-        
+
 
         #region hidden task
         ////second objectives
@@ -86,7 +88,7 @@ public class tasks : MonoBehaviour
         //taskPanels[3].SetActive(false);
         //taskBTNS[3].SetActive(false);
         #endregion
-
+        sfxStuff();
         SparklesForObj[0].SetActive(true);
     }
 
@@ -106,6 +108,21 @@ public class tasks : MonoBehaviour
         }
     }
 
+    public void sfxStuff()
+    {
+        gameObject.AddComponent<AudioSource>();
+        source.clip = sfx;
+
+        //SFX volume level
+        source.volume = 0.5f;
+        source.playOnAwake = false;
+
+    }
+
+    public void playSFX()
+    {
+        source.PlayOneShot(sfx);
+    }
 
     public void classRoomGoals()
     {
@@ -121,13 +138,12 @@ public class tasks : MonoBehaviour
           
 
             SparklesForObj[1].SetActive(true);
-
+            playSFX();
             indexer++;
         }
 
         else
         {
-
             taskPanels[0].SetActive(true);
         }
     }
@@ -146,7 +162,7 @@ public class tasks : MonoBehaviour
 
             taskPanels[2].SetActive(true);
             SparklesForObj[2].SetActive(true);
-
+            playSFX();
             indexer++;
         }
 
@@ -169,8 +185,8 @@ public class tasks : MonoBehaviour
 
             SparklesForObj[3].SetActive(true);
             taskPanels[3].SetActive(true);
-       
-            
+
+            playSFX();
             indexer++;
         }
 
@@ -194,7 +210,7 @@ public class tasks : MonoBehaviour
             SparklesForObj[4].SetActive(true);
             taskPanels[4].SetActive(true);
 
-
+            playSFX();
             indexer++;
         }
 
@@ -220,6 +236,7 @@ public class tasks : MonoBehaviour
             SparklesForObj[5].SetActive(true);
             taskPanels[5].SetActive(true);
 
+            playSFX();
             indexer++;
         }
 
@@ -238,11 +255,11 @@ public class tasks : MonoBehaviour
                 taskPanels[5].SetActive(false);
             }
 
-      
+
 
             //taskPanels[6].SetActive(true);
-           
 
+            playSFX();
             indexer++;
         }
 

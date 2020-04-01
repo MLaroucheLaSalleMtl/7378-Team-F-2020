@@ -19,16 +19,26 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float money;
     [SerializeField] Text moneyText; //"Money Text"
 
+    [Header("Gold SFX")]
+    public AudioClip sfx;
+    private AudioSource source { get { return GetComponent<AudioSource>(); } }
+
+    [Header("Student Count")]
     private int StudentCount;
+
+
     Text StudentCountText;//"StudentCount"
 
     private int classRCount;
     [SerializeField] private Text classRCountText;//"classRCount"
 
 
+
+
     //ADMIN
     private int adminCount;
 
+    [Header("Teacher Count")]
     private int teacherCount;
     [SerializeField] private Text TeacherCountTXT;
 
@@ -94,6 +104,24 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    //SFX 
+    public void sfxStuff()
+    {
+        gameObject.AddComponent<AudioSource>();
+        source.clip = sfx;
+
+        //SFX volume level
+        source.volume = 0.5f;
+        source.playOnAwake = false;
+
+    }
+
+    public void playSFX()
+    {
+        source.PlayOneShot(sfx);
+    }
+
     public void ClasesNumber()
     {
 
@@ -175,12 +203,14 @@ public class GameManager : MonoBehaviour
     public void AddMoney(float amount)
     {
         money += amount;
+        playSFX();
         UpdateMoneyUI();
     }
 
     public void ReduceMoney(float amount)
     {
         money -= amount;
+        playSFX();
         UpdateMoneyUI();
     }
 

@@ -1545,6 +1545,7 @@ GameObject:
   - component: {fileID: 138717094}
   - component: {fileID: 138717093}
   - component: {fileID: 138717095}
+  - component: {fileID: 138717096}
   m_Layer: 5
   m_Name: Left BTN
   m_TagString: Untagged
@@ -1661,6 +1662,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &138717096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138717091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 69349fef185a02744a0e2a2692d1f0a2, type: 3}
 --- !u!1 &142052880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3448,7 +3462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -166.3, y: -327.7}
+  m_AnchoredPosition: {x: -166.2998, y: -327.69995}
   m_SizeDelta: {x: 133.6, y: 53.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &275586604
@@ -4612,6 +4626,7 @@ GameObject:
   - component: {fileID: 342303883}
   - component: {fileID: 342303882}
   - component: {fileID: 342303881}
+  - component: {fileID: 342303884}
   m_Layer: 5
   m_Name: payNowBtn
   m_TagString: Untagged
@@ -4729,6 +4744,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342303879}
   m_CullTransparentMesh: 0
+--- !u!114 &342303884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342303879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 0cd27b1cb0940944e8887ce6cdbc8536, type: 3}
 --- !u!1 &353076514
 GameObject:
   m_ObjectHideFlags: 0
@@ -7458,6 +7486,7 @@ GameObject:
   - component: {fileID: 554882417}
   - component: {fileID: 554882416}
   - component: {fileID: 554882415}
+  - component: {fileID: 554882418}
   - component: {fileID: 554882414}
   m_Layer: 5
   m_Name: popUpBTN
@@ -7554,6 +7583,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 554882418}
+        m_MethodName: playSoundOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &554882416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7590,6 +7630,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554882412}
   m_CullTransparentMesh: 0
+--- !u!114 &554882418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554882412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 69349fef185a02744a0e2a2692d1f0a2, type: 3}
 --- !u!1 &558363267
 GameObject:
   m_ObjectHideFlags: 0
@@ -8831,6 +8884,7 @@ GameObject:
   - component: {fileID: 669782609}
   - component: {fileID: 669782608}
   - component: {fileID: 669782607}
+  - component: {fileID: 669782610}
   m_Layer: 5
   m_Name: 5XP
   m_TagString: Untagged
@@ -8948,6 +9002,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669782605}
   m_CullTransparentMesh: 0
+--- !u!114 &669782610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669782605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 0cd27b1cb0940944e8887ce6cdbc8536, type: 3}
 --- !u!1 &675363991
 GameObject:
   m_ObjectHideFlags: 0
@@ -11357,7 +11424,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh108658
+  m_Name: pb_Mesh17876
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12200,6 +12267,7 @@ GameObject:
   - component: {fileID: 918085236}
   - component: {fileID: 918085235}
   - component: {fileID: 918085234}
+  - component: {fileID: 918085237}
   m_Layer: 5
   m_Name: '50XP '
   m_TagString: Untagged
@@ -12317,6 +12385,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918085232}
   m_CullTransparentMesh: 0
+--- !u!114 &918085237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918085232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 0cd27b1cb0940944e8887ce6cdbc8536, type: 3}
 --- !u!1 &922701214
 GameObject:
   m_ObjectHideFlags: 0
@@ -12743,6 +12824,7 @@ GameObject:
   - component: {fileID: 954778798}
   - component: {fileID: 954778797}
   - component: {fileID: 954778800}
+  - component: {fileID: 954778801}
   m_Layer: 5
   m_Name: settings_GUI
   m_TagString: Untagged
@@ -12880,6 +12962,19 @@ MonoBehaviour:
   pauseTxt: {fileID: 189072667}
   pauseBG: {fileID: 1566350576}
   sceneToReload: SampleScene
+--- !u!114 &954778801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954778795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 0cd27b1cb0940944e8887ce6cdbc8536, type: 3}
 --- !u!1 &957025452
 GameObject:
   m_ObjectHideFlags: 0
@@ -13745,6 +13840,7 @@ GameObject:
   - component: {fileID: 1037852935}
   - component: {fileID: 1037852934}
   - component: {fileID: 1037852933}
+  - component: {fileID: 1037852937}
   - component: {fileID: 1037852936}
   m_Layer: 5
   m_Name: playBTN
@@ -13874,6 +13970,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05ec3d646f434b438933fbbc06c3065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1037852937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037852931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 0cd27b1cb0940944e8887ce6cdbc8536, type: 3}
 --- !u!1001 &1044874076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15795,6 +15904,7 @@ GameObject:
   - component: {fileID: 1217072763}
   - component: {fileID: 1217072762}
   - component: {fileID: 1217072765}
+  - component: {fileID: 1217072766}
   m_Layer: 5
   m_Name: mmBTN
   m_TagString: Untagged
@@ -15966,6 +16076,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1217072766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217072760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: e521bbf88d11170469faee5aeb2c4f98, type: 3}
 --- !u!1 &1221807765
 GameObject:
   m_ObjectHideFlags: 0
@@ -16132,6 +16255,7 @@ GameObject:
   - component: {fileID: 1231340076}
   - component: {fileID: 1231340075}
   - component: {fileID: 1231340074}
+  - component: {fileID: 1231340078}
   - component: {fileID: 1231340077}
   m_Layer: 5
   m_Name: 'fastBTN '
@@ -16261,6 +16385,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05ec3d646f434b438933fbbc06c3065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1231340078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231340072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 0cd27b1cb0940944e8887ce6cdbc8536, type: 3}
 --- !u!1 &1234050118
 GameObject:
   m_ObjectHideFlags: 0
@@ -18028,6 +18165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351838808}
   - component: {fileID: 1351838809}
+  - component: {fileID: 1351838810}
   m_Layer: 5
   m_Name: ---------- Level UI
   m_TagString: Untagged
@@ -18070,6 +18208,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confetti: {fileID: 1149623591}
+--- !u!114 &1351838810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351838807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4dd4cd730ea664a888d7859245be23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 05e53a827d5434746b2ccfc8529830c6, type: 3}
 --- !u!1 &1355302493
 GameObject:
   m_ObjectHideFlags: 0
@@ -31912,7 +32063,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh107992
+  m_Name: pb_Mesh17220
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32342,6 +32493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 500
   moneyText: {fileID: 1362588606}
+  sfx: {fileID: 8300000, guid: 88022e9111cb5fb469d5feebc58c1501, type: 3}
   classRCountText: {fileID: 0}
   TeacherCountTXT: {fileID: 0}
   totalSalary: 0
@@ -32470,6 +32622,7 @@ MonoBehaviour:
   - {fileID: 41960965}
   - {fileID: 2097442568}
   SparklePos: {x: 0, y: 0, z: 0}
+  sfx: {fileID: 8300000, guid: 47341d03ba533a441bed93a345500ec8, type: 3}
 --- !u!114 &1905191044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33848,6 +34001,7 @@ GameObject:
   - component: {fileID: 1988625540}
   - component: {fileID: 1988625539}
   - component: {fileID: 1988625541}
+  - component: {fileID: 1988625542}
   m_Layer: 5
   m_Name: Right BTN
   m_TagString: Untagged
@@ -33964,6 +34118,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1988625542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988625537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 69349fef185a02744a0e2a2692d1f0a2, type: 3}
 --- !u!1 &1996666196
 GameObject:
   m_ObjectHideFlags: 0
@@ -43835,6 +44002,7 @@ GameObject:
   - component: {fileID: 2142160732}
   - component: {fileID: 2142160731}
   - component: {fileID: 2142160730}
+  - component: {fileID: 2142160734}
   - component: {fileID: 2142160733}
   m_Layer: 5
   m_Name: pauseBTN
@@ -43973,6 +44141,19 @@ MonoBehaviour:
   pauseTxt: {fileID: 0}
   pauseBG: {fileID: 0}
   sceneToReload: SampleScene
+--- !u!114 &2142160734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142160728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0aabbf0944e034b87ed9dffdc10d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 0cd27b1cb0940944e8887ce6cdbc8536, type: 3}
 --- !u!224 &6764833562020239201
 RectTransform:
   m_ObjectHideFlags: 0
