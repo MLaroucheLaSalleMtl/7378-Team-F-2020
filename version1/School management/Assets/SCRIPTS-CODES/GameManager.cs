@@ -15,25 +15,36 @@ public class GameManager : MonoBehaviour
 
     TeacherMono teachermono;
 
-    [Header("Gold")]
+    [Header("Player Level")]
+    [SerializeField] private int maxExp;
+    [SerializeField] private float updatedExp;
+
+    public Text leveltext;
+    public Image Expbar;
+
+    [SerializeField] private GameObject confetti;
+
+    [SerializeField] private int expIncrease;
+    [SerializeField] private int playerLevel;
+
+    [Header("Level SFX")]
+    public AudioClip lvlSFX;
+    private AudioSource lvlsfxSource { get { return GetComponent<AudioSource>(); } }
+
+
+    [Header("Gold Coins")]
     [SerializeField] private float money;
     [SerializeField] Text moneyText; //"Money Text"
 
     [Header("Gold SFX")]
-    public AudioClip sfx;
-    private AudioSource source { get { return GetComponent<AudioSource>(); } }
+    public AudioClip goldSFX;
+    private AudioSource goldsfxSource { get { return GetComponent<AudioSource>(); } }
 
     [Header("Student Count")]
-    private int StudentCount;
-
-
     Text StudentCountText;//"StudentCount"
-
+    private int StudentCount;
     private int classRCount;
     [SerializeField] private Text classRCountText;//"classRCount"
-
-
-
 
     //ADMIN
     private int adminCount;
@@ -78,11 +89,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject[] waypontsinmanagement;
 
-    //[Header("Female Student Prefab Toinstanciate")]
-    //[SerializeField] private GameObject fStudent;
-
-    //[Header("student prefab Pool")]
-    //[SerializeField] private GameObject[] m_Pool;
+  
 
     public int ClassRCount { get => classRCount; set => classRCount = value; }
     public float Money { get => money; set => money = value; }
@@ -91,7 +98,13 @@ public class GameManager : MonoBehaviour
    
     public float TotalSalaryPerDay { get => totalSalaryPerDay; set => totalSalaryPerDay = value; }
     public float GrandtotalSalary1 { get => GrandtotalSalary; set => GrandtotalSalary = value; }
+
     public int AdminCount { get => adminCount; set => adminCount = value; }
+    
+    public int MaxExp { get => maxExp; set => maxExp = value; }
+    public float UpdatedExp { get => updatedExp; set => updatedExp = value; }
+    public int ExpIncrease { get => expIncrease; set => expIncrease = value; }
+    public int PlayerLevel { get => playerLevel; set => playerLevel = value; }
 
     private void Awake()
     {
@@ -105,22 +118,66 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //SFX 
+    ///SFX 
     public void sfxStuff()
     {
         gameObject.AddComponent<AudioSource>();
-        source.clip = sfx;
+        goldsfxSource.clip = goldSFX;
+        lvlsfxSource.clip = lvlSFX;
 
-        //SFX volume level
-        source.volume = 0.5f;
-        source.playOnAwake = false;
+        //SFX volume Gold
+        goldsfxSource.volume = 0.5f;
+        goldsfxSource.playOnAwake = false;
+
+        //SFX Volume Level
+        lvlsfxSource.volume = 0.5f;
+        lvlsfxSource.playOnAwake = false;
 
     }
 
-    public void playSFX()
+    public void playGoldSFX()
     {
-        source.PlayOneShot(sfx);
+        goldsfxSource.PlayOneShot(goldSFX);
     }
+
+    public void playLevelSFX()
+    {
+        lvlsfxSource.PlayOneShot(lvlSFX);
+    }
+
+    ///LEVEL SYSTEM  
+    public void playerBeginLvl()
+    {
+        PlayerLevel = 1;
+        MaxExp = 100;
+        UpdatedExp = 0;
+        Expbar.fillAmount = 0;
+    }
+
+    public void addExp(int ExpIncrease)
+    {
+        //ExpIncrease = 50; for testing purposes lol
+        UpdatedExp += ExpIncrease;
+        Expbar.fillAmount = UpdatedExp / MaxExp;
+
+        levelUp();
+    }
+
+
+    public void levelUp()
+    {
+        confetti.SetActive(false);
+
+        if (UpdatedExp >= MaxExp)
+        {
+            PlayerLevel++;
+            confetti.SetActive(true);
+            playLevelSFX();
+            UpdatedExp = 0;
+            MaxExp += MaxExp/2;
+        }
+    }
+
 
     public void ClasesNumber()
     {
@@ -174,12 +231,15 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        eventlog = PlayerLog.instance;
 
         StudentCountText = GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         classRCountText = GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
         TeacherCountTXT = GameObject.FindGameObjectWithTag("TeacherCount").GetComponent<Text>();
 
-        eventlog = PlayerLog.instance;
+        playerBeginLvl();
+
+       
 
     }
 
@@ -196,6 +256,8 @@ public class GameManager : MonoBehaviour
         updateNewlyHiredTSalary();
         updateCurrentTSalary();
         updateRecentTSalary();
+        levelTxtOnUI();
+        //levelUp();
 
     }
 
@@ -203,14 +265,14 @@ public class GameManager : MonoBehaviour
     public void AddMoney(float amount)
     {
         money += amount;
-        playSFX();
+        playGoldSFX();
         UpdateMoneyUI();
     }
 
     public void ReduceMoney(float amount)
     {
         money -= amount;
-        playSFX();
+        playGoldSFX();
         UpdateMoneyUI();
     }
 
@@ -301,8 +363,10 @@ public class GameManager : MonoBehaviour
 
     }
 
+    
 
-   
+
+
 
     // UI 
     public void updateCurrentTSalary()
@@ -340,7 +404,10 @@ public class GameManager : MonoBehaviour
         TeacherCountTXT.text = "Teachers: " + TeacherCount;
     }
 
-
+    public void levelTxtOnUI()
+    {
+        leveltext.text = "Level " + playerLevel;
+    }
 
     
 

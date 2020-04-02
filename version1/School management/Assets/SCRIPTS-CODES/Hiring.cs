@@ -15,11 +15,22 @@ public class Hiring : MonoBehaviour
     private PlayerLog eventLog;
 
 
-
     public static bool HiringMenuUI = false;
 
     [Header("Unlock pannels in the hiring menu")]
     [SerializeField] public GameObject[] unlockPannels;
+
+
+    void Start()
+    {
+        teachermanager = Teachermanager.instance;
+        secretarymanager = secretaryManager.instance;
+       
+        gameManager = GameManager.instance;      
+   
+
+        eventLog = GetComponent<PlayerLog>();
+    }
 
 
     public void OnhireTeacherOne()
@@ -93,12 +104,12 @@ public class Hiring : MonoBehaviour
             if (HiringMenuUI)
             {
                 ExitHiringMenu();
-                Debug.Log("hire menu OFF");
+                //Debug.Log("hire menu OFF");
             }
             else
             {
                 EnterHiringMenu();
-                Debug.Log("hire menu ON");
+                //Debug.Log("hire menu ON");
 
             }
         }
@@ -106,60 +117,74 @@ public class Hiring : MonoBehaviour
     /// Teacher unlock Panel
     public void unlockPannel200()
     {
-        if (gameManager.Money < 200)
+        if (gameManager.PlayerLevel < 4)
         {
-            eventLog.AddEvent("Not enough Gold to unlock this pannel");
-            Debug.Log("Not enough Gold to unlock this pannel");
+            eventLog.AddEvent("Need to be level 5");
+            Debug.Log("Need to be level 5");
             return;
         }
         else
         {
-            gameManager.ReduceMoney(200);
-            Destroy(unlockPannels[0]);
+            if (gameManager.Money < 200)
+            {
+                eventLog.AddEvent("Not enough Gold to unlock");
+                Debug.Log("Not enough Gold to unlock");
+                return;
+            }
+            else
+            {
+                gameManager.ReduceMoney(200);
+                Destroy(unlockPannels[0]);
+            }
         }
+       
     }
 
-    
+
     public void unlockPannel400()
     {
-        if (gameManager.Money < 400)
+        if (gameManager.PlayerLevel < 9)
         {
-            eventLog.AddEvent("Not enough Gold to unlock this pannel");
-            Debug.Log("Not enough Gold to unlock this pannel");
+            eventLog.AddEvent("Need to be level 10");
+            Debug.Log("Need to be level 10");
             return;
         }
         else
         {
-            gameManager.ReduceMoney(400);
-            Destroy(unlockPannels[1]);
+            if (gameManager.Money < 400)
+            {
+                eventLog.AddEvent("Not enough Gold to unlock");
+                Debug.Log("Not enough Gold to unlock");
+                return;
+            }
+            else
+            {
+                gameManager.ReduceMoney(400);
+                Destroy(unlockPannels[1]);
+            }
         }
+
+           
     }
 
 
     //Admin unlock Panel
     public void unlockAdminPannel100()
     {
-        if (gameManager.Money < 100)
+        if (gameManager.Money < 100 )
         {
-            eventLog.AddEvent("Not enough Gold to unlock this pannel");
-            Debug.Log("Not enough Gold to unlock this pannel");
+            eventLog.AddEvent("Not enough Gold to unlock ");
+            Debug.Log("Not enough Gold to unlock ");
             return;
         }
         else
         {
             gameManager.ReduceMoney(100);
-            Destroy(unlockPannels[2]);
+            Destroy(unlockPannels[1]);
         }
     }
 
-    void Start()
-    {
-        teachermanager = Teachermanager.instance;
-        secretarymanager = secretaryManager.instance;
-
-        gameManager = GameManager.instance;
-        eventLog = GetComponent<PlayerLog>();
-    }
+   
 
     void Update()
     {

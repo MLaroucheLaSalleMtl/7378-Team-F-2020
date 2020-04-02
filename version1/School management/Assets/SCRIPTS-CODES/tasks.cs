@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class tasks : MonoBehaviour
 {
+   
     public static tasks instance = null;
     private void Awake()
     {
@@ -14,8 +16,9 @@ public class tasks : MonoBehaviour
         }
         else if (instance != this)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
+   
     }
 
     GameManager gameManager;
@@ -30,7 +33,9 @@ public class tasks : MonoBehaviour
 
     HireSecretary secretaryScript;
 
-   
+    taskRewards rewards;
+
+
 
     [SerializeField] private GameObject[] taskPanels;
     // [SerializeField] private GameObject[] taskBTNS;
@@ -75,6 +80,7 @@ public class tasks : MonoBehaviour
         lobbyScript = SpawnLobby.instance;
         adminScript = SpawnAdmin.instance;
         caffScript = SpawnCaff.instance;
+        rewards = taskRewards.instance;
 
 
         #region hidden task
@@ -107,22 +113,24 @@ public class tasks : MonoBehaviour
                 break;
         }
     }
-
+    #region SFX
     public void sfxStuff()
     {
         gameObject.AddComponent<AudioSource>();
         source.clip = sfx;
 
         //SFX volume level
-        source.volume = 0.5f;
+        source.volume = 0.2f;
         source.playOnAwake = false;
 
     }
-
     public void playSFX()
     {
         source.PlayOneShot(sfx);
     }
+    #endregion
+
+    
 
     public void classRoomGoals()
     {
@@ -135,10 +143,16 @@ public class tasks : MonoBehaviour
 
 
             taskPanels[1].SetActive(true);
-          
-
             SparklesForObj[1].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+            
+
+            //sfx 
             playSFX();
+
+            //next task
             indexer++;
         }
 
@@ -162,7 +176,14 @@ public class tasks : MonoBehaviour
 
             taskPanels[2].SetActive(true);
             SparklesForObj[2].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
             playSFX();
+
+            //next task
             indexer++;
         }
 
@@ -186,7 +207,12 @@ public class tasks : MonoBehaviour
             SparklesForObj[3].SetActive(true);
             taskPanels[3].SetActive(true);
 
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
             playSFX();
+
             indexer++;
         }
 
@@ -210,7 +236,12 @@ public class tasks : MonoBehaviour
             SparklesForObj[4].SetActive(true);
             taskPanels[4].SetActive(true);
 
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
             playSFX();
+
             indexer++;
         }
 
@@ -236,7 +267,12 @@ public class tasks : MonoBehaviour
             SparklesForObj[5].SetActive(true);
             taskPanels[5].SetActive(true);
 
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
             playSFX();
+
             indexer++;
         }
 
@@ -259,7 +295,12 @@ public class tasks : MonoBehaviour
 
             //taskPanels[6].SetActive(true);
 
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
             playSFX();
+
             indexer++;
         }
 
@@ -268,7 +309,6 @@ public class tasks : MonoBehaviour
             taskPanels[5].SetActive(true);
         }
     }
-
 
 
 
