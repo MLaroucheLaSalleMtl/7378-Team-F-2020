@@ -16,5 +16,16 @@ public class DontDestroy : MonoBehaviour
 
             DontDestroyOnLoad(this.gameObject);
         }
-    
+
+
+    void Start()
+    {
+        
+    }
+    void Update()
+    {
+
+    }
+
+
 }

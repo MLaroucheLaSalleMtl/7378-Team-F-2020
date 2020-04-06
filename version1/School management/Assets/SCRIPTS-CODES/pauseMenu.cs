@@ -16,6 +16,7 @@ public class pauseMenu : MonoBehaviour
     public GameObject btnControls;
     public GameObject btnSHIFT;
     public GameObject btnSPACEBAR;
+    public GameObject musicBG;
 
 
     //Pause & Exit BG
@@ -76,6 +77,7 @@ public class pauseMenu : MonoBehaviour
         pauseBG.SetActive(true);
         btnSHIFT.SetActive(false);
         btnSPACEBAR.SetActive(false);
+        musicBG.SetActive(true);
         gamePaused = true;
     }
 
@@ -91,6 +93,7 @@ public class pauseMenu : MonoBehaviour
         pauseBG.SetActive(false);
         btnSHIFT.SetActive(false);
         btnSPACEBAR.SetActive(false);
+        musicBG.SetActive(false);
         gamePaused = false;
     }
 
@@ -107,8 +110,11 @@ public class pauseMenu : MonoBehaviour
         pauseBG.SetActive(true);
         btnSHIFT.SetActive(true);
         btnSPACEBAR.SetActive(true);
+        musicBG.SetActive(false);
         gamePaused = true;
     }
+
+   
 
     void Start()
     {
