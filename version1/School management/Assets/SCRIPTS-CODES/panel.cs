@@ -7,6 +7,7 @@ public class panel : MonoBehaviour
 
 
     public GameObject Panel;
+    public GameObject inputTxt;
     public GameObject Task;
     
 
@@ -16,6 +17,7 @@ public class panel : MonoBehaviour
         if (Panel != null)
         {
             Panel.SetActive(false);
+            inputTxt.SetActive(false);
 
             //Animation: Make task go to the actual place
             Animator animator = Task.GetComponent<Animator>();
