@@ -7,6 +7,8 @@ public class FloorUI : MonoBehaviour
 {
     #region Singleton to change the camera view
     public static FloorUI instance = null;
+    public int floor; 
+
     private void Awake()
     {
         if (instance == null)
@@ -35,12 +37,14 @@ public class FloorUI : MonoBehaviour
         floorTxt[0].SetActive(false);
         floorTxt[1].SetActive(true);
         floorTxt[2].SetActive(false);
+        floor = 2;
     }
     public void thirdFloor()
     {
         floorTxt[0].SetActive(false);
         floorTxt[1].SetActive(false);
         floorTxt[2].SetActive(true);
+        floor = 3;
     }
 
     public void clickNext()
@@ -56,6 +60,7 @@ public class FloorUI : MonoBehaviour
             indexer++;
         }
         floorsystem.instance.changecamera();
+        
     }
 
     public void clickPrev()
@@ -71,6 +76,7 @@ public class FloorUI : MonoBehaviour
             indexer--;
         }
         floorsystem.instance.changecamera();
+        
     }
 
 

@@ -84,12 +84,17 @@ public class GameTime : MonoBehaviour
             //    manager.SpawnCode();
             //}
             hour++;
+
+            // give XP
+            manager.addExp(5);
+
             minute = 0;
             UpdateText();
         }
         else if(hour >= 15)
         {
             manager.Gopay();
+            
             day++;
 
             //teacher generator per day

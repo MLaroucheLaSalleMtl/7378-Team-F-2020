@@ -35,6 +35,8 @@ public class tasks : MonoBehaviour
 
     taskRewards rewards;
 
+    FloorUI floorUI;
+
 
 
     [SerializeField] private GameObject[] taskPanels;
@@ -70,6 +72,12 @@ public class tasks : MonoBehaviour
     [Header("Objectives 5")]
     private int CaffBuilt = 0;
 
+    [Header("Objectives 6")]
+    private int sfloor = 1;
+
+    [Header("Objectives 7")]
+    private int tfloor = 2;
+
     int indexer = 0;
 
 
@@ -81,6 +89,7 @@ public class tasks : MonoBehaviour
         adminScript = SpawnAdmin.instance;
         caffScript = SpawnCaff.instance;
         rewards = taskRewards.instance;
+        floorUI = FloorUI.instance;
 
 
         #region hidden task
@@ -108,6 +117,16 @@ public class tasks : MonoBehaviour
             case 3: { AdminGoals(); } break;
             case 4: { SecretaryGoal(); } break;
             case 5: { CaffGoals(); } break;
+            case 6: { secondFloor();  } break;
+            case 7: { thirdFloor(); } break;
+            case 8: { clearPlayerLog(); } break;
+            case 9: { payTeacher(); } break;
+            case 10: { pressY(); } break;
+            case 11: { zoomCamera(); } break;
+            case 12: { pressW(); } break;
+            case 13: { pressA(); } break;
+            case 14: { pressS(); } break;
+            case 15: { pressD(); } break;
 
             default:
                 break;
@@ -193,7 +212,6 @@ public class tasks : MonoBehaviour
         }
     }
 
-
     public void LobbyGoals()
     {
         if (lobbyScript.LobbyMade > LobbyBuilt)
@@ -222,7 +240,6 @@ public class tasks : MonoBehaviour
         }
     }
 
-
     public void AdminGoals()
     {
         if (adminScript.AdminMade > AdminBuilt) 
@@ -250,7 +267,6 @@ public class tasks : MonoBehaviour
             taskPanels[4].SetActive(true);
         }
     }
-
 
     public void SecretaryGoal()
     {
@@ -293,7 +309,7 @@ public class tasks : MonoBehaviour
 
 
 
-            //taskPanels[6].SetActive(true);
+            taskPanels[6].SetActive(true);
 
             //reward
             rewards.rewardSystem();
@@ -310,7 +326,358 @@ public class tasks : MonoBehaviour
         }
     }
 
+    //explore different floors
 
+    public void secondFloor()
+    {
+        if (floorUI.floor > sfloor)
+        {
+            if (taskPanels[6] != null)
+            {
+                taskPanels[6].SetActive(false);
+            }
+
+
+
+            taskPanels[7].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[6].SetActive(true);
+        }
+    }
+
+    public void thirdFloor()
+    {
+        if (floorUI.floor > tfloor)
+        {
+            if (taskPanels[7] != null)
+            {
+                taskPanels[7].SetActive(false);
+            }
+
+
+
+            //taskPanels[8].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[7].SetActive(true);
+        }
+    }
+
+    //clear player log
+
+    public void clearPlayerLog()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (taskPanels[8] != null)
+            {
+                taskPanels[8].SetActive(false);
+            }
+
+
+
+            //taskPanels[9].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[8].SetActive(true);
+        }
+    }
+
+    //pay the teacher
+
+    public void payTeacher()
+    {
+        if (gameManager.playerPaidSalary == true)
+        {
+            if (taskPanels[9] != null)
+            {
+                taskPanels[9].SetActive(false);
+            }
+
+
+            taskPanels[10].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[9].SetActive(true);
+        }
+    }
+
+    //camera quest
+
+    public void pressY()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            if (taskPanels[10] != null)
+            {
+                taskPanels[10].SetActive(false);
+            }
+
+
+
+            taskPanels[11].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[10].SetActive(true);
+        }
+    }
+
+    public void zoomCamera()
+    {
+        if(Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            if (taskPanels[11] != null)
+            {
+                taskPanels[11].SetActive(false);
+            }
+
+
+
+            taskPanels[12].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[11].SetActive(true);
+        }
+    }
+
+    // camera basic movement
+
+    public void pressW()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            if (taskPanels[12] != null)
+            {
+                taskPanels[12].SetActive(false);
+            }
+
+
+
+            taskPanels[13].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[12].SetActive(true);
+        }
+    }
+
+    public void pressA()
+    {
+        if (Input.GetKeyDown(KeyCode.A)) //&& Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)
+        {
+            if (taskPanels[13] != null)
+            {
+                taskPanels[13].SetActive(false);
+            }
+
+
+
+            taskPanels[14].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[13].SetActive(true);
+        }
+    }
+
+    public void pressS()
+    {
+        if (Input.GetKeyDown(KeyCode.S)) //&& Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)
+        {
+            if (taskPanels[14] != null)
+            {
+                taskPanels[14].SetActive(false);
+            }
+
+
+
+            taskPanels[15].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[14].SetActive(true);
+        }
+    }
+
+    public void pressD()
+    {
+        if (Input.GetKeyDown(KeyCode.D)) //&& Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)
+        {
+
+            if (taskPanels[15] != null)
+            {
+                taskPanels[15].SetActive(false);
+            }
+
+
+
+            taskPanels[16].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[15].SetActive(true);
+        }
+    }
+
+    // camera rotation
+
+    public void pressQ()
+    {
+        if (Input.GetKeyDown(KeyCode.Q)) //&& Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)
+        {
+
+            if (taskPanels[16] != null)
+            {
+                taskPanels[16].SetActive(false);
+            }
+
+
+
+            taskPanels[17].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[16].SetActive(true);
+        }
+    }
+
+    public void pressE()
+    {
+        if (Input.GetKeyDown(KeyCode.E)) //&& Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)
+        {
+
+            if (taskPanels[17] != null)
+            {
+                taskPanels[17].SetActive(false);
+            }
+
+
+
+            taskPanels[18].SetActive(true);
+
+            //reward
+            rewards.rewardSystem();
+
+            //sfx
+            playSFX();
+
+            indexer++;
+        }
+
+        else
+        {
+            taskPanels[17].SetActive(true);
+        }
+    }
+
+    /// TO DO: 
+    /// - go into the setting and select "Controls"
 
     public void RemoveArrow()
     {
