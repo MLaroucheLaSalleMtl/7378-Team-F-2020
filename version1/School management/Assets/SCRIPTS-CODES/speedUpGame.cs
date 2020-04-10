@@ -10,7 +10,7 @@ public class speedUpGame : MonoBehaviour
     // using SHIFT the player can speed up the game time or slow down the time
     public void Speed()
     {
-        Time.timeScale = 15f;
+        GameTime.instance.Timescale1=1200;
         gameSpeedUp = true;
         Debug.Log("Speen ON");
         
@@ -18,7 +18,7 @@ public class speedUpGame : MonoBehaviour
 
     public void unSpeed()
     {
-        Time.timeScale = 15f;
+        GameTime.instance.Timescale1 = 600;
         gameSpeedUp = false;
         Debug.Log("Speed OFF");
     }

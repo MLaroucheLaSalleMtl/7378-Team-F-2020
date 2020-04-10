@@ -98,6 +98,19 @@ public class BuyCube : MonoBehaviour
 
         //display ui to pick
         classroom = Instantiate(ClassToBuild, transform.position + PossitionOfcet, transform.rotation);
+        for(int i = 0; i < classroom.transform.childCount;i++)
+        {
+            classroom.transform.GetChild(i).gameObject.layer= gameObject.layer;
+            if (classroom.transform.GetChild(i).childCount > 0)
+            {
+                for (int f = 0; f < classroom.transform.GetChild(i).childCount; f++)
+                {
+                    classroom.transform.GetChild(i).gameObject.transform.GetChild(f).gameObject.layer = this.gameObject.layer;
+                }
+            }
+        }
+        
+        //classroom.layer = gameObject.layer;
         gameManager.Clasesbogth.Add(classroom);
 
         //game to know there is a classroom, important for hiring a teacher

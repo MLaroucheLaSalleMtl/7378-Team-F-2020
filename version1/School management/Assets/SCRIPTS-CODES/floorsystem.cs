@@ -47,5 +47,23 @@ public class floorsystem : MonoBehaviour
         }
         
     }
-    
+    public void changecamera(int indexer)
+    {
+        for (int i = 0; i < cameralevels.Length; i++)
+        {
+
+            if (i == indexer)
+            {
+                if (i == 0) { cameralevels[i].transform.position = cameralevels[i + 1].transform.position; } else { cameralevels[i].transform.position = cameralevels[i - 1].transform.position; }
+
+                cameralevels[indexer].SetActive(true);
+            }
+            else
+            {
+                cameralevels[i].SetActive(false);
+            }
+        }
+
+    }
+
 }

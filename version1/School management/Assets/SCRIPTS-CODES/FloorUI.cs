@@ -50,16 +50,18 @@ public class FloorUI : MonoBehaviour
     public void clickNext()
     {
         
-        if (indexer > 3)
+        if (indexer >= 3)
         {
             indexer = default;
+            floorsystem.instance.changecamera(indexer);
         }
 
         else
         {
             indexer++;
+            floorsystem.instance.changecamera();
         }
-        floorsystem.instance.changecamera();
+        
         
     }
 
@@ -69,13 +71,15 @@ public class FloorUI : MonoBehaviour
         if (indexer == 0)
         {
             indexer = 2;
+            floorsystem.instance.changecamera(indexer);
         }
 
         else
         {
             indexer--;
+            floorsystem.instance.changecamera();
         }
-        floorsystem.instance.changecamera();
+        
         
     }
 

@@ -24,7 +24,7 @@ public class GameTime : MonoBehaviour
 
     
 
-    private const int Timescale = 600;//default45
+    private int Timescale = 600;//default45
 
     [Header("amount of money increase overtime")]
     [SerializeField] private float amount;
@@ -33,6 +33,8 @@ public class GameTime : MonoBehaviour
     private int daysSurv;
     private float minute,day, second, month, year;
     public float hour;
+
+    public int Timescale1 { get => Timescale; set => Timescale = value; }
 
     void Start()
     {
@@ -57,7 +59,7 @@ public class GameTime : MonoBehaviour
 
     private void CalculateTime()
     {
-        second += Time.deltaTime * Timescale;
+        second += Time.deltaTime * Timescale1;
         Mathf.Round(second);
         //if (second >= 10&& Lobby.instance.StudentsInLine.Count > 0 )
         //{

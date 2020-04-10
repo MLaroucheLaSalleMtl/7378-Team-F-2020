@@ -26,7 +26,7 @@ public class CamaraControl : MonoBehaviour
     {
         if (Input.GetKeyDown("y"))
             Locked = !Locked;
-        if (!Locked)
+        if (Locked)
             return;
 
         //if (Input.GetKey("left ctrl")){
