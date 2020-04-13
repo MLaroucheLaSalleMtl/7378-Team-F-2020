@@ -12,10 +12,12 @@ public class CamaraControl : MonoBehaviour
     private float maxy = 65f;
     private float RotationSpeed = 1;
     private Vector3 CamRotY=new Vector3(0f,2f,0f) ;
-    [SerializeField] private float xRotationup = 10f;
-    [SerializeField] private float xRotationdown = 90f;
-    [SerializeField] private float leftLimit = -31f;
-    [SerializeField] private float rightLimit = 31f;
+    private float xRotationup = 10f;
+    private float xRotationdown = 90f;
+    private float leftLimit = -36f;
+    private float rightLimit = 15f;
+     private float ForwardLimit = 27.4f;
+     private float BackwardLimit = -55f;
     void Start()
     {
         
@@ -35,19 +37,19 @@ public class CamaraControl : MonoBehaviour
 
         if (Input.GetKey("w"))
         {
-            transform.Translate(Vector3.forward * MoveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.forward * MoveSpeed * Time.deltaTime, Space.Self);
         }
         if (Input.GetKey("s"))
         {
-            transform.Translate(Vector3.back * MoveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.back * MoveSpeed * Time.deltaTime, Space.Self);
         }
         if (Input.GetKey("a"))
         {
-            transform.Translate(Vector3.left * MoveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.left * MoveSpeed * Time.deltaTime, Space.Self);
         }
         if (Input.GetKey("d"))
         {
-            transform.Translate(Vector3.right * MoveSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.right * MoveSpeed * Time.deltaTime, Space.Self);
         }
 
         float scrollig = Input.GetAxis("Mouse ScrollWheel");
@@ -55,10 +57,11 @@ public class CamaraControl : MonoBehaviour
         Poss.y -= scrollig * 1000 * scrollSpeed * Time.deltaTime;
 
         if (transform.position.y > xRotationup && transform.position.y < xRotationdown)
-            transform.rotation = Quaternion.Euler(transform.position.y, transform.rotation.y, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(transform.position.y, transform.rotation.y,transform.rotation.z);
 
         Poss.y = Mathf.Clamp(Poss.y, miny, maxy);
         Poss.x = Mathf.Clamp(Poss.x, leftLimit, rightLimit);
+        Poss.z = Mathf.Clamp(Poss.z, BackwardLimit, ForwardLimit);
 
         //rotate around Y axis
         if (Input.GetKey("e"))

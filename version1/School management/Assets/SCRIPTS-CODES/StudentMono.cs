@@ -41,9 +41,39 @@ public class StudentMono : MonoBehaviour
     }
 
     // Update is called once per frame
+    
     void Update()
     {
+        if (gameObject.transform.position.y<manager.LevelMarkers[0].position.y)
+        {
+            Setmylayer(8);
+        }
+        else if (gameObject.transform.position.y > manager.LevelMarkers[0].position.y && gameObject.transform.position.y < manager.LevelMarkers[1].position.y)
+        {
+            Setmylayer(9);
+        }
+        else if (gameObject.transform.position.y > manager.LevelMarkers[1].position.y)
+        {
+            Setmylayer(10);
+        }
         Schedule();
+    }
+
+    private void Setmylayer(int layer)
+    {
+        gameObject.layer = layer;
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.layer = layer;
+            if (transform.GetChild(i).childCount > 0)
+            {
+                for (int f = 0; f < gameObject.transform.GetChild(i).childCount; f++)
+                {
+                    transform.GetChild(i).gameObject.transform.GetChild(f).gameObject.layer = layer;
+                }
+            }
+        }
     }
 
     //public void OnSpawn()

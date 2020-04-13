@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     [Header("Level SFX")]
     public AudioClip lvlSFX;
     private AudioSource lvlsfxSource { get { return GetComponent<AudioSource>(); } }
-
+    public Transform[] LevelMarkers;
 
     [Header("Gold Coins")]
     [SerializeField] private float money;
