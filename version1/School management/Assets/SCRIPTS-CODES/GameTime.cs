@@ -46,7 +46,7 @@ public class GameTime : MonoBehaviour
         seasonTxt = GameObject.Find("Season").GetComponent<Text>();
         datetxt = GameObject.Find("Date").GetComponent<Text>();
         CalculateSeason();
-        hour = 3;
+        hour = 0;
         manager = GameManager.instance;
         teacher = Teachermanager.instance;
     }
@@ -93,9 +93,9 @@ public class GameTime : MonoBehaviour
             minute = 0;
             UpdateText();
         }
-        else if(hour >= 15)
+        else if(hour >= 24)
         {
-            manager.Gopay();
+            //manager.Gopay();
             
             day++;
 

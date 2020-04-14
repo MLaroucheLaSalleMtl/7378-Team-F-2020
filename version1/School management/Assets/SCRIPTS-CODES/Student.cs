@@ -24,7 +24,7 @@ public class Student
     public Student(string sName, string classIwant, string gender)
     {
         SName1 = sName;
-        Happines1 = 70;
+        Happines1 = 60;
         ClassIwant1 = classIwant;
         Scourse1 = "Not Registered";
         Gender1 = gender;

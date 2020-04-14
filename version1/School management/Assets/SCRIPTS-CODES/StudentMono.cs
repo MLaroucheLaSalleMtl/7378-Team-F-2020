@@ -18,6 +18,8 @@ public class StudentMono : MonoBehaviour
 
     public bool Paid = false;
 
+    
+
     void Start()
     {
         loby = Lobby.instance;
@@ -122,7 +124,18 @@ public class StudentMono : MonoBehaviour
 
     }
   
+    private void DetermineHappines()
+    {
+        //stdudentinfo.Happines1
+        float HapyTemp = 0;
 
+        if (stdudentinfo.ClassIgot1 == stdudentinfo.ClassIwant1)
+        {
+            HapyTemp += 40;
+        }
+              
+
+    }
 
 
 

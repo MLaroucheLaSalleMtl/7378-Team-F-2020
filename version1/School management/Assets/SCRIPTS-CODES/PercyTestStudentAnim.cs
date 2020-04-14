@@ -9,7 +9,7 @@ public class PercyTestStudentAnim : MonoBehaviour
     private Animator anim;
     void Start()
     {
-        nav = GetComponent<NavMeshAgent>();
+        nav = transform.parent.GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
     }
 

@@ -27,7 +27,7 @@ public class HireCube : MonoBehaviour
     [SerializeField] private Vector3 RotationOfcet;
 
     [Header("Tooltip when Hovered over cube")]
-    [SerializeField] private GameObject tooltip;
+     private GameObject tooltip;
 
     //[Header("Sparkles/Glow objective indicator")]
     //[SerializeField] public GameObject SparklesForTeacher;
@@ -38,11 +38,14 @@ public class HireCube : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        tooltip = GameObject.Find("hireTeacherToolTipTxT");
         gameManager = GameManager.instance;
         teacherManager = Teachermanager.instance;
         teachermono = TeacherMono.instance;
         Tasks = tasks.instance;
-        eventLog = GetComponent<PlayerLog>();
+        //eventLog = GetComponent<PlayerLog>(); WTF?
+        eventLog = PlayerLog.instance;
     }
 
     // Update is called once per frame
@@ -79,7 +82,7 @@ public class HireCube : MonoBehaviour
 
             GameObject TeacherTohire = teacherManager.GetTeacherTohire();
             tStaff = Instantiate(TeacherTohire, teacherPosition, transform.rotation * Quaternion.Euler(RotationOfcet));
-
+            transform.parent.GetComponent<ClasroomScip>().Teacher = tStaff;
             //How much the teacher cost to hire 
             gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().HiringCost1);
 

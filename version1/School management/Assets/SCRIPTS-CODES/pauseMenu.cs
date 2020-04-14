@@ -26,7 +26,7 @@ public class pauseMenu : MonoBehaviour
     public string sceneToReload = "SampleScene";
 
     //timescale
-    private float timeScale = 45f;
+    private float timeScale = 1f;
 
     //Buttons for pauseMenu
     public void DoQuit()
@@ -84,7 +84,7 @@ public class pauseMenu : MonoBehaviour
     public void unPause()
     {
         //Restarts the time when unpaused but timescale doesn't start right away??? :omegaMonka:
-        Time.timeScale = timeScale;
+        Time.timeScale = 1;
         pauseTxt.SetActive(false);
         btnQuit.SetActive(false);
         btnRestart.SetActive(false);

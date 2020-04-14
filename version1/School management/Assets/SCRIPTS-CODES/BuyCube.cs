@@ -125,7 +125,7 @@ public class BuyCube : MonoBehaviour
         Destroy(gameObject);
 
         //bring out the teacher HireCube
-        HireCube.SetActive(true);
+        //HireCube.SetActive(true);
 
         tooltip.SetActive(false);
 
