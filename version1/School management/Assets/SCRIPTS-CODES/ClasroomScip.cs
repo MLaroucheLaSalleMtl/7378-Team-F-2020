@@ -28,11 +28,10 @@ public class ClasroomScip : MonoBehaviour
     private void Update() 
         {
         
-        if (once)
+        if (once&&Teacher!=null)
         {
             SetTeacherSkill();
             once = false;
-
 
         }
         

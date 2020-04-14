@@ -7,9 +7,18 @@ public class PercyTestStudentAnim : MonoBehaviour
 {
     private NavMeshAgent nav;
     private Animator anim;
+    [SerializeField]private StudentMono info;
     void Start()
     {
-        nav = transform.parent.GetComponent<NavMeshAgent>();
+        if (info.stdudentinfo.Gender1 == "Female")
+        {
+            nav = transform.parent.GetComponent<NavMeshAgent>();
+        }
+        else
+        {
+            nav = GetComponent<NavMeshAgent>();
+
+        }
         anim = GetComponent<Animator>();
     }
 

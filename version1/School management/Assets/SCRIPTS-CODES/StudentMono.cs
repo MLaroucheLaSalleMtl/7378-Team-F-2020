@@ -18,7 +18,11 @@ public class StudentMono : MonoBehaviour
 
     public bool Paid = false;
 
-    
+    //-------------
+    [SerializeField] private GameObject boyrig;
+    [SerializeField] private GameObject girlrig;
+    [SerializeField] private Animator animboy;    
+    [SerializeField] private PercyTestStudentAnim script;    
 
     void Start()
     {
@@ -39,6 +43,14 @@ public class StudentMono : MonoBehaviour
 
 
         //InvokeRepeating("OnSpawn", 10, 5f);
+        if (stdudentinfo.Gender1 == "Female")
+        {
+            boyrig.SetActive(false);
+            animboy.enabled = false;
+            girlrig.SetActive(true);
+            script.enabled = false;
+            
+        }
 
     }
 
