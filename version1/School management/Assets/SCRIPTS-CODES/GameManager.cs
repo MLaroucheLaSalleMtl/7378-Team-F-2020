@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
     public float UpdatedExp { get => updatedExp; set => updatedExp = value; }
     public int ExpIncrease { get => expIncrease; set => expIncrease = value; }
     public int PlayerLevel { get => playerLevel; set => playerLevel = value; }
+    public int StudentCount1 { get => StudentCount; set => StudentCount = value; }
 
     private void Awake()
     {
@@ -298,7 +299,7 @@ public class GameManager : MonoBehaviour
     /// student
     public void AddStudent()
     {
-        StudentCount++;
+        StudentCount1++;
 
     }
 
@@ -394,7 +395,7 @@ public class GameManager : MonoBehaviour
 
     public void RefreshTextOnUI()
     {
-        StudentCountText.text = "Students: "+StudentCount;
+        StudentCountText.text = "Students: "+StudentCount1;
     }
 
     public void classRTxtOnUI()

@@ -202,7 +202,14 @@ public class GameTime : MonoBehaviour
     private void UpdateText()
     {
         dayTxt.text = "Days survived: "+daysSurv;
-        clockTxt.text = "Time: " + hour + ":" + minute;
+        if (minute >= 0&&minute<10)
+        {
+            clockTxt.text = "Time: " + hour + ":"+"0"+minute;
+        }
+        else
+        {
+            clockTxt.text = "Time: " + hour + ":" + minute;
+        }
         datetxt.text = "Date: " + day+"/"+month + "/" + year;
        // monthtxt.text="Month"
         
