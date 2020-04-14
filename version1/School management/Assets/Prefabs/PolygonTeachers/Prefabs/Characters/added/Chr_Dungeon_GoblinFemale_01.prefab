@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Gill the Goblin
   HiringCost: 0
-  salary: 2
+  salary: 100
 --- !u!114 &-6691597092555346978
 MonoBehaviour:
   m_ObjectHideFlags: 0

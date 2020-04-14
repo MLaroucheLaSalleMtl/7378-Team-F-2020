@@ -81,7 +81,7 @@ public class HireCube : MonoBehaviour
             gameManager.AddTeacher();
 
             GameObject TeacherTohire = teacherManager.GetTeacherTohire();
-            tStaff = Instantiate(TeacherTohire, teacherPosition, transform.rotation * Quaternion.Euler(RotationOfcet));
+            tStaff = Instantiate(TeacherTohire, transform.position, transform.rotation * Quaternion.Euler(RotationOfcet));
             transform.parent.GetComponent<ClasroomScip>().Teacher = tStaff;
             //How much the teacher cost to hire 
             gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().HiringCost1);

@@ -15,6 +15,7 @@ public class StudentMono : MonoBehaviour
     private NavMeshAgent myNavAgent;
     private bool LobbyFound = false;
     public GameObject ClassSit=null;
+    public GameObject Caffsit=null;
 
     public bool Paid = false;
 
@@ -90,6 +91,15 @@ public class StudentMono : MonoBehaviour
         }
     }
 
+    public void GetPlaceoncafeteria() { 
+    //{
+    //    if (Caffsit != null&&caa)
+    //    {
+
+    //    }
+    }
+
+
     //public void OnSpawn()
     //{
       
@@ -155,26 +165,34 @@ public class StudentMono : MonoBehaviour
     {
     
         if (ClassSit != null) { 
-            if (gtime.hour >= 3 && gtime.hour < 4)
-            {
-                Paid = false;
-            }
+            //if (gtime.hour >= 3 && gtime.hour < 4)
+            //{
+            //    Paid = false;
+            //}
                 
-            if (gtime.hour >3 && gtime.hour <= 7)
+            if (gtime.hour >3 && gtime.hour <= 10)
             {
                 
                 myNavAgent.SetDestination(ClassSit.transform.position);
             }
-            if (gtime.hour > 7 && gtime.hour <= 9)
+            if (gtime.hour > 10 && gtime.hour <= 13)
             {
                 myNavAgent.SetDestination( RandomNavmeshLocation(25));
             }
-            if (gtime.hour > 9 && gtime.hour <= 12)
+            if (gtime.hour > 13 && gtime.hour <= 15)
             {
                 myNavAgent.SetDestination(ClassSit.transform.position);
             }
-            
-            if (gtime.hour > 0 && gtime.hour < 3&&Paid ==true)
+            if (gtime.hour > 15 && gtime.hour <= 19)
+            {
+                myNavAgent.SetDestination(RandomNavmeshLocation(25));
+            }
+            if (gtime.hour > 19 && gtime.hour <= 24)
+            {
+                myNavAgent.SetDestination(ClassSit.transform.position);
+            }
+
+            if (gtime.hour > 24 && gtime.hour < 3)
             {
                 myNavAgent.SetDestination(manager.LocationOfSpawn);
             }

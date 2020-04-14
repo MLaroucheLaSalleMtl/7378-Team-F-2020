@@ -5775,8 +5775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Percy the Pirate
-  HiringCost: 0
-  salary: 6
+  HiringCost: 300
+  salary: 150
 --- !u!114 &1178790058671011039
 MonoBehaviour:
   m_ObjectHideFlags: 0

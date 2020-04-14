@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Goe the Goblin
   HiringCost: 0
-  salary: 3
+  salary: 100
 --- !u!114 &-983210312947851593
 MonoBehaviour:
   m_ObjectHideFlags: 0

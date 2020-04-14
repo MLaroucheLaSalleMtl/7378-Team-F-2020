@@ -1860,7 +1860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Wendy the Witch
   HiringCost: 0
-  salary: 4
+  salary: 100
 --- !u!114 &1780956280085532140
 MonoBehaviour:
   m_ObjectHideFlags: 0

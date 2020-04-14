@@ -14,16 +14,16 @@ public class ClasroomScip : MonoBehaviour
     {
         //ChildTagName = null;
     }
-    private void Start()
-    {
-       for(int i = 0; i < transform.childCount; i++)
+        private void Start()
         {
-            if (transform.GetChild(i).tag == "Sit")
+           for(int i = 0; i < transform.childCount; i++)
             {
-                Sits.Add(transform.GetChild(i).gameObject);
+                if (transform.GetChild(i).tag == "Sit")
+                {
+                    Sits.Add(transform.GetChild(i).gameObject);
+                }
             }
         }
-    }
 
     private void Update() 
         {

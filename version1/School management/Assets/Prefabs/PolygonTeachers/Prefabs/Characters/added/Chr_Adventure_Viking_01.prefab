@@ -2257,7 +2257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Vlad the Viking
   HiringCost: 0
-  salary: 1
+  salary: 100
 --- !u!114 &4812892313121811834
 MonoBehaviour:
   m_ObjectHideFlags: 0

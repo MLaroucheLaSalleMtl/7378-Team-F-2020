@@ -5425,7 +5425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Will the Wizard
   HiringCost: 0
-  salary: 5
+  salary: 100
 --- !u!114 &-1085387030474770125
 MonoBehaviour:
   m_ObjectHideFlags: 0

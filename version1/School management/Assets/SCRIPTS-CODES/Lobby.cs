@@ -159,6 +159,7 @@ public class Lobby : MonoBehaviour
             }
             if (StudentsInLine[0].GetComponent<StudentMono>().ClassSit != null)
             {
+                
                 StudentsInLine[0].tag = "RegisteredStudent";
                 StudentsInLine[0].GetComponent<StudentMono>().Schedule();
                 manager.Allregisteredstudents.Add(StudentsInLine[0]);
