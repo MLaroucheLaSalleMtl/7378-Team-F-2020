@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public Image Expbar;
 
     [SerializeField] private GameObject confetti;
+    [SerializeField] private GameObject lvlsplash;
 
     [SerializeField] private int expIncrease;
     [SerializeField] private int playerLevel;
@@ -167,11 +168,13 @@ public class GameManager : MonoBehaviour
     public void levelUp()
     {
         confetti.SetActive(false);
+        lvlsplash.SetActive(false);
 
         if (UpdatedExp >= MaxExp)
         {
             PlayerLevel++;
             confetti.SetActive(true);
+            lvlsplash.SetActive(true);
             playLevelSFX();
             UpdatedExp = 0;
             MaxExp += MaxExp/2;
