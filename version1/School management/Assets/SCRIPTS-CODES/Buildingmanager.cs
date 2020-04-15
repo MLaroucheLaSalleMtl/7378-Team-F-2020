@@ -17,7 +17,7 @@ public class Buildingmanager : MonoBehaviour
         }
     }
     
-    private string[] AvalableClases = { "Magic", "Axe Trowing", "Surfing", "Hacking"  };
+    private string[] AvalableClases = { "Magic", "Axe Trowing", "Surfing", "Hacking", "Chill Room", "Toilet" };
     public GameObject[] ClassesPrefavs;
     private string[] Clasesbogth;
     List<string> Clases;

@@ -13,8 +13,9 @@ public class mainMenuBTN : MonoBehaviour
     public static bool mainMenu = false;
 
     /// Buttons 
-    public GameObject btnStaff;
+    public GameObject btnHiring;
     public GameObject btnStudent;
+    public GameObject btnStaff;
     public GameObject btnFacility;
     public GameObject btnPublicity;
     public GameObject halfCircle;
@@ -37,7 +38,8 @@ public class mainMenuBTN : MonoBehaviour
 
     public void OnMainMenu()
     {
-        
+
+        btnHiring.SetActive(true);
         btnStaff.SetActive(true);
         btnStudent.SetActive(true);
         btnFacility.SetActive(true);
@@ -48,6 +50,7 @@ public class mainMenuBTN : MonoBehaviour
 
     public void OffMainMenu()
     {
+        btnHiring.SetActive(false);
         btnStaff.SetActive(false);
         btnStudent.SetActive(false);
         btnFacility.SetActive(false);

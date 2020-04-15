@@ -28,6 +28,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int expIncrease;
     [SerializeField] private int playerLevel;
 
+    [Header("Player Publicity")]
+
+    public Text publicity;
+    public Text publicityStanding;
+    [SerializeField] private int maxPub;
+    [SerializeField] private int addpub;
+    [SerializeField] private int playerpublicity;
+
     [Header("Level SFX")]
     public AudioClip lvlSFX;
     private AudioSource lvlsfxSource { get { return GetComponent<AudioSource>(); } }
@@ -107,6 +115,9 @@ public class GameManager : MonoBehaviour
     public int ExpIncrease { get => expIncrease; set => expIncrease = value; }
     public int PlayerLevel { get => playerLevel; set => playerLevel = value; }
     public int StudentCount1 { get => StudentCount; set => StudentCount = value; }
+    public int Playerpublicity { get => playerpublicity; set => playerpublicity = value; }
+    public int MaxPub { get => maxPub; set => maxPub = value; }
+    public int Addpub { get => addpub; set => addpub = value; }
 
     private void Awake()
     {
@@ -165,6 +176,7 @@ public class GameManager : MonoBehaviour
         levelUp();
     }
 
+   
 
     public void levelUp()
     {
@@ -182,6 +194,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    // Publicity SYSTEM 
+    public void playerBeginPublicity()
+    {
+        
+        Playerpublicity = 50;
+
+    }
+
+    public void addPub(int Addpub)
+    {
+        Playerpublicity += Addpub;
+    }
 
     public void ClasesNumber()
     {
@@ -242,8 +267,9 @@ public class GameManager : MonoBehaviour
         TeacherCountTXT = GameObject.FindGameObjectWithTag("TeacherCount").GetComponent<Text>();
 
         playerBeginLvl();
+        playerBeginPublicity();
 
-       
+
 
     }
 
@@ -261,6 +287,8 @@ public class GameManager : MonoBehaviour
         updateCurrentTSalary();
         updateRecentTSalary();
         levelTxtOnUI();
+        publictyUI();
+        publictyStandingUI();
         //levelUp();
 
     }
@@ -413,7 +441,31 @@ public class GameManager : MonoBehaviour
         leveltext.text = "Level " + playerLevel;
     }
 
-    
+    public void publictyUI()
+    {
+        Playerpublicity = Mathf.Clamp(Playerpublicity, 1, 100);
+        publicity.text = "Publicity: " + Playerpublicity;
+    }
+
+    public void publictyStandingUI()
+    {
+        Playerpublicity = Mathf.Clamp(Playerpublicity, 1, 100);
+
+        if(Playerpublicity > 0 && Playerpublicity < 45)
+        {
+            publicityStanding.text = "Current Publicity Standing is BAD because you are in the rage of 0 and 45.";
+        }
+        else if (Playerpublicity > 45 && Playerpublicity < 65)
+        {
+            publicityStanding.text = "Current Publicity Standing is OKAY because you are in the range of 45 and 65.";
+        }
+        else if (Playerpublicity > 65)
+        {
+            publicityStanding.text = "Current Publicity Standing is GOOD because you are above 65.";
+        }
+        
+    }
+
 
     public void Spawn(InputAction.CallbackContext context)
     {
