@@ -60,23 +60,20 @@ public class Buying : MonoBehaviour
         Buyingmenu.SetActive(false);
         eventLog.AddEvent("Bought a Hacking Classroom!");
     }
-
-    public void BuyChillRoom()
+    public void BuyChillingPlace()
     {
 
         buildmanager.SetClass(buildmanager.ClassesPrefavs[4]);
         Buyingmenu.SetActive(false);
-        eventLog.AddEvent("Bought a Lounge!");
+        eventLog.AddEvent("Bought a Chilling PLace!");
     }
-
-    public void BuyToilet()
+    public void BuyBathroomPlace()
     {
 
         buildmanager.SetClass(buildmanager.ClassesPrefavs[5]);
         Buyingmenu.SetActive(false);
-        eventLog.AddEvent("Bought a Rest Room!");
+        eventLog.AddEvent("Bought a Bathroom!");
     }
-
     public void DisplayBuyingMenu()
     {
         Buyingmenu.SetActive(true);

@@ -11,6 +11,7 @@ public class Student
     private int Happines;
     private string ClassIwant;
     private string Gender;
+    private string Hobbie;
 
     private string ClassIgot;
 
@@ -20,8 +21,9 @@ public class Student
     public string ClassIwant1 { get => ClassIwant; set => ClassIwant = value; }
     public string Gender1 { get => Gender; set => Gender = value; }
     public string ClassIgot1 { get => ClassIgot; set => ClassIgot = value; }
+    public string Hobbie1 { get => Hobbie; set => Hobbie = value; }
 
-    public Student(string sName, string classIwant, string gender)
+    public Student(string sName, string classIwant, string gender, string hobbie)
     {
         SName1 = sName;
         Happines1 = 60;
@@ -29,6 +31,7 @@ public class Student
         Scourse1 = "Not Registered";
         Gender1 = gender;
         ClassIgot = "nada";
+        Hobbie1 = hobbie;
     }
 
 }

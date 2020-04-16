@@ -26,10 +26,12 @@ public class StudentFactory : MonoBehaviour
     private string PathGirlNames = "Assets/Resources/GirlNames.txt";
     private string PathBoyNames = "Assets/Resources/BoyNames.txt";
     private string PathLastNames = "Assets/Resources/LastName.txt";
+    private string PathHobbies = "Assets/Resources/Hobbies.txt";
 
     readonly List<string> BoyNamesList = new List<string>();
     readonly List<string> GirNamesList = new List<string>();
     readonly List<string> LastNameList = new List<string>();
+    readonly List<string> HobbiesList = new List<string>();
 
 
     #endregion
@@ -47,6 +49,8 @@ public class StudentFactory : MonoBehaviour
         foreach (var w in File2) GirNamesList.Add(w);
         var File3 = File.ReadAllLines(PathLastNames);
         foreach (var w in File3) LastNameList.Add(w);
+        var File4 = File.ReadAllLines(PathHobbies);
+        foreach (var w in File4) HobbiesList.Add(w);
 
         //foreach (string a in BoyNamesList)
         //{
@@ -66,13 +70,15 @@ public class StudentFactory : MonoBehaviour
         int RandsBoy=Random.Range(0, BoyNamesList.Count);
         int RandsGirl=Random.Range(0, GirNamesList.Count);
         int Randslastname=Random.Range(0, LastNameList.Count);
+        int RandHobbie=Random.Range(0, HobbiesList.Count);
         int temporary = manager.AvalableClases.Length;
         int random=Random.Range(0, temporary);
         int binary = Random.Range(0,2);
-        string gender,firstname,lastname,classwanted;
+        string gender,firstname,lastname,classwanted,hoobbie;
 
         classwanted = manager.AvalableClases[random];
         lastname = LastNameList[Randslastname];
+        hoobbie = HobbiesList[RandHobbie];
 
         if (binary == 1)
         {
@@ -87,7 +93,7 @@ public class StudentFactory : MonoBehaviour
             
         }
 
-        Student temp = new Student(firstname +" "+ lastname, classwanted, gender);
+        Student temp = new Student(firstname +" "+ lastname, classwanted, gender,hoobbie);
         return temp;
     }
 }

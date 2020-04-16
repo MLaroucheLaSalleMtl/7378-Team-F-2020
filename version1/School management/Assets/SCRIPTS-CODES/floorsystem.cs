@@ -26,7 +26,7 @@ public class floorsystem : MonoBehaviour
 
     PlayerLog eventLog;
 
-    [SerializeField] private GameObject[] cameralevels;
+    public GameObject[] cameralevels;
 
     [Header("Unlock Pannels")]
     [SerializeField] private GameObject[] Pannels;

@@ -79,6 +79,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     public List<GameObject> Clasesbogth = new List<GameObject>();
+    public List<GameObject> Chilingspot = new List<GameObject>();
+    public List<GameObject> Bathroomrooms = new List<GameObject>();
     public int NumberOfMagic = 0;
     public int NumberOfSurfing = 0;
     public int NumberOfHacking = 0;

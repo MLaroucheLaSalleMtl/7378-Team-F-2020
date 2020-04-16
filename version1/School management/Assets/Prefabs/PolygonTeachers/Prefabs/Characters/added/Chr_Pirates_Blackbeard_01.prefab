@@ -5658,7 +5658,6 @@ GameObject:
   - component: {fileID: 4659060933568082}
   - component: {fileID: 95993992509409012}
   - component: {fileID: 8741195295608997556}
-  - component: {fileID: 1178790058671011039}
   - component: {fileID: -5171402244517435486}
   m_Layer: 0
   m_Name: Chr_Pirates_Blackbeard_01
@@ -5777,18 +5776,6 @@ MonoBehaviour:
   Name: Percy the Pirate
   HiringCost: 300
   salary: 150
---- !u!114 &1178790058671011039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610447763959210}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8270e84603cfd419aa5e70ea709f72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-5171402244517435486
 MonoBehaviour:
   m_ObjectHideFlags: 0

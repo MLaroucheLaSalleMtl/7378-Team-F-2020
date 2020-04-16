@@ -48,6 +48,9 @@ public class mainMenuBTN : MonoBehaviour
         mainMenu = true;
 }
 
+ 
+
+
     public void OffMainMenu()
     {
         btnHiring.SetActive(false);

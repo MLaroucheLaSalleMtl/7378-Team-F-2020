@@ -62,6 +62,10 @@ public class Buildingmanager : MonoBehaviour
             if (ClassToBuild.tag == "Surfing")
             {
                 return tempmap[3];
+            }else
+            if (ClassToBuild.tag == "ChillingPlace")
+            {
+                return tempmap[4];
             }
             else
             {

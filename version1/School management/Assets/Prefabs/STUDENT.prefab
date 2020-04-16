@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClassSit: {fileID: 0}
+  Chillsit: {fileID: 0}
   Paid: 1
   boyrig: {fileID: 6034249254276411067}
   girlrig: {fileID: 7099587837569834747}

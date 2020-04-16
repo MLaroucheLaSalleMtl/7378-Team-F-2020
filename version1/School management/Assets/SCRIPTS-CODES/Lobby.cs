@@ -161,6 +161,11 @@ public class Lobby : MonoBehaviour
             {
                 
                 StudentsInLine[0].tag = "RegisteredStudent";
+                StudentShow.instance.CreateStudPan(StudentsInLine[0].GetComponent<StudentMono>());
+                //GameObject.FindGameObjectsWithTag("ChillingPlace").Length
+                StudentsInLine[0].GetComponent<StudentMono>().GetPlaceoncafeteria();
+
+
                 StudentsInLine[0].GetComponent<StudentMono>().Schedule();
                 manager.Allregisteredstudents.Add(StudentsInLine[0]);
                 StudentsInLine.RemoveAt(0);

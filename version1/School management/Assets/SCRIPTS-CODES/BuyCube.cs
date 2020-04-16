@@ -36,7 +36,7 @@ public class BuyCube : MonoBehaviour
     [SerializeField] private GameObject tooltip;
 
     [Header("Hire Cube activation")]
-    [SerializeField] private GameObject HireCube;
+   // [SerializeField] private GameObject HireCube;
 
     [Header("Preview of classroom/building")]
     private GameObject clone;
@@ -71,33 +71,58 @@ public class BuyCube : MonoBehaviour
     {
         if (buildManager.GetClassToBuild() == null)
         {
-            eventLog.AddEvent("Buy a classroom!");
-            Debug.Log("Buy a classroom!");
-            return;
-        }
-        
-
-
-
-        if (gameManager.Money < buildManager.GetClassToBuild().GetComponent<ClasroomScip>().ClassCost)
-        {
-            eventLog.AddEvent("Not Enough Money");
-            Debug.Log("Not Enough Money");
+            eventLog.AddEvent("Buy a Structure First!");
+            Debug.Log("Buy a Structure First!");
             return;
         }
 
+
+        if (buildManager.GetClassToBuild().tag=="ChillingPlace"|| buildManager.GetClassToBuild().tag == "Bathroom") {
+            if (gameManager.Money < buildManager.GetClassToBuild().GetComponent<Chillingplace>().Cost)
+            {
+                eventLog.AddEvent("Not Enough Money");
+                Debug.Log("Not Enough Money");
+                return;
+            }
+        }
+        else {
+
+            if (gameManager.Money < buildManager.GetClassToBuild().GetComponent<ClasroomScip>().ClassCost)
+            {
+                eventLog.AddEvent("Not Enough Money");
+                Debug.Log("Not Enough Money");
+                return;
+            }
+        }
 
 
         GameObject ClassToBuild = buildManager.GetClassToBuild();
-        
 
-        gameManager.ReduceMoney(ClassToBuild.GetComponent<ClasroomScip>().ClassCost);
+        classroom = Instantiate(ClassToBuild, transform.position + PossitionOfcet, transform.rotation);
+
+        if (ClassToBuild.tag == "Bathroom")
+        {
+            gameManager.ReduceMoney(ClassToBuild.GetComponent<Chillingplace>().Cost);
+            gameManager.Bathroomrooms.Add(classroom);
+        }else if (ClassToBuild.tag == "ChillingPlace")
+        {
+            gameManager.ReduceMoney(ClassToBuild.GetComponent<Chillingplace>().Cost);
+            gameManager.Chilingspot.Add(classroom);
+        }
+        else
+        {
+            gameManager.ReduceMoney(ClassToBuild.GetComponent<ClasroomScip>().ClassCost);
+            gameManager.AddClasses();
+            gameManager.Clasesbogth.Add(classroom);
+        }
 
         // displays how many classes built
-        gameManager.AddClasses();
+        
 
         //display ui to pick
-        classroom = Instantiate(ClassToBuild, transform.position + PossitionOfcet, transform.rotation);
+        
+
+
         for(int i = 0; i < classroom.transform.childCount;i++)
         {
             classroom.transform.GetChild(i).gameObject.layer= gameObject.layer;
@@ -109,9 +134,9 @@ public class BuyCube : MonoBehaviour
                 }
             }
         }
-        
+
         //classroom.layer = gameObject.layer;
-        gameManager.Clasesbogth.Add(classroom);
+        
 
         //game to know there is a classroom, important for hiring a teacher
         buildManager.SetClass(null);

@@ -52,6 +52,7 @@ public class SpawnLobby : MonoBehaviour
         Tasks.SparklesForObj[2].SetActive(false);
         Destroy(gameObject);
         tooltip.SetActive(false);
+        GameManager.instance.ReduceMoney(200f);
     }
 
     private void OnMouseEnter()

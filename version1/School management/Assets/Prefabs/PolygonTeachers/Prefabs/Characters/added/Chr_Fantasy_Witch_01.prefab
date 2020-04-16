@@ -1742,7 +1742,6 @@ GameObject:
   - component: {fileID: 4636916375202554}
   - component: {fileID: 95411435178327466}
   - component: {fileID: 4046592906183345689}
-  - component: {fileID: 1780956280085532140}
   - component: {fileID: -8202161306564208851}
   m_Layer: 0
   m_Name: Chr_Fantasy_Witch_01
@@ -1861,18 +1860,6 @@ MonoBehaviour:
   Name: Wendy the Witch
   HiringCost: 0
   salary: 100
---- !u!114 &1780956280085532140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211613768531628}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8270e84603cfd419aa5e70ea709f72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-8202161306564208851
 MonoBehaviour:
   m_ObjectHideFlags: 0

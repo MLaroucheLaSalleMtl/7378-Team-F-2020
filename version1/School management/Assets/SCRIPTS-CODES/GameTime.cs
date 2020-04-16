@@ -8,6 +8,7 @@ public class GameTime : MonoBehaviour
     public static GameTime instance=null;
     GameManager manager;
     Teachermanager teacher;
+    SchoolEventManager eventmanager;
 
 
     private void Awake()
@@ -49,6 +50,7 @@ public class GameTime : MonoBehaviour
         hour = 0;
         manager = GameManager.instance;
         teacher = Teachermanager.instance;
+        eventmanager = SchoolEventManager.instance;
     }
 
     
@@ -86,6 +88,8 @@ public class GameTime : MonoBehaviour
             //    manager.SpawnCode();
             //}
             hour++;
+            
+            
 
             // give XP
             manager.addExp(5);
@@ -101,6 +105,12 @@ public class GameTime : MonoBehaviour
 
             //teacher generator per day
             teacher.RandomGenNum();
+
+            //random event triggered at 50%
+            if (Random.Range(0, 2) == 1)
+            {
+                eventmanager.eventTriggered();
+            }
 
             //total teacher salary paid per day
             manager.SumofSalary(manager.GrandtotalSalary1);

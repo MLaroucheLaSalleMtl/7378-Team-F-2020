@@ -63,6 +63,7 @@ public class SpawnAdmin : MonoBehaviour
         hireAdminCube[3].SetActive(true);
 
         tooltip.SetActive(false);
+        GameManager.instance.ReduceMoney(200f);
     }
 
     private void OnMouseEnter()

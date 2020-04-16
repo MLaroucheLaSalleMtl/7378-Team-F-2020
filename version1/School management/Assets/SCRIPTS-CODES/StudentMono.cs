@@ -1,4 +1,4 @@
-﻿//using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -15,7 +15,7 @@ public class StudentMono : MonoBehaviour
     private NavMeshAgent myNavAgent;
     private bool LobbyFound = false;
     public GameObject ClassSit=null;
-    public GameObject Caffsit=null;
+    public GameObject Chillsit=null;
 
     public bool Paid = false;
 
@@ -71,7 +71,7 @@ public class StudentMono : MonoBehaviour
         {
             Setmylayer(10);
         }
-        Schedule();
+        StartCoroutine( Schedule());
     }
 
     private void Setmylayer(int layer)
@@ -91,13 +91,30 @@ public class StudentMono : MonoBehaviour
         }
     }
 
-    public void GetPlaceoncafeteria() { 
-    //{
-    //    if (Caffsit != null&&caa)
-    //    {
+    public void GetPlaceoncafeteria() 
+    {
+        if (Chillsit == null)
+        {
+            for (int i = 0; i < manager.Chilingspot.Count; i++) {
 
-    //    }
-    }
+              //  if (manager.Chilingspot[i].name == "Caffeteria") {
+
+                    if (manager.Chilingspot[i].GetComponent<Chillingplace>().IsthereSpace())
+                    {
+                        Chillsit = manager.Chilingspot[i].GetComponent<Chillingplace>().AvalableSit();
+                    }
+
+              //  }
+                //else
+                //{
+                //    if (Chillsit == null && manager.Chilingspot[i].GetComponent<Chillingplace>().IsthereSpace())
+                //    {
+                //        Chillsit = manager.Chilingspot[i].GetComponent<Chillingplace>().AvalableSit();
+                //    }
+                //}
+            }
+        }
+    } 
 
 
     //public void OnSpawn()
@@ -155,13 +172,29 @@ public class StudentMono : MonoBehaviour
         {
             HapyTemp += 40;
         }
-              
+
+        //if(ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency>=0&& ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency < 45)
+        //{
+         //   HapyTemp += 0;
+       // }
+        if (ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency >= 45 && ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency < 65)
+        {
+            HapyTemp += 10;
+
+        }
+        else if (ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency >= 65 && ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency <= 100)
+        {
+            HapyTemp += 20;
+        }
+
+
+
 
     }
 
 
 
-    public void Schedule()
+    public IEnumerator Schedule()
     {
     
         if (ClassSit != null) { 
@@ -177,7 +210,14 @@ public class StudentMono : MonoBehaviour
             }
             if (gtime.hour > 10 && gtime.hour <= 13)
             {
-                myNavAgent.SetDestination( RandomNavmeshLocation(25));
+                if (Chillsit==null) {
+                    myNavAgent.SetDestination(RandomNavmeshLocation(25));
+                    yield return new WaitForSeconds(8f);
+                }
+                else
+                {
+                    myNavAgent.SetDestination(Chillsit.transform.position);
+                }
             }
             if (gtime.hour > 13 && gtime.hour <= 15)
             {
@@ -185,7 +225,15 @@ public class StudentMono : MonoBehaviour
             }
             if (gtime.hour > 15 && gtime.hour <= 19)
             {
-                myNavAgent.SetDestination(RandomNavmeshLocation(25));
+                if (Chillsit == null)
+                {
+                    myNavAgent.SetDestination(RandomNavmeshLocation(25));
+                    yield return new WaitForSeconds(8f);
+                }
+                else
+                {
+                    myNavAgent.SetDestination(Chillsit.transform.position);
+                }
             }
             if (gtime.hour > 19 && gtime.hour <= 24)
             {

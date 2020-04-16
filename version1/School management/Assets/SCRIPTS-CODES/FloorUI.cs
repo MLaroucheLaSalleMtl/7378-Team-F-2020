@@ -31,6 +31,7 @@ public class FloorUI : MonoBehaviour
         floorTxt[0].SetActive(true);
         floorTxt[1].SetActive(false);
         floorTxt[2].SetActive(false);
+        floor = 1;
     }
     public void secondFloor()
     {
