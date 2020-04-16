@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     [Header("Gold Coins")]
     [SerializeField] private float money;
     [SerializeField] Text moneyText; //"Money Text"
+    [SerializeField] private float earnedM;
+    [SerializeField] private float spentM;
 
     [Header("Gold SFX")]
     public AudioClip goldSFX;
@@ -120,6 +122,8 @@ public class GameManager : MonoBehaviour
     public int Playerpublicity { get => playerpublicity; set => playerpublicity = value; }
     public int MaxPub { get => maxPub; set => maxPub = value; }
     public int Addpub { get => addpub; set => addpub = value; }
+    public float EarnedM { get => earnedM; set => earnedM = value; }
+    public float SpentM { get => spentM; set => spentM = value; }
 
     private void Awake()
     {
@@ -299,6 +303,7 @@ public class GameManager : MonoBehaviour
     public void AddMoney(float amount)
     {
         money += amount;
+        earnedMoney(amount);
         playGoldSFX();
         UpdateMoneyUI();
     }
@@ -306,6 +311,7 @@ public class GameManager : MonoBehaviour
     public void ReduceMoney(float amount)
     {
         money -= amount;
+        spendMoney(amount);
         playGoldSFX();
         UpdateMoneyUI();
     }
@@ -325,6 +331,15 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    public void earnedMoney(float amount)
+    {
+        EarnedM += amount;
+    }
+
+    public void spendMoney(float amount)
+    {
+        SpentM += amount;
+    }
 
     /// student
     public void AddStudent()

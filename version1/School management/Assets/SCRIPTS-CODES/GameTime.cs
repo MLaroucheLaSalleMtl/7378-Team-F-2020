@@ -10,6 +10,7 @@ public class GameTime : MonoBehaviour
     Teachermanager teacher;
     SchoolEventManager eventmanager;
     weatherManager wmanager;
+    EndOfTheDayReportManager reportManager;
 
 
     private void Awake()
@@ -33,16 +34,19 @@ public class GameTime : MonoBehaviour
 
     private Text clockTxt, seasonTxt, dayTxt,datetxt;
     private int daysSurv;
-    private float minute,day, second, month, year;
+    private float minute, day, second, month, year;
     public float hour;
 
     public int Timescale1 { get => Timescale; set => Timescale = value; }
+    public float Day { get => day; set => day = value; }
+    public float Month { get => month; set => month = value; }
+    public float Year { get => year; set => year = value; }
 
     void Start()
     {
-        month = 1;
-        day = 1;
-        year = 2000;
+        Month = 1;
+        Day = 1;
+        Year = 2000;
         clockTxt = GameObject.Find("Clock").GetComponent<Text>();
         dayTxt = GameObject.Find("DaysSurv").GetComponent<Text>();
         seasonTxt = GameObject.Find("Season").GetComponent<Text>();
@@ -53,6 +57,7 @@ public class GameTime : MonoBehaviour
         teacher = Teachermanager.instance;
         eventmanager = SchoolEventManager.instance;
         wmanager = weatherManager.instance;
+        reportManager = EndOfTheDayReportManager.instance;
     }
 
     
@@ -103,7 +108,7 @@ public class GameTime : MonoBehaviour
         {
             //manager.Gopay();
             
-            day++;
+            Day++;
 
             //teacher generator per day
             teacher.RandomGenNum();
@@ -113,6 +118,9 @@ public class GameTime : MonoBehaviour
             {
                 eventmanager.eventTriggered();
             }
+
+            //Breakdown report!
+            reportManager.BreakdownReport();
 
             //weather generator per day
             wmanager.RandomWeather();
@@ -137,14 +145,14 @@ public class GameTime : MonoBehaviour
             
             UpdateText();
         }
-        else if (day >= 28)
+        else if (Day >= 28)
         {
             CalcMonth();
         }
-        else if(month >= 12)
+        else if(Month >= 12)
         {
-            month = 1;
-            year++;
+            Month = 1;
+            Year++;
             UpdateText();
             CalculateSeason();
         }
@@ -152,38 +160,38 @@ public class GameTime : MonoBehaviour
     }
     private void CalcMonth()
     {
-        if (month == 1 || month == 3 || month == 5||month == 7 || month == 8 || month == 10 || month == 12 )
+        if (Month == 1 || Month == 3 || Month == 5||Month == 7 || Month == 8 || Month == 10 || Month == 12 )
 
         {
-            if (day >= 32)
+            if (Day >= 32)
             {
                 daysSurv++;
-                month++;
-                day = 1;
+                Month++;
+                Day = 1;
                 UpdateText();
                 CalculateSeason();
             }
         }
-        if (month == 4 || month == 6 || month == 9 || month == 11)
+        if (Month == 4 || Month == 6 || Month == 9 || Month == 11)
 
         {
-            if (day >= 31)
+            if (Day >= 31)
             {
                 daysSurv++;
-                month++;
-                day = 1;
+                Month++;
+                Day = 1;
                 UpdateText();
                 CalculateSeason();
             }
         }
-        if (month == 2)
+        if (Month == 2)
 
         {
-            if (day >= 29)
+            if (Day >= 29)
             {
                 daysSurv++;
-                month++;
-                day = 1;
+                Month++;
+                Day = 1;
                 UpdateText();
                 CalculateSeason();
             }
@@ -191,22 +199,22 @@ public class GameTime : MonoBehaviour
     }
     private void CalculateSeason()
     {
-        if( month == 2 || month == 3|| month == 4)
+        if( Month == 2 || Month == 3|| Month == 4)
 
         {
             seasonTxt.text = "Spring";
         }
-        else if( month == 5 || month == 7|| month == 8|| month == 6)
+        else if( Month == 5 || Month == 7|| Month == 8|| Month == 6)
         {
             seasonTxt.text = "Summer";
             
         }
-        else if ( month == 9||month == 10)
+        else if ( Month == 9||Month == 10)
         {
             seasonTxt.text = "Autum";
 
         }
-        else if (month == 1 || month == 11 || month == 12)
+        else if (Month == 1 || Month == 11 || Month == 12)
         {
             
             seasonTxt.text = "Winter";
@@ -225,7 +233,7 @@ public class GameTime : MonoBehaviour
         {
             clockTxt.text = "Time: " + hour + ":" + minute;
         }
-        datetxt.text = "Date: " + day+"/"+month + "/" + year;
+        datetxt.text = "Date: " + Day+"/"+Month + "/" + Year;
        // monthtxt.text="Month"
         
     }
