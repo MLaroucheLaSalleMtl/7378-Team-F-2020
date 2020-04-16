@@ -25,6 +25,8 @@ public class SchoolEventManager : MonoBehaviour
     public Text desc;
     public Text outcome;
     public Image displayImg;
+    public Color negativeColor;
+    public Color possitiveColor;
 
     public GameObject panel;
 
@@ -43,14 +45,15 @@ public class SchoolEventManager : MonoBehaviour
     [SerializeField] public string[] eventDescription;
 
     [Header("Event Outcome")]
-    [SerializeField] public string[] eventOutcome;
+    [SerializeField] public int[] eventOutcome;
 
     [Header("Event Img")]
     [SerializeField] public Sprite[] eventImage;
 
-   
-    
-  
+
+
+
+
 
     public void randomGen()
     {
@@ -61,13 +64,31 @@ public class SchoolEventManager : MonoBehaviour
     {
         Title.text = eventHeader[randomNum];
         desc.text = eventDescription[randomNum];
-        outcome.text = "Event Outcome: " + eventOutcome[randomNum];
+
+        eventOutcomeColor();
+
+
         displayImg.sprite = eventImage[randomImg];
 
         happiness = Mathf.Clamp(happiness, 1, 10);
     }
 
-   
+   public void eventOutcomeColor()
+    {
+       
+            if (eventOutcome[randomNum] == 0)
+            {
+                outcome.text = "Event Outcome: Negative (0 Happiness) "; 
+                outcome.color = negativeColor;
+            }
+            else if (eventOutcome[randomNum] == 1)
+            {
+                outcome.text = "Event Outcome: Possitive (+10 Happiness) "; 
+                outcome.color = possitiveColor;
+            }
+
+
+    }
 
     public void eventTriggered()
     {
@@ -86,12 +107,13 @@ public class SchoolEventManager : MonoBehaviour
 
     public void happinessEvent()
     {
-        if(eventOutcome.Equals("Possitive"))
+        if(eventOutcome[randomNum] == 1)
         {
             happiness = 10;
         }
-        else
+        else if (eventOutcome[randomNum] == 0)
         {
+
             happiness = 0;
         }
     }
@@ -105,7 +127,12 @@ public class SchoolEventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(etriggered == true)
+        if (Input.GetButtonUp("R"))
+        {
+            eventTriggered();
+        }
+
+        if (etriggered == true)
         {
             callEventUI();
         }

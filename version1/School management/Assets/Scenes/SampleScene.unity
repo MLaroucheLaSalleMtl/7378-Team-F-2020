@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17730282}
   m_Layer: 8
-  m_Name: '-------- AdminHireCube-----'
+  m_Name: -------- AdminHireCube-----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6199,7 +6199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 51814388}
   m_Layer: 0
-  m_Name: '--------- Floor System'
+  m_Name: --------- Floor System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8794,7 +8794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 181303864}
   m_Layer: 5
-  m_Name: '---------- C&J'
+  m_Name: ---------- C&J
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11751,7 +11751,7 @@ GameObject:
   - component: {fileID: 275586604}
   - component: {fileID: 275586606}
   m_Layer: 5
-  m_Name: '----------- Different Floor UI'
+  m_Name: ----------- Different Floor UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22695,7 +22695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492187586}
   m_Layer: 0
-  m_Name: '----------- WeatherEffects'
+  m_Name: ----------- WeatherEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23032,7 +23032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503984832}
   m_Layer: 0
-  m_Name: '--------- FLOORS'
+  m_Name: --------- FLOORS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25078,7 +25078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 595111609}
   m_Layer: 5
-  m_Name: '---------- Advertising'
+  m_Name: ---------- Advertising
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25114,7 +25114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 596493406}
   m_Layer: 8
-  m_Name: '------------------- Confetti'
+  m_Name: ------------------- Confetti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25986,7 +25986,7 @@ GameObject:
   - component: {fileID: 645416508}
   - component: {fileID: 645416510}
   m_Layer: 5
-  m_Name: '--------Faculty Tab'
+  m_Name: --------Faculty Tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29713,7 +29713,7 @@ GameObject:
   - component: {fileID: 784239817}
   - component: {fileID: 784239818}
   m_Layer: 5
-  m_Name: '----------- POP UP MSG'
+  m_Name: ----------- POP UP MSG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35759,7 +35759,7 @@ GameObject:
   - component: {fileID: 843688818}
   - component: {fileID: 843688817}
   m_Layer: 5
-  m_Name: '---------------- OBJECTIVES'
+  m_Name: ---------------- OBJECTIVES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37885,7 +37885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 922701215}
   m_Layer: 5
-  m_Name: '--------- Tooltips'
+  m_Name: --------- Tooltips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38130,7 +38130,7 @@ GameObject:
   - component: {fileID: 933349001}
   - component: {fileID: 933349000}
   m_Layer: 5
-  m_Name: '-------- Publicity Tab'
+  m_Name: -------- Publicity Tab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38170,7 +38170,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933348998}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e832a2d5f0971a94e8b280babbd8eaf4, type: 3}
   m_Name: 
@@ -39427,7 +39427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 964778685}
   m_Layer: 5
-  m_Name: '----------- LEFT SIDE UI'
+  m_Name: ----------- LEFT SIDE UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46025,7 +46025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082584823}
   m_Layer: 5
-  m_Name: '---------- ADMIN'
+  m_Name: ---------- ADMIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46897,7 +46897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141696072}
   m_Layer: 5
-  m_Name: '---- School Name UI'
+  m_Name: ---- School Name UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46934,7 +46934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1144792886}
   m_Layer: 10
-  m_Name: '------- BuyingCube ----------- (2)'
+  m_Name: ------- BuyingCube ----------- (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46972,7 +46972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1152019223}
   m_Layer: 5
-  m_Name: '----- Top Right Corner UI'
+  m_Name: ----- Top Right Corner UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47412,7 +47412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1178149397}
   m_Layer: 5
-  m_Name: '---------- C&J'
+  m_Name: ---------- C&J
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47448,7 +47448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179603505}
   m_Layer: 5
-  m_Name: '---------- C&J'
+  m_Name: ---------- C&J
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47874,7 +47874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1209377051}
   m_Layer: 5
-  m_Name: '---------- AllStudents'
+  m_Name: ---------- AllStudents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50747,7 +50747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1282920406}
   m_Layer: 5
-  m_Name: '-------------- Side Task'
+  m_Name: -------------- Side Task
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52530,7 +52530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1346192577}
   m_Layer: 5
-  m_Name: '---------- TEACHERS'
+  m_Name: ---------- TEACHERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54526,7 +54526,7 @@ GameObject:
   - component: {fileID: 1427447642}
   - component: {fileID: 1427447643}
   m_Layer: 5
-  m_Name: '----------- MAIN MENU BTNS'
+  m_Name: ----------- MAIN MENU BTNS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56051,7 +56051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1466962346}
   m_Layer: 5
-  m_Name: '---------- ADMIN'
+  m_Name: ---------- ADMIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66378,7 +66378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586097614}
   m_Layer: 5
-  m_Name: '---------- ADMIN'
+  m_Name: ---------- ADMIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66877,7 +66877,7 @@ GameObject:
   - component: {fileID: 1619686120}
   - component: {fileID: 1619686119}
   m_Layer: 5
-  m_Name: '--------StudentList'
+  m_Name: --------StudentList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67070,7 +67070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1627984997}
   m_Layer: 0
-  m_Name: '------ Level Up Splash'
+  m_Name: ------ Level Up Splash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67405,7 +67405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1651595873}
   m_Layer: 5
-  m_Name: '--------- Green BTNS'
+  m_Name: --------- Green BTNS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68209,7 +68209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693669690}
   m_Layer: 8
-  m_Name: '------- BuyingCube -----------'
+  m_Name: ------- BuyingCube -----------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73706,7 +73706,7 @@ GameObject:
   - component: {fileID: 1899024445}
   - component: {fileID: 1899024444}
   m_Layer: 5
-  m_Name: '--------- FacilityPanel'
+  m_Name: --------- FacilityPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74291,6 +74291,8 @@ MonoBehaviour:
   desc: {fileID: 7945897594274132722}
   outcome: {fileID: 7945897595104276489}
   displayImg: {fileID: 7945897593446541028}
+  negativeColor: {r: 0.7924528, g: 0.08597367, b: 0.08597367, a: 1}
+  possitiveColor: {r: 0.093728244, g: 0.5471698, b: 0.08517267, a: 1}
   panel: {fileID: 7945897595112825093}
   randomNum: 0
   randomImg: 0
@@ -74318,17 +74320,7 @@ MonoBehaviour:
   - Students had to stay outside in the rain for an hour so now they're upset.
   - It's that time of the school year where almost all students are sleep deprived.
   - All the eletricity went out, all students are frightened.
-  eventOutcome:
-  - Possitive
-  - Possitive
-  - Possitive
-  - Possitive
-  - Possitive
-  - Negative
-  - Negative
-  - Negative
-  - Negative
-  - Negative
+  eventOutcome: 01000000010000000100000001000000010000000000000000000000000000000000000000000000
   eventImage:
   - {fileID: 21300000, guid: eb0182620f079d3489d97ef4676856fa, type: 3}
   - {fileID: 21300000, guid: c1bdd218d8fd4b4488ceefb367fb4b0c, type: 3}
@@ -74817,7 +74809,7 @@ GameObject:
   - component: {fileID: 1921894902}
   - component: {fileID: 1921894903}
   m_Layer: 5
-  m_Name: '---------------- PAUSE MENU'
+  m_Name: ---------------- PAUSE MENU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87309,7 +87301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2055191309}
   m_Layer: 8
-  m_Name: '-------Objective Indicators -----'
+  m_Name: -------Objective Indicators -----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89080,7 +89072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2127913515}
   m_Layer: 9
-  m_Name: '------- BuyingCube ----------- (1)'
+  m_Name: ------- BuyingCube ----------- (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89323,7 +89315,7 @@ GameObject:
   - component: {fileID: 2138226819}
   - component: {fileID: 2138226818}
   m_Layer: 5
-  m_Name: '-------------- Publicity UI'
+  m_Name: -------------- Publicity UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90277,21 +90269,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.02300641, g: 0.4433962, b: 0.14117008, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d6b66d478fc2348409ba9ef04886a3a9, type: 3}
-    m_FontSize: 14
+    m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_MaxSize: 44
+    m_Alignment: 1
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -90314,8 +90306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 237.8, y: -172.6}
-  m_SizeDelta: {x: 360.1, y: 60.1}
+  m_AnchoredPosition: {x: 237.8, y: -164.2}
+  m_SizeDelta: {x: 360.1, y: 76.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7945897595104276599
 GameObject:
@@ -90360,7 +90352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7945897595112825092}
   m_Layer: 0
-  m_Name: '------ EVENT UI'
+  m_Name: ------ EVENT UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
