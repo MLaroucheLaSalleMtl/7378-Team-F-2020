@@ -9,6 +9,7 @@ public class GameTime : MonoBehaviour
     GameManager manager;
     Teachermanager teacher;
     SchoolEventManager eventmanager;
+    weatherManager wmanager;
 
 
     private void Awake()
@@ -51,6 +52,7 @@ public class GameTime : MonoBehaviour
         manager = GameManager.instance;
         teacher = Teachermanager.instance;
         eventmanager = SchoolEventManager.instance;
+        wmanager = weatherManager.instance;
     }
 
     
@@ -111,6 +113,9 @@ public class GameTime : MonoBehaviour
             {
                 eventmanager.eventTriggered();
             }
+
+            //weather generator per day
+            wmanager.RandomWeather();
 
             //total teacher salary paid per day
             manager.SumofSalary(manager.GrandtotalSalary1);
