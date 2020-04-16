@@ -163,14 +163,14 @@ public class StudentMono : MonoBehaviour
 
     }
   
-    private void DetermineHappines()
+    public void DetermineHappines()
     {
         //stdudentinfo.Happines1
-        float HapyTemp = 0;
+        int HapyTemp = 0;
 
         if (stdudentinfo.ClassIgot1 == stdudentinfo.ClassIwant1)
         {
-            HapyTemp += 40;
+            HapyTemp += 40;//teacher eficiency 40%
         }
 
         //if(ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency>=0&& ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency < 45)
@@ -185,11 +185,25 @@ public class StudentMono : MonoBehaviour
         else if (ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency >= 65 && ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency <= 100)
         {
             HapyTemp += 20;
+        }//teacher eficiency 20%
+
+        if(Chillsit != null)
+        {
+            HapyTemp += 10;//Chill spot 10%
         }
 
+        if (manager.Allregisteredstudents.Count % 2 == 0)//is Even 5%
+        {
+            HapyTemp += 5;
+        }
+        //else//is odd
+
+        HapyTemp += weatherManager.instance.happiness;//whether 5%
+
+        HapyTemp += SchoolEventManager.instance.happiness;//events 20%
 
 
-
+        stdudentinfo.Happines1 = HapyTemp;
     }
 
 

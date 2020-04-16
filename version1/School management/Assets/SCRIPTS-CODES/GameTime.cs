@@ -26,7 +26,7 @@ public class GameTime : MonoBehaviour
 
     
 
-    private int Timescale = 600;//default45
+    private int Timescale = 400;//default45
 
     [Header("amount of money increase overtime")]
     [SerializeField] private float amount;
@@ -133,7 +133,7 @@ public class GameTime : MonoBehaviour
            
 
             hour = 0;
-
+            BroadcastMessage("DetermineHappines",SendMessageOptions.DontRequireReceiver);
             
             UpdateText();
         }

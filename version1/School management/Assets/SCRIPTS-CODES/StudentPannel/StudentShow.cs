@@ -58,7 +58,7 @@ public class StudentShow : MonoBehaviour
 
         pannel.transform.GetChild(1).GetComponent<Text>().text = Student.stdudentinfo.SName1;
         pannel.transform.GetChild(2).GetComponent<Text>().text = "Class Wanted: "+Student.stdudentinfo.ClassIwant1;
-        pannel.transform.GetChild(3).GetComponent<Text>().text = "Class Assigned"+Student.stdudentinfo.ClassIgot1;
+        pannel.transform.GetChild(3).GetComponent<Text>().text = "Class Assigned: "+Student.stdudentinfo.ClassIgot1;
         pannel.transform.GetChild(4).GetComponent<Text>().text = "Happines:"+ Student.stdudentinfo.Happines1.ToString();
         pannel.transform.GetChild(5).GetComponent<Text>().text = "Hobbie: "+Student.stdudentinfo.Hobbie1;
         pannel.GetComponent<PannelSINfo>().student=Student.gameObject;
