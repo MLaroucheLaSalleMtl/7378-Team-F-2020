@@ -19,6 +19,9 @@ public class weatherManager : MonoBehaviour
     }
     #endregion
 
+    GameTime timemanager;
+    GameManager gamemanager;
+
     [Header("Text and Image")]
     public Text weather;
     public Text outcome;
@@ -27,6 +30,8 @@ public class weatherManager : MonoBehaviour
     public int happiness = 0;
 
     public int randomNum;
+
+    bool activate = false;
 
     [Header("weather type")]
     [SerializeField] public string[] WeatherStatus;
@@ -40,9 +45,25 @@ public class weatherManager : MonoBehaviour
     [Header("weather Outcome")]
     [SerializeField] public int[] happinessOutcome;
 
-    public void randomGen()
+    public void randomWeatherSeason()
     {
-        randomNum = Random.Range(0, weatherImgs.Length);
+        //summer
+        if (timemanager.Month == 5 || timemanager.Month == 7 || timemanager.Month == 8 || timemanager.Month == 6) 
+        {
+            randomNum = Random.Range(0, 5);
+        }
+
+        //fall
+        else if (timemanager.Month == 1 || timemanager.Month == 11 || timemanager.Month == 12)
+        {
+            randomNum = Random.Range(3, 6);
+        }
+
+        //winter
+        else if (timemanager.Month == 9 || timemanager.Month == 10)
+        {
+            randomNum = Random.Range(0, 5);
+        }
     }
 
     public void callWeatherUI()
@@ -50,7 +71,7 @@ public class weatherManager : MonoBehaviour
         weather.text = WeatherStatus[randomNum];
         displayImg.sprite = weatherImgs[randomNum];
         happiness = happinessOutcome[randomNum];
-        weatherAnim[randomNum].SetActive(true);
+        //weatherAnim[randomNum].SetActive(true);
 
         happiness = Mathf.Clamp(happiness, 1, 5);
     }
@@ -58,18 +79,27 @@ public class weatherManager : MonoBehaviour
     public void RandomWeather()
     {
         clearWeatherEffects();
-        randomGen();
+        activate = true;
+        randomWeatherSeason();
     }
 
     public void clearWeatherEffects()
     {
-        weatherAnim[randomNum].SetActive(false);
+        //weatherAnim[randomNum].SetActive(false);
+        activate = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //RandomWeather();
+
+        gamemanager = GameManager.instance;
+        timemanager = GameTime.instance;
+
+
+        RandomWeather();
+
+       
     }
 
     // Update is called once per frame
@@ -78,10 +108,13 @@ public class weatherManager : MonoBehaviour
 
         if (Input.GetButtonUp("R"))
         {
-            RandomWeather();
+            randomWeatherSeason();
         }
 
-
-        callWeatherUI();
+        if (activate == true)
+        {
+            callWeatherUI();
+        }
+        
     }
 }

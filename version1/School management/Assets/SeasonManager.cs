@@ -32,14 +32,14 @@ public class SeasonManager : MonoBehaviour
 
         terrains[0].SetActive(false);
         terrains[1].SetActive(false);
-        terrains[3].SetActive(false);
+        terrains[2].SetActive(false);
 
         if (timemanager.Month == 5 || timemanager.Month == 7 || timemanager.Month == 8 || timemanager.Month == 6)
         {
             //seasonTxt.text = "Summer";
             terrains[0].SetActive(true);
             terrains[1].SetActive(false);
-            terrains[3].SetActive(false);
+            terrains[2].SetActive(false);
 
 
         }
@@ -48,7 +48,7 @@ public class SeasonManager : MonoBehaviour
             //seasonTxt.text = "Autum";
             terrains[0].SetActive(false);
             terrains[1].SetActive(true);
-            terrains[3].SetActive(false);
+            terrains[2].SetActive(false);
 
         }
         else if (timemanager.Month == 1 || timemanager.Month == 11 || timemanager.Month == 12)
@@ -57,7 +57,7 @@ public class SeasonManager : MonoBehaviour
             //seasonTxt.text = "Winter";
             terrains[0].SetActive(false);
             terrains[1].SetActive(false);
-            terrains[3].SetActive(true);
+            terrains[2].SetActive(true);
         }
     }
 

@@ -53629,16 +53629,16 @@ MonoBehaviour:
   WeatherStatus:
   - Sunny Thunder
   - Sunny Rain
-  - Windy
   - Heavy Rain
+  - Windy
   - Sunny
   - Snowy
   weatherAnim: []
   weatherImgs:
   - {fileID: 21300000, guid: 7cf5585e0317f3f448a32fc07c6fa80f, type: 3}
   - {fileID: 21300000, guid: 3788b51f048c54343b16d2361f61e011, type: 3}
-  - {fileID: 21300000, guid: 90a1ba5c5932bc04c85edc05bfcf34e2, type: 3}
   - {fileID: 21300000, guid: cf2fad9ca61264b4282c406d14ed2163, type: 3}
+  - {fileID: 21300000, guid: 90a1ba5c5932bc04c85edc05bfcf34e2, type: 3}
   - {fileID: 21300000, guid: 68dadc633caa128479ebe2e14da62c14, type: 3}
   - {fileID: 21300000, guid: ca5f1e63d9bdb5a48add460c157b0105, type: 3}
   happinessOutcome: 020000000300000004000000010000000500000004000000
@@ -67220,7 +67220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -245.99997, y: 56.2}
+  m_AnchoredPosition: {x: -245.99997, y: 59}
   m_SizeDelta: {x: 172.72, y: 75}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2088743757
@@ -68728,7 +68728,7 @@ PrefabInstance:
     - target: {fileID: 1094482081734143379, guid: 41b889fd7be7f3748b99bcd47bc52f7d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b889fd7be7f3748b99bcd47bc52f7d, type: 3}
@@ -68995,7 +68995,7 @@ PrefabInstance:
     - target: {fileID: 7496379645762259138, guid: e9a58d79c670c3a4598437848722f457,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9a58d79c670c3a4598437848722f457, type: 3}
