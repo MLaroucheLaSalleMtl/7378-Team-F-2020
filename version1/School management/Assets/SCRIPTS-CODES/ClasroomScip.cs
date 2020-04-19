@@ -10,6 +10,8 @@ public class ClasroomScip : MonoBehaviour
     public GameObject Teacher = null;
     public int Teficiency=0;
     private bool once = true;
+
+   // private teacherSkills Typeofclass = 0;
     private void Awake()
     {
         //ChildTagName = null;
@@ -23,19 +25,43 @@ public class ClasroomScip : MonoBehaviour
                     Sits.Add(transform.GetChild(i).gameObject);
                 }
             }
-        }
 
+        
+    //    if (gameObject.tag == "Magic")
+    //    {
+    //        Typeofclass ==teacherSkills.magic;
+    //    }
+    //    else if (gameObject.tag == "Surfing")
+    //    {
+    //        Typeofclass = 2;
+    //    }
+    //    else if (gameObject.tag == "Haking")
+    //    {
+    //        Typeofclass = 4;
+    //    }
+    //    else if (gameObject.tag == "AxeTrowing")
+    //    {
+    //        Typeofclass = 1;
+    //    }
+    }
+   
     private void Update() 
         {
         
-        if (once&&Teacher!=null)
+       
+        
+        }
+
+    private void LateUpdate()
+    {
+
+        if (Teacher != null)
         {
             SetTeacherSkill();
             once = false;
 
         }
-        
-        }
+    }
     public bool IsthereSpace()
     {
         int count=0;
@@ -63,12 +89,19 @@ public class ClasroomScip : MonoBehaviour
         return tep[a];
     }
 
+    //none, 0
+    //axeThrowing, 1
+    //surfing, 2
+    //magic, 3 
+    //hacking 4
+
     public void SetTeacherSkill()
     {
+       
         
         if (Teacher.tag== "Common")
         {
-            if (Teacher.GetComponent<TeacherSkillsEnum>().randomSkill0.ToString() == gameObject.tag)
+            if (Teacher.GetComponent<TeacherSkillsEnum>().randomSkill0.ToString() ==gameObject.tag)
             {
                 Teficiency = Teacher.GetComponent<TeacherSkillsEnum>().CEfficiency;
 
@@ -108,8 +141,9 @@ public class ClasroomScip : MonoBehaviour
             
 
         }
-        
-        
+
+
     }
+    
 
 }

@@ -24,6 +24,9 @@ public class StudentShow : MonoBehaviour
     [SerializeField] private Transform pannelholder;
     [SerializeField] private GameObject bace;
     [SerializeField] private Sprite[] pics;
+
+    public List<GameObject> Allpannels;
+
     void Start()
     {
         
@@ -62,7 +65,17 @@ public class StudentShow : MonoBehaviour
         pannel.transform.GetChild(4).GetComponent<Text>().text = "Happines:"+ Student.stdudentinfo.Happines1.ToString();
         pannel.transform.GetChild(5).GetComponent<Text>().text = "Hobbie: "+Student.stdudentinfo.Hobbie1;
         pannel.GetComponent<PannelSINfo>().student=Student.gameObject;
+        Allpannels.Add(pannel);
 
+    }
+
+    public void RefreshPannels()
+    {
+        foreach (GameObject pan in Allpannels)
+        {
+            pan.GetComponent<PannelSINfo>().student.GetComponent<StudentMono>().DetermineHappines();
+            pan.transform.GetChild(4).GetComponent<Text>().text = "Happines:" + pan.GetComponent<PannelSINfo>().student.GetComponent<StudentMono>().stdudentinfo.Happines1.ToString();
+        }
     }
 
 }

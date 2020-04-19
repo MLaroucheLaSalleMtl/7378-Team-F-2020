@@ -164,7 +164,7 @@ public class StudentMono : MonoBehaviour
     }
   
     public void DetermineHappines()
-    {
+     {
         //stdudentinfo.Happines1
         int HapyTemp = 0;
 

@@ -95,7 +95,7 @@ public class GameTime : MonoBehaviour
             //    manager.SpawnCode();
             //}
             hour++;
-            
+            //BroadcastMessage("DetermineHappines", SendMessageOptions.DontRequireReceiver);
             
 
             // give XP
@@ -103,12 +103,14 @@ public class GameTime : MonoBehaviour
 
             minute = 0;
             UpdateText();
+            StudentShow.instance.RefreshPannels();
         }
         else if(hour >= 24)
         {
             //manager.Gopay();
             
             Day++;
+           
 
             //teacher generator per day
             teacher.RandomGenNum();
@@ -141,7 +143,7 @@ public class GameTime : MonoBehaviour
            
 
             hour = 0;
-            BroadcastMessage("DetermineHappines",SendMessageOptions.DontRequireReceiver);
+           
             
             UpdateText();
         }

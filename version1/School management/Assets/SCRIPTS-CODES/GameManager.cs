@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     // public Text incrementTxt; //tester
 
-    public Vector3 LocationOfSpawn = new Vector3(-7.98f, 5.7f, -72f);
+    public Vector3 LocationOfSpawn = new Vector3(-7.98f, 0f, -72f);
     public static GameManager instance = null;
 
     public List<GameObject> Clasesbogth = new List<GameObject>();
@@ -484,13 +484,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void Spawn(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Instantiate (Student[Random.Range(0,1)], LocationOfSpawn, Quaternion.identity);
-        }
-    }
+  
     public void SpawnCode()
     {
         Instantiate(Student[Random.Range(0,1)], LocationOfSpawn, Quaternion.identity);
