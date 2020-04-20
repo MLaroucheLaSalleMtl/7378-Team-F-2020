@@ -599,7 +599,7 @@ public class tasks : MonoBehaviour
 
 
 
-            taskPanels[16].SetActive(true);
+            //taskPanels[16].SetActive(true);
 
             //reward
             rewards.rewardSystem();
@@ -620,7 +620,7 @@ public class tasks : MonoBehaviour
 
     public void pressQ()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) //&& Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)
+        if (Input.GetKey("q")) //&& Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)
         {
 
             if (taskPanels[16] != null)
@@ -649,7 +649,7 @@ public class tasks : MonoBehaviour
 
     public void pressE()
     {
-        if (Input.GetKeyDown(KeyCode.E)) //&& Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)
+        if (Input.GetKey("e")) //&& Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.D)
         {
 
             if (taskPanels[17] != null)

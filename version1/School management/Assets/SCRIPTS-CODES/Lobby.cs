@@ -94,7 +94,7 @@ public class Lobby : MonoBehaviour
         lineup++;
         Debug.Log(lineup);
         StudentsInLine.Add(a);
-        StudentPos.SetDestination(waitingspaces.ArrayOfWaitingposs[lineup]);
+        StudentPos.SetDestination(waitingspaces.ArrayOfWaitingposs[lineup-1]);
         
 
 

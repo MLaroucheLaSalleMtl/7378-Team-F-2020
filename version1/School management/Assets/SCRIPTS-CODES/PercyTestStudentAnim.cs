@@ -22,10 +22,16 @@ public class PercyTestStudentAnim : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         float speedOfcharacter = nav.velocity.magnitude / nav.speed;
-        anim.SetFloat("Speed",speedOfcharacter,1f,Time.deltaTime);
+        anim.SetFloat("Speed", speedOfcharacter, 1f, Time.deltaTime);
     }
+    //private void LateUpdate()
+    //{
+    //    float speedOfcharacter = nav.velocity.magnitude / nav.speed;
+    //    anim.SetFloat("Speed", speedOfcharacter, 1f, Time.deltaTime);
+    //}
+
 }

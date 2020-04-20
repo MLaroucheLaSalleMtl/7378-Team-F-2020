@@ -23,8 +23,17 @@ public class StudentMono : MonoBehaviour
     [SerializeField] private GameObject boyrig;
     [SerializeField] private GameObject girlrig;
     [SerializeField] private Animator animboy;    
-    [SerializeField] private PercyTestStudentAnim script;    
+    [SerializeField] private PercyTestStudentAnim script;
+    private bool female = false;
+    bool a = false;
 
+
+    //Special Parts
+    [SerializeField] private GameObject[] Specialparts;
+    private void Awake()
+    {
+        InvokeRepeating("Schedule",0f,8f);
+    }
     void Start()
     {
         loby = Lobby.instance;
@@ -50,7 +59,9 @@ public class StudentMono : MonoBehaviour
             animboy.enabled = false;
             girlrig.SetActive(true);
             script.enabled = false;
-            
+            female = true;
+
+
         }
 
     }
@@ -59,6 +70,10 @@ public class StudentMono : MonoBehaviour
     
     void Update()
     {
+        if (gameObject.transform.position.z < manager.LevelMarkers[2].position.z)
+        {
+            Setmylayer(13);
+        }else
         if (gameObject.transform.position.y<manager.LevelMarkers[0].position.y)
         {
             Setmylayer(8);
@@ -71,7 +86,7 @@ public class StudentMono : MonoBehaviour
         {
             Setmylayer(10);
         }
-        StartCoroutine( Schedule());
+        
     }
 
     private void Setmylayer(int layer)
@@ -81,11 +96,27 @@ public class StudentMono : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.layer = layer;
+            if (female)
+            {
+                for (int u = 0; u < Specialparts.Length; u++)
+                {
+                    Specialparts[u].gameObject.layer = layer;
+                }
+            }
+
             if (transform.GetChild(i).childCount > 0)
             {
                 for (int f = 0; f < gameObject.transform.GetChild(i).childCount; f++)
                 {
                     transform.GetChild(i).gameObject.transform.GetChild(f).gameObject.layer = layer;
+
+                    if (transform.GetChild(i).gameObject.transform.GetChild(f).childCount > 0)
+                    {
+                        for (int g = 0; g < gameObject.transform.GetChild(i).gameObject.transform.GetChild(f).childCount; g++)
+                        {
+                            transform.GetChild(i).gameObject.transform.GetChild(f).gameObject.transform.GetChild(g).gameObject.layer = layer;
+                        }
+                    }
                 }
             }
         }
@@ -208,57 +239,59 @@ public class StudentMono : MonoBehaviour
 
 
 
-    public IEnumerator Schedule()
+    public void Schedule()
     {
-    
-        if (ClassSit != null) { 
-            //if (gtime.hour >= 3 && gtime.hour < 4)
-            //{
-            //    Paid = false;
-            //}
-                
-            if (gtime.hour >3 && gtime.hour <= 10)
+        
+            if (ClassSit != null)
             {
-                
-                myNavAgent.SetDestination(ClassSit.transform.position);
-            }
-            if (gtime.hour > 10 && gtime.hour <= 13)
-            {
-                if (Chillsit==null) {
-                    myNavAgent.SetDestination(RandomNavmeshLocation(25));
-                    yield return new WaitForSeconds(8f);
-                }
-                else
-                {
-                    myNavAgent.SetDestination(Chillsit.transform.position);
-                }
-            }
-            if (gtime.hour > 13 && gtime.hour <= 15)
-            {
-                myNavAgent.SetDestination(ClassSit.transform.position);
-            }
-            if (gtime.hour > 15 && gtime.hour <= 19)
-            {
-                if (Chillsit == null)
-                {
-                    myNavAgent.SetDestination(RandomNavmeshLocation(25));
-                    yield return new WaitForSeconds(8f);
-                }
-                else
-                {
-                    myNavAgent.SetDestination(Chillsit.transform.position);
-                }
-            }
-            if (gtime.hour > 19 && gtime.hour <= 24)
-            {
-                myNavAgent.SetDestination(ClassSit.transform.position);
-            }
+                //if (gtime.hour >= 3 && gtime.hour < 4)
+                //{
+                //    Paid = false;
+                //}
 
-            if (gtime.hour > 24 && gtime.hour < 3)
-            {
-                myNavAgent.SetDestination(manager.LocationOfSpawn);
+                if (gtime.hour > 3 && gtime.hour <= 10)
+                {
+
+                    myNavAgent.SetDestination(ClassSit.transform.position);
+                }
+                if (gtime.hour > 10 && gtime.hour <= 13)
+                {
+                    if (Chillsit == null)
+                    {
+                        myNavAgent.SetDestination(RandomNavmeshLocation(7f));
+                        
+                    }
+                    else
+                    {
+                        myNavAgent.SetDestination(Chillsit.transform.position);
+                    }
+                }
+                if (gtime.hour > 13 && gtime.hour <= 15)
+                {
+                    myNavAgent.SetDestination(ClassSit.transform.position);
+                }
+                if (gtime.hour > 15 && gtime.hour <= 19)
+                {
+                    if (Chillsit == null)
+                    {
+                        myNavAgent.SetDestination(RandomNavmeshLocation(7f));
+                        
+                    }
+                    else
+                    {
+                        myNavAgent.SetDestination(Chillsit.transform.position);
+                    }
+                }
+                if (gtime.hour > 19 && gtime.hour <= 24)
+                {
+                    myNavAgent.SetDestination(ClassSit.transform.position);
+                }
+                if (gtime.hour > 0 && gtime.hour <= 3)
+                {
+                    myNavAgent.SetDestination(manager.LocationOfSpawn);
+                }
             }
-        }
+        
     }
 
  

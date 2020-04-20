@@ -22,6 +22,8 @@ public class LevelSplash : MonoBehaviour
 
     GameManager gamemanager;
 
+    [SerializeField] private GameObject panel;
+
     public Text infotext;
 
     // Start is called before the first frame update
@@ -34,6 +36,11 @@ public class LevelSplash : MonoBehaviour
     void Update()
     {
         levelSplashUI();
+    }
+
+    public void closePanel()
+    {
+        panel.SetActive(false);
     }
 
     public void levelSplashUI()
