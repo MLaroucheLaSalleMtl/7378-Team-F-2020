@@ -32,6 +32,7 @@ There are two objectives in this game:
 * [Edo SZ](http://www.vicfieger.com/) - Vic Fierger
 * [Luckiest Guy](https://www.fontsquirrel.com/fonts/luckiest-guy) - Astigmatic
 * [Stanberry](https://www.dafont.com/stanberry.font) -  Jayvee D. Enaguas (Grand Chaos)
+* [Porky](http://www.fontbros.com/families/porkys) - Fontalicious
 
 ### UI
 * [UI pack](https://loudeyes.itch.io/paper-ui-pack-for-games) – Lynda Mc Donald
@@ -46,7 +47,7 @@ There are two objectives in this game:
 ### 3D Characters 
 * [male students](https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870)
 * [female students](https://assetstore.unity.com/packages/3d/animations/sd-unity-chan-haon-custom-bundle-84992)
-* [Teacher Models](https://assetstore.unity.com/packages/3d/characters/humanoids/polygon-mini-fantasy-character-pack-122084)
+* [Teacher & Secretary Models](https://assetstore.unity.com/packages/3d/characters/humanoids/polygon-mini-fantasy-character-pack-122084)
 
 
 ### 3D Props
@@ -58,9 +59,17 @@ There are two objectives in this game:
 * [Assets for the hacking class](https://assetstore.unity.com/packages/3d/environments/sci-fi/atm-95057)
 * [Assets for the Caffeteria](https://assetstore.unity.com/packages/3d/props/food/delicious-food-02-54273)
 * [Glowing particles for the objectives](https://assetstore.unity.com/packages/vfx/particles/sci-fi-arsenal-60519)
+* [Environment Weather Effect](https://assetstore.unity.com/packages/vfx/particles/environment-weather-effect-71831)
+* [Fantasy Skybox](https://assetstore.unity.com/packages/2d/textures-materials/sky/fantasy-skybox-18216)
+* [Lowpoly Nature Pack for 4 Seasons](https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-nature-pack-4-seasons-37042)
+* [Lowpoly office decor](https://assetstore.unity.com/packages/3d/props/interior/polygon-office-pack-159492)
+* [Confetti FX](https://assetstore.unity.com/packages/vfx/particles/confetti-fx-82497)
+* [Weather Icon](https://www.sketchappsources.com/free-source/3478-weather-icons-sketch-freebie-resource.html)
 
 ### Music
 * [SFX](https://assetstore.unity.com/packages/audio/sound-fx/interface-item-sounds-148951)
+* [Game Background](https://assetstore.unity.com/packages/audio/music/pop/happy-music-pack-15530)
+* [Main Menu BG song](https://www.bensound.com/royalty-free-music/track/groovy-hip-hop) - Benjamin Tissot
 
 ### Others
 
