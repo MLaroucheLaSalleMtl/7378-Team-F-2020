@@ -133,7 +133,7 @@ public class GameTime : MonoBehaviour
             teacher.RandomGenNum();
 
             //random event triggered at 50%
-            if (Random.Range(0, 2) == 1)
+            if (hour == 12 && Random.Range(0, 2) == 1)
             {
                 eventmanager.eventTriggered();
             }

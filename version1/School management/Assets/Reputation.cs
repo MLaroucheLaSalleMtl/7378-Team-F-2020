@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Reputation : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class Reputation : MonoBehaviour
 
     private GameManager manager;
     private GameTime time;
-    private float reputation;
+    private float REP;
+
     void Start()
     {
         manager = GameManager.instance;
@@ -30,7 +32,10 @@ public class Reputation : MonoBehaviour
 
     private void determineReputation()
     {
+        REP1 = 0;
+
         float happytemp = 0;
+        
 
         foreach(GameObject student in manager.Allregisteredstudents)
         {
@@ -39,13 +44,13 @@ public class Reputation : MonoBehaviour
         happytemp = happytemp / manager.Allregisteredstudents.Count;
         if (happytemp >= 0 && happytemp < 45)
         {
-            reputation += 20;
+            REP1 += 20;
         }else if (happytemp >= 45 && happytemp < 75)
         {
-            reputation += 40;
+            REP1 += 40;
         }else if(happytemp >= 75 && happytemp <= 100)
         {
-            reputation += 60;
+            REP1 += 60;
         }
 
         float[] rarity=new float[3];
@@ -97,29 +102,29 @@ public class Reputation : MonoBehaviour
 
         if (place == 0)
         {
-            reputation += 5;
+            REP1 += 5;
         }else if (place == 1)
         {
-            reputation += 10;
+            REP1 += 10;
         }
         else if (place == 2)
         {
-            reputation += 15;
+            REP1 += 15;
         }
         else if (place == 3)
         {
-            reputation += 20;
+            REP1 += 20;
         }
 
 
         
         if (manager.Playerpublicity >= 45 && manager.Playerpublicity < 65)
         {
-            reputation += 10;
+            REP1 += 10;
         }
         else if (manager.Playerpublicity >= 65)
         {
-            reputation += 20;
+            REP1 += 20;
         }
 
 
@@ -132,12 +137,16 @@ public class Reputation : MonoBehaviour
 
     public Vector3 LocationOfSpawn = new Vector3(-7.98f, 0f, -72f);
     [SerializeField] private GameObject stud, Clockposs;
+
+    public float REP1 { get => REP; set => REP = value; }
+   
+
     public void Spawnstudents()
     {
         int studentstospawn = permastudenttospawn; 
         float randomval = Random.Range(0, 101);
 
-        if (reputation < 45)
+        if (REP1 < 45)
         {
             if (randomval > 50) {
 
@@ -146,7 +155,7 @@ public class Reputation : MonoBehaviour
             }
 
 
-        }else if (reputation >= 65)
+        }else if (REP1 >= 65)
         {
             if (randomval > 50)
             {
@@ -174,5 +183,6 @@ public class Reputation : MonoBehaviour
     void Update()
     {
         determineReputation();
+        
     }
 }

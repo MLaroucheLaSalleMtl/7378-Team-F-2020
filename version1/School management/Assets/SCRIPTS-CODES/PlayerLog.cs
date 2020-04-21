@@ -76,7 +76,7 @@ public class PlayerLog : MonoBehaviour
         {
             Eventlog.Clear();
             guiText = "";
-            Debug.Log("if you press C, it CLEARS the PlayerLog, b-baka");
+            Debug.Log("if you press C, it CLEARS the PlayerLog");
         }
     }
 }

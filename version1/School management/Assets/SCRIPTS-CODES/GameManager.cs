@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     TeacherMono teachermono;
 
+    Reputation rep;
+
     [Header("Player Level")]
     [SerializeField] private int maxExp;
     [SerializeField] private float updatedExp;
@@ -35,6 +37,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxPub;
     [SerializeField] private int addpub;
     [SerializeField] private int playerpublicity;
+
+    [Header("Player Reputation")]
+    [SerializeField] private Text reputationtxt;
+
 
     [Header("Level SFX")]
     public AudioClip lvlSFX;
@@ -337,6 +343,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         eventlog = PlayerLog.instance;
+        rep = Reputation.instance;
 
         StudentCountText = GameObject.FindGameObjectWithTag("StudentCount").GetComponent<Text>();
         classRCountText = GameObject.FindGameObjectWithTag("ClassCount").GetComponent<Text>();
@@ -365,6 +372,7 @@ public class GameManager : MonoBehaviour
         levelTxtOnUI();
         publictyUI();
         publictyStandingUI();
+        updateReputationUI();
         //levelUp();
 
     }
@@ -483,12 +491,18 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
+
 
 
 
 
     // UI 
+    
+
+    public void updateReputationUI()
+    {
+        reputationtxt.text = "Reputation: " + rep.REP1.ToString();
+    }
     public void updateCurrentTSalary()
     {
         SalaryPaidtxt.text = "Paid Salary: $" + TotalSalary.ToString();
