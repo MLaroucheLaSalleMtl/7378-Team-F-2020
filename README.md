@@ -15,6 +15,15 @@ There are two objectives in this game:
 
 # Instructions
 ![instruction](https://i.imgur.com/mQDQwHY.jpg)
+```
+Breakdown: 
+
+- Happiness of the student is based on ... are they in the right class (40%), how good are the teacher (20%), if they have a place to relax (10%), if students are odd or even (5%) because even number student means you can pair them up and they wont be alone! Also the weather condition (5%) and 20% on random school events. 
+
+- Reputation: 60% is the average of the happiness of the students, 20% publicity and other 20% is the rarity of your teachers
+
+- Publicity: you start off with 50 and it decreases by 5 per day. Its your job as the principle to use Publicity button to have ads in order to increase the School Publicity Rating
+```
 
 # Controls 
 ![Image of instruction](https://i.imgur.com/f8H8flg.jpg)
