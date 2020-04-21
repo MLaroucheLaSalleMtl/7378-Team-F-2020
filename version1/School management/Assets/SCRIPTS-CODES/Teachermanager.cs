@@ -186,10 +186,10 @@ public class Teachermanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonUp("R"))
-        {
-            RandomGenNum();
-        }
+        //if (Input.GetButtonUp("R"))
+        //{
+        //    RandomGenNum();
+        //}
 
         
         teacherNames();

@@ -144,8 +144,17 @@ public class GameTime : MonoBehaviour
             //weather generator per day
             wmanager.RandomWeather();
 
+            //remove publicty 5 per day
+            manager.removePub(5);
+
             //total teacher salary paid per day
             manager.SumofSalary(manager.GrandtotalSalary1);
+
+            //students will pay
+            if(hour == 23)
+            {
+                manager.getPaid();
+            }
 
             if (manager.playerPaidSalary == true)
             {

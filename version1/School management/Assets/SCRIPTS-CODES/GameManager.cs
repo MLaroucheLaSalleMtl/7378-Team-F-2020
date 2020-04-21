@@ -224,6 +224,11 @@ public class GameManager : MonoBehaviour
         Playerpublicity += Addpub;
     }
 
+    public void removePub(int removepub)
+    {
+        Playerpublicity -= removepub;
+    }
+
     public GameObject Reschudule(string clas)
     {
         GameObject tempo = null;
@@ -407,6 +412,20 @@ public class GameManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void getPaid()
+    {
+        float temp = 0;
+
+        foreach (GameObject stud in Allregisteredstudents)
+        {
+            if (stud.GetComponent<StudentMono>().ClassSit.transform.parent.GetComponent<ClasroomScip>().Teacher != null)
+            {
+                AddMoney(25);
+            }
+        }
+
     }
 
     public void earnedMoney(float amount)

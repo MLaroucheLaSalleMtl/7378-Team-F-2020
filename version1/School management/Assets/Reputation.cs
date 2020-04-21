@@ -22,6 +22,7 @@ public class Reputation : MonoBehaviour
     private GameManager manager;
     private GameTime time;
     private float REP;
+    private float happiness;
 
     void Start()
     {
@@ -35,6 +36,8 @@ public class Reputation : MonoBehaviour
         REP1 = 0;
 
         float happytemp = 0;
+
+        
         
 
         foreach(GameObject student in manager.Allregisteredstudents)
@@ -42,6 +45,7 @@ public class Reputation : MonoBehaviour
             happytemp += student.GetComponent<StudentMono>().stdudentinfo.Happines1;
         }
         happytemp = happytemp / manager.Allregisteredstudents.Count;
+        Happiness = happytemp;
         if (happytemp >= 0 && happytemp < 45)
         {
             REP1 += 20;
@@ -139,7 +143,7 @@ public class Reputation : MonoBehaviour
     [SerializeField] private GameObject stud, Clockposs;
 
     public float REP1 { get => REP; set => REP = value; }
-   
+    public float Happiness { get => happiness; set => happiness = value; }
 
     public void Spawnstudents()
     {

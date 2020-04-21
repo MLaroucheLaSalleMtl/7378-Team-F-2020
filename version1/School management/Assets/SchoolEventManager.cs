@@ -127,10 +127,10 @@ public class SchoolEventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonUp("R"))
-        {
-            eventTriggered();
-        }
+        //if (Input.GetButtonUp("R"))
+        //{
+        //    eventTriggered();
+        //}
 
         if (etriggered == true)
         {

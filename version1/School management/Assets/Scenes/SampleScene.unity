@@ -54719,7 +54719,7 @@ MonoBehaviour:
   - {fileID: 382708371}
   - {fileID: 1456898225}
   - {fileID: 818253349}
-  money: 999999
+  money: 700
   moneyText: {fileID: 1362588606}
   earnedM: 0
   spentM: 0

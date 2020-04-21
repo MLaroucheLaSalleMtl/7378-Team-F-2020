@@ -23,7 +23,7 @@ public class EndOfTheDayReportManager : MonoBehaviour
 
     GameManager gamemanager;
     GameTime timemanager;
-    
+    Reputation rep;
 
     [Header("Break Down Text")]
     public Text date;
@@ -49,7 +49,7 @@ public class EndOfTheDayReportManager : MonoBehaviour
         date.text = "Report for the Day" + "\n" + timemanager.Day + "/" + timemanager.Month + "/" + timemanager.Year;
         earned.text = "Money Earned: " + gamemanager.EarnedM;
         spent.text = "Money Spent: " + gamemanager.SpentM;
-        happyLvL.text = "Happiness Leve is ... ";  //we need to put the happiness level here.
+        happyLvL.text = "Happiness Leve is " + rep.Happiness;  //we need to put the happiness level here.
         pubLvl.text = "Publicity Rating is " + gamemanager.Playerpublicity;
 
 
@@ -101,6 +101,7 @@ public class EndOfTheDayReportManager : MonoBehaviour
     {
         gamemanager = GameManager.instance;
         timemanager = GameTime.instance;
+        rep = Reputation.instance;
 
         
     }
