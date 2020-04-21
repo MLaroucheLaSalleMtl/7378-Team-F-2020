@@ -14,7 +14,7 @@ There are two objectives in this game:
 ```
 
 # Instructions
-![https://i.imgur.com/mQDQwHY.jpg](https://i.imgur.com/mmzY8Zi.jpg)
+![instruction](https://i.imgur.com/mQDQwHY.jpg)
 
 # Controls 
 ![Image of instruction](https://i.imgur.com/n7pd1VN.jpg)
