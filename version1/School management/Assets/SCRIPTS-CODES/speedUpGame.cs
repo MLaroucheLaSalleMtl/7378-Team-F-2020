@@ -10,7 +10,7 @@ public class speedUpGame : MonoBehaviour
     // using SHIFT the player can speed up the game time or slow down the time
     public void Speed()
     {
-        Time.timeScale = Time.timeScale =3;
+        Time.timeScale = 2;//3 default
         gameSpeedUp = true;
         Debug.Log("Speen ON");
         

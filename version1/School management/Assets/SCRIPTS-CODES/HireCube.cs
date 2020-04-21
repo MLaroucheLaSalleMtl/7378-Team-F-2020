@@ -78,16 +78,18 @@ public class HireCube : MonoBehaviour
         {
             okayToHire = true;
 
-            gameManager.AddTeacher();
+            
 
             GameObject TeacherTohire = teacherManager.GetTeacherTohire();
             tStaff = Instantiate(TeacherTohire, transform.position, transform.rotation * Quaternion.Euler(RotationOfcet));
-            transform.parent.GetComponent<ClasroomScip>().Teacher = tStaff;
+            transform.parent.GetComponent<ClasroomScip>().Teacher = tStaff;//I aded to have a reference to the teacher object rstraigth from the class, in order to be linked
             //How much the teacher cost to hire 
             gameManager.ReduceMoney(TeacherTohire.GetComponent<TeacherMono>().HiringCost1);
 
             //SALARY per day
             gameManager.SumofSalary(TeacherTohire.GetComponent<TeacherMono>().Salary);
+
+            gameManager.AddTeacher(tStaff);
 
             //Player can choose other teachers, wont duplicate to previously selected one
             teacherManager.SetTeacher(null);

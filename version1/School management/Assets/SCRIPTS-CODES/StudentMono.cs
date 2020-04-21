@@ -201,7 +201,7 @@ public class StudentMono : MonoBehaviour
 
         if (stdudentinfo.ClassIgot1 == stdudentinfo.ClassIwant1)
         {
-            HapyTemp += 40;//teacher eficiency 40%
+            HapyTemp += 40;//class gotten 40%
         }
 
         //if(ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency>=0&& ClassSit.transform.parent.GetComponent<ClasroomScip>().Teficiency < 45)
@@ -244,12 +244,11 @@ public class StudentMono : MonoBehaviour
         
             if (ClassSit != null)
             {
-                //if (gtime.hour >= 3 && gtime.hour < 4)
-                //{
-                //    Paid = false;
-                //}
-
-                if (gtime.hour > 3 && gtime.hour <= 10)
+            if (gtime.hour > 0 && gtime.hour <= 3)
+            {
+                myNavAgent.SetDestination(manager.LocationOfSpawn);
+            }
+            if (gtime.hour > 3 && gtime.hour <= 10)
                 {
 
                     myNavAgent.SetDestination(ClassSit.transform.position);
@@ -286,10 +285,7 @@ public class StudentMono : MonoBehaviour
                 {
                     myNavAgent.SetDestination(ClassSit.transform.position);
                 }
-                if (gtime.hour > 0 && gtime.hour <= 3)
-                {
-                    myNavAgent.SetDestination(manager.LocationOfSpawn);
-                }
+                
             }
         
     }

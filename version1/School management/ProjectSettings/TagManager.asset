@@ -12,7 +12,6 @@ TagManager:
   - Sit
   - Magic
   - Surfing
-  - Haking
   - AxeTrowing
   - MagicSit1
   - HakingSit1
@@ -31,6 +30,7 @@ TagManager:
   - Great
   - ChillingPlace
   - Bathroom
+  - Haking
   layers:
   - Default
   - TransparentFX

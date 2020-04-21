@@ -31,9 +31,16 @@ public class Level : MonoBehaviour
         updatedExp += expIncrease;
         Expbar.fillAmount = updatedExp / maxExp;
     }
-
+    //Spawing students stuff
+    private int lvelspassed = 0;
     public void levelUp()
     {
+        lvelspassed++;
+        if (lvelspassed == 3)
+        {
+            Reputation.instance.Progresive();
+            lvelspassed = 0;
+        }
 
         if (updatedExp >= maxExp)
         {
@@ -42,7 +49,7 @@ public class Level : MonoBehaviour
             maxExp += maxExp-50;
         }
     }
-  
+   
     
     void Update()
     {

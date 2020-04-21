@@ -83,15 +83,19 @@ public class GameManager : MonoBehaviour
     public List<GameObject> Clasesbogth = new List<GameObject>();
     public List<GameObject> Chilingspot = new List<GameObject>();
     public List<GameObject> Bathroomrooms = new List<GameObject>();
+    public List<GameObject> MagicClass = new List<GameObject>();
+    public List<GameObject> SurfingClass = new List<GameObject>();
+    public List<GameObject> HakingClass = new List<GameObject>();
+    public List<GameObject> AxeTrowingClass = new List<GameObject>();
     public int NumberOfMagic = 0;
     public int NumberOfSurfing = 0;
     public int NumberOfHacking = 0;
     public int NumberOfAxeTrowing = 0;
 
 
-    public string[] AvalableClases = new string[] { "Magic", "Surfing", "Hacking", "Axe Trowing" };
+    public string[] AvalableClases = new string[] { "Magic", "Surfing", "Hacking", "AxeTrowing" };
 
-
+    public List<GameObject> HiredTeachers;
 
     List<string> Clases = new List<string>();
 
@@ -214,35 +218,101 @@ public class GameManager : MonoBehaviour
         Playerpublicity += Addpub;
     }
 
-    public void ClasesNumber()
+    public GameObject Reschudule(string clas)
+    {
+        GameObject tempo = null;
+        if (clas == "Magic")
+        {
+           for(int i = 0; i < MagicClass.Count; i++)
+            {
+                if (MagicClass[i].GetComponent<ClasroomScip>().IsthereSpace())
+                {
+                    tempo=MagicClass[i].GetComponent<ClasroomScip>().AvalableSit();
+                    
+                }
+            }
+            return tempo;
+        }
+        else if (clas == "Hacking")
+        {
+            for (int i = 0; i < HakingClass.Count; i++)
+            {
+                if (HakingClass[i].GetComponent<ClasroomScip>().IsthereSpace())
+                {
+                    tempo = HakingClass[i].GetComponent<ClasroomScip>().AvalableSit();
+                   
+                }
+                
+            }
+            return tempo;
+        }
+        else if (clas == "AxeTrowing")
+        {
+            for (int i = 0; i < AxeTrowingClass.Count; i++)
+            {
+                if (AxeTrowingClass[i].GetComponent<ClasroomScip>().IsthereSpace())
+                {
+                    tempo = AxeTrowingClass[i].GetComponent<ClasroomScip>().AvalableSit();
+                    
+                }
+                
+            }
+            return tempo;
+
+        }
+        else if (clas == "Surfing")
+        {
+            for (int i = 0; i < SurfingClass.Count; i++)
+            {
+                if (SurfingClass[i].GetComponent<ClasroomScip>().IsthereSpace())
+                {
+                    tempo = SurfingClass[i].GetComponent<ClasroomScip>().AvalableSit();
+                    
+                }
+                
+            }
+            return tempo;
+        }
+        else
+        {
+            return null;
+        }
+        
+    }
+
+    public void ClasesNumber(GameObject clasroom)
     {
 
-        NumberOfMagic = 0;
-        NumberOfSurfing = 0;
-        NumberOfHacking = 0;
-        NumberOfAxeTrowing = 0;
+        
 
-        foreach (GameObject clasroom in Clasesbogth)
-        {
+        
             if (clasroom.tag == "Magic")
             {
                 NumberOfMagic++;
+                MagicClass.Add(clasroom);
             }
             else if (clasroom.tag == "Haking")
             {
                 NumberOfHacking++;
+                HakingClass.Add(clasroom);
             }
             else if (clasroom.tag == "AxeTrowing")
             {
                 NumberOfAxeTrowing++;
+                AxeTrowingClass.Add(clasroom);
+                
             }
             else if (clasroom.tag == "Surfing")
             {
                 NumberOfSurfing++;
+                SurfingClass.Add(clasroom);
             }
+    //public List<GameObject> MagicClass = new List<GameObject>();
+    //public List<GameObject> SurfingClass = new List<GameObject>();
+    //public List<GameObject> HakingClass = new List<GameObject>();
+    //public List<GameObject> AxeTrowingClass = new List<GameObject>();
 
-        }
-    }
+}
 
     public bool SpaceOnClasroomBogth()
     {
@@ -287,7 +357,7 @@ public class GameManager : MonoBehaviour
         UpdateMoneyUI();
         RefreshTextOnUI();
         classRTxtOnUI();
-        ClasesNumber();
+        //ClasesNumber();
         teacherTxtOnUI();
         updateNewlyHiredTSalary();
         updateCurrentTSalary();
@@ -362,9 +432,10 @@ public class GameManager : MonoBehaviour
 
     //TEACHER
 
-    public void AddTeacher()
+    public void AddTeacher(GameObject Teacher)
     {
         TeacherCount++;
+        HiredTeachers.Add(Teacher);
     }
 
     /// ADMIN
@@ -472,11 +543,11 @@ public class GameManager : MonoBehaviour
         {
             publicityStanding.text = "Current Publicity Standing is BAD because you are in the rage of 0 and 45.";
         }
-        else if (Playerpublicity > 45 && Playerpublicity < 65)
+        else if (Playerpublicity >= 45 && Playerpublicity < 65)
         {
             publicityStanding.text = "Current Publicity Standing is OKAY because you are in the range of 45 and 65.";
         }
-        else if (Playerpublicity > 65)
+        else if (Playerpublicity >= 65)
         {
             publicityStanding.text = "Current Publicity Standing is GOOD because you are above 65.";
         }
@@ -495,41 +566,41 @@ public class GameManager : MonoBehaviour
     public Administration[] managementlines;
     public List<GameObject> Allregisteredstudents;
 
-    public void Gopay()
-    {
-        managementlines[0].studentstopay = new List<GameObject>();
-        managementlines[1].studentstopay = new List<GameObject>();
-        managementlines[2].studentstopay = new List<GameObject>();
-        managementlines[3].studentstopay = new List<GameObject>();
-        foreach (GameObject student in Allregisteredstudents) {
-            if (student.GetComponent<StudentMono>().Paid == false)
-            {
-                NavMeshAgent agent;
-                agent = student.GetComponent<NavMeshAgent>();
-                int temp=0;
-                for (int i = 0; i < managementlines.Length; i++)
-                {
-                    int f = 1;
+    //public void Gopay()
+    //{
+    //    managementlines[0].studentstopay = new List<GameObject>();
+    //    managementlines[1].studentstopay = new List<GameObject>();
+    //    managementlines[2].studentstopay = new List<GameObject>();
+    //    managementlines[3].studentstopay = new List<GameObject>();
+    //    foreach (GameObject student in Allregisteredstudents) {
+    //        if (student.GetComponent<StudentMono>().Paid == false)
+    //        {
+    //            NavMeshAgent agent;
+    //            agent = student.GetComponent<NavMeshAgent>();
+    //            int temp=0;
+    //            for (int i = 0; i < managementlines.Length; i++)
+    //            {
+    //                int f = 1;
 
-                    if (managementlines[i].Isthereasecretary && managementlines[i].studentstopay.Count <= managementlines[f].studentstopay.Count)
-                    {
-                        temp = i;
-                    }
+    //                if (managementlines[i].Isthereasecretary && managementlines[i].studentstopay.Count <= managementlines[f].studentstopay.Count)
+    //                {
+    //                    temp = i;
+    //                }
 
-                }
+    //            }
 
-                managementlines[temp].studentstopay.Add(student);
-            }
+    //            managementlines[temp].studentstopay.Add(student);
+    //        }
 
-        }
-        StartCoroutine( managementlines[0].Payfees());
-        managementlines[0].organiseline();
-        StartCoroutine( managementlines[1].Payfees());
-        managementlines[1].organiseline();
-        StartCoroutine( managementlines[2].Payfees());
-        managementlines[2].organiseline();
-        StartCoroutine( managementlines[3].Payfees());
-        managementlines[3].organiseline();
+    //    }
+    //    StartCoroutine( managementlines[0].Payfees());
+    //    managementlines[0].organiseline();
+    //    StartCoroutine( managementlines[1].Payfees());
+    //    managementlines[1].organiseline();
+    //    StartCoroutine( managementlines[2].Payfees());
+    //    managementlines[2].organiseline();
+    //    StartCoroutine( managementlines[3].Payfees());
+    //    managementlines[3].organiseline();
 
-    }
+    //}
 }

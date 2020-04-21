@@ -114,6 +114,8 @@ public class BuyCube : MonoBehaviour
             gameManager.ReduceMoney(ClassToBuild.GetComponent<ClasroomScip>().ClassCost);
             gameManager.AddClasses();
             gameManager.Clasesbogth.Add(classroom);
+            gameManager.ClasesNumber(classroom);
+
         }
 
         // displays how many classes built

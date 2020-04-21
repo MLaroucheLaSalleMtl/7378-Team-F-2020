@@ -14,7 +14,8 @@ public class MakeGosty : MonoBehaviour
             rend = transform.GetChild(i).GetComponent<Renderer>();
 
             rend.material = gostycolor;
-        } 
+        }
+        Destroy(gameObject, 5f);
     }
 
    

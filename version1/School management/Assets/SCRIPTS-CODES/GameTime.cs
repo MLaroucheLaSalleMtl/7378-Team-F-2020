@@ -37,6 +37,10 @@ public class GameTime : MonoBehaviour
     private float minute, day, second, month, year;
     public float hour;
 
+    //private float resetdays = 0;
+
+    [SerializeField] private GameObject[] suns;
+
     public int Timescale1 { get => Timescale; set => Timescale = value; }
     public float Day { get => day; set => day = value; }
     public float Month { get => month; set => month = value; }
@@ -95,8 +99,16 @@ public class GameTime : MonoBehaviour
             //    manager.SpawnCode();
             //}
             hour++;
+            if (hour == 4)
+            {
+                Reputation.instance.Spawnstudents();
+            }
+            //if (hour == 6)
+            //{
+            //    Time.timeScale = 0;
+            //}
             //BroadcastMessage("DetermineHappines", SendMessageOptions.DontRequireReceiver);
-            
+
 
             // give XP
             manager.addExp(5);
@@ -110,6 +122,11 @@ public class GameTime : MonoBehaviour
             //manager.Gopay();
             
             Day++;
+            foreach(GameObject sun in suns)
+            {
+                sun.GetComponent<daycicle>().Restartvalues();
+            }
+            
            
 
             //teacher generator per day
