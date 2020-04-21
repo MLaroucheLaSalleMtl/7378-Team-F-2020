@@ -14,10 +14,10 @@ There are two objectives in this game:
 ```
 
 # Instructions
-![Image of instruction](https://i.imgur.com/mmzY8Zi.jpg)
+![instruction](https://i.imgur.com/mQDQwHY.jpg)
 
 # Controls 
-![Image of instruction](https://i.imgur.com/n7pd1VN.jpg)
+![Image of instruction](https://i.imgur.com/f8H8flg.jpg)
 ```
 - GUI - small buttons as listed above under "Instructions"
 - Controller: SOON TM
