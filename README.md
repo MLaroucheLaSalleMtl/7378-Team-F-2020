@@ -24,7 +24,7 @@ There are two objectives in this game:
 ```
 
 # Roadmap
-![Image of instruction](https://i.imgur.com/yPADjGe.jpg)
+![Image of instruction](https://i.imgur.com/FArPSlB.jpg)
 
 # Sources
 
